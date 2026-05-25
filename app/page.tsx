@@ -7,14 +7,6 @@ import { modulIlerlemesi, tamamlananDersSayisi, getTamamlananDersler } from "./l
 import { SINAV_MENUSU, SINAVLAR } from "./_constants/sinavlar";
 import ThemeToggle from "./_components/ThemeToggle";
 
-const TESTIMONIALS = [
-  { isim: "Mehmet K.", rol: "Yatırım Uzmanı, İstanbul", yorum: "Düzey 3 sınavına SPK Akademi ile hazırlandım. Konuların özet anlatımı ve sorular gerçek sınav formatına çok yakındı. İlk denememde geçtim.", sinav: "Düzey 3" },
-  { isim: "Ayşe S.", rol: "Banka Müfettişi, Ankara", yorum: "BS Denetim sınavı için harika bir kaynak. COBIT, ISO 27001, ITIL gibi çerçeveleri en kolay şekilde özetlemiş.", sinav: "BS Denetim" },
-  { isim: "Burak Y.", rol: "Portföy Yöneticisi, İstanbul", yorum: "Türev Araçlar sınavı için kullandım. Risk yönetimi ve türev araç değerleme konuları çok iyi anlatılmış.", sinav: "Türev Araçlar" },
-  { isim: "Selin D.", rol: "Gayrimenkul Değerleme Uzmanı, İzmir", yorum: "GD sınavı için tam 75 soru ile pratik yapabildim. Mevzuat detayları çok kapsamlı.", sinav: "GD" },
-  { isim: "Emre A.", rol: "Bağımsız Denetçi, Bursa", yorum: "Kredi Derecelendirme için harikaydı. Sorulardaki açıklamalar tek başına bir ders niteliğinde.", sinav: "KD" },
-  { isim: "Zeynep T.", rol: "Stajyer Analist, İstanbul", yorum: "Düzey 1 sınavıma 1 ay kala başladım. Çok kapsamlı ama düzenli ilerleyince çok kolay oldu.", sinav: "Düzey 1" },
-];
 
 const TOPLAM_MODUL = modules.length;
 const TOPLAM_DERS = modules.reduce((s, m) => s + m.lessons.length, 0);
@@ -519,41 +511,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* YORUMLAR */}
-      <section id="yorumlar" className="py-24 relative">
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
-              Kullanıcı Yorumları
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">Sınavları Geçenler Ne Diyor?</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] hover:border-indigo-500/40 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6 text-[15px]">&ldquo;{t.yorum}&rdquo;</p>
-                <div className="flex items-center justify-between pt-4 border-t border-[var(--border-base)]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-full flex items-center justify-center text-white font-semibold">{t.isim.charAt(0)}</div>
-                    <div>
-                      <div className="font-semibold text-[var(--text-primary)] text-sm">{t.isim}</div>
-                      <div className="text-xs text-[var(--text-muted)]">{t.rol}</div>
-                    </div>
-                  </div>
-                  <span className="px-2 py-1 bg-indigo-500/10 text-indigo-400 rounded-md text-xs font-semibold border border-indigo-400/30">{t.sinav}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FOOTER */}
       <footer className="border-t border-[var(--border-base)] text-[var(--text-muted)] py-16">
