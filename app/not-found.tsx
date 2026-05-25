@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -19,23 +19,23 @@ export default function NotFound() {
           </div>
         </Link>
 
-        {/* 404 gÃ¶rseli */}
+        {/* 404 görseli */}
         <div className="relative mb-8">
           <div className="text-[120px] md:text-[160px] font-bold text-violet-500/15 leading-none select-none">
             404
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-6xl">ğŸ”</div>
+            <div className="text-6xl">🔍</div>
           </div>
         </div>
 
         <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
-          Sayfa BulunamadÄ±
+          Sayfa Bulunamadı
         </h1>
         <p className="text-slate-400 mb-10 leading-relaxed">
-          AradÄ±ÄŸÄ±nÄ±z sayfa mevcut deÄŸil ya da taÅŸÄ±nmÄ±ÅŸ olabilir.
+          Aradığınız sayfa mevcut değil ya da taşınmış olabilir.
           <br />
-          Ana sayfaya dÃ¶nerek devam edebilirsiniz.
+          Ana sayfaya dönerek devam edebilirsiniz.
         </p>
 
         {/* Butonlar */}
@@ -44,19 +44,19 @@ export default function NotFound() {
             href="/"
             className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-violet-500/40 transition hover:scale-105 flex items-center justify-center gap-2"
           >
-            ğŸ  Ana Sayfaya DÃ¶n
+            🏠 Ana Sayfaya Dön
           </Link>
           <Link
             href="/sinav"
             className="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
           >
-            ğŸ“ SÄ±nav SeÃ§
+            🎓 Sınav Seç
           </Link>
           <Link
             href="/dashboard"
             className="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
           >
-            ğŸ“š Ã‡alÄ±ÅŸma Paneli
+            📚 Çalışma Paneli
           </Link>
         </div>
       </div>

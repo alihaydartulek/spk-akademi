@@ -9,14 +9,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SPK Akademi — Sermaye Piyasası Lisanslama Hazırlık Platformu",
+  title: "SPK Akademi � Sermaye Piyasas� Lisanslama Haz�rl�k Platformu",
   description:
-    "Türkiye'nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu. 8 sınav türü, yüzlerce soru, gerçek sınav formatında simülasyon.",
+    "T�rkiye'nin en kapsaml� SPK Sermaye Piyasas� Lisanslama haz�rl�k platformu. 8 s�nav t�r�, y�zlerce soru, ger�ek s�nav format�nda sim�lasyon.",
   metadataBase: new URL("https://spk-akademi.vercel.app"),
   openGraph: {
-    title: "SPK Akademi — Lisanslama Hazırlık Platformu",
+    title: "SPK Akademi � Lisanslama Haz�rl�k Platformu",
     description:
-      "Düzey 1-3, Türev Araçlar, Kurumsal Yönetim ve daha fazlası. Gerçek sınav formatında pratik yap.",
+      "D�zey 1-3, T�rev Ara�lar, Kurumsal Y�netim ve daha fazlas�. Ger�ek s�nav format�nda pratik yap.",
     url: "https://spk-akademi.vercel.app",
     siteName: "SPK Akademi",
     locale: "tr_TR",
@@ -24,19 +24,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SPK Akademi — Lisanslama Hazırlık Platformu",
+    title: "SPK Akademi � Lisanslama Haz�rl�k Platformu",
     description:
-      "Türkiye'nin en kapsamlı SPK hazırlık platformu. 8 sınav türü, gerçek format, ücretsiz.",
+      "T�rkiye'nin en kapsaml� SPK haz�rl�k platformu. 8 s�nav t�r�, ger�ek format, �cretsiz.",
   },
   keywords: [
-    "SPK sınavı",
-    "sermaye piyasası lisanslama",
-    "SPL sınavı",
-    "Düzey 1",
-    "Düzey 2",
-    "Düzey 3",
-    "türev araçlar sınavı",
-    "SPK hazırlık",
+    "SPK s�nav�",
+    "sermaye piyasas� lisanslama",
+    "SPL s�nav�",
+    "D�zey 1",
+    "D�zey 2",
+    "D�zey 3",
+    "t�rev ara�lar s�nav�",
+    "SPK haz�rl�k",
   ],
 };
 

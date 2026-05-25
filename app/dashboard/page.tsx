@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
@@ -29,7 +29,7 @@ export default function DashboardPage() {
   const [tamamlaToast, setTamamlaToast] = useState(false);
 
   useEffect(() => {
-    // URL'de ?modul=XXX varsa o modÃ¼lÃ¼ seÃ§
+    // URL'de ?modul=XXX varsa o modülü seç
     const params = new URLSearchParams(window.location.search);
     const modulParam = params.get("modul");
     if (modulParam) {
@@ -47,7 +47,7 @@ export default function DashboardPage() {
 
   const dersTamamlanmis = mounted && secilenDers ? dersTamamlandiMi(secilenDers.id) : false;
 
-  // Ä°lk kez mi? HiÃ§ ders tamamlanmamÄ±ÅŸsa onboarding gÃ¶ster
+  // İlk kez mi? Hiç ders tamamlanmamışsa onboarding göster
   const ilkKullanici = mounted && modules.every((m) => modulIlerlemesi(m.id, m.lessons.length) === 0);
 
   function handleTamamla() {
@@ -74,13 +74,13 @@ export default function DashboardPage() {
       <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <SharedNavbar
-        subtitle="Ã‡alÄ±ÅŸma Paneli"
+        subtitle="Çalışma Paneli"
         activeHref="/dashboard"
         extraMobileAction={
           <button
             onClick={() => setSidebarAcik((v) => !v)}
             className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-white"
-            aria-label="ModÃ¼ller listesini aÃ§/kapat"
+            aria-label="Modüller listesini aç/kapat"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -95,7 +95,7 @@ export default function DashboardPage() {
           <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-violet-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
             <div className="p-5 border-b border-slate-700">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="font-bold text-white tracking-tight">ModÃ¼ller</h2>
+                <h2 className="font-bold text-white tracking-tight">Modüller</h2>
                 <span className="px-2.5 py-1 bg-violet-500/10 text-violet-300 text-xs font-bold rounded-md border border-violet-400/30">{modules.length}</span>
               </div>
               <div className="relative">
@@ -103,7 +103,7 @@ export default function DashboardPage() {
                   type="text"
                   value={aramaMetni}
                   onChange={(e) => setAramaMetni(e.target.value)}
-                  placeholder="ModÃ¼l ara..."
+                  placeholder="Modül ara..."
                   className="w-full px-3 py-2.5 pl-9 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-400 transition"
                 />
                 <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@ export default function DashboardPage() {
             </div>
             <div className="flex-1 overflow-y-auto p-3">
               {filtrelenmisModuller.length === 0 ? (
-                <div className="text-center py-8 text-sm text-slate-500">SonuÃ§ bulunamadÄ±</div>
+                <div className="text-center py-8 text-sm text-slate-500">Sonuç bulunamadı</div>
               ) : (
                 filtrelenmisModuller.map((modul, idx) => {
                   const acikMi = secilenModulId === modul.id;
@@ -125,7 +125,7 @@ export default function DashboardPage() {
                         onClick={() => {
                           setSecilenModulId(modul.id);
                           setSecilenDersId(modul.lessons[0]?.id || "");
-                          // Mobilden modÃ¼l seÃ§ilince ders listesi aÃ§Ä±lsÄ±n ama iÃ§erik iÃ§in kapanmasÄ±n
+                          // Mobilden modül seçilince ders listesi açılsın ama içerik için kapanmasın
                         }}
                         className={`w-full text-left p-3 rounded-lg transition-all ${
                           acikMi
@@ -143,14 +143,14 @@ export default function DashboardPage() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className={`font-semibold text-sm leading-tight mb-1 ${acikMi ? "text-violet-300" : "text-slate-200"}`}>
-                              {modul.title.replace("ModÃ¼l Â· ", "")}
+                              {modul.title.replace("Modül · ", "")}
                             </div>
                             <div className="flex items-center gap-2 text-xs text-slate-400 mb-1.5">
                               <span>{modul.lessons.length} ders</span>
-                              <span>Â·</span>
+                              <span>·</span>
                               <span>{toplamSoru} soru</span>
                             </div>
-                            {/* MÄ°NÄ° Ä°LERLEME BARI */}
+                            {/* MİNİ İLERLEME BARI */}
                             {mounted && ilerleme > 0 && (
                               <div className="h-1 bg-slate-900 rounded-full overflow-hidden">
                                 <div
@@ -172,7 +172,7 @@ export default function DashboardPage() {
                                 key={ders.id}
                                 onClick={() => {
                                   setSecilenDersId(ders.id);
-                                  // Mobilden ders seÃ§ilince sidebar'Ä± kapat, iÃ§erik gÃ¶rÃ¼nsÃ¼n
+                                  // Mobilden ders seçilince sidebar'ı kapat, içerik görünsün
                                   if (window.innerWidth < 1024) setSidebarAcik(false);
                                 }}
                                 className={`w-full text-left px-3 py-2 rounded-md text-xs transition-all flex items-center gap-2 ${
@@ -181,7 +181,7 @@ export default function DashboardPage() {
                                     : "text-slate-400 hover:bg-slate-700/50 hover:text-white"
                                 }`}
                               >
-                                {tamam && <span className="text-emerald-400 flex-shrink-0">âœ“</span>}
+                                {tamam && <span className="text-emerald-400 flex-shrink-0">✓</span>}
                                 <span className="line-clamp-1">{ders.title}</span>
                               </button>
                             );
@@ -196,10 +196,10 @@ export default function DashboardPage() {
           </div>
         </aside>
 
-        {/* Ä°Ã‡ERÄ°K */}
+        {/* İÇERİK */}
         <main className="flex-1 min-w-0">
 
-          {/* Mobil: ModÃ¼llere DÃ¶n butonu */}
+          {/* Mobil: Modüllere Dön butonu */}
           {!sidebarAcik && (
             <button
               onClick={() => setSidebarAcik(true)}
@@ -208,26 +208,26 @@ export default function DashboardPage() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              ModÃ¼ller
+              Modüller
             </button>
           )}
 
-          {/* â”€â”€â”€ Onboarding â€” sadece ilk kullanÄ±mda â”€â”€â”€ */}
+          {/* ─── Onboarding — sadece ilk kullanımda ─── */}
           {ilkKullanici && (
             <div className="bg-gradient-to-br from-violet-900/40 to-violet-800/20 border border-violet-500/30 rounded-2xl p-6 mb-6 shadow-xl shadow-violet-500/10">
               <div className="flex items-start gap-4">
-                <div className="text-3xl flex-shrink-0">ğŸ‘‹</div>
+                <div className="text-3xl flex-shrink-0">👋</div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-white text-lg mb-1">HoÅŸ geldin! Nereden baÅŸlamalÄ±sÄ±n?</h2>
+                  <h2 className="font-bold text-white text-lg mb-1">Hoş geldin! Nereden başlamalısın?</h2>
                   <p className="text-slate-300 text-sm mb-4 leading-relaxed">
-                    Sol panelden bir modÃ¼l seÃ§erek Ã§alÄ±ÅŸmaya baÅŸlayabilirsin. Hangi sÄ±nava hazÄ±rlandÄ±ÄŸÄ±nÄ± biliyorsan aÅŸaÄŸÄ±dan doÄŸrudan tam sÄ±nav simÃ¼lasyonuna geÃ§ebilirsin.
+                    Sol panelden bir modül seçerek çalışmaya başlayabilirsin. Hangi sınava hazırlandığını biliyorsan aşağıdan doğrudan tam sınav simülasyonuna geçebilirsin.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Link href="/sinav/duzey1" className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-violet-500/30">
-                      ğŸ“ DÃ¼zey 1 SÄ±navÄ±na HazÄ±rlan
+                      🎓 Düzey 1 Sınavına Hazırlan
                     </Link>
                     <Link href="/sinav" className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-semibold px-4 py-2 rounded-xl border border-slate-600 transition">
-                      â±ï¸ TÃ¼m SÄ±navlar
+                      ⏱️ Tüm Sınavlar
                     </Link>
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export default function DashboardPage() {
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-slate-300">{secilenModul.title.replace("ModÃ¼l Â· ", "")}</span>
+                <span className="text-slate-300">{secilenModul.title.replace("Modül · ", "")}</span>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
@@ -250,17 +250,17 @@ export default function DashboardPage() {
 
               <div className="bg-slate-800 rounded-2xl p-5 md:p-8 border border-slate-700 shadow-xl shadow-violet-900/30">
                 <div className="mb-5">
-                  {/* ModÃ¼l etiketi â€” truncate ile taÅŸmayÄ± Ã¶nle */}
+                  {/* Modül etiketi — truncate ile taşmayı önle */}
                   <div className="flex items-center gap-2 mb-3">
                     <span className="px-2.5 py-1 bg-violet-500/10 text-violet-300 rounded-full text-[11px] font-bold tracking-wider uppercase border border-violet-400/30 truncate max-w-[calc(100%-2rem)]">
-                      {secilenModul.title.replace("ModÃ¼l Â· ", "")}
+                      {secilenModul.title.replace("Modül · ", "")}
                     </span>
                   </div>
-                  {/* BaÅŸlÄ±k */}
+                  {/* Başlık */}
                   <h1 className="text-xl md:text-3xl font-bold text-white leading-tight tracking-tight mb-4">
                     {secilenDers.title}
                   </h1>
-                  {/* Tamamla + SÃ¼re â€” mobilden yan yana, kÃ¼Ã§Ã¼k */}
+                  {/* Tamamla + Süre — mobilden yan yana, küçük */}
                   <div className="flex items-center gap-2 flex-wrap">
                     {mounted && (
                       <button
@@ -272,14 +272,14 @@ export default function DashboardPage() {
                         }`}
                       >
                         {dersTamamlanmis ? (
-                          <><span>âœ“</span><span>TamamlandÄ±</span></>
+                          <><span>✓</span><span>Tamamlandı</span></>
                         ) : (
-                          <><span>â—‹</span><span>Tamamla</span></>
+                          <><span>○</span><span>Tamamla</span></>
                         )}
                       </button>
                     )}
                     <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-xl border border-slate-700 text-sm">
-                      <span className="text-violet-300 font-semibold">â±ï¸</span>
+                      <span className="text-violet-300 font-semibold">⏱️</span>
                       <span className="font-bold text-white">{secilenDers.duration}</span>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export default function DashboardPage() {
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     }`}
                   >
-                    ğŸ“– Konu Ã–zeti
+                    📖 Konu Özeti
                   </button>
                   <button
                     onClick={() => setAktifTab("sorular")}
@@ -303,7 +303,7 @@ export default function DashboardPage() {
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     }`}
                   >
-                    ğŸ“ Sorular ({secilenDers.questions.length})
+                    📝 Sorular ({secilenDers.questions.length})
                   </button>
                 </div>
               </div>
@@ -340,20 +340,20 @@ export default function DashboardPage() {
                   </div>
                   <div className="mt-8 p-6 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-l-4 border-amber-500 rounded-r-xl">
                     <div className="flex items-start gap-3">
-                      <div className="text-2xl flex-shrink-0">ğŸ’¡</div>
+                      <div className="text-2xl flex-shrink-0">💡</div>
                       <div>
-                        <div className="font-bold text-amber-300 mb-2 tracking-tight">PÃ¼f NoktasÄ±</div>
+                        <div className="font-bold text-amber-300 mb-2 tracking-tight">Püf Noktası</div>
                         <p className="text-amber-100 leading-relaxed">{secilenDers.summary.tip}</p>
                       </div>
                     </div>
                   </div>
                   <div className="mt-8 pt-8 border-t border-slate-700 flex items-center justify-between flex-wrap gap-4">
-                    <div className="text-sm text-slate-300">Konuyu bitirdiniz mi? Åimdi sorularÄ± Ã§Ã¶zÃ¼n.</div>
+                    <div className="text-sm text-slate-300">Konuyu bitirdiniz mi? Şimdi soruları çözün.</div>
                     <button
                       onClick={() => setAktifTab("sorular")}
                       className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition-all hover:scale-105 flex items-center gap-2"
                     >
-                      Sorulara GeÃ§ â†’
+                      Sorulara Geç →
                     </button>
                   </div>
                 </div>
@@ -370,8 +370,8 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
-              <div className="text-5xl mb-4">ğŸ“š</div>
-              <p className="text-slate-300 text-lg">LÃ¼tfen bir ders seÃ§in</p>
+              <div className="text-5xl mb-4">📚</div>
+              <p className="text-slate-300 text-lg">Lütfen bir ders seçin</p>
             </div>
           )}
         </main>
@@ -381,8 +381,8 @@ export default function DashboardPage() {
       {/* Tamamlama toast */}
       {tamamlaToast && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] flex items-center gap-3 bg-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-emerald-500/40 animate-bounce-in font-semibold text-sm">
-          <span className="text-xl">âœ“</span>
-          Ders tamamlandÄ±! ğŸ‰
+          <span className="text-xl">✓</span>
+          Ders tamamlandı! 🎉
         </div>
       )}
     </div>
@@ -393,8 +393,8 @@ function SorularBolumu({ sorular, dersBasligi, modulId, dersId }: { sorular: Que
   return (
     <div className="space-y-4 animate-fade-in">
       <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
-        <h2 className="text-xl font-bold text-white mb-2 tracking-tight">ğŸ“ {dersBasligi} â€” Sorular</h2>
-        <p className="text-sm text-slate-300">Her sorunun altÄ±ndaki "CevabÄ± GÃ¶ster" butonuna tÄ±klayarak doÄŸru cevabÄ± ve aÃ§Ä±klamasÄ±nÄ± gÃ¶rÃ¼ntÃ¼leyebilirsiniz. Zor sorularÄ± â­ ile favorilere ekleyin.</p>
+        <h2 className="text-xl font-bold text-white mb-2 tracking-tight">📝 {dersBasligi} — Sorular</h2>
+        <p className="text-sm text-slate-300">Her sorunun altındaki "Cevabı Göster" butonuna tıklayarak doğru cevabı ve açıklamasını görüntüleyebilirsiniz. Zor soruları ⭐ ile favorilere ekleyin.</p>
       </div>
       {sorular.map((soru, idx) => (
         <SoruKarti key={idx} soru={soru} numara={idx + 1} modulId={modulId} dersId={dersId} soruIndex={idx} />
@@ -409,7 +409,7 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
   const [favori, setFavori] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Ã–nceki cevabÄ± ve favori durumunu yÃ¼kle
+  // Önceki cevabı ve favori durumunu yükle
   useEffect(() => {
     setMounted(true);
     const oncekiCevap = soruCevabiAl(modulId, dersId, soruIndex);
@@ -450,14 +450,14 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
         <div className="flex-1">
           <p className="text-white font-medium leading-relaxed">{soru.text}</p>
         </div>
-        {/* FAVORÄ° BUTONU */}
+        {/* FAVORİ BUTONU */}
         {mounted && (
           <button
             onClick={handleFavori}
             className={`p-2 rounded-lg transition-all flex-shrink-0 ${
               favori ? "text-amber-400 hover:text-amber-300" : "text-slate-500 hover:text-amber-400"
             }`}
-            title={favori ? "Favorilerden Ã§Ä±kar" : "Favorilere ekle"}
+            title={favori ? "Favorilerden çıkar" : "Favorilere ekle"}
           >
             <svg className="w-6 h-6" fill={favori ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -501,8 +501,8 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
                 {opt.id}
               </div>
               <span className="leading-relaxed pt-0.5 flex-1">{opt.text}</span>
-              {cevapGosterildi && buDogru && <span className="text-emerald-400 font-bold flex-shrink-0">âœ“</span>}
-              {cevapGosterildi && buSecili && !buDogru && <span className="text-red-400 font-bold flex-shrink-0">âœ•</span>}
+              {cevapGosterildi && buDogru && <span className="text-emerald-400 font-bold flex-shrink-0">✓</span>}
+              {cevapGosterildi && buSecili && !buDogru && <span className="text-red-400 font-bold flex-shrink-0">✕</span>}
             </button>
           );
         })}
@@ -519,9 +519,9 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
                 : "bg-slate-700 text-slate-500 cursor-not-allowed"
             }`}
           >
-            CevabÄ± GÃ¶ster
+            Cevabı Göster
           </button>
-          {!secilenCevap && <span className="text-sm text-slate-400">Ã–nce bir ÅŸÄ±k seÃ§in</span>}
+          {!secilenCevap && <span className="text-sm text-slate-400">Önce bir şık seçin</span>}
         </div>
       )}
 
@@ -531,21 +531,21 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
             <div className="flex items-center gap-2 font-bold">
               {dogruMu ? (
                 <>
-                  <span className="text-emerald-400 text-xl">âœ“</span>
-                  <span className="text-emerald-300">DoÄŸru Cevap!</span>
+                  <span className="text-emerald-400 text-xl">✓</span>
+                  <span className="text-emerald-300">Doğru Cevap!</span>
                 </>
               ) : (
                 <>
-                  <span className="text-red-400 text-xl">âœ•</span>
-                  <span className="text-red-300">YanlÄ±ÅŸ Â· DoÄŸru cevap: {soru.correct}</span>
+                  <span className="text-red-400 text-xl">✕</span>
+                  <span className="text-red-300">Yanlış · Doğru cevap: {soru.correct}</span>
                 </>
               )}
             </div>
           </div>
           <div className="p-5 bg-slate-900/50 rounded-xl border border-slate-700">
             <div className="flex items-center gap-2 font-bold text-white mb-2 tracking-tight">
-              <span>ğŸ“–</span>
-              <span>AÃ§Ä±klama</span>
+              <span>📖</span>
+              <span>Açıklama</span>
             </div>
             <p className="text-slate-300 leading-relaxed">{soru.explanation}</p>
           </div>

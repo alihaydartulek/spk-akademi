@@ -1,19 +1,19 @@
-﻿"use client";
+"use client";
 
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
- * SPK Akademi â€” Ortak SÄ±nav SayfasÄ± BileÅŸeni
+/* ─────────────────────────────────────────────────────────────────────────────
+ * SPK Akademi — Ortak Sınav Sayfası Bileşeni
  *
- * TÃ¼m sÄ±nav sayfalarÄ± (DÃ¼zey 1-3, TÃ¼rev, KY, KD, GD, BS) bu bileÅŸeni kullanÄ±r.
- * Her sayfa yalnÄ±zca `config` nesnesini geÃ§irir; tÃ¼m mantÄ±k burada yaÅŸar.
- * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+ * Tüm sınav sayfaları (Düzey 1-3, Türev, KY, KD, GD, BS) bu bileşeni kullanır.
+ * Her sayfa yalnızca `config` nesnesini geçirir; tüm mantık burada yaşar.
+ * ─────────────────────────────────────────────────────────────────────────── */
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { modules } from "../../index";
 import type { Question } from "../../mevzuat";
-import { sinavSonucuKaydet } from "../../lib/storage";
+import { sinavSonucuKaydet, favoriEkle } from "../../lib/storage";
 
-/* â”€â”€â”€ Tip TanÄ±mlarÄ± â”€â”€â”€ */
+/* ─── Tip Tanımları ─── */
 
 export type Konu = {
   pdf: string;
@@ -22,34 +22,35 @@ export type Konu = {
 };
 
 export type SinavConfig = {
-  sinavKodu: string;   // "D1", "D2", "KY" â€¦
-  sinavAdi: string;    // "DÃ¼zey 1"
-  tamAd: string;       // "DÃ¼zey 1 SPL SÄ±navÄ±"
-  aciklama: string;    // kÄ±sa aÃ§Ä±klama
+  sinavKodu: string;   // "D1", "D2", "KY" …
+  sinavAdi: string;    // "Düzey 1"
+  tamAd: string;       // "Düzey 1 SPL Sınavı"
+  aciklama: string;    // kısa açıklama
   soruSayisi: number;  // 100 veya 75
   sureDakika: number;  // 150 veya 120
   gecmeEsigi: number;  // 60
-  modulIds: string[];  // ["m1","m2","m1003", â€¦]
-  konular: Konu[];     // hazÄ±rlÄ±k ekranÄ±nda gÃ¶sterilecek konu listesi
+  modulIds: string[];  // ["m1","m2","m1003", …]
+  konular: Konu[];     // hazırlık ekranında gösterilecek konu listesi
 };
 
-/* â”€â”€â”€ YardÄ±mcÄ± fonksiyonlar â”€â”€â”€ */
+/* ─── Yardımcı fonksiyonlar ─── */
 
 type SinavSoru = Question & {
   modulId: string;
   modulBaslik: string;
   dersId: string;
   dersBaslik: string;
+  soruIndex: number; // orijinal ders.questions[] içindeki indeks
 };
 
-/* â”€â”€â”€ Draft (ilerleme kaydÄ±) yardÄ±mcÄ±larÄ± â”€â”€â”€ */
+/* ─── Draft (ilerleme kaydı) yardımcıları ─── */
 
 type SinavDraft = {
   sorular: SinavSoru[];
   cevaplar: Record<number, string>;
   isaretliler: number[];
   aktifIdx: number;
-  bitis: number; // epoch ms â€” sÄ±navÄ±n biteceÄŸi an
+  bitis: number; // epoch ms — sınavın biteceği an
 };
 
 function draftKey(kod: string) {
@@ -112,13 +113,14 @@ function sorularHazirla(config: SinavConfig): SinavSoru[] {
   modules.forEach((modul) => {
     if (!config.modulIds.includes(modul.id)) return;
     modul.lessons.forEach((ders) => {
-      ders.questions.forEach((soru) => {
+      ders.questions.forEach((soru, soruIndex) => {
         tumSorular.push({
           ...soru,
           modulId: modul.id,
           modulBaslik: modul.title,
           dersId: ders.id,
           dersBaslik: ders.title,
+          soruIndex,
         });
       });
     });
@@ -126,7 +128,7 @@ function sorularHazirla(config: SinavConfig): SinavSoru[] {
   return karistir(tumSorular).slice(0, config.soruSayisi);
 }
 
-/* â”€â”€â”€ Ana BileÅŸen â”€â”€â”€ */
+/* ─── Ana Bileşen ─── */
 
 type Asama = "hazirlik" | "sinav" | "sonuc";
 
@@ -146,12 +148,12 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sorularRef = useRef<HTMLDivElement | null>(null);
 
-  /* Draft kontrolÃ¼ â€” mount'ta bir kez */
+  /* Draft kontrolü — mount'ta bir kez */
   useEffect(() => {
     setDraft(draftYukle(config.sinavKodu));
   }, [config.sinavKodu]);
 
-  /* SÃ¼re sayacÄ± */
+  /* Süre sayacı */
   useEffect(() => {
     if (asama !== "sinav") return;
     timerRef.current = setInterval(() => {
@@ -168,7 +170,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asama]);
 
-  /* Klavye kÄ±sayollarÄ± */
+  /* Klavye kısayolları */
   useEffect(() => {
     if (asama !== "sinav") return;
     const handler = (e: KeyboardEvent) => {
@@ -195,29 +197,29 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     return () => window.removeEventListener("keydown", handler);
   }, [asama, aktifIdx, sorular.length]);
 
-  /* Soru haritasÄ± otomatik kaydÄ±r */
+  /* Soru haritası otomatik kaydır */
   useEffect(() => {
     if (!sorularRef.current) return;
     const btn = sorularRef.current.querySelector(`[data-idx="${aktifIdx}"]`);
     btn?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [aktifIdx]);
 
-  /* Otomatik draft kayÄ±t â€” soru deÄŸiÅŸince ve iÅŸaretleyince */
+  /* Otomatik draft kayıt — soru değişince ve işaretleyince */
   useEffect(() => {
     if (asama !== "sinav" || sorular.length === 0) return;
     draftKaydet(config.sinavKodu, sorular, cevaplar, isaretliler, aktifIdx, kalanSaniye);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aktifIdx, isaretliler.size, asama]);
 
-  /* â”€â”€â”€ Ä°ÅŸlemler â”€â”€â”€ */
+  /* ─── İşlemler ─── */
 
   function sinaviBaslat() {
     const hazir = sorularHazirla(config);
     if (hazir.length === 0) {
-      alert("Bu sÄ±nav iÃ§in yeterli soru bulunamadÄ±.");
+      alert("Bu sınav için yeterli soru bulunamadı.");
       return;
     }
-    draftTemizle(config.sinavKodu); // eski draft'Ä± sil
+    draftTemizle(config.sinavKodu); // eski draft'ı sil
     setSorular(hazir);
     setCevaplar({});
     setIsaretliler(new Set());
@@ -284,7 +286,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
   const bitirSinav = useCallback(() => {
     clearInterval(timerRef.current!);
-    draftTemizle(config.sinavKodu); // bitti, draft'Ä± temizle
+    draftTemizle(config.sinavKodu); // bitti, draft'ı temizle
     const sc = hesaplaSonuc(sorular, cevaplar);
     setSonucData(sc);
     sinavSonucuKaydet({
@@ -301,19 +303,19 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sorular, cevaplar, baslangicMs, config.sinavKodu, config.tamAd]);
 
-  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  /* ════════════════════════════════════════════
    * HAZIRLIK EKRANI
-   * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   * ════════════════════════════════════════════ */
   if (asama === "hazirlik") {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900">
         <SinavNavbar config={config} asama="hazirlik" />
         <div className="max-w-3xl mx-auto px-6 py-16">
 
-          {/* BaÅŸlÄ±k */}
+          {/* Başlık */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-5 border border-violet-400/30">
-              ğŸ“ GerÃ§ek SÄ±nav FormatÄ±
+              🎓 Gerçek Sınav Formatı
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
               {config.tamAd}
@@ -323,13 +325,13 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </p>
           </div>
 
-          {/* SÄ±nav bilgileri */}
+          {/* Sınav bilgileri */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {[
-              { ikon: "ğŸ“", deger: config.soruSayisi.toString(), etiket: "Soru" },
-              { ikon: "â±ï¸", deger: `${config.sureDakika} dk`, etiket: "SÃ¼re" },
-              { ikon: "âœ…", deger: `%${config.gecmeEsigi}`, etiket: "GeÃ§me Notu" },
-              { ikon: "ğŸ¯", deger: "A/B/C/D", etiket: "ÅÄ±k SayÄ±sÄ±" },
+              { ikon: "📝", deger: config.soruSayisi.toString(), etiket: "Soru" },
+              { ikon: "⏱️", deger: `${config.sureDakika} dk`, etiket: "Süre" },
+              { ikon: "✅", deger: `%${config.gecmeEsigi}`, etiket: "Geçme Notu" },
+              { ikon: "🎯", deger: "A/B/C/D", etiket: "Şık Sayısı" },
             ].map((k) => (
               <div key={k.etiket} className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 text-center shadow-xl shadow-violet-900/20">
                 <div className="text-3xl mb-2">{k.ikon}</div>
@@ -339,11 +341,11 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             ))}
           </div>
 
-          {/* Konu daÄŸÄ±lÄ±mÄ± */}
+          {/* Konu dağılımı */}
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-10 shadow-xl shadow-violet-900/20">
             <h3 className="font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-6 h-6 bg-violet-500/20 rounded-md flex items-center justify-center text-violet-400 text-sm">ğŸ“š</span>
-              Konu DaÄŸÄ±lÄ±mÄ±
+              <span className="w-6 h-6 bg-violet-500/20 rounded-md flex items-center justify-center text-violet-400 text-sm">📚</span>
+              Konu Dağılımı
             </h3>
             <div className="space-y-2 text-sm">
               {config.konular.map((k) => (
@@ -358,26 +360,26 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </div>
           </div>
 
-          {/* Klavye kÄ±sayollarÄ± */}
+          {/* Klavye kısayolları */}
           <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 mb-10">
-            <h3 className="text-sm font-bold text-slate-300 mb-3 uppercase tracking-wider">âŒ¨ï¸ Klavye KÄ±sayollarÄ±</h3>
+            <h3 className="text-sm font-bold text-slate-300 mb-3 uppercase tracking-wider">⌨️ Klavye Kısayolları</h3>
             <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">A/B/C/D</kbd> â€” ÅÄ±k seÃ§</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">â† â†’</kbd> â€” Soru geÃ§</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">Enter</kbd> â€” Sonraki soru</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">M</kbd> â€” Ä°ÅŸaretle / kaldÄ±r</div>
+              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">A/B/C/D</kbd> — Şık seç</div>
+              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">← →</kbd> — Soru geç</div>
+              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">Enter</kbd> — Sonraki soru</div>
+              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">M</kbd> — İşaretle / kaldır</div>
             </div>
           </div>
 
           {/* Devam Et (draft varsa) */}
           {draft && (
             <div className="mb-8 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="text-3xl">â¸ï¸</div>
+              <div className="text-3xl">⏸️</div>
               <div className="flex-1 min-w-0">
-                <div className="font-bold text-amber-300 mb-1">YarÄ±m bÄ±rakÄ±lan sÄ±nav bulundu</div>
+                <div className="font-bold text-amber-300 mb-1">Yarım bırakılan sınav bulundu</div>
                 <div className="text-sm text-slate-400">
-                  {Object.keys(draft.cevaplar).length} soru cevaplandÄ± Â·{" "}
-                  {Math.floor(Math.max(0, draft.bitis - Date.now()) / 60000)} dk kalan sÃ¼re
+                  {Object.keys(draft.cevaplar).length} soru cevaplandı ·{" "}
+                  {Math.floor(Math.max(0, draft.bitis - Date.now()) / 60000)} dk kalan süre
                 </div>
               </div>
               <div className="flex gap-3 flex-shrink-0">
@@ -385,7 +387,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   onClick={() => devamEt(draft)}
                   className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl text-sm shadow-lg shadow-amber-500/30 transition"
                 >
-                  Devam Et â†’
+                  Devam Et →
                 </button>
                 <button
                   onClick={() => { draftTemizle(config.sinavKodu); setDraft(null); }}
@@ -397,40 +399,40 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </div>
           )}
 
-          {/* BaÅŸlat butonu */}
+          {/* Başlat butonu */}
           <div className="text-center pb-24 lg:pb-0">
             <button
               onClick={sinaviBaslat}
               className="group bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-violet-500/40 transition-all hover:scale-105 hover:shadow-violet-500/60"
             >
-              ğŸš€ {draft ? "Yeni SÄ±nav BaÅŸlat" : "SÄ±navÄ± BaÅŸlat"}
+              🚀 {draft ? "Yeni Sınav Başlat" : "Sınavı Başlat"}
               <span className="block text-sm font-normal text-violet-200 mt-1">
-                {config.soruSayisi} soru Â· {config.sureDakika} dakika
+                {config.soruSayisi} soru · {config.sureDakika} dakika
               </span>
             </button>
             <p className="text-slate-400 text-sm mt-5">
-              Sorular rastgele seÃ§ilir ve karÄ±ÅŸtÄ±rÄ±lÄ±r. Her sÄ±nav farklÄ± sÄ±rayla gelir.
+              Sorular rastgele seçilir ve karıştırılır. Her sınav farklı sırayla gelir.
             </p>
           </div>
         </div>
 
-        {/* Mobil: Sticky baÅŸlat barÄ± */}
+        {/* Mobil: Sticky başlat barı */}
         <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 z-50">
           <button
             onClick={draft ? () => devamEt(draft) : sinaviBaslat}
             className="w-full bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-violet-500/40 transition flex items-center justify-center gap-2"
           >
-            ğŸš€ {draft ? "Devam Et" : "SÄ±navÄ± BaÅŸlat"}
-            <span className="text-violet-200 font-normal text-sm">Â· {config.soruSayisi} soru</span>
+            🚀 {draft ? "Devam Et" : "Sınavı Başlat"}
+            <span className="text-violet-200 font-normal text-sm">· {config.soruSayisi} soru</span>
           </button>
         </div>
       </div>
     );
   }
 
-  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  /* ════════════════════════════════════════════
    * SINAV EKRANI
-   * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   * ════════════════════════════════════════════ */
   if (asama === "sinav" && sorular.length > 0) {
     const soru = sorular[aktifIdx];
     const dakika = Math.floor(kalanSaniye / 60);
@@ -444,7 +446,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col">
 
-        {/* Ãœst bar */}
+        {/* Üst bar */}
         <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50">
           <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between gap-3">
 
@@ -456,14 +458,14 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               <div className="min-w-0">
                 <div className="font-bold text-white text-sm leading-none">{config.tamAd}</div>
                 <div className="text-xs text-violet-300 mt-0.5">
-                  {cevaplanan}/{sorular.length} cevaplandÄ±
-                  {isaretliSayisi > 0 && ` Â· ${isaretliSayisi} iÅŸaretli`}
-                  {` Â· ${bos} boÅŸ`}
+                  {cevaplanan}/{sorular.length} cevaplandı
+                  {isaretliSayisi > 0 && ` · ${isaretliSayisi} işaretli`}
+                  {` · ${bos} boş`}
                 </div>
               </div>
             </div>
 
-            {/* Orta: sayaÃ§ */}
+            {/* Orta: sayaç */}
             <div className={`flex items-center gap-2 px-4 py-2 rounded-xl font-bold tabular-nums text-lg border transition ${
               sureKritik
                 ? "bg-red-500/20 text-red-300 border-red-500/50 animate-pulse"
@@ -471,21 +473,21 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 ? "bg-amber-500/15 text-amber-300 border-amber-500/40"
                 : "bg-violet-500/15 text-violet-300 border-violet-500/30"
             }`}>
-              â±ï¸ {String(dakika).padStart(2, "0")}:{String(saniye).padStart(2, "0")}
+              ⏱️ {String(dakika).padStart(2, "0")}:{String(saniye).padStart(2, "0")}
             </div>
 
-            {/* SaÄŸ: bitir */}
+            {/* Sağ: bitir */}
             <button
               onClick={() => setOnayModal({
-                mesaj: bos > 0 ? `${bos} soru boÅŸ kalacak. SÄ±navÄ± bitirmek istediÄŸinize emin misiniz?` : "SÄ±navÄ± bitirmek istediÄŸinize emin misiniz?",
+                mesaj: bos > 0 ? `${bos} soru boş kalacak. Sınavı bitirmek istediğinize emin misiniz?` : "Sınavı bitirmek istediğinize emin misiniz?",
                 onEvet: bitirSinav,
               })}
               className="bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition flex-shrink-0"
             >
-              ğŸ SÄ±navÄ± Bitir
+              🏁 Sınavı Bitir
             </button>
           </div>
-          {/* Ä°lerleme barÄ± */}
+          {/* İlerleme barı */}
           <div className="h-1 bg-slate-800">
             <div
               className="h-full bg-gradient-to-r from-violet-500 to-purple-400 transition-all duration-300"
@@ -494,17 +496,17 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           </div>
         </header>
 
-        {/* Ä°Ã§erik */}
+        {/* İçerik */}
         <div className="flex flex-1 max-w-[1400px] mx-auto w-full px-4 py-6 gap-6 pb-24 lg:pb-6">
 
-          {/* Sol: soru haritasÄ± (desktop) */}
+          {/* Sol: soru haritası (desktop) */}
           <aside className="w-56 flex-shrink-0 hidden lg:block">
             <div className="sticky top-28 bg-slate-800/80 border border-slate-700 rounded-2xl p-4 shadow-xl shadow-violet-900/20">
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Soru HaritasÄ±</div>
+              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Soru Haritası</div>
               <div className="flex flex-wrap gap-1.5 text-xs text-slate-500 mb-3">
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-violet-500 inline-block" /> Aktif</span>
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50 inline-block" /> CevaplÄ±</span>
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500/20 border border-amber-500/40 inline-block" /> Ä°ÅŸaretli</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50 inline-block" /> Cevaplı</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500/20 border border-amber-500/40 inline-block" /> İşaretli</span>
               </div>
               <div ref={sorularRef} className="grid grid-cols-5 gap-1 max-h-[420px] overflow-y-auto pr-1">
                 {sorular.map((_, idx) => {
@@ -534,19 +536,19 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   );
                 })}
               </div>
-              {/* Ã–zet */}
+              {/* Özet */}
               <div className="mt-4 pt-4 border-t border-slate-700 space-y-1.5 text-xs">
                 <div className="flex justify-between text-slate-400"><span>Cevaplanan</span><span className="font-bold text-emerald-400">{cevaplanan}</span></div>
-                <div className="flex justify-between text-slate-400"><span>BoÅŸ</span><span className="font-bold text-slate-300">{bos}</span></div>
-                {isaretliSayisi > 0 && <div className="flex justify-between text-slate-400"><span>Ä°ÅŸaretli</span><span className="font-bold text-amber-400">{isaretliSayisi}</span></div>}
+                <div className="flex justify-between text-slate-400"><span>Boş</span><span className="font-bold text-slate-300">{bos}</span></div>
+                {isaretliSayisi > 0 && <div className="flex justify-between text-slate-400"><span>İşaretli</span><span className="font-bold text-amber-400">{isaretliSayisi}</span></div>}
               </div>
             </div>
           </aside>
 
-          {/* Orta: soru kartÄ± */}
+          {/* Orta: soru kartı */}
           <main className="flex-1 min-w-0">
             <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-xl shadow-violet-900/20 mb-4">
-              {/* Soru baÅŸlÄ±ÄŸÄ± */}
+              {/* Soru başlığı */}
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-violet-500/40 flex-shrink-0">
@@ -567,14 +569,14 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       : "bg-slate-700/50 text-slate-400 border-slate-600/50 hover:bg-slate-700"
                   }`}
                 >
-                  {isaretliler.has(aktifIdx) ? "ğŸ”– Ä°ÅŸaretli" : "ğŸ“Œ Ä°ÅŸaretle"}
+                  {isaretliler.has(aktifIdx) ? "🔖 İşaretli" : "📌 İşaretle"}
                 </button>
               </div>
 
               {/* Soru metni */}
               <p className="text-white text-base md:text-lg font-medium leading-relaxed mb-7">{soru.text}</p>
 
-              {/* ÅÄ±klar */}
+              {/* Şıklar */}
               <div className="space-y-2.5">
                 {soru.options.map((opt) => {
                   const secili = cevaplar[aktifIdx] === opt.id;
@@ -609,15 +611,15 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               </div>
             </div>
 
-            {/* Navigasyon â€” masaÃ¼stÃ¼, mobilde sticky bar kullanÄ±lÄ±r */}
+            {/* Navigasyon — masaüstü, mobilde sticky bar kullanılır */}
             <div className="hidden lg:flex items-center justify-between gap-3">
               <button
                 onClick={() => setAktifIdx((i) => Math.max(0, i - 1))}
                 disabled={aktifIdx === 0}
                 className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white px-5 py-3 rounded-xl font-semibold border border-slate-700 transition"
-              >â† Ã–nceki</button>
+              >← Önceki</button>
 
-              {/* Mobil: komÅŸu sorular */}
+              {/* Mobil: komşu sorular */}
               <div className="flex items-center gap-1.5 flex-wrap justify-center lg:hidden">
                 {sorular.slice(Math.max(0, aktifIdx - 3), aktifIdx + 4).map((_, relIdx) => {
                   const idx = Math.max(0, aktifIdx - 3) + relIdx;
@@ -638,7 +640,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 onClick={() => {
                   if (aktifIdx === sorular.length - 1) {
                     setOnayModal({
-                      mesaj: bos > 0 ? `${bos} soru boÅŸ kalacak. SÄ±navÄ± bitirmek istediÄŸinize emin misiniz?` : "SÄ±navÄ± bitirmek istediÄŸinize emin misiniz?",
+                      mesaj: bos > 0 ? `${bos} soru boş kalacak. Sınavı bitirmek istediğinize emin misiniz?` : "Sınavı bitirmek istediğinize emin misiniz?",
                       onEvet: bitirSinav,
                     });
                   } else {
@@ -647,26 +649,26 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 }}
                 className="flex items-center gap-2 bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-5 py-3 rounded-xl font-semibold shadow-lg shadow-violet-500/30 transition"
               >
-                {aktifIdx === sorular.length - 1 ? "SÄ±navÄ± Bitir ğŸ" : "Sonraki â†’"}
+                {aktifIdx === sorular.length - 1 ? "Sınavı Bitir 🏁" : "Sonraki →"}
               </button>
             </div>
           </main>
         </div>
 
-        {/* â”€â”€ Mobil: Soru HaritasÄ± Overlay â”€â”€ */}
+        {/* ── Mobil: Soru Haritası Overlay ── */}
         {mobilHaritaAcik && (
           <div className="fixed inset-0 z-[90] lg:hidden flex flex-col justify-end">
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobilHaritaAcik(false)} />
             <div className="relative bg-slate-800 border-t border-slate-600 rounded-t-2xl p-6 max-h-[70vh] overflow-y-auto">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-white">Soru HaritasÄ±</h3>
-                <button onClick={() => setMobilHaritaAcik(false)} className="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">âœ•</button>
+                <h3 className="font-bold text-white">Soru Haritası</h3>
+                <button onClick={() => setMobilHaritaAcik(false)} className="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">✕</button>
               </div>
-              {/* AÃ§Ä±klama */}
+              {/* Açıklama */}
               <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-violet-500 inline-block" /> Aktif</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500/40 border border-emerald-500/50 inline-block" /> CevaplÄ±</span>
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500/30 border border-amber-500/40 inline-block" /> Ä°ÅŸaretli</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500/40 border border-emerald-500/50 inline-block" /> Cevaplı</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500/30 border border-amber-500/40 inline-block" /> İşaretli</span>
               </div>
               <div className="grid grid-cols-8 gap-2">
                 {sorular.map((_, idx) => {
@@ -693,45 +695,45 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   );
                 })}
               </div>
-              {/* Ã–zet */}
+              {/* Özet */}
               <div className="mt-5 pt-4 border-t border-slate-700 grid grid-cols-3 gap-4 text-center text-sm">
-                <div><div className="font-bold text-emerald-400">{Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">CevaplÄ±</div></div>
-                <div><div className="font-bold text-slate-300">{sorular.length - Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">BoÅŸ</div></div>
-                <div><div className="font-bold text-amber-400">{isaretliler.size}</div><div className="text-xs text-slate-400 mt-0.5">Ä°ÅŸaretli</div></div>
+                <div><div className="font-bold text-emerald-400">{Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">Cevaplı</div></div>
+                <div><div className="font-bold text-slate-300">{sorular.length - Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">Boş</div></div>
+                <div><div className="font-bold text-amber-400">{isaretliler.size}</div><div className="text-xs text-slate-400 mt-0.5">İşaretli</div></div>
               </div>
             </div>
           </div>
         )}
 
-        {/* â”€â”€ Mobil: Sticky Bottom Bar â”€â”€ */}
+        {/* ── Mobil: Sticky Bottom Bar ── */}
         <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 flex items-center gap-2 z-50">
           <button
             onClick={() => setAktifIdx((i) => Math.max(0, i - 1))}
             disabled={aktifIdx === 0}
             className="flex-1 bg-slate-800 hover:bg-slate-700 disabled:opacity-40 text-white py-2.5 rounded-xl font-semibold border border-slate-700 transition text-sm"
-          >â† Ã–nceki</button>
+          >← Önceki</button>
           <button
             onClick={() => setMobilHaritaAcik(true)}
             className="flex-[1.4] bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-xl font-semibold border border-slate-700 transition text-sm flex items-center justify-center gap-2"
           >
-            <span>ğŸ“‹</span>
+            <span>📋</span>
             <span className="tabular-nums text-violet-400 font-bold">{aktifIdx + 1}/{sorular.length}</span>
           </button>
           <button
             onClick={() => {
               if (aktifIdx === sorular.length - 1) {
-                setOnayModal({ mesaj: bos > 0 ? `${bos} soru boÅŸ kalacak. Bitirmek istediÄŸinize emin misiniz?` : "SÄ±navÄ± bitirmek istiyor musunuz?", onEvet: bitirSinav });
+                setOnayModal({ mesaj: bos > 0 ? `${bos} soru boş kalacak. Bitirmek istediğinize emin misiniz?` : "Sınavı bitirmek istiyor musunuz?", onEvet: bitirSinav });
               } else {
                 setAktifIdx((i) => Math.min(sorular.length - 1, i + 1));
               }
             }}
             className="flex-1 bg-gradient-to-br from-violet-500 to-violet-700 text-white py-2.5 rounded-xl font-semibold shadow-lg transition text-sm"
           >
-            {aktifIdx === sorular.length - 1 ? "Bitir ğŸ" : "Sonraki â†’"}
+            {aktifIdx === sorular.length - 1 ? "Bitir 🏁" : "Sonraki →"}
           </button>
         </div>
 
-        {/* â”€â”€ Custom Onay ModalÄ± â”€â”€ */}
+        {/* ── Custom Onay Modalı ── */}
         {onayModal && (
           <ConfirmModal mesaj={onayModal.mesaj} onEvet={() => { setOnayModal(null); onayModal.onEvet(); }} onHayir={() => setOnayModal(null)} />
         )}
@@ -739,11 +741,19 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     );
   }
 
-  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   * SONUÃ‡ EKRANI
-   * â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  /* ════════════════════════════════════════════
+   * SONUÇ EKRANI
+   * ════════════════════════════════════════════ */
   if (asama === "sonuc" && sonucData) {
     const { dogru, yanlis, bos, puan, sureSaniye, gecti, detaylar, konuHaritasi } = sonucData;
+
+    function yanlilariFavoriyeEkle() {
+      detaylar.forEach(({ soru, dogru: d }) => {
+        if (!d) {
+          favoriEkle(soru.modulId, soru.dersId, soru.soruIndex);
+        }
+      });
+    }
     const suDakika = Math.floor(sureSaniye / 60);
     const suSaniye = sureSaniye % 60;
 
@@ -756,11 +766,11 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           <div className={`rounded-3xl p-8 md:p-12 border-2 shadow-2xl text-center mb-8 bg-slate-800/80 ${
             gecti ? "border-emerald-500/40 shadow-emerald-500/15" : "border-amber-500/40 shadow-amber-500/15"
           }`}>
-            <div className="text-6xl mb-4">{gecti ? "ğŸ‰" : "ğŸ’ª"}</div>
+            <div className="text-6xl mb-4">{gecti ? "🎉" : "💪"}</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {gecti ? "Tebrikler! SÄ±navÄ± GeÃ§tiniz!" : "Biraz Daha Ã‡alÄ±ÅŸmanÄ±z Gerekiyor"}
+              {gecti ? "Tebrikler! Sınavı Geçtiniz!" : "Biraz Daha Çalışmanız Gerekiyor"}
             </h1>
-            <p className="text-slate-400 mb-8">{config.tamAd} Â· {suDakika} dk {suSaniye} sn</p>
+            <p className="text-slate-400 mb-8">{config.tamAd} · {suDakika} dk {suSaniye} sn</p>
 
             <div className="inline-flex flex-col items-center mb-8">
               <div className={`text-7xl md:text-8xl font-bold mb-2 ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
@@ -770,35 +780,35 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 gecti ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
                       : "bg-amber-500/15 text-amber-300 border-amber-500/30"
               }`}>
-                {gecti ? `âœ“ GeÃ§ti (%${config.gecmeEsigi} eÅŸiÄŸinin Ã¼zerinde)` : `âœ— KaldÄ± (%${config.gecmeEsigi} eÅŸiÄŸinin altÄ±nda)`}
+                {gecti ? `✓ Geçti (%${config.gecmeEsigi} eşiğinin üzerinde)` : `✗ Kaldı (%${config.gecmeEsigi} eşiğinin altında)`}
               </div>
             </div>
 
             <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
               <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-2xl p-4">
                 <div className="text-4xl font-bold text-emerald-400">{dogru}</div>
-                <div className="text-xs text-emerald-300 mt-1 uppercase tracking-wider font-semibold">DoÄŸru</div>
+                <div className="text-xs text-emerald-300 mt-1 uppercase tracking-wider font-semibold">Doğru</div>
               </div>
               <div className="bg-red-500/10 border border-red-500/25 rounded-2xl p-4">
                 <div className="text-4xl font-bold text-red-400">{yanlis}</div>
-                <div className="text-xs text-red-300 mt-1 uppercase tracking-wider font-semibold">YanlÄ±ÅŸ</div>
+                <div className="text-xs text-red-300 mt-1 uppercase tracking-wider font-semibold">Yanlış</div>
               </div>
               <div className="bg-slate-700/50 border border-slate-600 rounded-2xl p-4">
                 <div className="text-4xl font-bold text-slate-300">{bos}</div>
-                <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">BoÅŸ</div>
+                <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Boş</div>
               </div>
             </div>
 
             <div className="mt-6 pt-6 border-t border-slate-700 text-sm text-slate-400">
-              SÃ¼re: {suDakika} dk {suSaniye} sn Â· Toplam {sorular.length} soru
+              Süre: {suDakika} dk {suSaniye} sn · Toplam {sorular.length} soru
             </div>
           </div>
 
           {/* Konu analizi */}
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-8 shadow-xl shadow-violet-900/20">
             <h2 className="font-bold text-white text-xl mb-5 flex items-center gap-2">
-              <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">ğŸ“Š</span>
-              Konu BazÄ±nda Analiz
+              <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">📊</span>
+              Konu Bazında Analiz
             </h2>
             <div className="space-y-4">
               {Object.entries(konuHaritasi).map(([key, konu]) => {
@@ -809,10 +819,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   <div key={key}>
                     <div className="flex items-center justify-between mb-1.5 text-sm">
                       <span className="text-slate-300 font-medium line-clamp-1 flex-1 mr-3">
-                        {konu.baslik.replace(/^ModÃ¼l \d+ Â· /, "").replace(/^ModÃ¼l Â· /, "")}
+                        {konu.baslik.replace(/^Modül \d+ · /, "").replace(/^Modül · /, "")}
                       </span>
                       <span className={`font-bold flex-shrink-0 ${iyi ? "text-emerald-400" : orta ? "text-amber-400" : "text-red-400"}`}>
-                        {konu.dogru}/{konu.toplam} Â· %{oran}
+                        {konu.dogru}/{konu.toplam} · %{oran}
                       </span>
                     </div>
                     <div className="h-2.5 bg-slate-900 rounded-full overflow-hidden">
@@ -828,17 +838,17 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </div>
           </div>
 
-          {/* Soru Ã§Ã¶zÃ¼mleri (aÃ§Ä±lÄ±r) */}
+          {/* Soru çözümleri (açılır) */}
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-violet-900/20 mb-8">
             <button
               onClick={() => setGozlemModu((g) => !g)}
               className="w-full p-5 flex items-center justify-between text-left hover:bg-slate-700/40 transition"
             >
               <h2 className="font-bold text-white text-lg flex items-center gap-2">
-                <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">ğŸ”</span>
-                Soru Ã‡Ã¶zÃ¼mleri ve AÃ§Ä±klamalar
+                <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">🔍</span>
+                Soru Çözümleri ve Açıklamalar
               </h2>
-              <span className={`text-violet-400 transition-transform duration-300 ${gozlemModu ? "rotate-180" : ""}`}>â–¼</span>
+              <span className={`text-violet-400 transition-transform duration-300 ${gozlemModu ? "rotate-180" : ""}`}>▼</span>
             </button>
 
             {gozlemModu && (
@@ -849,9 +859,9 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 ${
                         d ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
                           : "bg-red-500/20 text-red-400 border border-red-500/30"
-                      }`}>{d ? "âœ“" : "âœ—"}</div>
+                      }`}>{d ? "✓" : "✗"}</div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs text-slate-500 mb-1 font-medium">Soru {idx + 1} Â· {soru.dersBaslik}</div>
+                        <div className="text-xs text-slate-500 mb-1 font-medium">Soru {idx + 1} · {soru.dersBaslik}</div>
                         <p className="text-white text-sm font-medium leading-relaxed">{soru.text}</p>
                       </div>
                     </div>
@@ -870,7 +880,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       ))}
                     </div>
                     <div className="ml-11 bg-slate-900/50 border border-slate-700/50 rounded-xl p-3 text-xs text-slate-300 leading-relaxed">
-                      <span className="font-bold text-violet-400 mr-1">AÃ§Ä±klama:</span>
+                      <span className="font-bold text-violet-400 mr-1">Açıklama:</span>
                       {soru.explanation}
                     </div>
                   </div>
@@ -879,28 +889,47 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             )}
           </div>
 
-          {/* Aksiyonlar â€” mobilden 2x2 grid */}
+          {/* Yanlışları favorilere ekle — yanlış varsa göster */}
+          {yanlis > 0 && (
+            <div className="mb-4 flex items-center justify-between bg-amber-500/10 border border-amber-400/30 rounded-2xl px-5 py-3.5">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">⭐</span>
+                <div>
+                  <div className="text-white font-semibold text-sm">{yanlis} yanlış soru favorilere eklenebilir</div>
+                  <div className="text-xs text-amber-300 mt-0.5">Favoriler &gt; Mini Sınav ile tekrar çalış</div>
+                </div>
+              </div>
+              <button
+                onClick={yanlilariFavoriyeEkle}
+                className="bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 text-xs font-bold px-4 py-2 rounded-xl transition whitespace-nowrap ml-3"
+              >
+                ⭐ Ekle
+              </button>
+            </div>
+          )}
+
+          {/* Aksiyonlar — mobilden 2x2 grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <button
               onClick={() => { setAsama("hazirlik"); setSonucData(null); setGozlemModu(false); }}
               className="col-span-2 sm:col-span-1 bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-4 rounded-xl font-semibold shadow-lg shadow-violet-500/40 transition flex items-center justify-center gap-2"
-            >ğŸ”„ Yeni SÄ±nav</button>
+            >🔄 Yeni Sınav</button>
             <button
               onClick={() => {
-                const metin = `SPK Akademi'de ${config.tamAd} sÄ±navÄ±nÄ± tamamladÄ±m!\n\nSonuÃ§: %${puan.toFixed(1)} ${gecti ? "âœ… GeÃ§ti" : "âŒ KaldÄ±"}\nDoÄŸru: ${dogru} Â· YanlÄ±ÅŸ: ${yanlis} Â· BoÅŸ: ${bos}\n\nğŸ“ spk-akademi.vercel.app`;
+                const metin = `SPK Akademi'de ${config.tamAd} sınavını tamamladım!\n\nSonuç: %${puan.toFixed(1)} ${gecti ? "✅ Geçti" : "❌ Kaldı"}\nDoğru: ${dogru} · Yanlış: ${yanlis} · Boş: ${bos}\n\n🎓 spk-akademi.vercel.app`;
                 if (navigator.share) {
                   navigator.share({ text: metin });
                 } else {
-                  navigator.clipboard.writeText(metin).then(() => alert("SonuÃ§ panoya kopyalandÄ±!"));
+                  navigator.clipboard.writeText(metin).then(() => alert("Sonuç panoya kopyalandı!"));
                 }
               }}
               className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
-            >ğŸ“¤ PaylaÅŸ</button>
+            >📤 Paylaş</button>
             <Link href="/istatistikler" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
-              ğŸ“Š Ä°statistikler
+              📊 İstatistikler
             </Link>
             <Link href="/sinav" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
-              â† SÄ±navlar
+              ← Sınavlar
             </Link>
           </div>
         </div>
@@ -911,7 +940,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
   return null;
 }
 
-/* â”€â”€â”€ Custom Onay ModalÄ± â”€â”€â”€ */
+/* ─── Custom Onay Modalı ─── */
 function ConfirmModal({
   mesaj,
   onEvet,
@@ -924,20 +953,20 @@ function ConfirmModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
       <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 shadow-2xl w-full max-w-sm">
-        <div className="text-4xl text-center mb-4">âš ï¸</div>
+        <div className="text-4xl text-center mb-4">⚠️</div>
         <p className="text-white text-center font-medium leading-relaxed mb-6">{mesaj}</p>
         <div className="flex gap-3">
           <button
             onClick={onHayir}
             className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold transition border border-slate-600"
           >
-            Ä°ptal
+            İptal
           </button>
           <button
             onClick={onEvet}
             className="flex-1 bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-xl font-semibold transition shadow-lg shadow-red-500/30"
           >
-            SÄ±navÄ± Bitir
+            Sınavı Bitir
           </button>
         </div>
       </div>
@@ -945,7 +974,7 @@ function ConfirmModal({
   );
 }
 
-/* â”€â”€â”€ Navbar â”€â”€â”€ */
+/* ─── Navbar ─── */
 function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
   return (
     <nav className="sticky top-0 z-50 bg-slate-900/85 backdrop-blur-xl border-b border-slate-700/50">
@@ -954,15 +983,15 @@ function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
           <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-violet-500/30">SPK</div>
           <div>
             <div className="font-bold text-white text-base leading-none">SPK Akademi</div>
-            <div className="text-[10px] text-violet-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} SimÃ¼lasyonu</div>
+            <div className="text-[10px] text-violet-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
           </div>
         </Link>
         <div className="flex items-center gap-3 text-sm">
           {asama === "hazirlik" && (
-            <Link href="/sinav" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">â† DiÄŸer SÄ±navlar</Link>
+            <Link href="/sinav" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">← Diğer Sınavlar</Link>
           )}
           {asama === "sonuc" && (
-            <Link href="/" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">ğŸ  Ana Sayfa</Link>
+            <Link href="/" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">🏠 Ana Sayfa</Link>
           )}
         </div>
       </div>

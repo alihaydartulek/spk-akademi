@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { SINAV_MENUSU } from "../_constants/sinavlar";
 import { modules } from "../index";
 
@@ -24,7 +24,7 @@ export default function SharedFooter() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
-              TÃ¼rkiye'nin en kapsamlÄ± SPK Sermaye PiyasasÄ± Lisanslama hazÄ±rlÄ±k platformu.
+              Türkiye'nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.
             </p>
           </div>
 
@@ -32,16 +32,16 @@ export default function SharedFooter() {
           <div>
             <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform</div>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/dashboard"    className="hover:text-violet-400 transition">Ã‡alÄ±ÅŸma Paneli</Link></li>
-              <li><Link href="/sinav"        className="hover:text-violet-400 transition">HÄ±zlÄ± Pratik</Link></li>
+              <li><Link href="/dashboard"    className="hover:text-violet-400 transition">Çalışma Paneli</Link></li>
+              <li><Link href="/sinav"        className="hover:text-violet-400 transition">Hızlı Pratik</Link></li>
               <li><Link href="/favoriler"    className="hover:text-violet-400 transition">Favoriler</Link></li>
-              <li><Link href="/istatistikler" className="hover:text-violet-400 transition">Ä°statistikler</Link></li>
+              <li><Link href="/istatistikler" className="hover:text-violet-400 transition">İstatistikler</Link></li>
             </ul>
           </div>
 
-          {/* SÄ±navlar */}
+          {/* Sınavlar */}
           <div>
-            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">SÄ±navlar</div>
+            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Sınavlar</div>
             <ul className="space-y-2.5 text-sm">
               {SINAV_MENUSU.map((sinav) => (
                 <li key={sinav.href}>
@@ -57,13 +57,13 @@ export default function SharedFooter() {
             </ul>
           </div>
 
-          {/* SayÄ±lar */}
+          {/* Sayılar */}
           <div>
-            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform Ä°statistikleri</div>
+            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform İstatistikleri</div>
             <ul className="space-y-4">
               <li>
                 <div className="text-2xl font-bold text-white">{TOPLAM_MODUL}</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-0.5">ModÃ¼l</div>
+                <div className="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Modül</div>
               </li>
               <li>
                 <div className="text-2xl font-bold text-white">{TOPLAM_DERS}</div>
@@ -78,7 +78,7 @@ export default function SharedFooter() {
         </div>
 
         <div className="pt-8 border-t border-slate-700/50 text-center text-sm">
-          Â© 2026 SPK Akademi Â· TÃ¼m haklarÄ± saklÄ±dÄ±r
+          © 2026 SPK Akademi · Tüm hakları saklıdır
         </div>
       </div>
     </footer>
