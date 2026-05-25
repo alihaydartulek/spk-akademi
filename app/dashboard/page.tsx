@@ -220,41 +220,39 @@ export default function DashboardPage() {
                 <span className="text-white font-medium">{secilenDers.title}</span>
               </div>
 
-              <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-blue-900/30">
-                <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
-                  <div className="flex-1 min-w-0">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/10 text-blue-300 rounded-full text-xs font-bold mb-3 tracking-wider uppercase border border-blue-400/30">
+              <div className="bg-slate-800 rounded-2xl p-5 md:p-8 border border-slate-700 shadow-xl shadow-blue-900/30">
+                <div className="mb-5">
+                  {/* Modül etiketi — truncate ile taşmayı önle */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-full text-[11px] font-bold tracking-wider uppercase border border-blue-400/30 truncate max-w-[calc(100%-2rem)]">
                       {secilenModul.title.replace("Modül · ", "")}
-                    </div>
-                    <h1 className="text-2xl md:text-3xl font-bold text-white leading-tight tracking-tight">{secilenDers.title}</h1>
+                    </span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    {/* TAMAMLANDI BUTONU */}
+                  {/* Başlık */}
+                  <h1 className="text-xl md:text-3xl font-bold text-white leading-tight tracking-tight mb-4">
+                    {secilenDers.title}
+                  </h1>
+                  {/* Tamamla + Süre — mobilden yan yana, küçük */}
+                  <div className="flex items-center gap-2 flex-wrap">
                     {mounted && (
                       <button
                         onClick={handleTamamla}
-                        className={`px-4 py-3 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 ${
+                        className={`px-4 py-2 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 ${
                           dersTamamlanmis
                             ? "bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 hover:bg-emerald-500/30"
                             : "bg-slate-700 border border-slate-600 text-slate-300 hover:bg-slate-600 hover:border-emerald-500/50"
                         }`}
                       >
                         {dersTamamlanmis ? (
-                          <>
-                            <span className="text-lg">✓</span>
-                            <span>Tamamlandı</span>
-                          </>
+                          <><span>✓</span><span>Tamamlandı</span></>
                         ) : (
-                          <>
-                            <span className="text-lg">○</span>
-                            <span>Tamamla</span>
-                          </>
+                          <><span>○</span><span>Tamamla</span></>
                         )}
                       </button>
                     )}
-                    <div className="bg-slate-900 rounded-xl px-4 py-3 border border-slate-700">
-                      <div className="text-[11px] text-blue-300 uppercase tracking-wider mb-1 font-semibold">Süre</div>
-                      <div className="text-xl font-bold text-white">{secilenDers.duration}</div>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-xl border border-slate-700 text-sm">
+                      <span className="text-blue-300 font-semibold">⏱️</span>
+                      <span className="font-bold text-white">{secilenDers.duration}</span>
                     </div>
                   </div>
                 </div>
