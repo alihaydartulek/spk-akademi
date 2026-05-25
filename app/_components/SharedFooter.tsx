@@ -1,6 +1,7 @@
 ﻿import Link from "next/link";
 import { SINAV_MENUSU } from "../_constants/sinavlar";
 import { modules } from "../index";
+import LogoMark from "./LogoMark";
 
 const TOPLAM_MODUL = modules.length;
 const TOPLAM_DERS  = modules.reduce((s, m) => s + m.lessons.length, 0);
@@ -15,9 +16,7 @@ export default function SharedFooter() {
           {/* Marka */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">
-                LP
-              </div>
+              <LogoMark size={44} />
               <div>
                 <div className="font-bold text-[var(--text-primary)] text-lg">LisansPro</div>
                 <div className="text-[11px] text-indigo-400 tracking-wider uppercase">Lisanslama Platformu</div>

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { SINAV_MENUSU } from "../_constants/sinavlar";
 import ThemeToggle from "./ThemeToggle";
+import LogoMark from "./LogoMark";
 
 export default function SharedNavbar({
   subtitle = "Lisanslama Platformu",
@@ -50,9 +51,7 @@ export default function SharedNavbar({
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-          <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/40">
-            LP
-          </div>
+          <LogoMark size={44} />
           <div>
             <div className="font-bold text-[var(--text-primary)] text-lg leading-none">LisansPro</div>
             <div className="text-[11px] text-indigo-300 mt-1 tracking-wider uppercase">{subtitle}</div>
