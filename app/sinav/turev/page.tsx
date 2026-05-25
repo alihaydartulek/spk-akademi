@@ -1,10 +1,10 @@
-import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
+﻿import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
 
 const config: SinavConfig = {
   sinavKodu: "T",
   sinavAdi: "Türev Araçlar",
   tamAd: "Türev Araçlar Lisanslama Sınavı",
-  aciklama: "SPK Türev Araçlar Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
+  aciklama: "Türev Araçlar Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
   soruSayisi: 100,
   sureDakika: 150,
   gecmeEsigi: 60,

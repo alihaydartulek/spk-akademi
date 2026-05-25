@@ -9,34 +9,35 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "SPK Akademi – Sermaye Piyasası Lisanslama Hazırlık Platformu",
+  title: "LisansPro – Sermaye Piyasası Lisanslama Hazırlık Platformu",
   description:
-    "Türkiye'nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu. 8 sınav türü, yüzlerce soru, gerçek sınav formatında simülasyon.",
-  metadataBase: new URL("https://spk-akademi.vercel.app"),
+    "Türkiye'nin en kapsamlı sermaye piyasası lisanslama hazırlık platformu. 8 sınav türü, yüzlerce soru, gerçek sınav formatında simülasyon.",
+  metadataBase: new URL("https://lisanspro.com.tr"),
   openGraph: {
-    title: "SPK Akademi – Lisanslama Hazırlık Platformu",
+    title: "LisansPro – Lisanslama Hazırlık Platformu",
     description:
       "Düzey 1-3, Türev Araçlar, Kurumsal Yönetim ve daha fazlası. Gerçek sınav formatında pratik yap.",
-    url: "https://spk-akademi.vercel.app",
-    siteName: "SPK Akademi",
+    url: "https://lisanspro.com.tr",
+    siteName: "LisansPro",
     locale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SPK Akademi – Lisanslama Hazırlık Platformu",
+    title: "LisansPro – Lisanslama Hazırlık Platformu",
     description:
-      "Türkiye'nin en kapsamlı SPK hazırlık platformu. 8 sınav türü, gerçek format, ücretsiz.",
+      "Türkiye'nin en kapsamlı sermaye piyasası lisanslama hazırlık platformu. 8 sınav türü, gerçek format.",
   },
   keywords: [
-    "SPK sınavı",
+    "sermaye piyasası sınavı",
     "sermaye piyasası lisanslama",
     "SPL sınavı",
     "Düzey 1",
     "Düzey 2",
     "Düzey 3",
     "türev araçlar sınavı",
-    "SPK hazırlık",
+    "lisans hazırlık",
+    "LisansPro",
   ],
 };
 

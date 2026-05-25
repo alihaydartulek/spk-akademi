@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
@@ -82,10 +82,10 @@ export default function HomePage() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
             <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/40">
-              SPK
+              LP
             </div>
             <div>
-              <div className="font-bold text-[var(--text-primary)] text-lg leading-none">SPK Akademi</div>
+              <div className="font-bold text-[var(--text-primary)] text-lg leading-none">LisansPro</div>
               <div className="text-[11px] text-indigo-300 mt-1 tracking-wider uppercase">Lisanslama Platformu</div>
             </div>
           </Link>
@@ -125,7 +125,7 @@ export default function HomePage() {
                 <div className="bg-[var(--bg-base)] border border-[var(--border-base)] rounded-2xl shadow-2xl overflow-hidden">
                   {/* Başlık */}
                   <div className="px-5 py-3.5 border-b border-[var(--border-base)] flex items-center gap-2">
-                    <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">SPK Lisanslama Sınavları</span>
+                    <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">Sermaye Piyasası Lisanslama Sınavları</span>
                     <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-indigo-500/15 text-indigo-400 rounded-full border border-indigo-500/25">8 Sınav Türü</span>
                   </div>
 
@@ -234,7 +234,7 @@ export default function HomePage() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
-              <span className="text-sm text-indigo-300 font-medium">SPK Sermaye Piyasası Lisanslama · Tüm Sınavlar</span>
+              <span className="text-sm text-indigo-300 font-medium">Sermaye Piyasası Lisanslama · Tüm Sınavlar</span>
             </div>
             <h1 className="animate-hero-1 text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--text-primary)] mb-6 leading-[1.05] tracking-tight">
               Türkiye&apos;nin<br />
@@ -242,7 +242,7 @@ export default function HomePage() {
               <span className="text-[var(--text-primary)]">SPL Platformu</span>
             </h1>
             <p className="animate-hero-2 text-lg md:text-xl text-[var(--text-secondary)] mb-10 max-w-3xl mx-auto leading-relaxed font-light">
-              SPK Lisanslama Sınavları için <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_MODUL} modül</span>, <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_DERS} ders</span> ve <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_SORU} soru</span> ile sınava bir adım önde başlayın.
+              Sermaye Piyasası Lisanslama Sınavları için <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_MODUL} modül</span>, <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_DERS} ders</span> ve <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_SORU} soru</span> ile sınava bir adım önde başlayın.
             </p>
             <div className="animate-hero-3 flex justify-center mb-16">
               <Link
@@ -521,11 +521,11 @@ export default function HomePage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">SPK</div>
                 <div>
-                  <div className="font-bold text-[var(--text-primary)] text-lg">SPK Akademi</div>
+                  <div className="font-bold text-[var(--text-primary)] text-lg">LisansPro</div>
                   <div className="text-[11px] text-indigo-400 tracking-wider uppercase">Lisanslama Platformu</div>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-[var(--text-muted)]">Türkiye&apos;nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.</p>
+              <p className="text-sm leading-relaxed text-[var(--text-muted)]">Türkiye&apos;nin en kapsamlı Sermaye Piyasası Lisanslama hazırlık platformu.</p>
             </div>
 
             {/* Platform */}
@@ -564,7 +564,7 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-[var(--border-base)] text-center text-sm">© 2026 SPK Akademi · Tüm hakları saklıdır</div>
+          <div className="pt-8 border-t border-[var(--border-base)] text-center text-sm">© 2026 LisansPro · Tüm hakları saklıdır</div>
         </div>
       </footer>
     </div>

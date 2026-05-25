@@ -1,7 +1,7 @@
-"use client";
+﻿"use client";
 
 /* ─────────────────────────────────────────────────────────────────────────────
- * SPK Akademi — Ortak Sınav Sayfası Bileşeni
+ * LisansPro — Ortak Sınav Sayfası Bileşeni
  *
  * Tüm sınav sayfaları (Düzey 1-3, Türev, KY, KD, GD, BS) bu bileşeni kullanır.
  * Her sayfa yalnızca `config` nesnesini geçirir; tüm mantık burada yaşar.
@@ -470,7 +470,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             {/* Sol: logo + bilgi */}
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-                SPK
+                LP
               </div>
               <div className="min-w-0">
                 <div className="font-bold text-[var(--text-primary)] text-sm leading-none">{config.tamAd}</div>
@@ -904,7 +904,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             >🔄 Yeni Sınav</button>
             <button
               onClick={() => {
-                const metin = `SPK Akademi'de ${config.tamAd} sınavını tamamladım!\n\nSonuç: %${puan.toFixed(1)} ${gecti ? "✅ Geçti" : "❌ Kaldı"}\nDoğru: ${dogru} · Yanlış: ${yanlis} · Boş: ${bos}\n\n🎓 spk-akademi.vercel.app`;
+                const metin = `LisansPro'de ${config.tamAd} sınavını tamamladım!\n\nSonuç: %${puan.toFixed(1)} ${gecti ? "✅ Geçti" : "❌ Kaldı"}\nDoğru: ${dogru} · Yanlış: ${yanlis} · Boş: ${bos}\n\n🎓 lisanspro.com.tr`;
                 if (navigator.share) {
                   navigator.share({ text: metin });
                 } else {
@@ -1029,7 +1029,7 @@ function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-indigo-500/30">SPK</div>
           <div>
-            <div className="font-bold text-[var(--text-primary)] text-base leading-none">SPK Akademi</div>
+            <div className="font-bold text-[var(--text-primary)] text-base leading-none">LisansPro</div>
             <div className="text-[10px] text-indigo-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
           </div>
         </Link>

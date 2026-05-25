@@ -1,10 +1,10 @@
-import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
+﻿import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
 
 const config: SinavConfig = {
   sinavKodu: "BS",
   sinavAdi: "Bilgi Sistemleri Denetim",
   tamAd: "Bilgi Sistemleri Denetim Lisanslama Sınavı",
-  aciklama: "SPK Bilgi Sistemleri Denetim Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
+  aciklama: "Bilgi Sistemleri Denetim Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
   soruSayisi: 100,
   sureDakika: 150,
   gecmeEsigi: 60,

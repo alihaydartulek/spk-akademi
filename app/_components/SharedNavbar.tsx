@@ -51,10 +51,10 @@ export default function SharedNavbar({
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
           <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/40">
-            SPK
+            LP
           </div>
           <div>
-            <div className="font-bold text-[var(--text-primary)] text-lg leading-none">SPK Akademi</div>
+            <div className="font-bold text-[var(--text-primary)] text-lg leading-none">LisansPro</div>
             <div className="text-[11px] text-indigo-300 mt-1 tracking-wider uppercase">{subtitle}</div>
           </div>
         </Link>
@@ -93,7 +93,7 @@ export default function SharedNavbar({
               <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-[var(--bg-base)] border-l border-t border-[var(--border-base)] rotate-45 z-10" />
               <div className="bg-[var(--bg-base)] border border-[var(--border-base)] rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 64px -8px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.06)" }}>
                 <div className="px-5 py-3.5 border-b border-[var(--border-base)] flex items-center gap-2">
-                  <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">SPK Lisanslama Sınavları</span>
+                  <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">Sermaye Piyasası Lisanslama Sınavları</span>
                   <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-indigo-500/15 text-indigo-400 rounded-full border border-indigo-500/25">8 Sınav Türü</span>
                 </div>
                 <div className="grid grid-cols-2 gap-px bg-[var(--bg-surface-2)]/40 p-1">

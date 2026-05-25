@@ -1,7 +1,7 @@
-import { MetadataRoute } from "next";
+﻿import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://spk-akademi.vercel.app";
+  const baseUrl = "https://lisanspro.com.tr";
   const now = new Date();
 
   return [

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SINAV_MENUSU } from "../_constants/sinavlar";
 import { modules } from "../index";
 
@@ -16,15 +16,15 @@ export default function SharedFooter() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">
-                SPK
+                LP
               </div>
               <div>
-                <div className="font-bold text-[var(--text-primary)] text-lg">SPK Akademi</div>
+                <div className="font-bold text-[var(--text-primary)] text-lg">LisansPro</div>
                 <div className="text-[11px] text-indigo-400 tracking-wider uppercase">Lisanslama Platformu</div>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-              Türkiye&apos;nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.
+              Türkiye&apos;nin en kapsamlı Sermaye Piyasası Lisanslama hazırlık platformu.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function SharedFooter() {
         </div>
 
         <div className="pt-8 border-t border-[var(--border-base)] text-center text-sm">
-          © 2026 SPK Akademi · Tüm hakları saklıdır
+          © 2026 LisansPro · Tüm hakları saklıdır
         </div>
       </div>
     </footer>

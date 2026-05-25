@@ -1,10 +1,10 @@
-import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
+﻿import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
 
 const config: SinavConfig = {
   sinavKodu: "GD",
   sinavAdi: "Gayrimenkul Değerleme",
   tamAd: "Gayrimenkul Değerleme Lisanslama Sınavı",
-  aciklama: "SPK Gayrimenkul Değerleme Lisanslama Sınavı'nın gerçek formatında 75 soruluk tam simülasyon.",
+  aciklama: "Gayrimenkul Değerleme Lisanslama Sınavı'nın gerçek formatında 75 soruluk tam simülasyon.",
   soruSayisi: 75,
   sureDakika: 120,
   gecmeEsigi: 60,

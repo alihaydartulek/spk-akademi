@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -11,10 +11,10 @@ export default function NotFound() {
         {/* Logo */}
         <Link href="/" className="inline-flex items-center gap-3 mb-12 group">
           <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/30">
-            SPK
+            LP
           </div>
           <div className="text-left">
-            <div className="font-bold text-[var(--text-primary)] text-lg leading-none group-hover:text-indigo-400 transition">SPK Akademi</div>
+            <div className="font-bold text-[var(--text-primary)] text-lg leading-none group-hover:text-indigo-400 transition">LisansPro</div>
             <div className="text-[10px] text-indigo-400 tracking-wider uppercase mt-0.5">Lisanslama Platformu</div>
           </div>
         </Link>

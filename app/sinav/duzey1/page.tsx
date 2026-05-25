@@ -1,10 +1,10 @@
-import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
+﻿import SinavSayfasi, { type SinavConfig } from "../_shared/SinavSayfasi";
 
 const config: SinavConfig = {
   sinavKodu: "D1",
   sinavAdi: "Düzey 1",
   tamAd: "Düzey 1 SPL Sınavı",
-  aciklama: "SPK Sermaye Piyasası Faaliyetleri Düzey 1 Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
+  aciklama: "Sermaye Piyasası Faaliyetleri Düzey 1 Lisanslama Sınavı'nın gerçek formatında 100 soruluk tam simülasyon.",
   soruSayisi: 100,
   sureDakika: 150,
   gecmeEsigi: 60,
