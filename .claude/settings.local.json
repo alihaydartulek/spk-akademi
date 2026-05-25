@@ -17,7 +17,11 @@
       "Bash(sleep 4 && cat \"/mnt/c/Users/90506/AppData/Local/Temp/claude/C--Users-90506-Desktop-spl-projem/f57ac1d6-0567-4c56-9f79-9da43c2e847a/tasks/b1hnsq65f.output\")",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)"
     ]
   }
 }

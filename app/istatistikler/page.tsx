@@ -22,6 +22,7 @@ import SharedFooter from "../_components/SharedFooter";
 export default function IstatistiklerPage() {
   const [mounted, setMounted] = useState(false);
   const [refresh, setRefresh] = useState(0);
+  const [sifirlaModal, setSifirlaModal] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -58,13 +59,13 @@ export default function IstatistiklerPage() {
   const maxSoru = Math.max(1, ...son7Gun.map((g) => g.soruSayisi));
 
   function handleSifirla() {
-    if (confirm("⚠️ TÜM VERİLERİNİZ SİLİNECEK!\n\nİlerleme, favoriler, sınav sonuçları, cevaplar — hepsi gidecek.\n\nEmin misiniz?")) {
-      if (confirm("Son uyarı! Bu işlem GERİ ALINAMAZ. Devam edilsin mi?")) {
-        tumVerileriSil();
-        setRefresh((r) => r + 1);
-        alert("Tüm veriler silindi.");
-      }
-    }
+    setSifirlaModal(true);
+  }
+
+  function sifirlaOnayla() {
+    tumVerileriSil();
+    setRefresh((r) => r + 1);
+    setSifirlaModal(false);
   }
 
   return (
@@ -252,6 +253,40 @@ export default function IstatistiklerPage() {
           )}
         </div>
 
+        {/* SINAV PUAN TRENDİ */}
+        {sinavlar.length >= 2 && (
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30 mb-8">
+            <h2 className="text-xl font-bold text-white mb-5 tracking-tight">📈 Puan Trendi</h2>
+            <div className="flex items-end gap-2 h-32">
+              {sinavlar.slice(0, 10).reverse().map((s, i) => {
+                const yuksek = (s.puan / 100) * 100;
+                const gecti = s.puan >= 60;
+                return (
+                  <div key={s.id} className="flex-1 flex flex-col items-center gap-1 group relative">
+                    {/* Tooltip */}
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10 pointer-events-none">
+                      %{s.puan.toFixed(0)}
+                    </div>
+                    <div className="text-[10px] text-slate-500 font-bold">{s.puan.toFixed(0)}</div>
+                    <div className="w-full rounded-t-md overflow-hidden bg-slate-900" style={{ height: "80px" }}>
+                      <div
+                        className={`w-full rounded-t-md transition-all duration-700 ${gecti ? "bg-gradient-to-t from-emerald-600 to-emerald-400" : "bg-gradient-to-t from-amber-600 to-amber-400"}`}
+                        style={{ height: `${yuksek}%`, marginTop: `${100 - yuksek}%` }}
+                      />
+                    </div>
+                    <div className="text-[9px] text-slate-500">{i + 1}</div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex items-center gap-4 mt-3 text-xs text-slate-500">
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> Geçti (%60+)</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Kaldı</span>
+              <span className="ml-auto">Son {Math.min(sinavlar.length, 10)} sınav (eskiden yeniye)</span>
+            </div>
+          </div>
+        )}
+
         {/* TEHLİKE BÖLGESİ */}
         <div className="bg-red-500/5 border border-red-500/30 rounded-2xl p-6">
           <h3 className="font-bold text-red-300 mb-2">⚠️ Tehlike Bölgesi</h3>
@@ -265,6 +300,34 @@ export default function IstatistiklerPage() {
         </div>
       </div>
       <SharedFooter />
+
+      {/* Sıfırlama onay modalı */}
+      {sifirlaModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 shadow-2xl w-full max-w-sm">
+            <div className="text-4xl text-center mb-4">🗑️</div>
+            <h3 className="text-white font-bold text-lg text-center mb-2">Tüm Verileri Sil?</h3>
+            <p className="text-slate-400 text-sm text-center leading-relaxed mb-6">
+              İlerleme, favoriler, sınav sonuçları ve tüm cevaplar kalıcı olarak silinecek.
+              Bu işlem <span className="text-red-400 font-semibold">geri alınamaz.</span>
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setSifirlaModal(false)}
+                className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold transition border border-slate-600"
+              >
+                İptal
+              </button>
+              <button
+                onClick={sifirlaOnayla}
+                className="flex-1 bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-xl font-semibold transition shadow-lg shadow-red-500/30"
+              >
+                Evet, Sil
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

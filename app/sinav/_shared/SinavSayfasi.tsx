@@ -187,6 +187,9 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           return next;
         });
       }
+      if (e.key === "Enter") {
+        setAktifIdx((i) => Math.min(sorular.length - 1, i + 1));
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -361,8 +364,8 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
               <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">A/B/C/D</kbd> — Şık seç</div>
               <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">← →</kbd> — Soru geç</div>
+              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">Enter</kbd> — Sonraki soru</div>
               <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">M</kbd> — İşaretle / kaldır</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">ESC</kbd> — Bitir onayı</div>
             </div>
           </div>
 
@@ -481,7 +484,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
         </header>
 
         {/* İçerik */}
-        <div className="flex flex-1 max-w-[1400px] mx-auto w-full px-4 py-6 gap-6">
+        <div className="flex flex-1 max-w-[1400px] mx-auto w-full px-4 py-6 gap-6 pb-24 lg:pb-6">
 
           {/* Sol: soru haritası (desktop) */}
           <aside className="w-56 flex-shrink-0 hidden lg:block">
@@ -595,8 +598,8 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               </div>
             </div>
 
-            {/* Navigasyon */}
-            <div className="flex items-center justify-between gap-3">
+            {/* Navigasyon — masaüstü, mobilde sticky bar kullanılır */}
+            <div className="hidden lg:flex items-center justify-between gap-3">
               <button
                 onClick={() => setAktifIdx((i) => Math.max(0, i - 1))}
                 disabled={aktifIdx === 0}
@@ -871,6 +874,19 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               onClick={() => { setAsama("hazirlik"); setSonucData(null); setGozlemModu(false); }}
               className="flex-1 bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-4 rounded-xl font-semibold shadow-lg shadow-blue-500/40 transition flex items-center justify-center gap-2"
             >🔄 Yeni Sınav</button>
+            <button
+              onClick={() => {
+                const metin = `SPK Akademi'de ${config.tamAd} sınavını tamamladım!\n\nSonuç: %${puan.toFixed(1)} ${gecti ? "✅ Geçti" : "❌ Kaldı"}\nDoğru: ${dogru} · Yanlış: ${yanlis} · Boş: ${bos}\n\n🎓 spk-akademi.vercel.app`;
+                if (navigator.share) {
+                  navigator.share({ text: metin });
+                } else {
+                  navigator.clipboard.writeText(metin).then(() => alert("Sonuç panoya kopyalandı!"));
+                }
+              }}
+              className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
+            >
+              📤 Paylaş
+            </button>
             <Link href="/istatistikler" className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
               📊 İstatistikler
             </Link>
