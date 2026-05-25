@@ -275,49 +275,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SINAVLAR */}
-      <section id="sinavlar" className="py-24 relative">
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-blue-400/30">
-              Sınav Türleri
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-              Tüm SPL Sınavları Tek Platformda
-            </h2>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              Düzey 1'den Bilgi Sistemleri Denetimine kadar tüm sermaye piyasası lisanslarına hazırlık.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SINAVLAR.map((sinav) => (
-              <Link
-                key={sinav.kod}
-                href={sinav.href}
-                className="group relative bg-slate-800 border border-slate-700 hover:border-blue-500/50 shadow-xl shadow-blue-900/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-end mb-2">
-                  <div className="w-2 h-2 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 shadow-lg shadow-blue-500/50" />
-                </div>
-                <h3 className="font-bold text-2xl mb-3 leading-tight bg-gradient-to-br from-blue-300 via-cyan-200 to-blue-400 bg-clip-text text-transparent">
-                  {sinav.ad}
-                </h3>
-                <p className="text-sm text-slate-400 mb-5 leading-relaxed min-h-[60px]">{sinav.aciklama}</p>
-                <div className="flex items-center justify-between pt-5 border-t border-slate-700">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl font-bold text-white">{sinav.pdfler.length}</span>
-                    <span className="text-xs text-slate-400 uppercase tracking-wider">Modül</span>
-                  </div>
-                  <svg className="w-5 h-5 text-blue-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* MODÜLLER — İLERLEME BARLARI İLE */}
       <section id="moduller" className="py-24 relative">
         <div className="relative max-w-7xl mx-auto px-6">
@@ -370,7 +327,7 @@ export default function HomePage() {
                         : "bg-slate-800 text-slate-400 border-slate-700 hover:border-blue-400/50 hover:text-slate-200"
                     }`}
                   >
-                    {s.kod}
+                    {s.pilAd}
                   </button>
                 ))}
               </div>
@@ -458,6 +415,67 @@ export default function HomePage() {
               <p className="text-slate-300 text-lg mb-2">Sonuç bulunamadı</p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* SINAVLAR */}
+      <section id="sinavlar" className="py-24 relative">
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-blue-400/30">
+              🎓 Sınav Simülasyonları
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Tüm SPL Sınavları Tek Platformda
+            </h2>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+              Gerçek sınav formatında, süre sayacıyla tam simülasyon. Her sınav farklı soru sırası.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {SINAVLAR.map((sinav) => {
+              const renkler: Record<string, { badge: string; dot: string; hover: string }> = {
+                blue:    { badge: "bg-blue-500/20 text-blue-300 border-blue-400/40",    dot: "bg-blue-400",    hover: "hover:border-blue-400/60" },
+                cyan:    { badge: "bg-cyan-500/20 text-cyan-300 border-cyan-400/40",    dot: "bg-cyan-400",    hover: "hover:border-cyan-400/60" },
+                indigo:  { badge: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40", dot: "bg-indigo-400", hover: "hover:border-indigo-400/60" },
+                purple:  { badge: "bg-purple-500/20 text-purple-300 border-purple-400/40", dot: "bg-purple-400", hover: "hover:border-purple-400/60" },
+                emerald: { badge: "bg-emerald-500/20 text-emerald-300 border-emerald-400/40", dot: "bg-emerald-400", hover: "hover:border-emerald-400/60" },
+                amber:   { badge: "bg-amber-500/20 text-amber-300 border-amber-400/40",  dot: "bg-amber-400",  hover: "hover:border-amber-400/60" },
+                orange:  { badge: "bg-orange-500/20 text-orange-300 border-orange-400/40", dot: "bg-orange-400", hover: "hover:border-orange-400/60" },
+                rose:    { badge: "bg-rose-500/20 text-rose-300 border-rose-400/40",    dot: "bg-rose-400",    hover: "hover:border-rose-400/60" },
+              };
+              const r = renkler[sinav.renk] ?? renkler.blue;
+              return (
+                <Link
+                  key={sinav.kod}
+                  href={sinav.href}
+                  className={`group bg-slate-800 border border-slate-700 ${r.hover} rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-blue-900/40 hover:-translate-y-0.5 flex flex-col`}
+                >
+                  {/* Üst: kod badge + aktif gösterge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`px-2.5 py-1 rounded-lg text-xs font-bold border ${r.badge}`}>
+                      {sinav.kod}
+                    </span>
+                    <span className={`w-2 h-2 rounded-full ${r.dot} shadow-lg`} />
+                  </div>
+                  {/* Sınav adı */}
+                  <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-blue-200 transition">
+                    {sinav.ad}
+                  </h3>
+                  <p className="text-xs text-slate-400 leading-relaxed mb-4 flex-1">{sinav.aciklama}</p>
+                  {/* Alt: bilgi + ok */}
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-700/60">
+                    <div className="flex items-center gap-3 text-xs text-slate-400">
+                      <span className="font-bold text-white">{sinav.soruSayisi}</span> soru
+                      <span>·</span>
+                      <span className="font-bold text-white">{sinav.sureDakika}</span> dk
+                    </div>
+                    <span className="text-blue-400 group-hover:translate-x-1 transition-transform text-sm font-bold">→</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
