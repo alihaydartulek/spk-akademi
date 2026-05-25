@@ -1,4 +1,4 @@
-/* ─────────────────────────────────────────────────────────────────────────────
+﻿/* ─────────────────────────────────────────────────────────────────────────────
  * Bilgi Sistemleri Güvenliği (1023)
  * Kaynak: SPL 1023 Çalışma Notu, 31 Aralık 2025 (121 sayfa)
  * Sınavlar: Bilgi Sistemleri Bağımsız Denetim Sınavı
@@ -456,7 +456,7 @@ export const mevzuat1023: Module[] = [
             text: "Türkiye'de e-imza ve elektronik sertifikalar için aşağıdakilerden hangisi DOĞRUDUR?",
             options: [
               { id: "A", text: "E-imza yasal değer taşımaz." },
-              { id: "B", text: "5070 sayılı Elektronik İmza Kanunu (2004); Nitelikli Elektronik Sertifika (NES) ile yapılan e-imza �ıSLAK İMZA İLE AYNI HUKUKİ DEĞERE sahiptir; ESHS'ler (Elektronik Sertifika Hizmet Sağlayıcıları): TÜRKTRUST, e-Güven, E-Tugra, KamuSM; BTK denetiminde; Mobil İmza ve E-İmza yaygın kullanım (e-Devlet, e-Beyanname, e-Fatura)." },
+              { id: "B", text: "5070 sayılı Elektronik İmza Kanunu (2004); Nitelikli Elektronik Sertifika (NES) ile yapılan e-imza = ıslak İMZA İLE AYNI HUKUKİ DEĞERE sahiptir; ESHS'ler (Elektronik Sertifika Hizmet Sağlayıcıları): TÜRKTRUST, e-Güven, E-Tugra, KamuSM; BTK denetiminde; Mobil İmza ve E-İmza yaygın kullanım (e-Devlet, e-Beyanname, e-Fatura)." },
               { id: "C", text: "E-imza yalnızca devlet kurumları için." },
               { id: "D", text: "5070 sayılı Kanun yürürlükten kaldırıldı." },
             ],
