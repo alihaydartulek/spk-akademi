@@ -25,9 +25,22 @@ export default function DashboardPage() {
   const [sidebarAcik, setSidebarAcik] = useState(true);
   const [aktifTab, setAktifTab] = useState<"ozet" | "sorular">("ozet");
   const [mounted, setMounted] = useState(false);
-  const [refresh, setRefresh] = useState(0); // veri yenilenmesini tetiklemek için
+  const [refresh, setRefresh] = useState(0);
+  const [tamamlaToast, setTamamlaToast] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // URL'de ?modul=XXX varsa o modülü seç
+    const params = new URLSearchParams(window.location.search);
+    const modulParam = params.get("modul");
+    if (modulParam) {
+      const hedefModul = modules.find((m) => m.id === modulParam);
+      if (hedefModul) {
+        setSecilenModulId(hedefModul.id);
+        setSecilenDersId(hedefModul.lessons[0]?.id || "");
+      }
+    }
+    setMounted(true);
+  }, []);
 
   const secilenModul = useMemo(() => modules.find((m) => m.id === secilenModulId), [secilenModulId]);
   const secilenDers = useMemo(() => secilenModul?.lessons.find((l) => l.id === secilenDersId), [secilenModul, secilenDersId]);
@@ -43,6 +56,8 @@ export default function DashboardPage() {
       dersTamamlamasiniGeriAl(secilenDers.id);
     } else {
       dersiTamamla(secilenDers.id, secilenModul.id);
+      setTamamlaToast(true);
+      setTimeout(() => setTamamlaToast(false), 2500);
     }
     setRefresh((r) => r + 1);
   }
@@ -183,6 +198,19 @@ export default function DashboardPage() {
 
         {/* İÇERİK */}
         <main className="flex-1 min-w-0">
+
+          {/* Mobil: Modüllere Dön butonu */}
+          {!sidebarAcik && (
+            <button
+              onClick={() => setSidebarAcik(true)}
+              className="lg:hidden flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 font-semibold mb-4 px-1 transition"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Modüller
+            </button>
+          )}
 
           {/* ─── Onboarding — sadece ilk kullanımda ─── */}
           {ilkKullanici && (
@@ -349,6 +377,14 @@ export default function DashboardPage() {
         </main>
       </div>
       <SharedFooter />
+
+      {/* Tamamlama toast */}
+      {tamamlaToast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] flex items-center gap-3 bg-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-emerald-500/40 animate-bounce-in font-semibold text-sm">
+          <span className="text-xl">✓</span>
+          Ders tamamlandı! 🎉
+        </div>
+      )}
     </div>
   );
 }

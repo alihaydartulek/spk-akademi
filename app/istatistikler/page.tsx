@@ -18,6 +18,7 @@ import {
 } from "../lib/storage";
 import SharedNavbar from "../_components/SharedNavbar";
 import SharedFooter from "../_components/SharedFooter";
+import { SINAVLAR } from "../_constants/sinavlar";
 
 export default function IstatistiklerPage() {
   const [mounted, setMounted] = useState(false);
@@ -357,22 +358,29 @@ function SinavKart({ sinav }: { sinav: SinavSonuc }) {
   const gecti = sinav.puan >= 60;
   const dakika = Math.floor(sinav.sureSaniye / 60);
   const tarih = new Date(sinav.tarih).toLocaleDateString("tr-TR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const sinavHref = SINAVLAR.find((s) => s.kod === sinav.sinavKodu)?.href ?? "/sinav";
 
   return (
-    <div className={`bg-slate-900/50 rounded-xl p-4 border ${gecti ? "border-emerald-500/30" : "border-amber-500/30"} flex items-center justify-between gap-4`}>
-      <div className="flex items-center gap-3 flex-1 min-w-0">
-        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${gecti ? "bg-emerald-500/20" : "bg-amber-500/20"}`}>
-          {gecti ? "🎉" : "💪"}
-        </div>
-        <div className="min-w-0">
-          <div className="font-semibold text-white text-sm">{sinav.sinavAdi}</div>
-          <div className="text-xs text-slate-400 mt-0.5">
-            {tarih} · {dakika} dk · {sinav.dogruSayisi}/{sinav.toplamSoru}
-          </div>
+    <div className={`bg-slate-900/50 rounded-xl p-4 border ${gecti ? "border-emerald-500/30" : "border-amber-500/30"} flex items-center gap-4`}>
+      <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${gecti ? "bg-emerald-500/20" : "bg-amber-500/20"}`}>
+        {gecti ? "🎉" : "💪"}
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="font-semibold text-white text-sm">{sinav.sinavAdi}</div>
+        <div className="text-xs text-slate-400 mt-0.5">
+          {tarih} · {dakika} dk · {sinav.dogruSayisi}/{sinav.toplamSoru}
         </div>
       </div>
-      <div className={`text-2xl font-bold ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
-        %{sinav.puan.toFixed(1)}
+      <div className="flex items-center gap-3 flex-shrink-0">
+        <div className={`text-xl font-bold ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
+          %{sinav.puan.toFixed(1)}
+        </div>
+        <Link
+          href={sinavHref}
+          className="text-xs text-blue-400 hover:text-blue-300 font-semibold bg-blue-500/10 hover:bg-blue-500/20 border border-blue-400/30 px-2.5 py-1.5 rounded-lg transition whitespace-nowrap"
+        >
+          Tekrar →
+        </Link>
       </div>
     </div>
   );

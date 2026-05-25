@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { modules } from "../index";
 import type { Question } from "../mevzuat";
-import { getFavoriler, favoriCikar, getYanlislar, type FavoriSoru, type SoruCevap } from "../lib/storage";
+import { getFavoriler, favoriCikar, getYanlislar, yanlisSil, type FavoriSoru, type SoruCevap } from "../lib/storage";
 import SharedNavbar from "../_components/SharedNavbar";
 import SharedFooter from "../_components/SharedFooter";
 
@@ -338,7 +338,17 @@ export default function FavorilerPage() {
                 </Link>
               </div>
             ) : (
-              yanlislar.map((y, idx) => <YanlisKart key={idx} yanlis={y} numara={idx + 1} />)
+              yanlislar.map((y, idx) => (
+                <YanlisKart
+                  key={idx}
+                  yanlis={y}
+                  numara={idx + 1}
+                  onSil={() => {
+                    yanlisSil(y.modulId, y.dersId, y.soruIndex);
+                    setRefresh((r) => r + 1);
+                  }}
+                />
+              ))
             )}
           </div>
         )}
@@ -412,7 +422,7 @@ function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: nu
   );
 }
 
-function YanlisKart({ yanlis, numara }: { yanlis: SoruCevap; numara: number }) {
+function YanlisKart({ yanlis, numara, onSil }: { yanlis: SoruCevap; numara: number; onSil: () => void }) {
   const modul = modules.find((m) => m.id === yanlis.modulId);
   const ders = modul?.lessons.find((l) => l.id === yanlis.dersId);
   const soru = ders?.questions[yanlis.soruIndex];
@@ -428,6 +438,15 @@ function YanlisKart({ yanlis, numara }: { yanlis: SoruCevap; numara: number }) {
           <div className="text-xs text-red-300 mb-1 font-medium">{modul.title.replace("Modül · ", "")} · {ders.title}</div>
           <p className="text-white font-medium leading-relaxed">{soru.text}</p>
         </div>
+        <button
+          onClick={onSil}
+          className="p-2 text-slate-500 hover:text-red-400 transition flex-shrink-0"
+          title="Yanlışlardan çıkar"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
       <div className="ml-14 space-y-2">
         {soru.options.map((opt) => {

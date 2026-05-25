@@ -398,7 +398,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           )}
 
           {/* Başlat butonu */}
-          <div className="text-center">
+          <div className="text-center pb-24 lg:pb-0">
             <button
               onClick={sinaviBaslat}
               className="group bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-blue-500/40 transition-all hover:scale-105 hover:shadow-blue-500/60"
@@ -412,6 +412,17 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               Sorular rastgele seçilir ve karıştırılır. Her sınav farklı sırayla gelir.
             </p>
           </div>
+        </div>
+
+        {/* Mobil: Sticky başlat barı */}
+        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 z-50">
+          <button
+            onClick={draft ? () => devamEt(draft) : sinaviBaslat}
+            className="w-full bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-blue-500/40 transition flex items-center justify-center gap-2"
+          >
+            🚀 {draft ? "Devam Et" : "Sınavı Başlat"}
+            <span className="text-blue-200 font-normal text-sm">· {config.soruSayisi} soru</span>
+          </button>
         </div>
       </div>
     );
@@ -868,11 +879,11 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             )}
           </div>
 
-          {/* Aksiyonlar */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          {/* Aksiyonlar — mobilden 2x2 grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <button
               onClick={() => { setAsama("hazirlik"); setSonucData(null); setGozlemModu(false); }}
-              className="flex-1 bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-6 py-4 rounded-xl font-semibold shadow-lg shadow-blue-500/40 transition flex items-center justify-center gap-2"
+              className="col-span-2 sm:col-span-1 bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-4 py-4 rounded-xl font-semibold shadow-lg shadow-blue-500/40 transition flex items-center justify-center gap-2"
             >🔄 Yeni Sınav</button>
             <button
               onClick={() => {
@@ -883,15 +894,13 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   navigator.clipboard.writeText(metin).then(() => alert("Sonuç panoya kopyalandı!"));
                 }
               }}
-              className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
-            >
-              📤 Paylaş
-            </button>
-            <Link href="/istatistikler" className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
+              className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
+            >📤 Paylaş</button>
+            <Link href="/istatistikler" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
               📊 İstatistikler
             </Link>
-            <Link href="/sinav" className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
-              ← Diğer Sınavlar
+            <Link href="/sinav" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
+              ← Sınavlar
             </Link>
           </div>
         </div>

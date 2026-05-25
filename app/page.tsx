@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { modules } from "./index";
-import { modulIlerlemesi, tamamlananDersSayisi } from "./lib/storage";
+import { modulIlerlemesi, tamamlananDersSayisi, getTamamlananDersler } from "./lib/storage";
 import { SINAV_MENUSU, SINAVLAR } from "./_constants/sinavlar";
 
 const TESTIMONIALS = [
@@ -275,6 +275,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* KİŞİSEL İLERLEME ŞERIDI — localStorage'da veri varsa göster */}
+      {mounted && (() => {
+        const tamamlanan = getTamamlananDersler().length;
+        const toplamDers = modules.reduce((s, m) => s + m.lessons.length, 0);
+        if (tamamlanan === 0) return null;
+        const yuzde = Math.round((tamamlanan / toplamDers) * 100);
+        return (
+          <div className="max-w-7xl mx-auto px-6 -mt-8 mb-4 relative z-10">
+            <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl shadow-blue-900/20">
+              <div className="w-10 h-10 bg-emerald-500/20 border border-emerald-400/40 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📈</div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-sm font-semibold text-white">Toplam İlerleme</span>
+                  <span className="text-sm font-bold text-emerald-400">%{yuzde}</span>
+                </div>
+                <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 rounded-full transition-all duration-700" style={{ width: `${yuzde}%` }} />
+                </div>
+                <div className="text-xs text-slate-400 mt-1">{tamamlanan} / {toplamDers} ders tamamlandı</div>
+              </div>
+              <Link href="/dashboard" className="flex-shrink-0 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold px-3 py-2 rounded-lg transition whitespace-nowrap">
+                Devam Et →
+              </Link>
+            </div>
+          </div>
+        );
+      })()}
+
       {/* MODÜLLER — İLERLEME BARLARI İLE */}
       <section id="moduller" className="py-24 relative">
         <div className="relative max-w-7xl mx-auto px-6">
@@ -348,7 +376,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={modul.id}
-                  href="/dashboard"
+                  href={`/dashboard?modul=${modul.id}`}
                   className="group relative bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-blue-500/50 shadow-xl shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start justify-between mb-4">

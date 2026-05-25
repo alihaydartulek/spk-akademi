@@ -142,6 +142,13 @@ export function getYanlislar(): SoruCevap[] {
   return getCevaplar().filter((c) => !c.dogruMu);
 }
 
+export function yanlisSil(modulId: string, dersId: string, soruIndex: number): void {
+  const liste = getCevaplar().filter(
+    (c) => !(c.modulId === modulId && c.dersId === dersId && c.soruIndex === soruIndex)
+  );
+  set(KEY_CEVAPLAR, liste);
+}
+
 export function getDogruSayisi(): number {
   return getCevaplar().filter((c) => c.dogruMu).length;
 }
