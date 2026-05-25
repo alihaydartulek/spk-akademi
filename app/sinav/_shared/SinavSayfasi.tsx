@@ -325,13 +325,13 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
    * ════════════════════════════════════════════ */
   if (asama === "hazirlik") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900">
         <SinavNavbar config={config} asama="hazirlik" />
         <div className="max-w-3xl mx-auto px-6 py-16">
 
           {/* Başlık */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-5 border border-violet-400/30">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-5 border border-indigo-400/30">
               🎓 Gerçek Sınav Formatı
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
@@ -350,7 +350,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               { ikon: "✅", deger: `%${config.gecmeEsigi}`, etiket: "Geçme Notu" },
               { ikon: "🎯", deger: "A/B/C/D", etiket: "Şık Sayısı" },
             ].map((k) => (
-              <div key={k.etiket} className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 text-center shadow-xl shadow-violet-900/20">
+              <div key={k.etiket} className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 text-center shadow-xl shadow-indigo-900/20">
                 <div className="text-3xl mb-2">{k.ikon}</div>
                 <div className="text-2xl font-bold text-white mb-1">{k.deger}</div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider">{k.etiket}</div>
@@ -359,15 +359,15 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           </div>
 
           {/* Konu dağılımı */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-10 shadow-xl shadow-violet-900/20">
+          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-10 shadow-xl shadow-indigo-900/20">
             <h3 className="font-bold text-white mb-4 flex items-center gap-2">
-              <span className="w-6 h-6 bg-violet-500/20 rounded-md flex items-center justify-center text-violet-400 text-sm">📚</span>
+              <span className="w-6 h-6 bg-indigo-500/20 rounded-md flex items-center justify-center text-indigo-400 text-sm">📚</span>
               Konu Dağılımı
             </h3>
             <div className="space-y-2 text-sm">
               {config.konular.map((k) => (
                 <div key={k.pdf} className="flex items-start gap-3 p-3 bg-slate-900/40 rounded-xl border border-slate-700/50">
-                  <div className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0 mt-2" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0 mt-2" />
                   <div>
                     <div className="font-semibold text-white">{k.ad}</div>
                     <div className="text-slate-400 text-xs mt-0.5">{k.icerik}</div>
@@ -420,10 +420,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           <div className="text-center pb-24 lg:pb-0">
             <button
               onClick={sinaviBaslat}
-              className="group bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-violet-500/40 transition-all hover:scale-105 hover:shadow-violet-500/60"
+              className="group bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-indigo-500/40 transition-all hover:scale-105 hover:shadow-indigo-500/60"
             >
               🚀 {draft ? "Yeni Sınav Başlat" : "Sınavı Başlat"}
-              <span className="block text-sm font-normal text-violet-200 mt-1">
+              <span className="block text-sm font-normal text-indigo-200 mt-1">
                 {config.soruSayisi} soru · {config.sureDakika} dakika
               </span>
             </button>
@@ -437,10 +437,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
         <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 z-50">
           <button
             onClick={draft ? () => devamEt(draft) : sinaviBaslat}
-            className="w-full bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-violet-500/40 transition flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-indigo-500/40 transition flex items-center justify-center gap-2"
           >
             🚀 {draft ? "Devam Et" : "Sınavı Başlat"}
-            <span className="text-violet-200 font-normal text-sm">· {config.soruSayisi} soru</span>
+            <span className="text-indigo-200 font-normal text-sm">· {config.soruSayisi} soru</span>
           </button>
         </div>
       </div>
@@ -461,7 +461,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     const isaretliSayisi = isaretliler.size;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
 
         {/* Üst bar */}
         <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50">
@@ -469,12 +469,12 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
             {/* Sol: logo + bilgi */}
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-9 h-9 bg-gradient-to-br from-violet-500 to-violet-700 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
+              <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
                 SPK
               </div>
               <div className="min-w-0">
                 <div className="font-bold text-white text-sm leading-none">{config.tamAd}</div>
-                <div className="text-xs text-violet-300 mt-0.5">
+                <div className="text-xs text-indigo-300 mt-0.5">
                   {cevaplanan}/{sorular.length} cevaplandı
                   {isaretliSayisi > 0 && ` · ${isaretliSayisi} işaretli`}
                   {` · ${bos} boş`}
@@ -488,7 +488,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 ? "bg-red-500/20 text-red-300 border-red-500/50 animate-pulse"
                 : sureAcil
                 ? "bg-amber-500/15 text-amber-300 border-amber-500/40"
-                : "bg-violet-500/15 text-violet-300 border-violet-500/30"
+                : "bg-indigo-500/15 text-indigo-300 border-indigo-500/30"
             }`}>
               ⏱️ {String(dakika).padStart(2, "0")}:{String(saniye).padStart(2, "0")}
             </div>
@@ -507,7 +507,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           {/* İlerleme barı */}
           <div className="h-1 bg-slate-800">
             <div
-              className="h-full bg-gradient-to-r from-violet-500 to-purple-400 transition-all duration-500 ease-out"
+              className="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-500 ease-out"
               style={{ width: `${(cevaplanan / sorular.length) * 100}%` }}
             />
           </div>
@@ -518,10 +518,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
           {/* Sol: soru haritası (desktop) */}
           <aside className="w-56 flex-shrink-0 hidden lg:block">
-            <div className="sticky top-28 bg-slate-800/80 border border-slate-700 rounded-2xl p-4 shadow-xl shadow-violet-900/20">
+            <div className="sticky top-28 bg-slate-800/80 border border-slate-700 rounded-2xl p-4 shadow-xl shadow-indigo-900/20">
               <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Soru Haritası</div>
               <div className="flex flex-wrap gap-1.5 text-xs text-slate-500 mb-3">
-                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-violet-500 inline-block" /> Aktif</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-indigo-500 inline-block" /> Aktif</span>
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50 inline-block" /> Cevaplı</span>
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500/20 border border-amber-500/40 inline-block" /> İşaretli</span>
               </div>
@@ -537,7 +537,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       onClick={() => setAktifIdx(idx)}
                       className={`w-8 h-8 rounded-md text-xs font-bold transition relative ${
                         aktif
-                          ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
+                          ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
                           : isaretli
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                           : cevaplandi
@@ -564,15 +564,15 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
           {/* Orta: soru kartı */}
           <main className="flex-1 min-w-0">
-            <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-xl shadow-violet-900/20 mb-4">
+            <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-xl shadow-indigo-900/20 mb-4">
               {/* Soru başlığı */}
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-violet-500/40 flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/40 flex-shrink-0">
                     {aktifIdx + 1}
                   </div>
                   <div>
-                    <div className="text-xs text-violet-300 uppercase tracking-wider font-semibold">
+                    <div className="text-xs text-indigo-300 uppercase tracking-wider font-semibold">
                       Soru {aktifIdx + 1} / {sorular.length}
                     </div>
                     <div className="text-xs text-slate-500 mt-0.5 line-clamp-1">{soru.dersBaslik}</div>
@@ -603,20 +603,20 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       onClick={() => cevapla(aktifIdx, opt.id)}
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start gap-3 group ${
                         secili
-                          ? "bg-violet-500/12 border-violet-400/60 shadow-lg shadow-violet-500/20 scale-[1.01]"
-                          : "bg-slate-900/50 border-slate-700/60 hover:border-violet-400/40 hover:bg-violet-500/5 hover:scale-[1.005]"
+                          ? "bg-indigo-500/12 border-indigo-400/60 shadow-lg shadow-indigo-500/20 scale-[1.01]"
+                          : "bg-slate-900/50 border-slate-700/60 hover:border-indigo-400/40 hover:bg-indigo-500/5 hover:scale-[1.005]"
                       }`}
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 transition ${
-                        secili ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40" : "bg-slate-700 text-slate-300 group-hover:bg-slate-600"
+                        secili ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40" : "bg-slate-700 text-slate-300 group-hover:bg-slate-600"
                       }`}>
                         {opt.id}
                       </div>
-                      <span className={`leading-relaxed pt-0.5 flex-1 text-sm md:text-base ${secili ? "text-violet-100" : "text-slate-300"}`}>
+                      <span className={`leading-relaxed pt-0.5 flex-1 text-sm md:text-base ${secili ? "text-indigo-100" : "text-slate-300"}`}>
                         {opt.text}
                       </span>
                       {secili && (
-                        <div className="w-5 h-5 bg-violet-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
@@ -644,7 +644,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   return (
                     <button key={idx} onClick={() => setAktifIdx(idx)}
                       className={`w-8 h-8 rounded-md text-xs font-bold transition ${
-                        aktif ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white"
+                        aktif ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white"
                         : cevaplar[idx] ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
                         : "bg-slate-800 text-slate-400 border border-slate-700"
                       }`}
@@ -664,7 +664,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                     setAktifIdx((i) => Math.min(sorular.length - 1, i + 1));
                   }
                 }}
-                className="flex items-center gap-2 bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-5 py-3 rounded-xl font-semibold shadow-lg shadow-violet-500/30 transition"
+                className="flex items-center gap-2 bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-5 py-3 rounded-xl font-semibold shadow-lg shadow-indigo-500/30 transition"
               >
                 {aktifIdx === sorular.length - 1 ? "Sınavı Bitir 🏁" : "Sonraki →"}
               </button>
@@ -683,7 +683,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               </div>
               {/* Açıklama */}
               <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
-                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-violet-500 inline-block" /> Aktif</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-indigo-500 inline-block" /> Aktif</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500/40 border border-emerald-500/50 inline-block" /> Cevaplı</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500/30 border border-amber-500/40 inline-block" /> İşaretli</span>
               </div>
@@ -698,7 +698,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       onClick={() => { setAktifIdx(idx); setMobilHaritaAcik(false); }}
                       className={`aspect-square rounded-md text-xs font-bold transition relative ${
                         aktif
-                          ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
+                          ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
                           : isaretli
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                           : cevaplandi
@@ -734,7 +734,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             className="flex-[1.4] bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-xl font-semibold border border-slate-700 transition text-sm flex items-center justify-center gap-2"
           >
             <span>📋</span>
-            <span className="tabular-nums text-violet-400 font-bold">{aktifIdx + 1}/{sorular.length}</span>
+            <span className="tabular-nums text-indigo-400 font-bold">{aktifIdx + 1}/{sorular.length}</span>
           </button>
           <button
             onClick={() => {
@@ -744,7 +744,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 setAktifIdx((i) => Math.min(sorular.length - 1, i + 1));
               }
             }}
-            className="flex-1 bg-gradient-to-br from-violet-500 to-violet-700 text-white py-2.5 rounded-xl font-semibold shadow-lg transition text-sm"
+            className="flex-1 bg-gradient-to-br from-indigo-500 to-indigo-700 text-white py-2.5 rounded-xl font-semibold shadow-lg transition text-sm"
           >
             {aktifIdx === sorular.length - 1 ? "Bitir 🏁" : "Sonraki →"}
           </button>
@@ -775,7 +775,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     const suSaniye = sureSaniye % 60;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 animate-page-in">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 animate-page-in">
         <SinavNavbar config={config} asama="sonuc" />
         <div className="max-w-5xl mx-auto px-4 py-10">
 
@@ -793,9 +793,9 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           />
 
           {/* Konu analizi */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-8 shadow-xl shadow-violet-900/20">
+          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-8 shadow-xl shadow-indigo-900/20">
             <h2 className="font-bold text-white text-xl mb-5 flex items-center gap-2">
-              <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">📊</span>
+              <span className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400">📊</span>
               Konu Bazında Analiz
             </h2>
             <div className="space-y-4">
@@ -827,16 +827,16 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           </div>
 
           {/* Soru çözümleri (açılır) */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-violet-900/20 mb-8">
+          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-indigo-900/20 mb-8">
             <button
               onClick={() => setGozlemModu((g) => !g)}
               className="w-full p-5 flex items-center justify-between text-left hover:bg-slate-700/40 transition"
             >
               <h2 className="font-bold text-white text-lg flex items-center gap-2">
-                <span className="w-8 h-8 bg-violet-500/20 rounded-lg flex items-center justify-center text-violet-400">🔍</span>
+                <span className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400">🔍</span>
                 Soru Çözümleri ve Açıklamalar
               </h2>
-              <span className={`text-violet-400 transition-transform duration-300 ${gozlemModu ? "rotate-180" : ""}`}>▼</span>
+              <span className={`text-indigo-400 transition-transform duration-300 ${gozlemModu ? "rotate-180" : ""}`}>▼</span>
             </button>
 
             {gozlemModu && (
@@ -868,7 +868,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       ))}
                     </div>
                     <div className="ml-11 bg-slate-900/50 border border-slate-700/50 rounded-xl p-3 text-xs text-slate-300 leading-relaxed">
-                      <span className="font-bold text-violet-400 mr-1">Açıklama:</span>
+                      <span className="font-bold text-indigo-400 mr-1">Açıklama:</span>
                       {soru.explanation}
                     </div>
                   </div>
@@ -900,7 +900,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <button
               onClick={() => { setAsama("hazirlik"); setSonucData(null); setGozlemModu(false); }}
-              className="col-span-2 sm:col-span-1 bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-4 rounded-xl font-semibold shadow-lg shadow-violet-500/40 transition flex items-center justify-center gap-2"
+              className="col-span-2 sm:col-span-1 bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-4 py-4 rounded-xl font-semibold shadow-lg shadow-indigo-500/40 transition flex items-center justify-center gap-2"
             >🔄 Yeni Sınav</button>
             <button
               onClick={() => {
@@ -1027,18 +1027,18 @@ function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
     <nav className="sticky top-0 z-50 bg-slate-900/85 backdrop-blur-xl border-b border-slate-700/50">
       <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-violet-500/30">SPK</div>
+          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-indigo-500/30">SPK</div>
           <div>
             <div className="font-bold text-white text-base leading-none">SPK Akademi</div>
-            <div className="text-[10px] text-violet-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
+            <div className="text-[10px] text-indigo-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
           </div>
         </Link>
         <div className="flex items-center gap-3 text-sm">
           {asama === "hazirlik" && (
-            <Link href="/sinav" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">← Diğer Sınavlar</Link>
+            <Link href="/sinav" className="text-slate-300 hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">← Diğer Sınavlar</Link>
           )}
           {asama === "sonuc" && (
-            <Link href="/" className="text-slate-300 hover:text-violet-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">🏠 Ana Sayfa</Link>
+            <Link href="/" className="text-slate-300 hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">🏠 Ana Sayfa</Link>
           )}
         </div>
       </div>

@@ -8,18 +8,19 @@
  * ──────────────────────────────────────────── */
 :root {
   /* Brand colors — HSL channels only (used with hsl()) */
-  --color-primary-h: 263;
-  --color-primary-s: 70%;
-  --color-primary-l: 58%;
+  --color-primary-h: 239;
+  --color-primary-s: 84%;
+  --color-primary-l: 67%;
 
   /* Convenience shorthand */
-  --primary: hsl(263 70% 58%);           /* violet-500 equivalent */
-  --primary-light: hsl(263 70% 70%);     /* hover / lighter states */
-  --primary-dim: hsl(263 70% 58% / 0.15);/* tinted backgrounds */
-  --primary-border: hsl(263 70% 58% / 0.35); /* border with opacity */
+  --primary: hsl(239 84% 67%);           /* indigo-500 equivalent */
+  --primary-light: hsl(234 89% 74%);     /* hover / lighter states — indigo-400 */
+  --primary-dark: hsl(243 75% 59%);      /* indigo-600 */
+  --primary-dim: hsl(239 84% 67% / 0.15);/* tinted backgrounds */
+  --primary-border: hsl(239 84% 67% / 0.35); /* border with opacity */
 
-  --accent: hsl(158 64% 52%);            /* emerald accent */
-  --accent-dim: hsl(158 64% 52% / 0.15);
+  --accent: hsl(189 94% 43%);            /* cyan-500 accent */
+  --accent-dim: hsl(189 94% 43% / 0.15);
 
   /* Surface tokens — match existing slate palette */
   --surface-base: hsl(222 47% 8%);       /* slate-900 */
@@ -28,20 +29,20 @@
 
   /* Border tokens */
   --border-subtle: hsl(222 20% 25% / 0.5);   /* slate-700/50 */
-  --border-brand: hsl(263 70% 58% / 0.35);   /* violet tinted */
-  --border-brand-hover: hsl(263 70% 58% / 0.6);
+  --border-brand: hsl(239 84% 67% / 0.35);   /* indigo tinted */
+  --border-brand-hover: hsl(239 84% 67% / 0.6);
 
   /* Shadow tokens */
-  --shadow-card: 0 8px 32px -4px hsl(263 70% 20% / 0.35);
-  --shadow-card-hover: 0 16px 48px -8px hsl(263 70% 20% / 0.5);
-  --shadow-glow: 0 0 40px hsl(263 70% 58% / 0.3);
-  --shadow-glow-sm: 0 0 20px hsl(263 70% 58% / 0.2);
-  --shadow-accent-glow: 0 0 24px hsl(158 64% 52% / 0.3);
+  --shadow-card: 0 8px 32px -4px hsl(239 84% 20% / 0.35);
+  --shadow-card-hover: 0 16px 48px -8px hsl(239 84% 20% / 0.5);
+  --shadow-glow: 0 0 40px hsl(239 84% 67% / 0.4);
+  --shadow-glow-sm: 0 0 20px hsl(239 84% 67% / 0.25);
+  --shadow-accent-glow: 0 0 24px hsl(189 94% 43% / 0.3);
 
   /* Gradient tokens */
-  --gradient-brand: linear-gradient(135deg, hsl(263 70% 55%), hsl(280 65% 60%));
-  --gradient-brand-cta: linear-gradient(135deg, hsl(263 70% 60%), hsl(263 70% 45%));
-  --gradient-hero-bg: linear-gradient(to bottom, hsl(222 47% 8%), hsl(263 50% 10%), hsl(222 47% 8%));
+  --gradient-brand: linear-gradient(135deg, hsl(239 84% 67%), hsl(189 94% 43%));
+  --gradient-brand-cta: linear-gradient(135deg, hsl(239 84% 67%), hsl(243 75% 59%));
+  --gradient-hero-bg: linear-gradient(to bottom, hsl(230 47% 8%), hsl(239 60% 10%), hsl(230 47% 8%));
 
   /* Typography scale tokens */
   --text-hero: clamp(2.75rem, 6vw, 4.5rem);
@@ -80,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(263 60% 35%);
+  background: hsl(239 60% 35%);
   border-radius: 4px;
   transition: background var(--transition-fast);
 }
@@ -102,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: hsl(263 70% 58% / 0.28);
+  background: hsl(239 84% 67% / 0.28);
   color: hsl(0 0% 100%);
 }
 

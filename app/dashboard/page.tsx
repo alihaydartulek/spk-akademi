@@ -69,9 +69,9 @@ export default function DashboardPage() {
   }, [aramaMetni]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
-      <div className="fixed top-1/4 right-0 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+      <div className="fixed top-1/4 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-cyan-600/8 rounded-full blur-3xl pointer-events-none" />
 
       <SharedNavbar
         subtitle="Çalışma Paneli"
@@ -93,11 +93,11 @@ export default function DashboardPage() {
       <div className="relative max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 p-6">
         {/* SIDEBAR */}
         <aside className={`${sidebarAcik ? "animate-sidebar-in" : "hidden"} lg:block lg:animate-sidebar-in w-full lg:w-80 flex-shrink-0`}>
-          <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-violet-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
+          <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-indigo-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
             <div className="p-5 border-b border-slate-700">
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-bold text-white tracking-tight">Modüller</h2>
-                <span className="px-2.5 py-1 bg-violet-500/10 text-violet-300 text-xs font-bold rounded-md border border-violet-400/30">{modules.length}</span>
+                <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-bold rounded-md border border-indigo-400/30">{modules.length}</span>
               </div>
               <div className="relative">
                 <input
@@ -105,9 +105,9 @@ export default function DashboardPage() {
                   value={aramaMetni}
                   onChange={(e) => setAramaMetni(e.target.value)}
                   placeholder="Modül ara..."
-                  className="w-full px-3 py-2.5 pl-9 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-400 transition"
+                  className="w-full px-3 py-2.5 pl-9 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-400 transition"
                 />
-                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -130,20 +130,20 @@ export default function DashboardPage() {
                         }}
                         className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                           acikMi
-                            ? "bg-violet-500/10 border border-violet-400/30 shadow-md shadow-violet-500/20 translate-x-0.5"
+                            ? "bg-indigo-500/10 border border-indigo-400/30 shadow-md shadow-indigo-500/20 translate-x-0.5"
                             : "hover:bg-slate-700/50 border border-transparent hover:translate-x-0.5"
                         }`}
                       >
                         <div className="flex items-start gap-3">
                           <div className={`w-8 h-8 rounded-md flex items-center justify-center font-bold text-xs flex-shrink-0 transition ${
                             acikMi
-                              ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/50"
+                              ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/50"
                               : "bg-slate-700 text-slate-300"
                           }`}>
                             {String(idx + 1).padStart(2, "0")}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className={`font-semibold text-sm leading-tight mb-1 ${acikMi ? "text-violet-300" : "text-slate-200"}`}>
+                            <div className={`font-semibold text-sm leading-tight mb-1 ${acikMi ? "text-indigo-300" : "text-slate-200"}`}>
                               {modul.title.replace("Modül · ", "")}
                             </div>
                             <div className="flex items-center gap-2 text-xs text-slate-400 mb-1.5">
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                             {mounted && ilerleme > 0 && (
                               <div className="h-1 bg-slate-900 rounded-full overflow-hidden">
                                 <div
-                                  className={`h-full ${ilerleme === 100 ? "bg-emerald-500" : "bg-violet-500"}`}
+                                  className={`h-full ${ilerleme === 100 ? "bg-emerald-500" : "bg-indigo-500"}`}
                                   style={{ width: `${ilerleme}%` }}
                                 />
                               </div>
@@ -164,7 +164,7 @@ export default function DashboardPage() {
                         </div>
                       </button>
                       {acikMi && (
-                        <div className="mt-1 ml-3 pl-3 border-l-2 border-violet-400/30 space-y-0.5">
+                        <div className="mt-1 ml-3 pl-3 border-l-2 border-indigo-400/30 space-y-0.5">
                           {modul.lessons.map((ders) => {
                             const dersSecili = secilenDersId === ders.id;
                             const tamam = mounted && dersTamamlandiMi(ders.id);
@@ -178,7 +178,7 @@ export default function DashboardPage() {
                                 }}
                                 className={`w-full text-left px-3 py-2 rounded-md text-xs transition-all flex items-center gap-2 ${
                                   dersSecili
-                                    ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white font-semibold shadow-lg shadow-violet-500/50"
+                                    ? "bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 font-semibold"
                                     : "text-slate-400 hover:bg-slate-700/50 hover:text-white"
                                 }`}
                               >
@@ -204,7 +204,7 @@ export default function DashboardPage() {
           {!sidebarAcik && (
             <button
               onClick={() => setSidebarAcik(true)}
-              className="lg:hidden flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 font-semibold mb-4 px-1 transition"
+              className="lg:hidden flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 font-semibold mb-4 px-1 transition"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -215,7 +215,7 @@ export default function DashboardPage() {
 
           {/* ─── Onboarding — sadece ilk kullanımda ─── */}
           {ilkKullanici && (
-            <div className="bg-gradient-to-br from-violet-900/40 to-violet-800/20 border border-violet-500/30 rounded-2xl p-6 mb-6 shadow-xl shadow-violet-500/10">
+            <div className="bg-gradient-to-br from-indigo-900/40 to-indigo-800/20 border border-indigo-500/30 rounded-2xl p-6 mb-6 shadow-xl shadow-indigo-500/10">
               <div className="flex items-start gap-4">
                 <div className="text-3xl flex-shrink-0">👋</div>
                 <div className="flex-1 min-w-0">
@@ -224,7 +224,7 @@ export default function DashboardPage() {
                     Sol panelden bir modül seçerek çalışmaya başlayabilirsin. Hangi sınava hazırlandığını biliyorsan aşağıdan doğrudan tam sınav simülasyonuna geçebilirsin.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Link href="/sinav/duzey1" className="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-violet-500/30">
+                    <Link href="/sinav/duzey1" className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-indigo-500/30">
                       🎓 Düzey 1 Sınavına Hazırlan
                     </Link>
                     <Link href="/sinav" className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-semibold px-4 py-2 rounded-xl border border-slate-600 transition">
@@ -238,7 +238,7 @@ export default function DashboardPage() {
           {secilenDers && secilenModul ? (
             <div className="space-y-6">
               <div className="flex items-center gap-2 text-sm text-slate-400 flex-wrap">
-                <Link href="/" className="hover:text-violet-400">Ana Sayfa</Link>
+                <Link href="/" className="hover:text-indigo-400">Ana Sayfa</Link>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
@@ -249,11 +249,11 @@ export default function DashboardPage() {
                 <span className="text-white font-medium">{secilenDers.title}</span>
               </div>
 
-              <div className="bg-slate-800 rounded-2xl p-5 md:p-8 border border-slate-700 shadow-xl shadow-violet-900/30">
+              <div className="bg-slate-800 rounded-2xl p-5 md:p-8 border border-slate-700 shadow-xl shadow-indigo-900/30">
                 <div className="mb-5">
                   {/* Modül etiketi — truncate ile taşmayı önle */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2.5 py-1 bg-violet-500/10 text-violet-300 rounded-full text-[11px] font-bold tracking-wider uppercase border border-violet-400/30 truncate max-w-[calc(100%-2rem)]">
+                    <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 rounded-full text-[11px] font-bold tracking-wider uppercase border border-indigo-400/30 truncate max-w-[calc(100%-2rem)]">
                       {secilenModul.title.replace("Modül · ", "")}
                     </span>
                   </div>
@@ -280,7 +280,7 @@ export default function DashboardPage() {
                       </button>
                     )}
                     <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-xl border border-slate-700 text-sm">
-                      <span className="text-violet-300 font-semibold">⏱️</span>
+                      <span className="text-indigo-300 font-semibold">⏱️</span>
                       <span className="font-bold text-white">{secilenDers.duration}</span>
                     </div>
                   </div>
@@ -290,7 +290,7 @@ export default function DashboardPage() {
                     onClick={() => setAktifTab("ozet")}
                     className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
                       aktifTab === "ozet"
-                        ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
+                        ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     }`}
                   >
@@ -300,7 +300,7 @@ export default function DashboardPage() {
                     onClick={() => setAktifTab("sorular")}
                     className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
                       aktifTab === "sorular"
-                        ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
+                        ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     }`}
                   >
@@ -310,7 +310,7 @@ export default function DashboardPage() {
               </div>
 
               {aktifTab === "ozet" && (
-                <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-violet-900/30 animate-fade-in">
+                <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-indigo-900/30 animate-fade-in">
                   <h2 className="text-2xl font-bold text-white mb-4 tracking-tight">{secilenDers.summary.title}</h2>
                   <p className="text-slate-300 leading-relaxed text-base mb-8">{secilenDers.summary.intro}</p>
                   <div className="space-y-8">
@@ -319,7 +319,7 @@ export default function DashboardPage() {
                         <div className="flex items-center gap-3 mb-5">
                           <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white shadow-lg ${
                             section.icon === "shield"
-                              ? "bg-gradient-to-br from-violet-500 to-violet-700 shadow-violet-500/40"
+                              ? "bg-gradient-to-br from-indigo-500 to-indigo-700 shadow-indigo-500/40"
                               : "bg-gradient-to-br from-emerald-500 to-emerald-700 shadow-emerald-500/40"
                           }`}>
                             {idx + 1}
@@ -328,7 +328,7 @@ export default function DashboardPage() {
                         </div>
                         <div className="space-y-2.5">
                           {section.items.map((item, i) => (
-                            <div key={i} className="flex gap-3 p-4 bg-slate-900/50 rounded-xl border-l-4 border-violet-400">
+                            <div key={i} className="flex gap-3 p-4 bg-slate-900/50 rounded-xl border-l-4 border-indigo-400">
                               <div>
                                 <span className="font-bold text-white">{item.strong}</span>{" "}
                                 <span className="text-slate-300 leading-relaxed">{item.text}</span>
@@ -352,7 +352,7 @@ export default function DashboardPage() {
                     <div className="text-sm text-slate-300">Konuyu bitirdiniz mi? Şimdi soruları çözün.</div>
                     <button
                       onClick={() => setAktifTab("sorular")}
-                      className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition-all hover:scale-105 flex items-center gap-2"
+                      className="bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition-all hover:scale-105 flex items-center gap-2"
                     >
                       Sorulara Geç →
                     </button>

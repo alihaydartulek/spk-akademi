@@ -79,28 +79,28 @@ export default function HomePage() {
   }, [aramaMetni, sinavFiltre]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative">
-      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none animate-orb-pulse" />
-      <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none animate-orb-pulse" style={{ animationDelay: "3s" }} />
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative">
+      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none animate-orb-pulse" />
+      <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-cyan-600/8 rounded-full blur-3xl pointer-events-none animate-orb-pulse" style={{ animationDelay: "3s" }} />
 
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-slate-900/80 glass border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="w-11 h-11 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-violet-500/40">
+            <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/40">
               SPK
             </div>
             <div>
               <div className="font-bold text-white text-lg leading-none">SPK Akademi</div>
-              <div className="text-[11px] text-violet-300 mt-1 tracking-wider uppercase">Lisanslama Platformu</div>
+              <div className="text-[11px] text-indigo-300 mt-1 tracking-wider uppercase">Lisanslama Platformu</div>
             </div>
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-            <a href="#moduller" className="hover:text-violet-400 transition">Modüller</a>
-            <Link href="/sinav" className="hover:text-violet-400 transition">Hızlı Pratik</Link>
+            <a href="#moduller" className="hover:text-indigo-400 transition">Modüller</a>
+            <Link href="/sinav" className="hover:text-indigo-400 transition">Hızlı Pratik</Link>
 
             {/* ── Sınavlar Dropdown ── */}
             <div
@@ -111,11 +111,11 @@ export default function HomePage() {
             >
               <button
                 onClick={() => setSinavMenuAcik((v) => !v)}
-                className={`flex items-center gap-1.5 font-semibold transition ${sinavMenuAcik ? "text-violet-400" : "text-slate-300 hover:text-violet-400"}`}
+                className={`flex items-center gap-1.5 font-semibold transition ${sinavMenuAcik ? "text-indigo-400" : "text-slate-300 hover:text-indigo-400"}`}
               >
                 Sınavlar
                 <svg
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${sinavMenuAcik ? "rotate-180 text-violet-400" : ""}`}
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${sinavMenuAcik ? "rotate-180 text-indigo-400" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -129,11 +129,11 @@ export default function HomePage() {
                 {/* Ok işareti */}
                 <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-800 border-l border-t border-slate-600/60 rotate-45" />
 
-                <div className="bg-slate-900 border border-slate-700/70 rounded-2xl shadow-2xl shadow-violet-900/40 overflow-hidden">
+                <div className="bg-slate-900 border border-slate-700/70 rounded-2xl shadow-2xl shadow-indigo-900/40 overflow-hidden">
                   {/* Başlık */}
                   <div className="px-5 py-3.5 border-b border-slate-700/60 flex items-center gap-2">
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">SPK Lisanslama Sınavları</span>
-                    <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-violet-500/15 text-violet-400 rounded-full border border-violet-500/25">8 Sınav Türü</span>
+                    <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-indigo-500/15 text-indigo-400 rounded-full border border-indigo-500/25">8 Sınav Türü</span>
                   </div>
 
                   {/* 2 sütun grid */}
@@ -143,16 +143,16 @@ export default function HomePage() {
                         key={sinav.href}
                         href={sinav.href}
                         onClick={() => setSinavMenuAcik(false)}
-                        className="group flex items-start gap-3 px-4 py-3.5 rounded-xl bg-slate-900 hover:bg-violet-500/8 transition-all"
+                        className="group flex items-start gap-3 px-4 py-3.5 rounded-xl bg-slate-900 hover:bg-indigo-500/8 transition-all"
                       >
                         <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 mt-1.5 flex-shrink-0" />
                         <div className="min-w-0">
-                          <div className="text-sm font-semibold text-white group-hover:text-violet-300 transition leading-tight">
+                          <div className="text-sm font-semibold text-white group-hover:text-indigo-300 transition leading-tight">
                             {sinav.ad}
                           </div>
                           <div className="text-xs text-slate-400 mt-0.5">{sinav.aciklama}</div>
                         </div>
-                        <svg className="w-4 h-4 text-violet-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-4 h-4 text-indigo-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all ml-auto flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </Link>
@@ -165,7 +165,7 @@ export default function HomePage() {
                     <Link
                       href="/sinav"
                       onClick={() => setSinavMenuAcik(false)}
-                      className="text-xs font-semibold text-violet-400 hover:text-violet-300 transition flex items-center gap-1"
+                      className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1"
                     >
                       Hızlı Pratik →
                     </Link>
@@ -175,9 +175,9 @@ export default function HomePage() {
             </div>
             {/* ── / Dropdown ── */}
 
-            <Link href="/favoriler" className="hover:text-violet-400 transition">Favoriler</Link>
-            <Link href="/istatistikler" className="hover:text-violet-400 transition">İstatistikler</Link>
-            <Link href="/dashboard" className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition-all hover:scale-105">
+            <Link href="/favoriler" className="hover:text-indigo-400 transition">Favoriler</Link>
+            <Link href="/istatistikler" className="hover:text-indigo-400 transition">İstatistikler</Link>
+            <Link href="/dashboard" className="bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-5 py-2.5 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition-all hover:scale-105">
               Çalışmaya Başla
             </Link>
           </div>
@@ -193,7 +193,7 @@ export default function HomePage() {
               <span className={`w-5 h-0.5 bg-slate-300 rounded transition-all duration-200 ${mobileMenuAcik ? "opacity-0" : ""}`} />
               <span className={`w-5 h-0.5 bg-slate-300 rounded transition-all duration-200 ${mobileMenuAcik ? "-rotate-45 -translate-y-2" : ""}`} />
             </button>
-            <Link href="/dashboard" className="bg-gradient-to-br from-violet-500 to-violet-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Başla</Link>
+            <Link href="/dashboard" className="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Başla</Link>
           </div>
         </div>
 
@@ -214,10 +214,10 @@ export default function HomePage() {
                     key={sinav.href}
                     href={sinav.href}
                     onClick={() => setMobileMenuAcik(false)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-violet-500/8 border border-violet-500/20 mb-1 hover:bg-violet-500/15 transition"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-500/8 border border-indigo-500/20 mb-1 hover:bg-indigo-500/15 transition"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
-                    <span className="text-sm font-semibold text-violet-300">{sinav.ad}</span>
+                    <span className="text-sm font-semibold text-indigo-300">{sinav.ad}</span>
                     <span className="ml-auto text-xs text-slate-400">{sinav.aciklama}</span>
                   </Link>
                 ))}
@@ -230,20 +230,20 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-orb-pulse" />
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl animate-orb-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-orb-pulse" />
+        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-indigo-600/12 rounded-full blur-3xl animate-orb-pulse" style={{ animationDelay: "2s" }} />
         <div className="relative max-w-7xl mx-auto px-6 py-28 lg:py-36">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="animate-hero-1 inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/30 rounded-full px-4 py-2 mb-8">
+            <div className="animate-hero-1 inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-400/30 rounded-full px-4 py-2 mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
-              <span className="text-sm text-violet-100 font-medium">SPK Sermaye Piyasası Lisanslama · Tüm Sınavlar</span>
+              <span className="text-sm text-indigo-100 font-medium">SPK Sermaye Piyasası Lisanslama · Tüm Sınavlar</span>
             </div>
             <h1 className="animate-hero-1 text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
               Türkiye'nin<br />
-              <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-violet-400 bg-clip-text text-transparent">En Kapsamlı</span>{" "}
+              <span className="bg-gradient-to-r from-indigo-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">En Kapsamlı</span>{" "}
               <span className="text-white">SPL Platformu</span>
             </h1>
             <p className="animate-hero-2 text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
@@ -252,7 +252,7 @@ export default function HomePage() {
             <div className="animate-hero-3 flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link
                 href="/dashboard"
-                className="group relative overflow-hidden bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-400 hover:to-violet-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-violet-500/40 transition-all duration-250 hover:scale-105 hover:shadow-violet-500/60 flex items-center justify-center gap-2"
+                className="group relative overflow-hidden bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 hover:from-indigo-400 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-indigo-500/40 transition-all duration-250 hover:scale-105 hover:shadow-cyan-500/20 flex items-center justify-center gap-2"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Ücretsiz Başla <span className="group-hover:translate-x-0.5 transition-transform">→</span>
@@ -262,23 +262,23 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/sinav"
-                className="bg-slate-800/60 hover:bg-slate-800 border border-slate-600/60 hover:border-violet-400/50 text-slate-200 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-250 hover:scale-105 flex items-center justify-center gap-2"
+                className="bg-slate-800/60 hover:bg-slate-800 border border-slate-600/60 hover:border-indigo-400/50 text-slate-200 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-250 hover:scale-105 flex items-center justify-center gap-2"
               >
                 Sınav Simülasyonu
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto pt-10 border-t border-slate-700/50">
               <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-violet-200 bg-clip-text text-transparent mb-2">{animModul}</div>
-                <div className="text-xs md:text-sm text-violet-300 uppercase tracking-[0.2em] font-medium">Modül</div>
+                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-indigo-200 bg-clip-text text-transparent mb-2">{animModul}</div>
+                <div className="text-xs md:text-sm text-indigo-300 uppercase tracking-[0.2em] font-medium">Modül</div>
               </div>
               <div className="text-center border-x border-slate-700/50">
-                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-violet-200 bg-clip-text text-transparent mb-2">{animDers}</div>
-                <div className="text-xs md:text-sm text-violet-300 uppercase tracking-[0.2em] font-medium">Ders</div>
+                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-indigo-200 bg-clip-text text-transparent mb-2">{animDers}</div>
+                <div className="text-xs md:text-sm text-indigo-300 uppercase tracking-[0.2em] font-medium">Ders</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-violet-200 bg-clip-text text-transparent mb-2">{animSoru}</div>
-                <div className="text-xs md:text-sm text-violet-300 uppercase tracking-[0.2em] font-medium">Soru</div>
+                <div className="text-4xl md:text-6xl font-bold bg-gradient-to-b from-white to-indigo-200 bg-clip-text text-transparent mb-2">{animSoru}</div>
+                <div className="text-xs md:text-sm text-indigo-300 uppercase tracking-[0.2em] font-medium">Soru</div>
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@ export default function HomePage() {
         const yuzde = Math.round((tamamlanan / toplamDers) * 100);
         return (
           <div className="max-w-7xl mx-auto px-6 -mt-8 mb-4 relative z-10">
-            <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl shadow-violet-900/20">
+            <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl shadow-indigo-900/20">
               <div className="w-10 h-10 bg-emerald-500/20 border border-emerald-400/40 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📈</div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1.5">
@@ -301,11 +301,11 @@ export default function HomePage() {
                   <span className="text-sm font-bold text-emerald-400">%{yuzde}</span>
                 </div>
                 <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-emerald-500 to-purple-400 rounded-full transition-all duration-700" style={{ width: `${yuzde}%` }} />
+                  <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-700" style={{ width: `${yuzde}%` }} />
                 </div>
                 <div className="text-xs text-slate-400 mt-1">{tamamlanan} / {toplamDers} ders tamamlandı</div>
               </div>
-              <Link href="/dashboard" className="flex-shrink-0 bg-violet-500/10 hover:bg-violet-500/20 border border-violet-400/30 text-violet-300 text-xs font-semibold px-3 py-2 rounded-lg transition whitespace-nowrap">
+              <Link href="/dashboard" className="flex-shrink-0 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold px-3 py-2 rounded-lg transition whitespace-nowrap">
                 Devam Et →
               </Link>
             </div>
@@ -317,7 +317,7 @@ export default function HomePage() {
       <section id="moduller" className="py-24 relative">
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
               Çalışma Modülleri
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
@@ -333,9 +333,9 @@ export default function HomePage() {
                   value={aramaMetni}
                   onChange={(e) => setAramaMetni(e.target.value)}
                   placeholder="Modül veya konu ara..."
-                  className="w-full px-6 py-4 pl-14 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-4 focus:ring-violet-500/20 transition-all shadow-xl shadow-violet-900/30"
+                  className="w-full px-6 py-4 pl-14 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/20 transition-all shadow-xl shadow-indigo-900/30"
                 />
-                <svg className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 {aramaMetni && (
@@ -349,8 +349,8 @@ export default function HomePage() {
                   onClick={() => setSinavFiltre(null)}
                   className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                     !sinavFiltre
-                      ? "bg-violet-500 text-white border-violet-500 shadow-lg shadow-violet-500/30"
-                      : "bg-slate-800 text-slate-400 border-slate-700 hover:border-violet-400/50 hover:text-slate-200"
+                      ? "bg-indigo-500 text-white border-indigo-500 shadow-lg shadow-indigo-500/30"
+                      : "bg-slate-800 text-slate-400 border-slate-700 hover:border-indigo-400/50 hover:text-slate-200"
                   }`}
                 >
                   Tümü
@@ -361,8 +361,8 @@ export default function HomePage() {
                     onClick={() => setSinavFiltre(sinavFiltre === s.kod ? null : s.kod)}
                     className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
                       sinavFiltre === s.kod
-                        ? "bg-violet-500 text-white border-violet-500 shadow-lg shadow-violet-500/30"
-                        : "bg-slate-800 text-slate-400 border-slate-700 hover:border-violet-400/50 hover:text-slate-200"
+                        ? "bg-indigo-500 text-white border-indigo-500 shadow-lg shadow-indigo-500/30"
+                        : "bg-slate-800 text-slate-400 border-slate-700 hover:border-indigo-400/50 hover:text-slate-200"
                     }`}
                   >
                     {s.pilAd}
@@ -373,7 +373,7 @@ export default function HomePage() {
               {(aramaMetni || sinavFiltre) && (
                 <div className="mt-4 text-sm text-slate-300 text-center">
                   <span className="font-semibold text-white">{filtrelenmisModuller.length}</span> modül
-                  {sinavFiltre && <span> · <span className="font-semibold text-violet-300">{SINAVLAR.find((s) => s.kod === sinavFiltre)?.ad}</span> sınavı için</span>}
+                  {sinavFiltre && <span> · <span className="font-semibold text-indigo-300">{SINAVLAR.find((s) => s.kod === sinavFiltre)?.ad}</span> sınavı için</span>}
                 </div>
               )}
             </div>
@@ -388,18 +388,18 @@ export default function HomePage() {
                 <Link
                   key={modul.id}
                   href={`/dashboard?modul=${modul.id}`}
-                  className="animate-card-stagger group relative bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-500/50 shadow-xl shadow-violet-900/30 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01]"
+                  className="animate-card-stagger group relative bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/50 shadow-xl shadow-indigo-900/30 hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01]"
                   style={{ "--stagger-delay": `${staggerMs}ms` } as React.CSSProperties}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-11 h-11 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-violet-500/50">
+                    <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-500/50">
                       {String(idx + 1).padStart(2, "0")}
                     </div>
-                    <span className="px-2.5 py-1 bg-violet-500/10 text-violet-300 text-xs font-semibold rounded-md border border-violet-400/30">
+                    <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-semibold rounded-md border border-indigo-400/30">
                       {modul.lessons.length} Ders
                     </span>
                   </div>
-                  <h3 className="font-bold text-white text-lg mb-3 leading-tight group-hover:text-violet-300 transition line-clamp-2 min-h-[56px]">
+                  <h3 className="font-bold text-white text-lg mb-3 leading-tight group-hover:text-indigo-300 transition line-clamp-2 min-h-[56px]">
                     {modul.title.replace("Modül · ", "")}
                   </h3>
 
@@ -408,7 +408,7 @@ export default function HomePage() {
                     <div className="mb-4">
                       <div className="flex items-center justify-between text-xs mb-1.5">
                         <span className="text-slate-400">İlerleme</span>
-                        <span className={`font-bold ${ilerleme === 100 ? "text-emerald-400" : "text-violet-400"}`}>
+                        <span className={`font-bold ${ilerleme === 100 ? "text-emerald-400" : "text-indigo-400"}`}>
                           {tamamlanan}/{modul.lessons.length} · %{ilerleme}
                         </span>
                       </div>
@@ -417,7 +417,7 @@ export default function HomePage() {
                           className={`h-full rounded-full transition-all duration-500 ${
                             ilerleme === 100
                               ? "bg-gradient-to-r from-emerald-500 to-emerald-400"
-                              : "bg-gradient-to-r from-violet-500 to-purple-400"
+                              : "bg-gradient-to-r from-indigo-500 to-cyan-400"
                           }`}
                           style={{ width: `${ilerleme}%` }}
                         />
@@ -428,22 +428,22 @@ export default function HomePage() {
                   <div className="space-y-1.5 mb-5">
                     {modul.lessons.slice(0, 2).map((ders) => (
                       <div key={ders.id} className="flex items-center gap-2 text-sm text-slate-400">
-                        <span className="w-1 h-1 bg-violet-400 rounded-full flex-shrink-0" />
+                        <span className="w-1 h-1 bg-indigo-400 rounded-full flex-shrink-0" />
                         <span className="line-clamp-1">{ders.title}</span>
                       </div>
                     ))}
                     {modul.lessons.length > 2 && (
-                      <div className="text-xs text-violet-400 pl-3 font-medium">+ {modul.lessons.length - 2} ders daha</div>
+                      <div className="text-xs text-indigo-400 pl-3 font-medium">+ {modul.lessons.length - 2} ders daha</div>
                     )}
                   </div>
                   <div className="flex items-center justify-between pt-4 border-t border-slate-700/70">
                     <div className="flex items-baseline gap-1.5 text-sm">
-                      <span className="text-lg font-bold text-violet-400">{toplamSoruSayisi}</span>
+                      <span className="text-lg font-bold text-indigo-400">{toplamSoruSayisi}</span>
                       <span className="text-slate-400">soru</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 group-hover:text-violet-400 transition-colors">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 group-hover:text-indigo-400 transition-colors">
                       <span className="hidden group-hover:inline font-medium">Başla</span>
-                      <svg className="w-5 h-5 text-violet-400 group-hover:text-violet-300 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-indigo-400 group-hover:text-indigo-300 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </div>
@@ -453,7 +453,7 @@ export default function HomePage() {
             })}
           </div>
           {filtrelenmisModuller.length === 0 && (
-            <div className="text-center py-16 bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-violet-900/30">
+            <div className="text-center py-16 bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-indigo-900/30">
               <div className="text-5xl mb-4">🔍</div>
               <p className="text-slate-300 text-lg mb-2">Sonuç bulunamadı</p>
             </div>
@@ -465,7 +465,7 @@ export default function HomePage() {
       <section id="sinavlar" className="py-24 relative">
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
               🎓 Sınav Simülasyonları
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
@@ -478,10 +478,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SINAVLAR.map((sinav, idx) => {
               const renkler: Record<string, { badge: string; dot: string; hover: string }> = {
-                blue:    { badge: "bg-violet-500/20 text-violet-300 border-violet-400/40",    dot: "bg-violet-400",    hover: "hover:border-violet-400/60" },
-                cyan:    { badge: "bg-purple-500/20 text-purple-300 border-purple-400/40",    dot: "bg-purple-400",    hover: "hover:border-purple-400/60" },
+                blue:    { badge: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40",    dot: "bg-indigo-400",    hover: "hover:border-indigo-400/60" },
+                cyan:    { badge: "bg-cyan-500/20 text-cyan-300 border-cyan-400/40",    dot: "bg-cyan-400",    hover: "hover:border-cyan-400/60" },
                 indigo:  { badge: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40", dot: "bg-indigo-400", hover: "hover:border-indigo-400/60" },
-                purple:  { badge: "bg-purple-500/20 text-purple-300 border-purple-400/40", dot: "bg-purple-400", hover: "hover:border-purple-400/60" },
+                purple:  { badge: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40", dot: "bg-indigo-400", hover: "hover:border-indigo-400/60" },
                 emerald: { badge: "bg-emerald-500/20 text-emerald-300 border-emerald-400/40", dot: "bg-emerald-400", hover: "hover:border-emerald-400/60" },
                 amber:   { badge: "bg-amber-500/20 text-amber-300 border-amber-400/40",  dot: "bg-amber-400",  hover: "hover:border-amber-400/60" },
                 orange:  { badge: "bg-orange-500/20 text-orange-300 border-orange-400/40", dot: "bg-orange-400", hover: "hover:border-orange-400/60" },
@@ -492,7 +492,7 @@ export default function HomePage() {
                 <Link
                   key={sinav.kod}
                   href={sinav.href}
-                  className={`animate-card-stagger group bg-slate-800 border border-slate-700 ${r.hover} rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-violet-900/40 hover:-translate-y-1 hover:scale-[1.01] flex flex-col`}
+                  className={`animate-card-stagger group bg-slate-800 border border-slate-700 ${r.hover} rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-indigo-900/40 hover:-translate-y-1 hover:scale-[1.01] flex flex-col`}
                   style={{ "--stagger-delay": `${idx * 50}ms` } as React.CSSProperties}
                 >
                   {/* Üst: kod badge + aktif gösterge */}
@@ -503,7 +503,7 @@ export default function HomePage() {
                     <span className={`w-2 h-2 rounded-full ${r.dot} shadow-lg`} />
                   </div>
                   {/* Sınav adı */}
-                  <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-violet-200 transition">
+                  <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-indigo-200 transition">
                     {sinav.ad}
                   </h3>
                   <p className="text-xs text-slate-400 leading-relaxed mb-4 flex-1">{sinav.aciklama}</p>
@@ -514,7 +514,7 @@ export default function HomePage() {
                       <span>·</span>
                       <span className="font-bold text-white">{sinav.sureDakika}</span> dk
                     </div>
-                    <span className="text-violet-400 group-hover:translate-x-1 transition-transform text-sm font-bold">→</span>
+                    <span className="text-indigo-400 group-hover:translate-x-1 transition-transform text-sm font-bold">→</span>
                   </div>
                 </Link>
               );
@@ -527,14 +527,14 @@ export default function HomePage() {
       <section id="yorumlar" className="py-24 relative">
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
               Kullanıcı Yorumları
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Sınavları Geçenler Ne Diyor?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-500/40 shadow-xl shadow-violet-900/30 hover:shadow-violet-500/20 transition-all duration-300">
+              <div key={idx} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-indigo-500/40 shadow-xl shadow-indigo-900/30 hover:shadow-indigo-500/20 transition-all duration-300">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
@@ -545,13 +545,13 @@ export default function HomePage() {
                 <p className="text-slate-300 leading-relaxed mb-6 text-[15px]">"{t.yorum}"</p>
                 <div className="flex items-center justify-between pt-4 border-t border-slate-700">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-full flex items-center justify-center text-white font-semibold">{t.isim.charAt(0)}</div>
+                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-full flex items-center justify-center text-white font-semibold">{t.isim.charAt(0)}</div>
                     <div>
                       <div className="font-semibold text-white text-sm">{t.isim}</div>
                       <div className="text-xs text-slate-400">{t.rol}</div>
                     </div>
                   </div>
-                  <span className="px-2 py-1 bg-violet-500/10 text-violet-300 rounded-md text-xs font-semibold border border-violet-400/30">{t.sinav}</span>
+                  <span className="px-2 py-1 bg-indigo-500/10 text-indigo-300 rounded-md text-xs font-semibold border border-indigo-400/30">{t.sinav}</span>
                 </div>
               </div>
             ))}
@@ -566,10 +566,10 @@ export default function HomePage() {
             {/* Marka */}
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-11 h-11 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">SPK</div>
+                <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">SPK</div>
                 <div>
                   <div className="font-bold text-white text-lg">SPK Akademi</div>
-                  <div className="text-[11px] text-violet-300 tracking-wider uppercase">Lisanslama Platformu</div>
+                  <div className="text-[11px] text-indigo-300 tracking-wider uppercase">Lisanslama Platformu</div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-slate-400">Türkiye'nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.</p>
@@ -579,10 +579,10 @@ export default function HomePage() {
             <div>
               <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform</div>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/dashboard" className="hover:text-violet-400 transition">Çalışma Paneli</Link></li>
-                <li><Link href="/sinav" className="hover:text-violet-400 transition">Hızlı Pratik</Link></li>
-                <li><Link href="/favoriler" className="hover:text-violet-400 transition">Favoriler</Link></li>
-                <li><Link href="/istatistikler" className="hover:text-violet-400 transition">İstatistikler</Link></li>
+                <li><Link href="/dashboard" className="hover:text-indigo-400 transition">Çalışma Paneli</Link></li>
+                <li><Link href="/sinav" className="hover:text-indigo-400 transition">Hızlı Pratik</Link></li>
+                <li><Link href="/favoriler" className="hover:text-indigo-400 transition">Favoriler</Link></li>
+                <li><Link href="/istatistikler" className="hover:text-indigo-400 transition">İstatistikler</Link></li>
               </ul>
             </div>
 
@@ -592,7 +592,7 @@ export default function HomePage() {
               <ul className="space-y-2 text-sm">
                 {SINAV_MENUSU.map((sinav) => (
                   <li key={sinav.href}>
-                    <Link href={sinav.href} className="flex items-center gap-2 text-violet-300 hover:text-violet-200 font-medium transition">
+                    <Link href={sinav.href} className="flex items-center gap-2 text-indigo-300 hover:text-indigo-200 font-medium transition">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                       {sinav.ad}
                     </Link>

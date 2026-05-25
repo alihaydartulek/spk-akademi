@@ -134,7 +134,7 @@ export default function FavorilerPage() {
     if (miniBitti) {
       const puan = Math.round((miniDogru / miniSorular.length) * 100);
       return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col">
+        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
           <SharedNavbar subtitle="Favoriler & Yanlışlar" activeHref="/favoriler" />
           <div className="flex-1 flex items-center justify-center px-6 py-16">
             <div className="bg-slate-800 rounded-3xl p-10 border border-slate-700 shadow-2xl text-center max-w-md w-full">
@@ -164,7 +164,7 @@ export default function FavorilerPage() {
                       miniBaslat(favoriler, "favoriler");
                     }
                   }}
-                  className="flex-1 bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-3 rounded-xl font-semibold shadow-lg transition"
+                  className="flex-1 bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-4 py-3 rounded-xl font-semibold shadow-lg transition"
                 >
                   🔄 Tekrar
                 </button>
@@ -184,7 +184,7 @@ export default function FavorilerPage() {
     const soru = miniSorular[miniIdx];
     const dogruId = soru.soru.correct;
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
         {/* Mini sınav navbar */}
         <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-700/50">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -214,7 +214,7 @@ export default function FavorilerPage() {
           </div>
 
           {/* Soru kartı */}
-          <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-violet-900/20 mb-6">
+          <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-indigo-900/20 mb-6">
             <p className="text-white text-lg font-medium leading-relaxed mb-6">{soru.soru.text}</p>
             <div className="space-y-2.5">
               {soru.soru.options.map((opt) => {
@@ -232,12 +232,12 @@ export default function FavorilerPage() {
                         : gosterYanlis
                         ? "bg-red-500/10 border-red-400/60 text-red-100"
                         : secili
-                        ? "bg-violet-500/10 border-violet-400/60 text-violet-100"
-                        : "bg-slate-900/50 border-slate-700 hover:border-violet-400/40 hover:bg-violet-500/5 text-slate-300"
+                        ? "bg-indigo-500/10 border-indigo-400/60 text-indigo-100"
+                        : "bg-slate-900/50 border-slate-700 hover:border-indigo-400/40 hover:bg-indigo-500/5 text-slate-300"
                     } ${miniGoster ? "cursor-default" : "cursor-pointer"}`}
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 ${
-                      gosterDogru ? "bg-emerald-500 text-white" : gosterYanlis ? "bg-red-500 text-white" : secili ? "bg-violet-500 text-white" : "bg-slate-700 text-slate-300"
+                      gosterDogru ? "bg-emerald-500 text-white" : gosterYanlis ? "bg-red-500 text-white" : secili ? "bg-indigo-500 text-white" : "bg-slate-700 text-slate-300"
                     }`}>
                       {opt.id}
                     </div>
@@ -273,7 +273,7 @@ export default function FavorilerPage() {
               disabled={!miniSecim}
               className={`px-6 py-3 rounded-xl font-semibold transition shadow-lg ${
                 miniSecim
-                  ? "bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white shadow-violet-500/30 hover:scale-105"
+                  ? "bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white shadow-indigo-500/30 hover:scale-105"
                   : "bg-slate-700 text-slate-500 cursor-not-allowed"
               }`}
             >
@@ -286,15 +286,15 @@ export default function FavorilerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
-      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <SharedNavbar subtitle="Favoriler & Yanlışlar" activeHref="/favoriler" />
 
       <div className="relative max-w-5xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
             ⭐ Tekrar Listesi
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Favorilerim & Yanlışlarım</h1>
@@ -307,7 +307,7 @@ export default function FavorilerPage() {
             onClick={() => setAktifTab("favoriler")}
             className={`px-6 py-3 rounded-xl font-semibold transition-all ${
               aktifTab === "favoriler"
-                ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
+                ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
             }`}
           >
@@ -333,7 +333,7 @@ export default function FavorilerPage() {
                 <div className="text-6xl mb-4 animate-star-bounce inline-block">⭐</div>
                 <h3 className="text-xl font-bold text-white mb-2">Henüz favori eklemediniz</h3>
                 <p className="text-slate-400 mb-6">Sorulardaki yıldız ikonuna tıklayarak zor soruları kaydedin.</p>
-                <Link href="/dashboard" className="inline-block bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition">
+                <Link href="/dashboard" className="inline-block bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition">
                   Çalışmaya Başla
                 </Link>
               </div>
@@ -379,7 +379,7 @@ export default function FavorilerPage() {
                 <div className="text-6xl mb-4">🎯</div>
                 <h3 className="text-xl font-bold text-white mb-2">Henüz yanlışınız yok!</h3>
                 <p className="text-slate-400 mb-6">Soru çözmeye başlayın, yanlış cevapladıklarınız burada birikecek.</p>
-                <Link href="/dashboard" className="inline-block bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition">
+                <Link href="/dashboard" className="inline-block bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition">
                   Soru Çöz
                 </Link>
               </div>
@@ -443,13 +443,13 @@ export default function FavorilerPage() {
 function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: number; onSil: () => void }) {
   const [gosterCevap, setGosterCevap] = useState(false);
   return (
-    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
       <div className="flex items-start gap-4 mb-4">
         <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/50 rounded-xl flex items-center justify-center text-amber-300 font-bold text-sm flex-shrink-0">
           {numara}
         </div>
         <div className="flex-1">
-          <div className="text-xs text-violet-300 mb-1 font-medium">{favori.modulBaslik} · {favori.dersBaslik}</div>
+          <div className="text-xs text-indigo-300 mb-1 font-medium">{favori.modulBaslik} · {favori.dersBaslik}</div>
           <p className="text-white font-medium leading-relaxed">{favori.soru.text}</p>
         </div>
         <button
@@ -489,7 +489,7 @@ function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: nu
         {!gosterCevap ? (
           <button
             onClick={() => setGosterCevap(true)}
-            className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+            className="bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
           >
             Cevabı Göster
           </button>
@@ -511,7 +511,7 @@ function YanlisKart({ yanlis, numara, onSil }: { yanlis: SoruCevap; numara: numb
   if (!soru || !modul || !ders) return null;
 
   return (
-    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
       <div className="flex items-start gap-4 mb-4">
         <div className="w-10 h-10 bg-red-500/20 border border-red-400/50 rounded-xl flex items-center justify-center text-red-300 font-bold text-sm flex-shrink-0">
           {numara}

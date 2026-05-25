@@ -15,12 +15,12 @@ export default function SharedFooter() {
           {/* Marka */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">
+              <div className="w-11 h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm">
                 SPK
               </div>
               <div>
                 <div className="font-bold text-white text-lg">SPK Akademi</div>
-                <div className="text-[11px] text-violet-300 tracking-wider uppercase">Lisanslama Platformu</div>
+                <div className="text-[11px] text-indigo-300 tracking-wider uppercase">Lisanslama Platformu</div>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -32,10 +32,10 @@ export default function SharedFooter() {
           <div>
             <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform</div>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/dashboard"    className="hover:text-violet-400 transition">Çalışma Paneli</Link></li>
-              <li><Link href="/sinav"        className="hover:text-violet-400 transition">Hızlı Pratik</Link></li>
-              <li><Link href="/favoriler"    className="hover:text-violet-400 transition">Favoriler</Link></li>
-              <li><Link href="/istatistikler" className="hover:text-violet-400 transition">İstatistikler</Link></li>
+              <li><Link href="/dashboard"    className="hover:text-indigo-400 transition">Çalışma Paneli</Link></li>
+              <li><Link href="/sinav"        className="hover:text-indigo-400 transition">Hızlı Pratik</Link></li>
+              <li><Link href="/favoriler"    className="hover:text-indigo-400 transition">Favoriler</Link></li>
+              <li><Link href="/istatistikler" className="hover:text-indigo-400 transition">İstatistikler</Link></li>
             </ul>
           </div>
 
@@ -47,7 +47,7 @@ export default function SharedFooter() {
                 <li key={sinav.href}>
                   <Link
                     href={sinav.href}
-                    className="flex items-center gap-2 text-violet-300 hover:text-violet-200 font-medium transition"
+                    className="flex items-center gap-2 text-indigo-300 hover:text-indigo-200 font-medium transition"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                     {sinav.ad}

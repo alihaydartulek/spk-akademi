@@ -70,15 +70,15 @@ export default function IstatistiklerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
-      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <SharedNavbar subtitle="İstatistikler" activeHref="/istatistikler" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
             📊 Genel Bakış
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">İlerleme & İstatistikler</h1>
@@ -95,7 +95,7 @@ export default function IstatistiklerPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* SON 7 GÜN GRAFİĞİ */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
             <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📅 Son 7 Gün</h2>
             {son7Gun.length === 0 ? (
               <div className="text-center py-12 text-slate-400">
@@ -109,10 +109,10 @@ export default function IstatistiklerPage() {
                   const yukseklik = (gun.soruSayisi / maxSoru) * 100;
                   return (
                     <div key={gun.tarih} className="flex-1 flex flex-col items-center gap-2">
-                      <div className="text-xs text-violet-300 font-bold">{gun.soruSayisi}</div>
+                      <div className="text-xs text-indigo-300 font-bold">{gun.soruSayisi}</div>
                       <div className="w-full bg-slate-900 rounded-t-md relative" style={{ height: "75%" }}>
                         <div
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-violet-500 to-purple-400 rounded-t-md transition-all"
+                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-500 to-cyan-400 rounded-t-md transition-all"
                           style={{ height: `${yukseklik}%` }}
                         />
                       </div>
@@ -128,7 +128,7 @@ export default function IstatistiklerPage() {
           </div>
 
           {/* DAĞILIM */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
             <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📈 Cevap Dağılımı</h2>
             {toplamCevap === 0 ? (
               <div className="text-center py-12 text-slate-400">
@@ -174,7 +174,7 @@ export default function IstatistiklerPage() {
         </div>
 
         {/* ZAYIF ALAN ANALİZİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
+        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-xl font-bold text-white tracking-tight">🎯 Zayıf Alan Analizi</h2>
@@ -228,7 +228,7 @@ export default function IstatistiklerPage() {
         </div>
 
         {/* SINAV GEÇMİŞİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
+        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-xl font-bold text-white tracking-tight">⏱️ Sınav Geçmişi</h2>
@@ -236,7 +236,7 @@ export default function IstatistiklerPage() {
             </div>
             <Link
               href="/sinav"
-              className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-violet-500/40 transition"
+              className="bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-indigo-500/40 transition"
             >
               + Yeni Sınav
             </Link>
@@ -256,7 +256,7 @@ export default function IstatistiklerPage() {
 
         {/* SINAV PUAN TRENDİ */}
         {sinavlar.length >= 2 && (
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
             <h2 className="text-xl font-bold text-white mb-5 tracking-tight">📈 Puan Trendi</h2>
             <div className="flex items-end gap-2 h-32">
               {sinavlar.slice(0, 10).reverse().map((s, i) => {
@@ -355,7 +355,7 @@ function useCountUp(target: number, duration = 1200) {
 function StatKart({ icon, label, value, subtext, color }: { icon: string; label: string; value: string; subtext: string; color: string }) {
   const renkSinifi: Record<string, string> = {
     emerald: "from-emerald-500 to-emerald-600 shadow-emerald-500/40",
-    blue: "from-violet-500 to-violet-700 shadow-violet-500/40",
+    blue: "from-indigo-500 to-indigo-700 shadow-indigo-500/40",
     amber: "from-amber-500 to-amber-600 shadow-amber-500/40",
     orange: "from-orange-500 to-orange-600 shadow-orange-500/40",
   };
@@ -368,7 +368,7 @@ function StatKart({ icon, label, value, subtext, color }: { icon: string; label:
   const displayValue = numericMatch ? `${prefix}${animCount}` : value;
 
   return (
-    <div className="animate-fade-up bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-violet-900/30 hover:-translate-y-0.5 transition-transform duration-200">
+    <div className="animate-fade-up bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-indigo-900/30 hover:-translate-y-0.5 transition-transform duration-200">
       <div className="flex items-start justify-between mb-3">
         <div className="text-3xl">{icon}</div>
       </div>
@@ -404,7 +404,7 @@ function SinavKart({ sinav }: { sinav: SinavSonuc }) {
         </div>
         <Link
           href={sinavHref}
-          className="text-xs text-violet-400 hover:text-violet-300 font-semibold bg-violet-500/10 hover:bg-violet-500/20 border border-violet-400/30 px-2.5 py-1.5 rounded-lg transition whitespace-nowrap"
+          className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-400/30 px-2.5 py-1.5 rounded-lg transition whitespace-nowrap"
         >
           Tekrar →
         </Link>
