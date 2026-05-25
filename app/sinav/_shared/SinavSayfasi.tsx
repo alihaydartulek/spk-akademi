@@ -325,7 +325,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
    * ════════════════════════════════════════════ */
   if (asama === "hazirlik") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900">
+      <div className="min-h-screen bg-[var(--bg-base)]">
         <SinavNavbar config={config} asama="hazirlik" />
         <div className="max-w-3xl mx-auto px-6 py-16">
 
@@ -334,10 +334,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-5 border border-indigo-400/30">
               🎓 Gerçek Sınav Formatı
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">
               {config.tamAd}
             </h1>
-            <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
               {config.aciklama}
             </p>
           </div>
@@ -350,27 +350,27 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               { ikon: "✅", deger: `%${config.gecmeEsigi}`, etiket: "Geçme Notu" },
               { ikon: "🎯", deger: "A/B/C/D", etiket: "Şık Sayısı" },
             ].map((k) => (
-              <div key={k.etiket} className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 text-center shadow-xl shadow-indigo-900/20">
+              <div key={k.etiket} className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-5 text-center shadow-xl shadow-indigo-900/20">
                 <div className="text-3xl mb-2">{k.ikon}</div>
-                <div className="text-2xl font-bold text-white mb-1">{k.deger}</div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider">{k.etiket}</div>
+                <div className="text-2xl font-bold text-[var(--text-primary)] mb-1">{k.deger}</div>
+                <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">{k.etiket}</div>
               </div>
             ))}
           </div>
 
           {/* Konu dağılımı */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-10 shadow-xl shadow-indigo-900/20">
-            <h3 className="font-bold text-white mb-4 flex items-center gap-2">
+          <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-6 mb-10 shadow-xl shadow-indigo-900/20">
+            <h3 className="font-bold text-[var(--text-primary)] mb-4 flex items-center gap-2">
               <span className="w-6 h-6 bg-indigo-500/20 rounded-md flex items-center justify-center text-indigo-400 text-sm">📚</span>
               Konu Dağılımı
             </h3>
             <div className="space-y-2 text-sm">
               {config.konular.map((k) => (
-                <div key={k.pdf} className="flex items-start gap-3 p-3 bg-slate-900/40 rounded-xl border border-slate-700/50">
+                <div key={k.pdf} className="flex items-start gap-3 p-3 bg-[var(--bg-surface)]/40 rounded-xl border border-[var(--border-base)]">
                   <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0 mt-2" />
                   <div>
-                    <div className="font-semibold text-white">{k.ad}</div>
-                    <div className="text-slate-400 text-xs mt-0.5">{k.icerik}</div>
+                    <div className="font-semibold text-[var(--text-primary)]">{k.ad}</div>
+                    <div className="text-[var(--text-muted)] text-xs mt-0.5">{k.icerik}</div>
                   </div>
                 </div>
               ))}
@@ -378,13 +378,13 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           </div>
 
           {/* Klavye kısayolları */}
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 mb-10">
-            <h3 className="text-sm font-bold text-slate-300 mb-3 uppercase tracking-wider">⌨️ Klavye Kısayolları</h3>
-            <div className="grid grid-cols-2 gap-2 text-xs text-slate-400">
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">A/B/C/D</kbd> — Şık seç</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">← →</kbd> — Soru geç</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">Enter</kbd> — Sonraki soru</div>
-              <div><kbd className="bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded text-xs font-mono">M</kbd> — İşaretle / kaldır</div>
+          <div className="bg-[var(--bg-surface-2)]/50 border border-[var(--border-base)] rounded-2xl p-5 mb-10">
+            <h3 className="text-sm font-bold text-[var(--text-secondary)] mb-3 uppercase tracking-wider">⌨️ Klavye Kısayolları</h3>
+            <div className="grid grid-cols-2 gap-2 text-xs text-[var(--text-muted)]">
+              <div><kbd className="bg-[var(--bg-surface-3)] text-[var(--text-secondary)] px-1.5 py-0.5 rounded text-xs font-mono">A/B/C/D</kbd> — Şık seç</div>
+              <div><kbd className="bg-[var(--bg-surface-3)] text-[var(--text-secondary)] px-1.5 py-0.5 rounded text-xs font-mono">← →</kbd> — Soru geç</div>
+              <div><kbd className="bg-[var(--bg-surface-3)] text-[var(--text-secondary)] px-1.5 py-0.5 rounded text-xs font-mono">Enter</kbd> — Sonraki soru</div>
+              <div><kbd className="bg-[var(--bg-surface-3)] text-[var(--text-secondary)] px-1.5 py-0.5 rounded text-xs font-mono">M</kbd> — İşaretle / kaldır</div>
             </div>
           </div>
 
@@ -394,7 +394,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               <div className="text-3xl">⏸️</div>
               <div className="flex-1 min-w-0">
                 <div className="font-bold text-amber-300 mb-1">Yarım bırakılan sınav bulundu</div>
-                <div className="text-sm text-slate-400">
+                <div className="text-sm text-[var(--text-muted)]">
                   {Object.keys(draft.cevaplar).length} soru cevaplandı ·{" "}
                   {Math.floor(Math.max(0, draft.bitis - Date.now()) / 60000)} dk kalan süre
                 </div>
@@ -408,7 +408,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 </button>
                 <button
                   onClick={() => { draftTemizle(config.sinavKodu); setDraft(null); }}
-                  className="bg-slate-700 hover:bg-slate-600 text-slate-300 font-semibold px-4 py-2.5 rounded-xl text-sm transition"
+                  className="bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] font-semibold px-4 py-2.5 rounded-xl text-sm transition"
                 >
                   Sil
                 </button>
@@ -427,14 +427,14 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 {config.soruSayisi} soru · {config.sureDakika} dakika
               </span>
             </button>
-            <p className="text-slate-400 text-sm mt-5">
+            <p className="text-[var(--text-muted)] text-sm mt-5">
               Sorular rastgele seçilir ve karıştırılır. Her sınav farklı sırayla gelir.
             </p>
           </div>
         </div>
 
         {/* Mobil: Sticky başlat barı */}
-        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 z-50">
+        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-[var(--bg-base)]/95 backdrop-blur-xl border-t border-[var(--border-base)] px-4 py-3 z-50">
           <button
             onClick={draft ? () => devamEt(draft) : sinaviBaslat}
             className="w-full bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white py-3.5 rounded-xl font-bold text-base shadow-lg shadow-indigo-500/40 transition flex items-center justify-center gap-2"
@@ -461,10 +461,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     const isaretliSayisi = isaretliler.size;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
+      <div className="min-h-screen bg-[var(--bg-base)] flex flex-col">
 
         {/* Üst bar */}
-        <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-xl border-b border-slate-700/50">
+        <header className="sticky top-0 z-50 bg-[var(--bg-base)]/95 backdrop-blur-xl border-b border-[var(--border-base)]">
           <div className="max-w-[1400px] mx-auto px-4 py-3 flex items-center justify-between gap-3">
 
             {/* Sol: logo + bilgi */}
@@ -473,7 +473,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 SPK
               </div>
               <div className="min-w-0">
-                <div className="font-bold text-white text-sm leading-none">{config.tamAd}</div>
+                <div className="font-bold text-[var(--text-primary)] text-sm leading-none">{config.tamAd}</div>
                 <div className="text-xs text-indigo-300 mt-0.5">
                   {cevaplanan}/{sorular.length} cevaplandı
                   {isaretliSayisi > 0 && ` · ${isaretliSayisi} işaretli`}
@@ -505,7 +505,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </button>
           </div>
           {/* İlerleme barı */}
-          <div className="h-1 bg-slate-800">
+          <div className="h-1 bg-[var(--bg-surface-2)]">
             <div
               className="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-500 ease-out"
               style={{ width: `${(cevaplanan / sorular.length) * 100}%` }}
@@ -518,9 +518,9 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
           {/* Sol: soru haritası (desktop) */}
           <aside className="w-56 flex-shrink-0 hidden lg:block">
-            <div className="sticky top-28 bg-slate-800/80 border border-slate-700 rounded-2xl p-4 shadow-xl shadow-indigo-900/20">
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Soru Haritası</div>
-              <div className="flex flex-wrap gap-1.5 text-xs text-slate-500 mb-3">
+            <div className="sticky top-28 bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-4 shadow-xl shadow-indigo-900/20">
+              <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-3">Soru Haritası</div>
+              <div className="flex flex-wrap gap-1.5 text-xs text-[var(--text-faint)] mb-3">
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-indigo-500 inline-block" /> Aktif</span>
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500/30 border border-emerald-500/50 inline-block" /> Cevaplı</span>
                 <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-amber-500/20 border border-amber-500/40 inline-block" /> İşaretli</span>
@@ -542,7 +542,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                           : cevaplandi
                           ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                          : "bg-slate-700/80 text-slate-400 hover:bg-slate-700 border border-slate-600/50"
+                          : "bg-[var(--bg-surface-3)] text-[var(--text-muted)] hover:bg-[var(--bg-surface-3)] border border-[var(--border-subtle)]"
                       }`}
                     >
                       {idx + 1}
@@ -554,17 +554,17 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 })}
               </div>
               {/* Özet */}
-              <div className="mt-4 pt-4 border-t border-slate-700 space-y-1.5 text-xs">
-                <div className="flex justify-between text-slate-400"><span>Cevaplanan</span><span className="font-bold text-emerald-400">{cevaplanan}</span></div>
-                <div className="flex justify-between text-slate-400"><span>Boş</span><span className="font-bold text-slate-300">{bos}</span></div>
-                {isaretliSayisi > 0 && <div className="flex justify-between text-slate-400"><span>İşaretli</span><span className="font-bold text-amber-400">{isaretliSayisi}</span></div>}
+              <div className="mt-4 pt-4 border-t border-[var(--border-base)] space-y-1.5 text-xs">
+                <div className="flex justify-between text-[var(--text-muted)]"><span>Cevaplanan</span><span className="font-bold text-emerald-400">{cevaplanan}</span></div>
+                <div className="flex justify-between text-[var(--text-muted)]"><span>Boş</span><span className="font-bold text-[var(--text-secondary)]">{bos}</span></div>
+                {isaretliSayisi > 0 && <div className="flex justify-between text-[var(--text-muted)]"><span>İşaretli</span><span className="font-bold text-amber-400">{isaretliSayisi}</span></div>}
               </div>
             </div>
           </aside>
 
           {/* Orta: soru kartı */}
           <main className="flex-1 min-w-0">
-            <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-xl shadow-indigo-900/20 mb-4">
+            <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-6 md:p-8 shadow-xl shadow-indigo-900/20 mb-4">
               {/* Soru başlığı */}
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
@@ -575,7 +575,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                     <div className="text-xs text-indigo-300 uppercase tracking-wider font-semibold">
                       Soru {aktifIdx + 1} / {sorular.length}
                     </div>
-                    <div className="text-xs text-slate-500 mt-0.5 line-clamp-1">{soru.dersBaslik}</div>
+                    <div className="text-xs text-[var(--text-faint)] mt-0.5 line-clamp-1">{soru.dersBaslik}</div>
                   </div>
                 </div>
                 <button
@@ -583,7 +583,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition flex-shrink-0 ${
                     isaretliler.has(aktifIdx)
                       ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
-                      : "bg-slate-700/50 text-slate-400 border-slate-600/50 hover:bg-slate-700"
+                      : "bg-[var(--bg-surface-3)]/50 text-[var(--text-muted)] border-[var(--border-subtle)] hover:bg-[var(--bg-surface-3)]"
                   }`}
                 >
                   {isaretliler.has(aktifIdx) ? "🔖 İşaretli" : "📌 İşaretle"}
@@ -591,7 +591,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               </div>
 
               {/* Soru metni */}
-              <p className="text-white text-base md:text-lg font-medium leading-relaxed mb-7">{soru.text}</p>
+              <p className="text-[var(--text-primary)] text-base md:text-lg font-medium leading-relaxed mb-7">{soru.text}</p>
 
               {/* Şıklar */}
               <div className="space-y-2.5">
@@ -604,15 +604,15 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start gap-3 group ${
                         secili
                           ? "bg-indigo-500/12 border-indigo-400/60 shadow-lg shadow-indigo-500/20 scale-[1.01]"
-                          : "bg-slate-900/50 border-slate-700/60 hover:border-indigo-400/40 hover:bg-indigo-500/5 hover:scale-[1.005]"
+                          : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] hover:border-indigo-400/40 hover:bg-indigo-500/5 hover:scale-[1.005]"
                       }`}
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 transition ${
-                        secili ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40" : "bg-slate-700 text-slate-300 group-hover:bg-slate-600"
+                        secili ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40" : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)] group-hover:bg-[var(--bg-surface-2)]"
                       }`}>
                         {opt.id}
                       </div>
-                      <span className={`leading-relaxed pt-0.5 flex-1 text-sm md:text-base ${secili ? "text-indigo-100" : "text-slate-300"}`}>
+                      <span className={`leading-relaxed pt-0.5 flex-1 text-sm md:text-base ${secili ? "text-indigo-100" : "text-[var(--text-secondary)]"}`}>
                         {opt.text}
                       </span>
                       {secili && (
@@ -633,7 +633,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
               <button
                 onClick={() => setAktifIdx((i) => Math.max(0, i - 1))}
                 disabled={aktifIdx === 0}
-                className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed text-white px-5 py-3 rounded-xl font-semibold border border-slate-700 transition"
+                className="flex items-center gap-2 bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] disabled:opacity-40 disabled:cursor-not-allowed text-[var(--text-primary)] px-5 py-3 rounded-xl font-semibold border border-[var(--border-base)] transition"
               >← Önceki</button>
 
               {/* Mobil: komşu sorular */}
@@ -646,7 +646,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       className={`w-8 h-8 rounded-md text-xs font-bold transition ${
                         aktif ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white"
                         : cevaplar[idx] ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                        : "bg-slate-800 text-slate-400 border border-slate-700"
+                        : "bg-[var(--bg-surface-2)] text-[var(--text-muted)] border border-[var(--border-base)]"
                       }`}
                     >{idx + 1}</button>
                   );
@@ -676,13 +676,13 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
         {mobilHaritaAcik && (
           <div className="fixed inset-0 z-[90] lg:hidden flex flex-col justify-end">
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobilHaritaAcik(false)} />
-            <div className="relative bg-slate-800 border-t border-slate-600 rounded-t-2xl p-6 max-h-[70vh] overflow-y-auto">
+            <div className="relative bg-[var(--bg-surface-2)] border-t border-[var(--border-base)] rounded-t-2xl p-6 max-h-[70vh] overflow-y-auto">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-white">Soru Haritası</h3>
-                <button onClick={() => setMobilHaritaAcik(false)} className="w-8 h-8 flex items-center justify-center rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 transition">✕</button>
+                <h3 className="font-bold text-[var(--text-primary)]">Soru Haritası</h3>
+                <button onClick={() => setMobilHaritaAcik(false)} className="w-8 h-8 flex items-center justify-center rounded-lg bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface)] text-[var(--text-secondary)] transition">✕</button>
               </div>
               {/* Açıklama */}
-              <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
+              <div className="flex items-center gap-4 text-xs text-[var(--text-muted)] mb-4">
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-indigo-500 inline-block" /> Aktif</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500/40 border border-emerald-500/50 inline-block" /> Cevaplı</span>
                 <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500/30 border border-amber-500/40 inline-block" /> İşaretli</span>
@@ -703,7 +703,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                           : cevaplandi
                           ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                          : "bg-slate-700 text-slate-400 border border-slate-600/50"
+                          : "bg-[var(--bg-surface-3)] text-[var(--text-muted)] border border-[var(--border-subtle)]"
                       }`}
                     >
                       {idx + 1}
@@ -713,25 +713,25 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 })}
               </div>
               {/* Özet */}
-              <div className="mt-5 pt-4 border-t border-slate-700 grid grid-cols-3 gap-4 text-center text-sm">
-                <div><div className="font-bold text-emerald-400">{Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">Cevaplı</div></div>
-                <div><div className="font-bold text-slate-300">{sorular.length - Object.keys(cevaplar).length}</div><div className="text-xs text-slate-400 mt-0.5">Boş</div></div>
-                <div><div className="font-bold text-amber-400">{isaretliler.size}</div><div className="text-xs text-slate-400 mt-0.5">İşaretli</div></div>
+              <div className="mt-5 pt-4 border-t border-[var(--border-base)] grid grid-cols-3 gap-4 text-center text-sm">
+                <div><div className="font-bold text-emerald-400">{Object.keys(cevaplar).length}</div><div className="text-xs text-[var(--text-muted)] mt-0.5">Cevaplı</div></div>
+                <div><div className="font-bold text-[var(--text-secondary)]">{sorular.length - Object.keys(cevaplar).length}</div><div className="text-xs text-[var(--text-muted)] mt-0.5">Boş</div></div>
+                <div><div className="font-bold text-amber-400">{isaretliler.size}</div><div className="text-xs text-[var(--text-muted)] mt-0.5">İşaretli</div></div>
               </div>
             </div>
           </div>
         )}
 
         {/* ── Mobil: Sticky Bottom Bar ── */}
-        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 px-4 py-3 flex items-center gap-2 z-50">
+        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-[var(--bg-base)]/95 backdrop-blur-xl border-t border-[var(--border-base)] px-4 py-3 flex items-center gap-2 z-50">
           <button
             onClick={() => setAktifIdx((i) => Math.max(0, i - 1))}
             disabled={aktifIdx === 0}
-            className="flex-1 bg-slate-800 hover:bg-slate-700 disabled:opacity-40 text-white py-2.5 rounded-xl font-semibold border border-slate-700 transition text-sm"
+            className="flex-1 bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] disabled:opacity-40 text-[var(--text-primary)] py-2.5 rounded-xl font-semibold border border-[var(--border-base)] transition text-sm"
           >← Önceki</button>
           <button
             onClick={() => setMobilHaritaAcik(true)}
-            className="flex-[1.4] bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-xl font-semibold border border-slate-700 transition text-sm flex items-center justify-center gap-2"
+            className="flex-[1.4] bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] py-2.5 rounded-xl font-semibold border border-[var(--border-base)] transition text-sm flex items-center justify-center gap-2"
           >
             <span>📋</span>
             <span className="tabular-nums text-indigo-400 font-bold">{aktifIdx + 1}/{sorular.length}</span>
@@ -775,7 +775,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     const suSaniye = sureSaniye % 60;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 animate-page-in">
+      <div className="min-h-screen bg-[var(--bg-base)] animate-page-in">
         <SinavNavbar config={config} asama="sonuc" />
         <div className="max-w-5xl mx-auto px-4 py-10">
 
@@ -793,8 +793,8 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           />
 
           {/* Konu analizi */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-8 shadow-xl shadow-indigo-900/20">
-            <h2 className="font-bold text-white text-xl mb-5 flex items-center gap-2">
+          <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-6 mb-8 shadow-xl shadow-indigo-900/20">
+            <h2 className="font-bold text-[var(--text-primary)] text-xl mb-5 flex items-center gap-2">
               <span className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400">📊</span>
               Konu Bazında Analiz
             </h2>
@@ -806,14 +806,14 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                 return (
                   <div key={key}>
                     <div className="flex items-center justify-between mb-1.5 text-sm">
-                      <span className="text-slate-300 font-medium line-clamp-1 flex-1 mr-3">
+                      <span className="text-[var(--text-secondary)] font-medium line-clamp-1 flex-1 mr-3">
                         {konu.baslik.replace(/^Modül \d+ · /, "").replace(/^Modül · /, "")}
                       </span>
                       <span className={`font-bold flex-shrink-0 ${iyi ? "text-emerald-400" : orta ? "text-amber-400" : "text-red-400"}`}>
                         {konu.dogru}/{konu.toplam} · %{oran}
                       </span>
                     </div>
-                    <div className="h-2.5 bg-slate-900 rounded-full overflow-hidden">
+                    <div className="h-2.5 bg-[var(--bg-surface)] rounded-full overflow-hidden">
                       <div className={`h-full rounded-full animate-progress ${
                         iyi ? "bg-gradient-to-r from-emerald-500 to-emerald-400"
                         : orta ? "bg-gradient-to-r from-amber-500 to-amber-400"
@@ -827,12 +827,12 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           </div>
 
           {/* Soru çözümleri (açılır) */}
-          <div className="bg-slate-800/80 border border-slate-700 rounded-2xl overflow-hidden shadow-xl shadow-indigo-900/20 mb-8">
+          <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl overflow-hidden shadow-xl shadow-indigo-900/20 mb-8">
             <button
               onClick={() => setGozlemModu((g) => !g)}
-              className="w-full p-5 flex items-center justify-between text-left hover:bg-slate-700/40 transition"
+              className="w-full p-5 flex items-center justify-between text-left hover:bg-[var(--bg-surface-3)]/40 transition"
             >
-              <h2 className="font-bold text-white text-lg flex items-center gap-2">
+              <h2 className="font-bold text-[var(--text-primary)] text-lg flex items-center gap-2">
                 <span className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center text-indigo-400">🔍</span>
                 Soru Çözümleri ve Açıklamalar
               </h2>
@@ -840,7 +840,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
             </button>
 
             {gozlemModu && (
-              <div className="border-t border-slate-700 divide-y divide-slate-700/50">
+              <div className="border-t border-[var(--border-base)] divide-y divide-[var(--border-base)]">
                 {detaylar.map(({ soru, verilen, dogru: d }, idx) => (
                   <div key={idx} className={`p-5 ${d ? "" : "bg-red-500/5"}`}>
                     <div className="flex items-start gap-3 mb-3">
@@ -849,8 +849,8 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                           : "bg-red-500/20 text-red-400 border border-red-500/30"
                       }`}>{d ? "✓" : "✗"}</div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs text-slate-500 mb-1 font-medium">Soru {idx + 1} · {soru.dersBaslik}</div>
-                        <p className="text-white text-sm font-medium leading-relaxed">{soru.text}</p>
+                        <div className="text-xs text-[var(--text-faint)] mb-1 font-medium">Soru {idx + 1} · {soru.dersBaslik}</div>
+                        <p className="text-[var(--text-primary)] text-sm font-medium leading-relaxed">{soru.text}</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 mb-3 ml-11">
@@ -860,14 +860,14 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                             ? "bg-emerald-500/10 border-emerald-500/40 text-emerald-300"
                             : opt.id === verilen && !d
                             ? "bg-red-500/10 border-red-500/40 text-red-300"
-                            : "border-slate-700/50 text-slate-400"
+                            : "border-[var(--border-base)] text-[var(--text-muted)]"
                         }`}>
                           <span className="font-bold flex-shrink-0">{opt.id}.</span>
                           <span className="leading-relaxed">{opt.text}</span>
                         </div>
                       ))}
                     </div>
-                    <div className="ml-11 bg-slate-900/50 border border-slate-700/50 rounded-xl p-3 text-xs text-slate-300 leading-relaxed">
+                    <div className="ml-11 bg-[var(--bg-surface)]/50 border border-[var(--border-base)] rounded-xl p-3 text-xs text-[var(--text-secondary)] leading-relaxed">
                       <span className="font-bold text-indigo-400 mr-1">Açıklama:</span>
                       {soru.explanation}
                     </div>
@@ -911,12 +911,12 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                   navigator.clipboard.writeText(metin).then(() => alert("Sonuç panoya kopyalandı!"));
                 }
               }}
-              className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2"
+              className="bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] px-4 py-4 rounded-xl font-semibold border border-[var(--border-base)] transition flex items-center justify-center gap-2"
             >📤 Paylaş</button>
-            <Link href="/istatistikler" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
+            <Link href="/istatistikler" className="bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] px-4 py-4 rounded-xl font-semibold border border-[var(--border-base)] transition flex items-center justify-center gap-2">
               📊 İstatistikler
             </Link>
-            <Link href="/sinav" className="bg-slate-800 hover:bg-slate-700 text-white px-4 py-4 rounded-xl font-semibold border border-slate-700 transition flex items-center justify-center gap-2">
+            <Link href="/sinav" className="bg-[var(--bg-surface-2)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] px-4 py-4 rounded-xl font-semibold border border-[var(--border-base)] transition flex items-center justify-center gap-2">
               ← Sınavlar
             </Link>
           </div>
@@ -944,14 +944,14 @@ function SonucKart({
 }) {
   const animPuan = useCountUpFloat(puan, 1500);
   return (
-    <div className={`rounded-3xl p-8 md:p-12 border-2 shadow-2xl text-center mb-8 bg-slate-800/80 animate-fade-up ${
+    <div className={`rounded-3xl p-8 md:p-12 border-2 shadow-2xl text-center mb-8 bg-[var(--bg-surface-2)] animate-fade-up ${
       gecti ? "border-emerald-500/40 shadow-emerald-500/15" : "border-amber-500/40 shadow-amber-500/15"
     }`}>
       <div className="text-6xl mb-4">{gecti ? "🎉" : "💪"}</div>
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+      <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2">
         {gecti ? "Tebrikler! Sınavı Geçtiniz!" : "Biraz Daha Çalışmanız Gerekiyor"}
       </h1>
-      <p className="text-slate-400 mb-8">{config.tamAd} · {suDakika} dk {suSaniye} sn</p>
+      <p className="text-[var(--text-muted)] mb-8">{config.tamAd} · {suDakika} dk {suSaniye} sn</p>
 
       <div className="inline-flex flex-col items-center mb-8">
         <div className={`text-7xl md:text-8xl font-bold mb-2 tabular-nums ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
@@ -974,13 +974,13 @@ function SonucKart({
           <div className="text-4xl font-bold text-red-400">{yanlis}</div>
           <div className="text-xs text-red-300 mt-1 uppercase tracking-wider font-semibold">Yanlış</div>
         </div>
-        <div className="bg-slate-700/50 border border-slate-600 rounded-2xl p-4">
-          <div className="text-4xl font-bold text-slate-300">{bos}</div>
-          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Boş</div>
+        <div className="bg-[var(--bg-surface-3)]/50 border border-[var(--border-subtle)] rounded-2xl p-4">
+          <div className="text-4xl font-bold text-[var(--text-secondary)]">{bos}</div>
+          <div className="text-xs text-[var(--text-muted)] mt-1 uppercase tracking-wider font-semibold">Boş</div>
         </div>
       </div>
 
-      <div className="mt-6 pt-6 border-t border-slate-700 text-sm text-slate-400">
+      <div className="mt-6 pt-6 border-t border-[var(--border-base)] text-sm text-[var(--text-muted)]">
         Süre: {suDakika} dk {suSaniye} sn · Toplam {sorularLength} soru
       </div>
     </div>
@@ -999,13 +999,13 @@ function ConfirmModal({
 }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-      <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 shadow-2xl w-full max-w-sm">
+      <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-8 shadow-2xl w-full max-w-sm">
         <div className="text-4xl text-center mb-4">⚠️</div>
-        <p className="text-white text-center font-medium leading-relaxed mb-6">{mesaj}</p>
+        <p className="text-[var(--text-primary)] text-center font-medium leading-relaxed mb-6">{mesaj}</p>
         <div className="flex gap-3">
           <button
             onClick={onHayir}
-            className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold transition border border-slate-600"
+            className="flex-1 bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface)] text-[var(--text-primary)] px-4 py-3 rounded-xl font-semibold transition border border-[var(--border-base)]"
           >
             İptal
           </button>
@@ -1024,21 +1024,21 @@ function ConfirmModal({
 /* ─── Navbar ─── */
 function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900/85 backdrop-blur-xl border-b border-slate-700/50">
+    <nav className="sticky top-0 z-50 bg-[var(--bg-base)]/85 backdrop-blur-xl border-b border-[var(--border-base)]">
       <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-indigo-500/30">SPK</div>
           <div>
-            <div className="font-bold text-white text-base leading-none">SPK Akademi</div>
+            <div className="font-bold text-[var(--text-primary)] text-base leading-none">SPK Akademi</div>
             <div className="text-[10px] text-indigo-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
           </div>
         </Link>
         <div className="flex items-center gap-3 text-sm">
           {asama === "hazirlik" && (
-            <Link href="/sinav" className="text-slate-300 hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">← Diğer Sınavlar</Link>
+            <Link href="/sinav" className="text-[var(--text-secondary)] hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-[var(--bg-surface-2)]">← Diğer Sınavlar</Link>
           )}
           {asama === "sonuc" && (
-            <Link href="/" className="text-slate-300 hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-slate-800">🏠 Ana Sayfa</Link>
+            <Link href="/" className="text-[var(--text-secondary)] hover:text-indigo-400 transition font-medium px-3 py-2 rounded-lg hover:bg-[var(--bg-surface-2)]">🏠 Ana Sayfa</Link>
           )}
         </div>
       </div>

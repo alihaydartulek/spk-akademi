@@ -27,7 +27,7 @@ export default function IstatistiklerPage() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="min-h-screen bg-slate-900" />;
+  if (!mounted) return <div className="min-h-screen bg-[var(--bg-base)]" />;
 
   const cevaplar = getCevaplar();
   const dogru = getDogruSayisi();
@@ -70,7 +70,7 @@ export default function IstatistiklerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+    <div className="min-h-screen bg-[var(--bg-base)] relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -78,11 +78,11 @@ export default function IstatistiklerPage() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
             📊 Genel Bakış
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">İlerleme & İstatistikler</h1>
-          <p className="text-lg text-slate-300">Çalışmanın özetini ve zayıf alanlarını gör.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">İlerleme & İstatistikler</h1>
+          <p className="text-lg text-[var(--text-secondary)]">Çalışmanın özetini ve zayıf alanlarını gör.</p>
         </div>
 
         {/* GENEL KARTLAR */}
@@ -95,10 +95,10 @@ export default function IstatistiklerPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* SON 7 GÜN GRAFİĞİ */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
-            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📅 Son 7 Gün</h2>
+          <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
+            <h2 className="text-xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">📅 Son 7 Gün</h2>
             {son7Gun.length === 0 ? (
-              <div className="text-center py-12 text-slate-400">
+              <div className="text-center py-12 text-[var(--text-muted)]">
                 <div className="text-5xl mb-3">📅</div>
                 <p>Henüz çalışma kaydı yok</p>
               </div>
@@ -109,35 +109,35 @@ export default function IstatistiklerPage() {
                   const yukseklik = (gun.soruSayisi / maxSoru) * 100;
                   return (
                     <div key={gun.tarih} className="flex-1 flex flex-col items-center gap-2">
-                      <div className="text-xs text-indigo-300 font-bold">{gun.soruSayisi}</div>
-                      <div className="w-full bg-slate-900 rounded-t-md relative" style={{ height: "75%" }}>
+                      <div className="text-xs text-indigo-400 font-bold">{gun.soruSayisi}</div>
+                      <div className="w-full bg-[var(--bg-surface)] rounded-t-md relative" style={{ height: "75%" }}>
                         <div
                           className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-500 to-cyan-400 rounded-t-md transition-all"
                           style={{ height: `${yukseklik}%` }}
                         />
                       </div>
-                      <div className="text-xs text-slate-400 capitalize">{gunFormat}</div>
+                      <div className="text-xs text-[var(--text-muted)] capitalize">{gunFormat}</div>
                     </div>
                   );
                 })}
               </div>
             )}
-            <div className="mt-4 pt-4 border-t border-slate-700 text-center text-sm text-slate-400">
-              Bu hafta toplam: <span className="text-white font-bold">{son7Gun.reduce((s, g) => s + g.soruSayisi, 0)}</span> soru
+            <div className="mt-4 pt-4 border-t border-[var(--border-base)] text-center text-sm text-[var(--text-muted)]">
+              Bu hafta toplam: <span className="text-[var(--text-primary)] font-bold">{son7Gun.reduce((s, g) => s + g.soruSayisi, 0)}</span> soru
             </div>
           </div>
 
           {/* DAĞILIM */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
-            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📈 Cevap Dağılımı</h2>
+          <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
+            <h2 className="text-xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">📈 Cevap Dağılımı</h2>
             {toplamCevap === 0 ? (
-              <div className="text-center py-12 text-slate-400">
+              <div className="text-center py-12 text-[var(--text-muted)]">
                 <div className="text-5xl mb-3">📈</div>
                 <p>Henüz soru cevaplamadın</p>
               </div>
             ) : (
               <>
-                <div className="relative h-8 bg-slate-900 rounded-full overflow-hidden mb-6">
+                <div className="relative h-8 bg-[var(--bg-surface)] rounded-full overflow-hidden mb-6">
                   <div
                     className="absolute left-0 top-0 h-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all"
                     style={{ width: `${(dogru / toplamCevap) * 100}%` }}
@@ -153,19 +153,19 @@ export default function IstatistiklerPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-emerald-300 text-sm font-semibold">Doğru</span>
+                      <span className="text-emerald-400 text-sm font-semibold">Doğru</span>
                       <span className="text-2xl">✓</span>
                     </div>
                     <div className="text-3xl font-bold text-emerald-400">{dogru}</div>
-                    <div className="text-xs text-emerald-300 mt-1">%{Math.round((dogru / toplamCevap) * 100)}</div>
+                    <div className="text-xs text-emerald-400 mt-1">%{Math.round((dogru / toplamCevap) * 100)}</div>
                   </div>
                   <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-red-300 text-sm font-semibold">Yanlış</span>
+                      <span className="text-red-400 text-sm font-semibold">Yanlış</span>
                       <span className="text-2xl">✕</span>
                     </div>
                     <div className="text-3xl font-bold text-red-400">{yanlis}</div>
-                    <div className="text-xs text-red-300 mt-1">%{Math.round((yanlis / toplamCevap) * 100)}</div>
+                    <div className="text-xs text-red-400 mt-1">%{Math.round((yanlis / toplamCevap) * 100)}</div>
                   </div>
                 </div>
               </>
@@ -174,15 +174,15 @@ export default function IstatistiklerPage() {
         </div>
 
         {/* ZAYIF ALAN ANALİZİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
+        <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)] mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">🎯 Zayıf Alan Analizi</h2>
-              <p className="text-sm text-slate-400 mt-1">En çok yanlış yaptığın modüller — bunlara tekrar bak</p>
+              <h2 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">🎯 Zayıf Alan Analizi</h2>
+              <p className="text-sm text-[var(--text-muted)] mt-1">En çok yanlış yaptığın modüller — bunlara tekrar bak</p>
             </div>
           </div>
           {modulAnalizi.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">
+            <div className="text-center py-12 text-[var(--text-muted)]">
               <div className="text-5xl mb-3">🎯</div>
               <p>Henüz analiz için yeterli veri yok</p>
               <p className="text-sm mt-2">Soru çözmeye başlayın, hangi modülde zayıf olduğunuzu görelim</p>
@@ -197,24 +197,24 @@ export default function IstatistiklerPage() {
                     ? "from-amber-500 to-amber-400"
                     : "from-emerald-500 to-emerald-400";
                 const etiketRenk =
-                  m.oran < 50 ? "text-red-300" : m.oran < 75 ? "text-amber-300" : "text-emerald-300";
+                  m.oran < 50 ? "text-red-400" : m.oran < 75 ? "text-amber-400" : "text-emerald-400";
                 return (
-                  <div key={m.id} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700">
+                  <div key={m.id} className="bg-[var(--bg-surface)]/50 rounded-xl p-4 border border-[var(--border-base)]">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3 flex-1 min-w-0">
                         <div className="text-2xl flex-shrink-0">
                           {m.oran < 50 ? "🔴" : m.oran < 75 ? "🟡" : "🟢"}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-white text-sm leading-tight line-clamp-1">{m.baslik}</div>
-                          <div className="text-xs text-slate-400 mt-0.5">
+                          <div className="font-semibold text-[var(--text-primary)] text-sm leading-tight line-clamp-1">{m.baslik}</div>
+                          <div className="text-xs text-[var(--text-muted)] mt-0.5">
                             {m.dogru} doğru · {m.yanlis} yanlış · {m.toplamSoru} toplam
                           </div>
                         </div>
                       </div>
                       <div className={`text-2xl font-bold ${etiketRenk} ml-3`}>%{m.oran}</div>
                     </div>
-                    <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
+                    <div className="h-2 bg-[var(--bg-surface)] rounded-full overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${renkSinifi} animate-progress`}
                         style={{ width: `${m.oran}%` }}
@@ -228,11 +228,11 @@ export default function IstatistiklerPage() {
         </div>
 
         {/* SINAV GEÇMİŞİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
+        <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)] mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">⏱️ Sınav Geçmişi</h2>
-              <p className="text-sm text-slate-400 mt-1">Daha önce yaptığın sınav denemeleri</p>
+              <h2 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">⏱️ Sınav Geçmişi</h2>
+              <p className="text-sm text-[var(--text-muted)] mt-1">Daha önce yaptığın sınav denemeleri</p>
             </div>
             <Link
               href="/sinav"
@@ -242,7 +242,7 @@ export default function IstatistiklerPage() {
             </Link>
           </div>
           {sinavlar.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">
+            <div className="text-center py-12 text-[var(--text-muted)]">
               <div className="text-5xl mb-3">⏱️</div>
               <p>Henüz sınav denemesi yok</p>
               <p className="text-sm mt-2">Sınav simülasyonu yaparak kendini ölç</p>
@@ -256,8 +256,8 @@ export default function IstatistiklerPage() {
 
         {/* SINAV PUAN TRENDİ */}
         {sinavlar.length >= 2 && (
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30 mb-8">
-            <h2 className="text-xl font-bold text-white mb-5 tracking-tight">📈 Puan Trendi</h2>
+          <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)] mb-8">
+            <h2 className="text-xl font-bold text-[var(--text-primary)] mb-5 tracking-tight">📈 Puan Trendi</h2>
             <div className="flex items-end gap-2 h-32">
               {sinavlar.slice(0, 10).reverse().map((s, i) => {
                 const yuksek = (s.puan / 100) * 100;
@@ -265,22 +265,22 @@ export default function IstatistiklerPage() {
                 return (
                   <div key={s.id} className="flex-1 flex flex-col items-center gap-1 group relative">
                     {/* Tooltip */}
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-700 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10 pointer-events-none">
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[var(--bg-surface-3)] text-[var(--text-primary)] text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10 pointer-events-none">
                       %{s.puan.toFixed(0)}
                     </div>
-                    <div className="text-[10px] text-slate-500 font-bold">{s.puan.toFixed(0)}</div>
-                    <div className="w-full rounded-t-md overflow-hidden bg-slate-900" style={{ height: "80px" }}>
+                    <div className="text-[10px] text-[var(--text-faint)] font-bold">{s.puan.toFixed(0)}</div>
+                    <div className="w-full rounded-t-md overflow-hidden bg-[var(--bg-surface)]" style={{ height: "80px" }}>
                       <div
                         className={`w-full rounded-t-md transition-all duration-700 ${gecti ? "bg-gradient-to-t from-emerald-600 to-emerald-400" : "bg-gradient-to-t from-amber-600 to-amber-400"}`}
                         style={{ height: `${yuksek}%`, marginTop: `${100 - yuksek}%` }}
                       />
                     </div>
-                    <div className="text-[9px] text-slate-500">{i + 1}</div>
+                    <div className="text-[9px] text-[var(--text-faint)]">{i + 1}</div>
                   </div>
                 );
               })}
             </div>
-            <div className="flex items-center gap-4 mt-3 text-xs text-slate-500">
+            <div className="flex items-center gap-4 mt-3 text-xs text-[var(--text-faint)]">
               <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> Geçti (%60+)</span>
               <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Kaldı</span>
               <span className="ml-auto">Son {Math.min(sinavlar.length, 10)} sınav (eskiden yeniye)</span>
@@ -290,11 +290,11 @@ export default function IstatistiklerPage() {
 
         {/* TEHLİKE BÖLGESİ */}
         <div className="bg-red-500/5 border border-red-500/30 rounded-2xl p-6">
-          <h3 className="font-bold text-red-300 mb-2">⚠️ Tehlike Bölgesi</h3>
-          <p className="text-sm text-slate-400 mb-4">Tüm ilerleme, favoriler, sınav sonuçları ve cevapları silebilirsin. Bu işlem geri alınamaz!</p>
+          <h3 className="font-bold text-red-400 mb-2">⚠️ Tehlike Bölgesi</h3>
+          <p className="text-sm text-[var(--text-muted)] mb-4">Tüm ilerleme, favoriler, sınav sonuçları ve cevapları silebilirsin. Bu işlem geri alınamaz!</p>
           <button
             onClick={handleSifirla}
-            className="bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition"
+            className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition"
           >
             🗑️ Tüm Verileri Sıfırla
           </button>
@@ -305,17 +305,17 @@ export default function IstatistiklerPage() {
       {/* Sıfırlama onay modalı */}
       {sifirlaModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-          <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 shadow-2xl w-full max-w-sm">
+          <div className="bg-[var(--bg-surface-2)] border border-[var(--border-base)] rounded-2xl p-8 shadow-2xl w-full max-w-sm">
             <div className="text-4xl text-center mb-4">🗑️</div>
-            <h3 className="text-white font-bold text-lg text-center mb-2">Tüm Verileri Sil?</h3>
-            <p className="text-slate-400 text-sm text-center leading-relaxed mb-6">
+            <h3 className="text-[var(--text-primary)] font-bold text-lg text-center mb-2">Tüm Verileri Sil?</h3>
+            <p className="text-[var(--text-muted)] text-sm text-center leading-relaxed mb-6">
               İlerleme, favoriler, sınav sonuçları ve tüm cevaplar kalıcı olarak silinecek.
               Bu işlem <span className="text-red-400 font-semibold">geri alınamaz.</span>
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setSifirlaModal(false)}
-                className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold transition border border-slate-600"
+                className="flex-1 bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] px-4 py-3 rounded-xl font-semibold transition border border-[var(--border-base)]"
               >
                 İptal
               </button>
@@ -368,15 +368,15 @@ function StatKart({ icon, label, value, subtext, color }: { icon: string; label:
   const displayValue = numericMatch ? `${prefix}${animCount}` : value;
 
   return (
-    <div className="animate-fade-up bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-indigo-900/30 hover:-translate-y-0.5 transition-transform duration-200">
+    <div className="animate-fade-up bg-[var(--bg-surface-2)] rounded-2xl p-5 border border-[var(--border-base)] shadow-[var(--shadow-card)] hover:-translate-y-0.5 transition-transform duration-200">
       <div className="flex items-start justify-between mb-3">
         <div className="text-3xl">{icon}</div>
       </div>
       <div className={`text-3xl font-bold tabular-nums bg-gradient-to-br ${renkSinifi[color]} bg-clip-text text-transparent mb-1`}>
         {displayValue}
       </div>
-      <div className="text-sm text-white font-semibold mb-0.5">{label}</div>
-      <div className="text-xs text-slate-400">{subtext}</div>
+      <div className="text-sm text-[var(--text-primary)] font-semibold mb-0.5">{label}</div>
+      <div className="text-xs text-[var(--text-muted)]">{subtext}</div>
     </div>
   );
 }
@@ -388,13 +388,13 @@ function SinavKart({ sinav }: { sinav: SinavSonuc }) {
   const sinavHref = SINAVLAR.find((s) => s.kod === sinav.sinavKodu)?.href ?? "/sinav";
 
   return (
-    <div className={`bg-slate-900/50 rounded-xl p-4 border ${gecti ? "border-emerald-500/30" : "border-amber-500/30"} flex items-center gap-4`}>
+    <div className={`bg-[var(--bg-surface)]/50 rounded-xl p-4 border ${gecti ? "border-emerald-500/30" : "border-amber-500/30"} flex items-center gap-4`}>
       <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${gecti ? "bg-emerald-500/20" : "bg-amber-500/20"}`}>
         {gecti ? "🎉" : "💪"}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="font-semibold text-white text-sm">{sinav.sinavAdi}</div>
-        <div className="text-xs text-slate-400 mt-0.5">
+        <div className="font-semibold text-[var(--text-primary)] text-sm">{sinav.sinavAdi}</div>
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
           {tarih} · {dakika} dk · {sinav.dogruSayisi}/{sinav.toplamSoru}
         </div>
       </div>

@@ -134,24 +134,24 @@ export default function FavorilerPage() {
     if (miniBitti) {
       const puan = Math.round((miniDogru / miniSorular.length) * 100);
       return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
+        <div className="min-h-screen bg-[var(--bg-base)] flex flex-col">
           <SharedNavbar subtitle="Favoriler & Yanlışlar" activeHref="/favoriler" />
           <div className="flex-1 flex items-center justify-center px-6 py-16">
-            <div className="bg-slate-800 rounded-3xl p-10 border border-slate-700 shadow-2xl text-center max-w-md w-full">
+            <div className="bg-[var(--bg-surface-2)] rounded-3xl p-10 border border-[var(--border-base)] shadow-[var(--shadow-card)] text-center max-w-md w-full">
               <div className="text-6xl mb-4">{puan >= 70 ? "🎉" : puan >= 50 ? "💪" : "📚"}</div>
-              <h2 className="text-3xl font-bold text-white mb-2">Mini Sınav Tamamlandı</h2>
-              <p className="text-slate-400 mb-8">{miniSorular.length} soru · {miniKaynak === "yanlislar" ? "Yanlışlarımdan" : "Favorilerimden"}</p>
+              <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">Mini Sınav Tamamlandı</h2>
+              <p className="text-[var(--text-muted)] mb-8">{miniSorular.length} soru · {miniKaynak === "yanlislar" ? "Yanlışlarımdan" : "Favorilerimden"}</p>
               <div className={`text-6xl font-bold mb-2 ${puan >= 70 ? "text-emerald-400" : puan >= 50 ? "text-amber-400" : "text-red-400"}`}>
                 %{puan}
               </div>
               <div className="grid grid-cols-2 gap-4 mt-6 mb-8">
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
                   <div className="text-2xl font-bold text-emerald-400">{miniDogru}</div>
-                  <div className="text-xs text-emerald-300 mt-1 uppercase tracking-wider">Doğru</div>
+                  <div className="text-xs text-emerald-400 mt-1 uppercase tracking-wider">Doğru</div>
                 </div>
                 <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
                   <div className="text-2xl font-bold text-red-400">{miniSorular.length - miniDogru}</div>
-                  <div className="text-xs text-red-300 mt-1 uppercase tracking-wider">Yanlış</div>
+                  <div className="text-xs text-red-400 mt-1 uppercase tracking-wider">Yanlış</div>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -170,7 +170,7 @@ export default function FavorilerPage() {
                 </button>
                 <button
                   onClick={() => setMiniMod(false)}
-                  className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold border border-slate-600 transition"
+                  className="flex-1 bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface-3)] text-[var(--text-primary)] px-4 py-3 rounded-xl font-semibold border border-[var(--border-base)] transition"
                 >
                   ← {miniKaynak === "yanlislar" ? "Yanlışlar" : "Favoriler"}
                 </button>
@@ -184,38 +184,38 @@ export default function FavorilerPage() {
     const soru = miniSorular[miniIdx];
     const dogruId = soru.soru.correct;
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 flex flex-col">
+      <div className="min-h-screen bg-[var(--bg-base)] flex flex-col">
         {/* Mini sınav navbar */}
-        <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-700/50">
+        <nav className="sticky top-0 z-50 bg-[var(--bg-base)]/80 backdrop-blur-xl border-b border-[var(--border-base)]">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg ${miniKaynak === "yanlislar" ? "bg-gradient-to-br from-red-500 to-red-700 shadow-red-500/30" : "bg-gradient-to-br from-amber-500 to-amber-700 shadow-amber-500/30"}`}>
                 {miniKaynak === "yanlislar" ? "❌" : "⭐"}
               </div>
               <div>
-                <div className="font-bold text-white text-sm leading-none">{miniKaynak === "yanlislar" ? "Yanlış Mini Sınav" : "Favori Mini Sınav"}</div>
-                <div className={`text-xs mt-0.5 ${miniKaynak === "yanlislar" ? "text-red-300" : "text-amber-300"}`}>Soru {miniIdx + 1} / {miniSorular.length}</div>
+                <div className="font-bold text-[var(--text-primary)] text-sm leading-none">{miniKaynak === "yanlislar" ? "Yanlış Mini Sınav" : "Favori Mini Sınav"}</div>
+                <div className={`text-xs mt-0.5 ${miniKaynak === "yanlislar" ? "text-red-400" : "text-amber-400"}`}>Soru {miniIdx + 1} / {miniSorular.length}</div>
               </div>
             </div>
-            <button onClick={() => setMiniMod(false)} className="text-slate-400 hover:text-white text-sm font-medium px-3 py-2 rounded-lg hover:bg-slate-800 transition">
+            <button onClick={() => setMiniMod(false)} className="text-[var(--text-muted)] hover:text-[var(--text-primary)] text-sm font-medium px-3 py-2 rounded-lg hover:bg-[var(--bg-surface-2)] transition">
               ✕ Çıkış
             </button>
           </div>
           {/* Progress bar */}
-          <div className="h-1 bg-slate-800">
+          <div className="h-1 bg-[var(--bg-surface-2)]">
             <div className={`h-full transition-all duration-300 ${miniKaynak === "yanlislar" ? "bg-gradient-to-r from-red-500 to-red-400" : "bg-gradient-to-r from-amber-500 to-amber-400"}`} style={{ width: `${((miniIdx) / miniSorular.length) * 100}%` }} />
           </div>
         </nav>
 
         <div className="flex-1 max-w-3xl mx-auto px-6 py-10 w-full">
           {/* Modül etiketi */}
-          <div className="text-xs text-amber-300 font-medium mb-4 uppercase tracking-wider">
+          <div className="text-xs text-amber-400 font-medium mb-4 uppercase tracking-wider">
             {soru.modulBaslik.replace("Modül · ", "")} · {soru.dersBaslik}
           </div>
 
           {/* Soru kartı */}
-          <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-indigo-900/20 mb-6">
-            <p className="text-white text-lg font-medium leading-relaxed mb-6">{soru.soru.text}</p>
+          <div className="bg-[var(--bg-surface-2)] rounded-2xl p-8 border border-[var(--border-base)] shadow-[var(--shadow-card)] mb-6">
+            <p className="text-[var(--text-primary)] text-lg font-medium leading-relaxed mb-6">{soru.soru.text}</p>
             <div className="space-y-2.5">
               {soru.soru.options.map((opt) => {
                 const secili = miniSecim === opt.id;
@@ -228,16 +228,16 @@ export default function FavorilerPage() {
                     disabled={miniGoster}
                     className={`w-full text-left p-4 rounded-xl border-2 transition flex items-start gap-3 ${
                       gosterDogru
-                        ? "bg-emerald-500/10 border-emerald-400/60 text-emerald-100"
+                        ? "bg-emerald-500/10 border-emerald-400/60 text-emerald-400"
                         : gosterYanlis
-                        ? "bg-red-500/10 border-red-400/60 text-red-100"
+                        ? "bg-red-500/10 border-red-400/60 text-red-400"
                         : secili
-                        ? "bg-indigo-500/10 border-indigo-400/60 text-indigo-100"
-                        : "bg-slate-900/50 border-slate-700 hover:border-indigo-400/40 hover:bg-indigo-500/5 text-slate-300"
+                        ? "bg-indigo-500/10 border-indigo-400/60 text-indigo-300"
+                        : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] hover:border-indigo-400/40 hover:bg-indigo-500/5 text-[var(--text-secondary)]"
                     } ${miniGoster ? "cursor-default" : "cursor-pointer"}`}
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 ${
-                      gosterDogru ? "bg-emerald-500 text-white" : gosterYanlis ? "bg-red-500 text-white" : secili ? "bg-indigo-500 text-white" : "bg-slate-700 text-slate-300"
+                      gosterDogru ? "bg-emerald-500 text-white" : gosterYanlis ? "bg-red-500 text-white" : secili ? "bg-indigo-500 text-white" : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)]"
                     }`}>
                       {opt.id}
                     </div>
@@ -252,20 +252,20 @@ export default function FavorilerPage() {
 
           {/* Açıklama */}
           {miniGoster && (
-            <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 mb-6 animate-fade-in">
-              <div className={`flex items-center gap-2 font-bold mb-3 ${miniSecim === dogruId ? "text-emerald-300" : "text-red-300"}`}>
+            <div className="bg-[var(--bg-surface-2)]/80 border border-[var(--border-base)] rounded-2xl p-5 mb-6 animate-fade-in">
+              <div className={`flex items-center gap-2 font-bold mb-3 ${miniSecim === dogruId ? "text-emerald-400" : "text-red-400"}`}>
                 {miniSecim === dogruId ? "✓ Doğru!" : `✕ Yanlış — Doğru cevap: ${dogruId}`}
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">{soru.soru.explanation}</p>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{soru.soru.explanation}</p>
             </div>
           )}
 
           {/* Aksiyonlar */}
           <div className="flex justify-between items-center">
             <div>
-              <div className="text-sm text-slate-400">{miniDogru} doğru · {miniIdx - miniDogru + (miniGoster && miniSecim !== dogruId ? 1 : 0)} yanlış</div>
-              <div className="text-xs text-slate-600 mt-0.5 hidden sm:block">
-                <kbd className="bg-slate-800 px-1 rounded text-[10px]">A/B/C/D</kbd> seç · <kbd className="bg-slate-800 px-1 rounded text-[10px]">Enter</kbd> ilerle
+              <div className="text-sm text-[var(--text-muted)]">{miniDogru} doğru · {miniIdx - miniDogru + (miniGoster && miniSecim !== dogruId ? 1 : 0)} yanlış</div>
+              <div className="text-xs text-[var(--text-faint)] mt-0.5 hidden sm:block">
+                <kbd className="bg-[var(--bg-surface-2)] px-1 rounded text-[10px]">A/B/C/D</kbd> seç · <kbd className="bg-[var(--bg-surface-2)] px-1 rounded text-[10px]">Enter</kbd> ilerle
               </div>
             </div>
             <button
@@ -274,7 +274,7 @@ export default function FavorilerPage() {
               className={`px-6 py-3 rounded-xl font-semibold transition shadow-lg ${
                 miniSecim
                   ? "bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white shadow-indigo-500/30 hover:scale-105"
-                  : "bg-slate-700 text-slate-500 cursor-not-allowed"
+                  : "bg-[var(--bg-surface-3)] text-[var(--text-faint)] cursor-not-allowed"
               }`}
             >
               {!miniGoster ? "Cevabı Gör" : miniIdx + 1 >= miniSorular.length ? "Sonuçları Gör 🏁" : "Sonraki →"}
@@ -286,7 +286,7 @@ export default function FavorilerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+    <div className="min-h-screen bg-[var(--bg-base)] relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -294,11 +294,11 @@ export default function FavorilerPage() {
 
       <div className="relative max-w-5xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-indigo-400/30">
             ⭐ Tekrar Listesi
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Favorilerim & Yanlışlarım</h1>
-          <p className="text-lg text-slate-300">Zor soruları ve hata yaptıklarını tek yerde tekrar et.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">Favorilerim & Yanlışlarım</h1>
+          <p className="text-lg text-[var(--text-secondary)]">Zor soruları ve hata yaptıklarını tek yerde tekrar et.</p>
         </div>
 
         {/* Tab seçici */}
@@ -308,7 +308,7 @@ export default function FavorilerPage() {
             className={`px-6 py-3 rounded-xl font-semibold transition-all ${
               aktifTab === "favoriler"
                 ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
-                : "bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                : "bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-3)] border border-[var(--border-base)]"
             }`}
           >
             ⭐ Favoriler ({favoriler.length})
@@ -318,7 +318,7 @@ export default function FavorilerPage() {
             className={`px-6 py-3 rounded-xl font-semibold transition-all ${
               aktifTab === "yanlislar"
                 ? "bg-gradient-to-br from-red-500 to-red-700 text-white shadow-lg shadow-red-500/40"
-                : "bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700"
+                : "bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-3)] border border-[var(--border-base)]"
             }`}
           >
             ❌ Yanlışlarım ({yanlislar.length})
@@ -329,10 +329,10 @@ export default function FavorilerPage() {
         {aktifTab === "favoriler" && (
           <div className="animate-fade-in space-y-4">
             {favoriler.length === 0 ? (
-              <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
+              <div className="bg-[var(--bg-surface-2)] rounded-2xl p-12 text-center border border-[var(--border-base)]">
                 <div className="text-6xl mb-4 animate-star-bounce inline-block">⭐</div>
-                <h3 className="text-xl font-bold text-white mb-2">Henüz favori eklemediniz</h3>
-                <p className="text-slate-400 mb-6">Sorulardaki yıldız ikonuna tıklayarak zor soruları kaydedin.</p>
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Henüz favori eklemediniz</h3>
+                <p className="text-[var(--text-muted)] mb-6">Sorulardaki yıldız ikonuna tıklayarak zor soruları kaydedin.</p>
                 <Link href="/dashboard" className="inline-block bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition">
                   Çalışmaya Başla
                 </Link>
@@ -344,8 +344,8 @@ export default function FavorilerPage() {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/40 rounded-xl flex items-center justify-center text-xl">⭐</div>
                     <div>
-                      <div className="text-white font-semibold text-sm">{favoriler.length} favori soru hazır</div>
-                      <div className="text-amber-300 text-xs mt-0.5">Sıraları karıştırılarak quiz başlatılır</div>
+                      <div className="text-[var(--text-primary)] font-semibold text-sm">{favoriler.length} favori soru hazır</div>
+                      <div className="text-amber-400 text-xs mt-0.5">Sıraları karıştırılarak quiz başlatılır</div>
                     </div>
                   </div>
                   <button
@@ -375,10 +375,10 @@ export default function FavorilerPage() {
         {aktifTab === "yanlislar" && (
           <div className="animate-fade-in space-y-4">
             {yanlislar.length === 0 ? (
-              <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
+              <div className="bg-[var(--bg-surface-2)] rounded-2xl p-12 text-center border border-[var(--border-base)]">
                 <div className="text-6xl mb-4">🎯</div>
-                <h3 className="text-xl font-bold text-white mb-2">Henüz yanlışınız yok!</h3>
-                <p className="text-slate-400 mb-6">Soru çözmeye başlayın, yanlış cevapladıklarınız burada birikecek.</p>
+                <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Henüz yanlışınız yok!</h3>
+                <p className="text-[var(--text-muted)] mb-6">Soru çözmeye başlayın, yanlış cevapladıklarınız burada birikecek.</p>
                 <Link href="/dashboard" className="inline-block bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition">
                   Soru Çöz
                 </Link>
@@ -392,8 +392,8 @@ export default function FavorilerPage() {
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-red-500/20 border border-red-400/40 rounded-xl flex items-center justify-center text-xl">❌</div>
                       <div>
-                        <div className="text-white font-semibold text-sm">{yanlislar.length} yanlış soru hazır</div>
-                        <div className="text-red-300 text-xs mt-0.5">Sadece hata yaptıklarınla çalış</div>
+                        <div className="text-[var(--text-primary)] font-semibold text-sm">{yanlislar.length} yanlış soru hazır</div>
+                        <div className="text-red-400 text-xs mt-0.5">Sadece hata yaptıklarınla çalış</div>
                       </div>
                     </div>
                     <button
@@ -413,7 +413,7 @@ export default function FavorilerPage() {
                       yanlislar.forEach((y) => favoriEkle(y.modulId, y.dersId, y.soruIndex));
                       setRefresh((r) => r + 1);
                     }}
-                    className="sm:w-auto flex items-center justify-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-400/30 text-amber-300 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap"
+                    className="sm:w-auto flex items-center justify-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-400/30 text-amber-400 px-5 py-3 rounded-2xl font-semibold text-sm transition whitespace-nowrap"
                   >
                     ⭐ Tümünü Favorilere Ekle
                   </button>
@@ -443,14 +443,14 @@ export default function FavorilerPage() {
 function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: number; onSil: () => void }) {
   const [gosterCevap, setGosterCevap] = useState(false);
   return (
-    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
+    <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/50 rounded-xl flex items-center justify-center text-amber-300 font-bold text-sm flex-shrink-0">
+        <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/50 rounded-xl flex items-center justify-center text-amber-400 font-bold text-sm flex-shrink-0">
           {numara}
         </div>
         <div className="flex-1">
-          <div className="text-xs text-indigo-300 mb-1 font-medium">{favori.modulBaslik} · {favori.dersBaslik}</div>
-          <p className="text-white font-medium leading-relaxed">{favori.soru.text}</p>
+          <div className="text-xs text-indigo-400 mb-1 font-medium">{favori.modulBaslik} · {favori.dersBaslik}</div>
+          <p className="text-[var(--text-primary)] font-medium leading-relaxed">{favori.soru.text}</p>
         </div>
         <button
           onClick={onSil}
@@ -470,12 +470,12 @@ function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: nu
               key={opt.id}
               className={`p-3 rounded-lg border flex items-start gap-3 text-sm ${
                 gosterCevap && dogru
-                  ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-100"
-                  : "bg-slate-900/50 border-slate-700 text-slate-300"
+                  ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-400"
+                  : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] text-[var(--text-secondary)]"
               }`}
             >
               <div className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs flex-shrink-0 ${
-                gosterCevap && dogru ? "bg-emerald-500 text-white" : "bg-slate-700 text-slate-300"
+                gosterCevap && dogru ? "bg-emerald-500 text-white" : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)]"
               }`}>
                 {opt.id}
               </div>
@@ -494,9 +494,9 @@ function FavoriKart({ favori, numara, onSil }: { favori: FavoriDetay; numara: nu
             Cevabı Göster
           </button>
         ) : (
-          <div className="p-4 bg-slate-900/50 rounded-lg border border-slate-700">
-            <div className="font-bold text-white mb-2 text-sm">📖 Açıklama</div>
-            <p className="text-slate-300 text-sm leading-relaxed">{favori.soru.explanation}</p>
+          <div className="p-4 bg-[var(--bg-surface)]/50 rounded-lg border border-[var(--border-base)]">
+            <div className="font-bold text-[var(--text-primary)] mb-2 text-sm">📖 Açıklama</div>
+            <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{favori.soru.explanation}</p>
           </div>
         )}
       </div>
@@ -511,18 +511,18 @@ function YanlisKart({ yanlis, numara, onSil }: { yanlis: SoruCevap; numara: numb
   if (!soru || !modul || !ders) return null;
 
   return (
-    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-indigo-900/30">
+    <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-10 h-10 bg-red-500/20 border border-red-400/50 rounded-xl flex items-center justify-center text-red-300 font-bold text-sm flex-shrink-0">
+        <div className="w-10 h-10 bg-red-500/20 border border-red-400/50 rounded-xl flex items-center justify-center text-red-400 font-bold text-sm flex-shrink-0">
           {numara}
         </div>
         <div className="flex-1">
-          <div className="text-xs text-red-300 mb-1 font-medium">{modul.title.replace("Modül · ", "")} · {ders.title}</div>
-          <p className="text-white font-medium leading-relaxed">{soru.text}</p>
+          <div className="text-xs text-red-400 mb-1 font-medium">{modul.title.replace("Modül · ", "")} · {ders.title}</div>
+          <p className="text-[var(--text-primary)] font-medium leading-relaxed">{soru.text}</p>
         </div>
         <button
           onClick={onSil}
-          className="p-2 text-slate-500 hover:text-red-400 transition flex-shrink-0"
+          className="p-2 text-[var(--text-faint)] hover:text-red-400 transition flex-shrink-0"
           title="Yanlışlardan çıkar"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -539,14 +539,14 @@ function YanlisKart({ yanlis, numara, onSil }: { yanlis: SoruCevap; numara: numb
               key={opt.id}
               className={`p-3 rounded-lg border flex items-start gap-3 text-sm ${
                 dogru
-                  ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-100"
+                  ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-400"
                   : senSectin
-                  ? "bg-red-500/10 border-red-500/50 text-red-100"
-                  : "bg-slate-900/50 border-slate-700 text-slate-400"
+                  ? "bg-red-500/10 border-red-500/50 text-red-400"
+                  : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] text-[var(--text-muted)]"
               }`}
             >
               <div className={`w-6 h-6 rounded flex items-center justify-center font-bold text-xs flex-shrink-0 ${
-                dogru ? "bg-emerald-500 text-white" : senSectin ? "bg-red-500 text-white" : "bg-slate-700 text-slate-400"
+                dogru ? "bg-emerald-500 text-white" : senSectin ? "bg-red-500 text-white" : "bg-[var(--bg-surface-3)] text-[var(--text-muted)]"
               }`}>
                 {opt.id}
               </div>
@@ -557,9 +557,9 @@ function YanlisKart({ yanlis, numara, onSil }: { yanlis: SoruCevap; numara: numb
           );
         })}
       </div>
-      <div className="ml-14 mt-4 p-4 bg-slate-900/50 rounded-lg border border-slate-700">
-        <div className="font-bold text-white mb-2 text-sm">📖 Açıklama</div>
-        <p className="text-slate-300 text-sm leading-relaxed">{soru.explanation}</p>
+      <div className="ml-14 mt-4 p-4 bg-[var(--bg-surface)]/50 rounded-lg border border-[var(--border-base)]">
+        <div className="font-bold text-[var(--text-primary)] mb-2 text-sm">📖 Açıklama</div>
+        <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{soru.explanation}</p>
       </div>
     </div>
   );

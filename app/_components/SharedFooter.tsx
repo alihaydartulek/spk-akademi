@@ -8,7 +8,7 @@ const TOPLAM_SORU  = modules.reduce((s, m) => s + m.lessons.reduce((s2, l) => s2
 
 export default function SharedFooter() {
   return (
-    <footer className="border-t border-slate-700/50 text-slate-400 py-16 mt-16">
+    <footer className="border-t border-[var(--border-base)] text-[var(--text-muted)] py-16 mt-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
@@ -19,18 +19,18 @@ export default function SharedFooter() {
                 SPK
               </div>
               <div>
-                <div className="font-bold text-white text-lg">SPK Akademi</div>
-                <div className="text-[11px] text-indigo-300 tracking-wider uppercase">Lisanslama Platformu</div>
+                <div className="font-bold text-[var(--text-primary)] text-lg">SPK Akademi</div>
+                <div className="text-[11px] text-indigo-400 tracking-wider uppercase">Lisanslama Platformu</div>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-slate-400">
-              Türkiye'nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.
+            <p className="text-sm leading-relaxed text-[var(--text-muted)]">
+              Türkiye&apos;nin en kapsamlı SPK Sermaye Piyasası Lisanslama hazırlık platformu.
             </p>
           </div>
 
           {/* Platform */}
           <div>
-            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform</div>
+            <div className="font-semibold text-[var(--text-primary)] mb-4 text-sm tracking-wider uppercase">Platform</div>
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/dashboard"    className="hover:text-indigo-400 transition">Çalışma Paneli</Link></li>
               <li><Link href="/sinav"        className="hover:text-indigo-400 transition">Hızlı Pratik</Link></li>
@@ -41,13 +41,13 @@ export default function SharedFooter() {
 
           {/* Sınavlar */}
           <div>
-            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Sınavlar</div>
+            <div className="font-semibold text-[var(--text-primary)] mb-4 text-sm tracking-wider uppercase">Sınavlar</div>
             <ul className="space-y-2.5 text-sm">
               {SINAV_MENUSU.map((sinav) => (
                 <li key={sinav.href}>
                   <Link
                     href={sinav.href}
-                    className="flex items-center gap-2 text-indigo-300 hover:text-indigo-200 font-medium transition"
+                    className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium transition"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                     {sinav.ad}
@@ -59,25 +59,25 @@ export default function SharedFooter() {
 
           {/* Sayılar */}
           <div>
-            <div className="font-semibold text-white mb-4 text-sm tracking-wider uppercase">Platform İstatistikleri</div>
+            <div className="font-semibold text-[var(--text-primary)] mb-4 text-sm tracking-wider uppercase">Platform İstatistikleri</div>
             <ul className="space-y-4">
               <li>
-                <div className="text-2xl font-bold text-white">{TOPLAM_MODUL}</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Modül</div>
+                <div className="text-2xl font-bold text-[var(--text-primary)]">{TOPLAM_MODUL}</div>
+                <div className="text-xs text-[var(--text-faint)] uppercase tracking-wider mt-0.5">Modül</div>
               </li>
               <li>
-                <div className="text-2xl font-bold text-white">{TOPLAM_DERS}</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Ders</div>
+                <div className="text-2xl font-bold text-[var(--text-primary)]">{TOPLAM_DERS}</div>
+                <div className="text-xs text-[var(--text-faint)] uppercase tracking-wider mt-0.5">Ders</div>
               </li>
               <li>
-                <div className="text-2xl font-bold text-white">{TOPLAM_SORU}</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Soru</div>
+                <div className="text-2xl font-bold text-[var(--text-primary)]">{TOPLAM_SORU}</div>
+                <div className="text-xs text-[var(--text-faint)] uppercase tracking-wider mt-0.5">Soru</div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-700/50 text-center text-sm">
+        <div className="pt-8 border-t border-[var(--border-base)] text-center text-sm">
           © 2026 SPK Akademi · Tüm hakları saklıdır
         </div>
       </div>

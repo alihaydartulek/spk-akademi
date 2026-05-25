@@ -69,7 +69,7 @@ export default function DashboardPage() {
   }, [aramaMetni]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative animate-page-in">
+    <div className="min-h-screen bg-[var(--bg-base)] relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-cyan-600/8 rounded-full blur-3xl pointer-events-none" />
 
@@ -79,10 +79,9 @@ export default function DashboardPage() {
         extraMobileAction={
           <button
             onClick={() => setSidebarAcik((v) => !v)}
-            className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-white"
+            className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-[var(--bg-surface-2)] transition text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             aria-label="Modüller listesini aç/kapat"
           >
-            {/* Sidebar panel ikonu — navbar hamburgerundan ayırt etmek için */}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h4M9 3v18M9 3h10a2 2 0 012 2v14a2 2 0 01-2 2H9" />
             </svg>
@@ -93,11 +92,11 @@ export default function DashboardPage() {
       <div className="relative max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 p-6">
         {/* SIDEBAR */}
         <aside className={`${sidebarAcik ? "animate-sidebar-in" : "hidden"} lg:block lg:animate-sidebar-in w-full lg:w-80 flex-shrink-0`}>
-          <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-indigo-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
-            <div className="p-5 border-b border-slate-700">
+          <div className="bg-[var(--bg-surface-2)] rounded-2xl border border-[var(--border-base)] shadow-[var(--shadow-card)] lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
+            <div className="p-5 border-b border-[var(--border-base)]">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="font-bold text-white tracking-tight">Modüller</h2>
-                <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-bold rounded-md border border-indigo-400/30">{modules.length}</span>
+                <h2 className="font-bold text-[var(--text-primary)] tracking-tight">Modüller</h2>
+                <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded-md border border-indigo-400/30">{modules.length}</span>
               </div>
               <div className="relative">
                 <input
@@ -105,7 +104,7 @@ export default function DashboardPage() {
                   value={aramaMetni}
                   onChange={(e) => setAramaMetni(e.target.value)}
                   placeholder="Modül ara..."
-                  className="w-full px-3 py-2.5 pl-9 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-400 transition"
+                  className="w-full px-3 py-2.5 pl-9 bg-[var(--bg-surface)] border border-[var(--border-base)] rounded-lg text-sm text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-indigo-400 transition"
                 />
                 <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -114,7 +113,7 @@ export default function DashboardPage() {
             </div>
             <div className="flex-1 overflow-y-auto p-3">
               {filtrelenmisModuller.length === 0 ? (
-                <div className="text-center py-8 text-sm text-slate-500">Sonuç bulunamadı</div>
+                <div className="text-center py-8 text-sm text-[var(--text-faint)]">Sonuç bulunamadı</div>
               ) : (
                 filtrelenmisModuller.map((modul, idx) => {
                   const acikMi = secilenModulId === modul.id;
@@ -126,34 +125,33 @@ export default function DashboardPage() {
                         onClick={() => {
                           setSecilenModulId(modul.id);
                           setSecilenDersId(modul.lessons[0]?.id || "");
-                          // Mobilden modül seçilince ders listesi açılsın ama içerik için kapanmasın
                         }}
                         className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                           acikMi
                             ? "bg-indigo-500/10 border border-indigo-400/30 shadow-md shadow-indigo-500/20 translate-x-0.5"
-                            : "hover:bg-slate-700/50 border border-transparent hover:translate-x-0.5"
+                            : "hover:bg-[var(--bg-surface-3)]/50 border border-transparent hover:translate-x-0.5"
                         }`}
                       >
                         <div className="flex items-start gap-3">
                           <div className={`w-8 h-8 rounded-md flex items-center justify-center font-bold text-xs flex-shrink-0 transition ${
                             acikMi
                               ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/50"
-                              : "bg-slate-700 text-slate-300"
+                              : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)]"
                           }`}>
                             {String(idx + 1).padStart(2, "0")}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className={`font-semibold text-sm leading-tight mb-1 ${acikMi ? "text-indigo-300" : "text-slate-200"}`}>
+                            <div className={`font-semibold text-sm leading-tight mb-1 ${acikMi ? "text-indigo-400" : "text-[var(--text-secondary)]"}`}>
                               {modul.title.replace("Modül · ", "")}
                             </div>
-                            <div className="flex items-center gap-2 text-xs text-slate-400 mb-1.5">
+                            <div className="flex items-center gap-2 text-xs text-[var(--text-muted)] mb-1.5">
                               <span>{modul.lessons.length} ders</span>
                               <span>·</span>
                               <span>{toplamSoru} soru</span>
                             </div>
                             {/* MİNİ İLERLEME BARI */}
                             {mounted && ilerleme > 0 && (
-                              <div className="h-1 bg-slate-900 rounded-full overflow-hidden">
+                              <div className="h-1 bg-[var(--bg-surface)] rounded-full overflow-hidden">
                                 <div
                                   className={`h-full ${ilerleme === 100 ? "bg-emerald-500" : "bg-indigo-500"}`}
                                   style={{ width: `${ilerleme}%` }}
@@ -173,13 +171,12 @@ export default function DashboardPage() {
                                 key={ders.id}
                                 onClick={() => {
                                   setSecilenDersId(ders.id);
-                                  // Mobilden ders seçilince sidebar'ı kapat, içerik görünsün
                                   if (window.innerWidth < 1024) setSidebarAcik(false);
                                 }}
                                 className={`w-full text-left px-3 py-2 rounded-md text-xs transition-all flex items-center gap-2 ${
                                   dersSecili
-                                    ? "bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 font-semibold"
-                                    : "text-slate-400 hover:bg-slate-700/50 hover:text-white"
+                                    ? "bg-cyan-500/20 border border-cyan-400/30 text-cyan-400 font-semibold"
+                                    : "text-[var(--text-muted)] hover:bg-[var(--bg-surface-3)]/50 hover:text-[var(--text-primary)]"
                                 }`}
                               >
                                 {tamam && <span className="text-emerald-400 flex-shrink-0 animate-checkmark-pop inline-block">✓</span>}
@@ -215,19 +212,19 @@ export default function DashboardPage() {
 
           {/* ─── Onboarding — sadece ilk kullanımda ─── */}
           {ilkKullanici && (
-            <div className="bg-gradient-to-br from-indigo-900/40 to-indigo-800/20 border border-indigo-500/30 rounded-2xl p-6 mb-6 shadow-xl shadow-indigo-500/10">
+            <div className="bg-gradient-to-br from-indigo-500/10 to-indigo-400/5 border border-indigo-500/30 rounded-2xl p-6 mb-6 shadow-[var(--shadow-card)]">
               <div className="flex items-start gap-4">
                 <div className="text-3xl flex-shrink-0">👋</div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-white text-lg mb-1">Hoş geldin! Nereden başlamalısın?</h2>
-                  <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                  <h2 className="font-bold text-[var(--text-primary)] text-lg mb-1">Hoş geldin! Nereden başlamalısın?</h2>
+                  <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
                     Sol panelden bir modül seçerek çalışmaya başlayabilirsin. Hangi sınava hazırlandığını biliyorsan aşağıdan doğrudan tam sınav simülasyonuna geçebilirsin.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Link href="/sinav/duzey1" className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition shadow-lg shadow-indigo-500/30">
                       🎓 Düzey 1 Sınavına Hazırlan
                     </Link>
-                    <Link href="/sinav" className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-sm font-semibold px-4 py-2 rounded-xl border border-slate-600 transition">
+                    <Link href="/sinav" className="inline-flex items-center gap-2 bg-[var(--bg-surface-3)] hover:bg-[var(--bg-surface-3)] text-[var(--text-secondary)] text-sm font-semibold px-4 py-2 rounded-xl border border-[var(--border-base)] transition">
                       ⏱️ Tüm Sınavlar
                     </Link>
                   </div>
@@ -237,39 +234,36 @@ export default function DashboardPage() {
           )}
           {secilenDers && secilenModul ? (
             <div className="space-y-6">
-              <div className="flex items-center gap-2 text-sm text-slate-400 flex-wrap">
+              <div className="flex items-center gap-2 text-sm text-[var(--text-muted)] flex-wrap">
                 <Link href="/" className="hover:text-indigo-400">Ana Sayfa</Link>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-slate-300">{secilenModul.title.replace("Modül · ", "")}</span>
+                <span className="text-[var(--text-secondary)]">{secilenModul.title.replace("Modül · ", "")}</span>
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-white font-medium">{secilenDers.title}</span>
+                <span className="text-[var(--text-primary)] font-medium">{secilenDers.title}</span>
               </div>
 
-              <div className="bg-slate-800 rounded-2xl p-5 md:p-8 border border-slate-700 shadow-xl shadow-indigo-900/30">
+              <div className="bg-[var(--bg-surface-2)] rounded-2xl p-5 md:p-8 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
                 <div className="mb-5">
-                  {/* Modül etiketi — truncate ile taşmayı önle */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-300 rounded-full text-[11px] font-bold tracking-wider uppercase border border-indigo-400/30 truncate max-w-[calc(100%-2rem)]">
+                    <span className="px-2.5 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-[11px] font-bold tracking-wider uppercase border border-indigo-400/30 truncate max-w-[calc(100%-2rem)]">
                       {secilenModul.title.replace("Modül · ", "")}
                     </span>
                   </div>
-                  {/* Başlık */}
-                  <h1 className="text-xl md:text-3xl font-bold text-white leading-tight tracking-tight mb-4">
+                  <h1 className="text-xl md:text-3xl font-bold text-[var(--text-primary)] leading-tight tracking-tight mb-4">
                     {secilenDers.title}
                   </h1>
-                  {/* Tamamla + Süre — mobilden yan yana, küçük */}
                   <div className="flex items-center gap-2 flex-wrap">
                     {mounted && (
                       <button
                         onClick={handleTamamla}
                         className={`px-4 py-2 rounded-xl font-semibold text-sm transition-all flex items-center gap-2 ${
                           dersTamamlanmis
-                            ? "bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 hover:bg-emerald-500/30"
-                            : "bg-slate-700 border border-slate-600 text-slate-300 hover:bg-slate-600 hover:border-emerald-500/50"
+                            ? "bg-emerald-500/20 border border-emerald-400/50 text-emerald-400 hover:bg-emerald-500/30"
+                            : "bg-[var(--bg-surface-3)] border border-[var(--border-base)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-3)] hover:border-emerald-500/50"
                         }`}
                       >
                         {dersTamamlanmis ? (
@@ -279,19 +273,19 @@ export default function DashboardPage() {
                         )}
                       </button>
                     )}
-                    <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-xl border border-slate-700 text-sm">
-                      <span className="text-indigo-300 font-semibold">⏱️</span>
-                      <span className="font-bold text-white">{secilenDers.duration}</span>
+                    <div className="flex items-center gap-2 px-4 py-2 bg-[var(--bg-surface)] rounded-xl border border-[var(--border-base)] text-sm">
+                      <span className="text-indigo-400 font-semibold">⏱️</span>
+                      <span className="font-bold text-[var(--text-primary)]">{secilenDers.duration}</span>
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-2 pt-6 border-t border-slate-700">
+                <div className="flex gap-2 pt-6 border-t border-[var(--border-base)]">
                   <button
                     onClick={() => setAktifTab("ozet")}
                     className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
                       aktifTab === "ozet"
                         ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
-                        : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                        : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-3)]"
                     }`}
                   >
                     📖 Konu Özeti
@@ -301,7 +295,7 @@ export default function DashboardPage() {
                     className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
                       aktifTab === "sorular"
                         ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
-                        : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                        : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-3)]"
                     }`}
                   >
                     📝 Sorular ({secilenDers.questions.length})
@@ -310,9 +304,9 @@ export default function DashboardPage() {
               </div>
 
               {aktifTab === "ozet" && (
-                <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-xl shadow-indigo-900/30 animate-fade-in">
-                  <h2 className="text-2xl font-bold text-white mb-4 tracking-tight">{secilenDers.summary.title}</h2>
-                  <p className="text-slate-300 leading-relaxed text-base mb-8">{secilenDers.summary.intro}</p>
+                <div className="bg-[var(--bg-surface-2)] rounded-2xl p-8 border border-[var(--border-base)] shadow-[var(--shadow-card)] animate-fade-in">
+                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">{secilenDers.summary.title}</h2>
+                  <p className="text-[var(--text-secondary)] leading-relaxed text-base mb-8">{secilenDers.summary.intro}</p>
                   <div className="space-y-8">
                     {secilenDers.summary.sections.map((section, idx) => (
                       <div key={idx}>
@@ -324,14 +318,14 @@ export default function DashboardPage() {
                           }`}>
                             {idx + 1}
                           </div>
-                          <h3 className="text-xl font-bold text-white tracking-tight">{section.heading}</h3>
+                          <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">{section.heading}</h3>
                         </div>
                         <div className="space-y-2.5">
                           {section.items.map((item, i) => (
-                            <div key={i} className="flex gap-3 p-4 bg-slate-900/50 rounded-xl border-l-4 border-indigo-400">
+                            <div key={i} className="flex gap-3 p-4 bg-[var(--bg-surface)]/50 rounded-xl border-l-4 border-indigo-400">
                               <div>
-                                <span className="font-bold text-white">{item.strong}</span>{" "}
-                                <span className="text-slate-300 leading-relaxed">{item.text}</span>
+                                <span className="font-bold text-[var(--text-primary)]">{item.strong}</span>{" "}
+                                <span className="text-[var(--text-secondary)] leading-relaxed">{item.text}</span>
                               </div>
                             </div>
                           ))}
@@ -343,13 +337,13 @@ export default function DashboardPage() {
                     <div className="flex items-start gap-3">
                       <div className="text-2xl flex-shrink-0">💡</div>
                       <div>
-                        <div className="font-bold text-amber-300 mb-2 tracking-tight">Püf Noktası</div>
-                        <p className="text-amber-100 leading-relaxed">{secilenDers.summary.tip}</p>
+                        <div className="font-bold text-amber-400 mb-2 tracking-tight">Püf Noktası</div>
+                        <p className="text-amber-300 leading-relaxed">{secilenDers.summary.tip}</p>
                       </div>
                     </div>
                   </div>
-                  <div className="mt-8 pt-8 border-t border-slate-700 flex items-center justify-between flex-wrap gap-4">
-                    <div className="text-sm text-slate-300">Konuyu bitirdiniz mi? Şimdi soruları çözün.</div>
+                  <div className="mt-8 pt-8 border-t border-[var(--border-base)] flex items-center justify-between flex-wrap gap-4">
+                    <div className="text-sm text-[var(--text-secondary)]">Konuyu bitirdiniz mi? Şimdi soruları çözün.</div>
                     <button
                       onClick={() => setAktifTab("sorular")}
                       className="bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-indigo-500/40 transition-all hover:scale-105 flex items-center gap-2"
@@ -370,9 +364,9 @@ export default function DashboardPage() {
               )}
             </div>
           ) : (
-            <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
+            <div className="bg-[var(--bg-surface-2)] rounded-2xl p-12 text-center border border-[var(--border-base)]">
               <div className="text-5xl mb-4">📚</div>
-              <p className="text-slate-300 text-lg">Lütfen bir ders seçin</p>
+              <p className="text-[var(--text-secondary)] text-lg">Lütfen bir ders seçin</p>
             </div>
           )}
         </main>
@@ -393,9 +387,9 @@ export default function DashboardPage() {
 function SorularBolumu({ sorular, dersBasligi, modulId, dersId }: { sorular: Question[]; dersBasligi: string; modulId: string; dersId: string }) {
   return (
     <div className="space-y-4 animate-fade-in">
-      <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
-        <h2 className="text-xl font-bold text-white mb-2 tracking-tight">📝 {dersBasligi} — Sorular</h2>
-        <p className="text-sm text-slate-300">Her sorunun altındaki "Cevabı Göster" butonuna tıklayarak doğru cevabı ve açıklamasını görüntüleyebilirsiniz. Zor soruları ⭐ ile favorilere ekleyin.</p>
+      <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2 tracking-tight">📝 {dersBasligi} — Sorular</h2>
+        <p className="text-sm text-[var(--text-secondary)]">Her sorunun altındaki &quot;Cevabı Göster&quot; butonuna tıklayarak doğru cevabı ve açıklamasını görüntüleyebilirsiniz. Zor soruları ⭐ ile favorilere ekleyin.</p>
       </div>
       {sorular.map((soru, idx) => (
         <SoruKarti key={idx} soru={soru} numara={idx + 1} modulId={modulId} dersId={dersId} soruIndex={idx} />
@@ -410,7 +404,6 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
   const [favori, setFavori] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Önceki cevabı ve favori durumunu yükle
   useEffect(() => {
     setMounted(true);
     const oncekiCevap = soruCevabiAl(modulId, dersId, soruIndex);
@@ -426,7 +419,6 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
   function handleCevapGoster() {
     if (!secilenCevap) return;
     setCevapGosterildi(true);
-    // Kaydet
     cevapKaydet({
       modulId,
       dersId,
@@ -443,20 +435,20 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
   }
 
   return (
-    <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+    <div className="bg-[var(--bg-surface-2)] rounded-2xl p-6 border border-[var(--border-base)] shadow-[var(--shadow-card)]">
       <div className="flex items-start gap-4 mb-5">
-        <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-violet-500/40">
+        <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg shadow-indigo-500/40">
           {numara}
         </div>
         <div className="flex-1">
-          <p className="text-white font-medium leading-relaxed">{soru.text}</p>
+          <p className="text-[var(--text-primary)] font-medium leading-relaxed">{soru.text}</p>
         </div>
         {/* FAVORİ BUTONU */}
         {mounted && (
           <button
             onClick={handleFavori}
             className={`p-2 rounded-lg transition-all flex-shrink-0 ${
-              favori ? "text-amber-400 hover:text-amber-300" : "text-slate-500 hover:text-amber-400"
+              favori ? "text-amber-400 hover:text-amber-300" : "text-[var(--text-faint)] hover:text-amber-400"
             }`}
             title={favori ? "Favorilerden çıkar" : "Favorilere ekle"}
           >
@@ -473,13 +465,13 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
           const buDogru = opt.id === soru.correct;
           const renkSinifi = cevapGosterildi
             ? buDogru
-              ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-100"
+              ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-400"
               : buSecili
-              ? "bg-red-500/10 border-red-500/50 text-red-100"
-              : "bg-slate-900/50 border-slate-700 text-slate-400"
+              ? "bg-red-500/10 border-red-500/50 text-red-400"
+              : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] text-[var(--text-muted)]"
             : buSecili
-            ? "bg-violet-500/10 border-violet-400/50 text-violet-100"
-            : "bg-slate-900/50 border-slate-700 hover:border-violet-400/50 hover:bg-violet-500/5 text-slate-300";
+            ? "bg-indigo-500/10 border-indigo-400/50 text-indigo-300"
+            : "bg-[var(--bg-surface)]/50 border-[var(--border-base)] hover:border-indigo-400/50 hover:bg-indigo-500/5 text-[var(--text-secondary)]";
 
           return (
             <button
@@ -494,10 +486,10 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
                     ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/40"
                     : buSecili
                     ? "bg-red-500 text-white shadow-lg shadow-red-500/40"
-                    : "bg-slate-700 text-slate-400"
+                    : "bg-[var(--bg-surface-3)] text-[var(--text-muted)]"
                   : buSecili
-                  ? "bg-gradient-to-br from-violet-500 to-violet-700 text-white shadow-lg shadow-violet-500/40"
-                  : "bg-slate-700 text-slate-300"
+                  ? "bg-gradient-to-br from-indigo-500 to-indigo-700 text-white shadow-lg shadow-indigo-500/40"
+                  : "bg-[var(--bg-surface-3)] text-[var(--text-secondary)]"
               }`}>
                 {opt.id}
               </div>
@@ -516,13 +508,13 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
             disabled={!secilenCevap}
             className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all ${
               secilenCevap
-                ? "bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white shadow-lg shadow-violet-500/40 hover:scale-105"
-                : "bg-slate-700 text-slate-500 cursor-not-allowed"
+                ? "bg-gradient-to-br from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white shadow-lg shadow-indigo-500/40 hover:scale-105"
+                : "bg-[var(--bg-surface-3)] text-[var(--text-faint)] cursor-not-allowed"
             }`}
           >
             Cevabı Göster
           </button>
-          {!secilenCevap && <span className="text-sm text-slate-400">Önce bir şık seçin</span>}
+          {!secilenCevap && <span className="text-sm text-[var(--text-muted)]">Önce bir şık seçin</span>}
         </div>
       )}
 
@@ -533,29 +525,29 @@ function SoruKarti({ soru, numara, modulId, dersId, soruIndex }: { soru: Questio
               {dogruMu ? (
                 <>
                   <span className="text-emerald-400 text-xl">✓</span>
-                  <span className="text-emerald-300">Doğru Cevap!</span>
+                  <span className="text-emerald-400">Doğru Cevap!</span>
                 </>
               ) : (
                 <>
                   <span className="text-red-400 text-xl">✕</span>
-                  <span className="text-red-300">Yanlış · Doğru cevap: {soru.correct}</span>
+                  <span className="text-red-400">Yanlış · Doğru cevap: {soru.correct}</span>
                 </>
               )}
             </div>
           </div>
-          <div className="p-5 bg-slate-900/50 rounded-xl border border-slate-700">
-            <div className="flex items-center gap-2 font-bold text-white mb-2 tracking-tight">
+          <div className="p-5 bg-[var(--bg-surface)]/50 rounded-xl border border-[var(--border-base)]">
+            <div className="flex items-center gap-2 font-bold text-[var(--text-primary)] mb-2 tracking-tight">
               <span>📖</span>
               <span>Açıklama</span>
             </div>
-            <p className="text-slate-300 leading-relaxed">{soru.explanation}</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">{soru.explanation}</p>
           </div>
           <button
             onClick={() => {
               setSecilenCevap(null);
               setCevapGosterildi(false);
             }}
-            className="text-sm text-violet-400 hover:text-violet-300 font-semibold flex items-center gap-1.5"
+            className="text-sm text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1.5"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
