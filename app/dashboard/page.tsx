@@ -74,10 +74,10 @@ export default function DashboardPage() {
         }
       />
 
-      <div className="relative max-w-[1600px] mx-auto flex gap-6 p-6">
+      <div className="relative max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 p-6">
         {/* SIDEBAR */}
         <aside className={`${sidebarAcik ? "block" : "hidden"} lg:block w-full lg:w-80 flex-shrink-0`}>
-          <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-blue-900/30 sticky top-24 max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
+          <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-blue-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
             <div className="p-5 border-b border-slate-700">
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-bold text-white tracking-tight">Modüller</h2>
@@ -110,6 +110,7 @@ export default function DashboardPage() {
                         onClick={() => {
                           setSecilenModulId(modul.id);
                           setSecilenDersId(modul.lessons[0]?.id || "");
+                          // Mobilden modül seçilince ders listesi açılsın ama içerik için kapanmasın
                         }}
                         className={`w-full text-left p-3 rounded-lg transition-all ${
                           acikMi
@@ -154,7 +155,11 @@ export default function DashboardPage() {
                             return (
                               <button
                                 key={ders.id}
-                                onClick={() => setSecilenDersId(ders.id)}
+                                onClick={() => {
+                                  setSecilenDersId(ders.id);
+                                  // Mobilden ders seçilince sidebar'ı kapat, içerik görünsün
+                                  if (window.innerWidth < 1024) setSidebarAcik(false);
+                                }}
                                 className={`w-full text-left px-3 py-2 rounded-md text-xs transition-all flex items-center gap-2 ${
                                   dersSecili
                                     ? "bg-gradient-to-br from-blue-500 to-blue-700 text-white font-semibold shadow-lg shadow-blue-500/50"
