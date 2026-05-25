@@ -82,8 +82,9 @@ export default function DashboardPage() {
             className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-white"
             aria-label="Modüller listesini aç/kapat"
           >
+            {/* Sidebar panel ikonu — navbar hamburgerundan ayırt etmek için */}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h4M9 3v18M9 3h10a2 2 0 012 2v14a2 2 0 01-2 2H9" />
             </svg>
           </button>
         }
