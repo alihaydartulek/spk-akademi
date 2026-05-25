@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -41,21 +41,21 @@ export default function IstatistiklerPage() {
   const streak = getStreak();
   const istatistikler = getIstatistikler();
 
-  // Zayıf alan analizi - modüllere göre başarı oranı
+  // ZayÄ±f alan analizi - modÃ¼llere gÃ¶re baÅŸarÄ± oranÄ±
   const modulAnalizi = modules
     .map((m) => {
       const oran = modulBasariOrani(m.id);
       return {
         id: m.id,
-        baslik: m.title.replace("Modül · ", ""),
+        baslik: m.title.replace("ModÃ¼l Â· ", ""),
         ...oran,
         toplamSoru: oran.dogru + oran.yanlis,
       };
     })
     .filter((m) => m.toplamSoru > 0)
-    .sort((a, b) => a.oran - b.oran); // En zayıftan en güçlüye
+    .sort((a, b) => a.oran - b.oran); // En zayÄ±ftan en gÃ¼Ã§lÃ¼ye
 
-  // Son 7 gün
+  // Son 7 gÃ¼n
   const son7Gun = istatistikler.slice(0, 7).reverse();
   const maxSoru = Math.max(1, ...son7Gun.map((g) => g.soruSayisi));
 
@@ -70,37 +70,37 @@ export default function IstatistiklerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 relative">
-      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative">
+      <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
-      <SharedNavbar subtitle="İstatistikler" activeHref="/istatistikler" />
+      <SharedNavbar subtitle="Ä°statistikler" activeHref="/istatistikler" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-blue-400/30">
-            📊 Genel Bakış
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 text-violet-300 rounded-full text-xs font-bold tracking-wider uppercase mb-4 border border-violet-400/30">
+            ğŸ“Š Genel BakÄ±ÅŸ
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">İlerleme & İstatistikler</h1>
-          <p className="text-lg text-slate-300">Çalışmanın özetini ve zayıf alanlarını gör.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Ä°lerleme & Ä°statistikler</h1>
+          <p className="text-lg text-slate-300">Ã‡alÄ±ÅŸmanÄ±n Ã¶zetini ve zayÄ±f alanlarÄ±nÄ± gÃ¶r.</p>
         </div>
 
         {/* GENEL KARTLAR */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <StatKart icon="🎯" label="Başarı Oranı" value={`%${basariOrani}`} subtext={`${dogru}/${toplamCevap} doğru`} color="emerald" />
-          <StatKart icon="✅" label="Tamamlanan Ders" value={tamamlananDersler.length.toString()} subtext={`/${modules.reduce((s, m) => s + m.lessons.length, 0)} ders`} color="blue" />
-          <StatKart icon="⭐" label="Favori Soru" value={favoriler.length.toString()} subtext="Tekrar için" color="amber" />
-          <StatKart icon="🔥" label="Streak" value={streak.toString()} subtext={streak === 0 ? "Bugün başla!" : streak === 1 ? "gün" : "gün üst üste"} color="orange" />
+          <StatKart icon="ğŸ¯" label="BaÅŸarÄ± OranÄ±" value={`%${basariOrani}`} subtext={`${dogru}/${toplamCevap} doÄŸru`} color="emerald" />
+          <StatKart icon="âœ…" label="Tamamlanan Ders" value={tamamlananDersler.length.toString()} subtext={`/${modules.reduce((s, m) => s + m.lessons.length, 0)} ders`} color="blue" />
+          <StatKart icon="â­" label="Favori Soru" value={favoriler.length.toString()} subtext="Tekrar iÃ§in" color="amber" />
+          <StatKart icon="ğŸ”¥" label="Streak" value={streak.toString()} subtext={streak === 0 ? "BugÃ¼n baÅŸla!" : streak === 1 ? "gÃ¼n" : "gÃ¼n Ã¼st Ã¼ste"} color="orange" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {/* SON 7 GÜN GRAFİĞİ */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30">
-            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📅 Son 7 Gün</h2>
+          {/* SON 7 GÃœN GRAFÄ°ÄÄ° */}
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">ğŸ“… Son 7 GÃ¼n</h2>
             {son7Gun.length === 0 ? (
               <div className="text-center py-12 text-slate-400">
-                <div className="text-5xl mb-3">📅</div>
-                <p>Henüz çalışma kaydı yok</p>
+                <div className="text-5xl mb-3">ğŸ“…</div>
+                <p>HenÃ¼z Ã§alÄ±ÅŸma kaydÄ± yok</p>
               </div>
             ) : (
               <div className="flex items-end justify-between gap-2 h-48 mt-6">
@@ -109,10 +109,10 @@ export default function IstatistiklerPage() {
                   const yukseklik = (gun.soruSayisi / maxSoru) * 100;
                   return (
                     <div key={gun.tarih} className="flex-1 flex flex-col items-center gap-2">
-                      <div className="text-xs text-blue-300 font-bold">{gun.soruSayisi}</div>
+                      <div className="text-xs text-violet-300 font-bold">{gun.soruSayisi}</div>
                       <div className="w-full bg-slate-900 rounded-t-md relative" style={{ height: "75%" }}>
                         <div
-                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500 to-cyan-400 rounded-t-md transition-all"
+                          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-violet-500 to-purple-400 rounded-t-md transition-all"
                           style={{ height: `${yukseklik}%` }}
                         />
                       </div>
@@ -127,13 +127,13 @@ export default function IstatistiklerPage() {
             </div>
           </div>
 
-          {/* DAĞILIM */}
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30">
-            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">📈 Cevap Dağılımı</h2>
+          {/* DAÄILIM */}
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30">
+            <h2 className="text-xl font-bold text-white mb-4 tracking-tight">ğŸ“ˆ Cevap DaÄŸÄ±lÄ±mÄ±</h2>
             {toplamCevap === 0 ? (
               <div className="text-center py-12 text-slate-400">
-                <div className="text-5xl mb-3">📈</div>
-                <p>Henüz soru cevaplamadın</p>
+                <div className="text-5xl mb-3">ğŸ“ˆ</div>
+                <p>HenÃ¼z soru cevaplamadÄ±n</p>
               </div>
             ) : (
               <>
@@ -153,16 +153,16 @@ export default function IstatistiklerPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-emerald-300 text-sm font-semibold">Doğru</span>
-                      <span className="text-2xl">✓</span>
+                      <span className="text-emerald-300 text-sm font-semibold">DoÄŸru</span>
+                      <span className="text-2xl">âœ“</span>
                     </div>
                     <div className="text-3xl font-bold text-emerald-400">{dogru}</div>
                     <div className="text-xs text-emerald-300 mt-1">%{Math.round((dogru / toplamCevap) * 100)}</div>
                   </div>
                   <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-red-300 text-sm font-semibold">Yanlış</span>
-                      <span className="text-2xl">✕</span>
+                      <span className="text-red-300 text-sm font-semibold">YanlÄ±ÅŸ</span>
+                      <span className="text-2xl">âœ•</span>
                     </div>
                     <div className="text-3xl font-bold text-red-400">{yanlis}</div>
                     <div className="text-xs text-red-300 mt-1">%{Math.round((yanlis / toplamCevap) * 100)}</div>
@@ -173,19 +173,19 @@ export default function IstatistiklerPage() {
           </div>
         </div>
 
-        {/* ZAYIF ALAN ANALİZİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30 mb-8">
+        {/* ZAYIF ALAN ANALÄ°ZÄ° */}
+        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">🎯 Zayıf Alan Analizi</h2>
-              <p className="text-sm text-slate-400 mt-1">En çok yanlış yaptığın modüller — bunlara tekrar bak</p>
+              <h2 className="text-xl font-bold text-white tracking-tight">ğŸ¯ ZayÄ±f Alan Analizi</h2>
+              <p className="text-sm text-slate-400 mt-1">En Ã§ok yanlÄ±ÅŸ yaptÄ±ÄŸÄ±n modÃ¼ller â€” bunlara tekrar bak</p>
             </div>
           </div>
           {modulAnalizi.length === 0 ? (
             <div className="text-center py-12 text-slate-400">
-              <div className="text-5xl mb-3">🎯</div>
-              <p>Henüz analiz için yeterli veri yok</p>
-              <p className="text-sm mt-2">Soru çözmeye başlayın, hangi modülde zayıf olduğunuzu görelim</p>
+              <div className="text-5xl mb-3">ğŸ¯</div>
+              <p>HenÃ¼z analiz iÃ§in yeterli veri yok</p>
+              <p className="text-sm mt-2">Soru Ã§Ã¶zmeye baÅŸlayÄ±n, hangi modÃ¼lde zayÄ±f olduÄŸunuzu gÃ¶relim</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -203,12 +203,12 @@ export default function IstatistiklerPage() {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3 flex-1 min-w-0">
                         <div className="text-2xl flex-shrink-0">
-                          {m.oran < 50 ? "🔴" : m.oran < 75 ? "🟡" : "🟢"}
+                          {m.oran < 50 ? "ğŸ”´" : m.oran < 75 ? "ğŸŸ¡" : "ğŸŸ¢"}
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="font-semibold text-white text-sm leading-tight line-clamp-1">{m.baslik}</div>
                           <div className="text-xs text-slate-400 mt-0.5">
-                            {m.dogru} doğru · {m.yanlis} yanlış · {m.toplamSoru} toplam
+                            {m.dogru} doÄŸru Â· {m.yanlis} yanlÄ±ÅŸ Â· {m.toplamSoru} toplam
                           </div>
                         </div>
                       </div>
@@ -227,25 +227,25 @@ export default function IstatistiklerPage() {
           )}
         </div>
 
-        {/* SINAV GEÇMİŞİ */}
-        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30 mb-8">
+        {/* SINAV GEÃ‡MÄ°ÅÄ° */}
+        <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">⏱️ Sınav Geçmişi</h2>
-              <p className="text-sm text-slate-400 mt-1">Daha önce yaptığın sınav denemeleri</p>
+              <h2 className="text-xl font-bold text-white tracking-tight">â±ï¸ SÄ±nav GeÃ§miÅŸi</h2>
+              <p className="text-sm text-slate-400 mt-1">Daha Ã¶nce yaptÄ±ÄŸÄ±n sÄ±nav denemeleri</p>
             </div>
             <Link
               href="/sinav"
-              className="bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-blue-500/40 transition"
+              className="bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg shadow-violet-500/40 transition"
             >
-              + Yeni Sınav
+              + Yeni SÄ±nav
             </Link>
           </div>
           {sinavlar.length === 0 ? (
             <div className="text-center py-12 text-slate-400">
-              <div className="text-5xl mb-3">⏱️</div>
-              <p>Henüz sınav denemesi yok</p>
-              <p className="text-sm mt-2">Sınav simülasyonu yaparak kendini ölç</p>
+              <div className="text-5xl mb-3">â±ï¸</div>
+              <p>HenÃ¼z sÄ±nav denemesi yok</p>
+              <p className="text-sm mt-2">SÄ±nav simÃ¼lasyonu yaparak kendini Ã¶lÃ§</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -254,10 +254,10 @@ export default function IstatistiklerPage() {
           )}
         </div>
 
-        {/* SINAV PUAN TRENDİ */}
+        {/* SINAV PUAN TRENDÄ° */}
         {sinavlar.length >= 2 && (
-          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-blue-900/30 mb-8">
-            <h2 className="text-xl font-bold text-white mb-5 tracking-tight">📈 Puan Trendi</h2>
+          <div className="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl shadow-violet-900/30 mb-8">
+            <h2 className="text-xl font-bold text-white mb-5 tracking-tight">ğŸ“ˆ Puan Trendi</h2>
             <div className="flex items-end gap-2 h-32">
               {sinavlar.slice(0, 10).reverse().map((s, i) => {
                 const yuksek = (s.puan / 100) * 100;
@@ -281,43 +281,43 @@ export default function IstatistiklerPage() {
               })}
             </div>
             <div className="flex items-center gap-4 mt-3 text-xs text-slate-500">
-              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> Geçti (%60+)</span>
-              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Kaldı</span>
-              <span className="ml-auto">Son {Math.min(sinavlar.length, 10)} sınav (eskiden yeniye)</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> GeÃ§ti (%60+)</span>
+              <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-amber-500 inline-block" /> KaldÄ±</span>
+              <span className="ml-auto">Son {Math.min(sinavlar.length, 10)} sÄ±nav (eskiden yeniye)</span>
             </div>
           </div>
         )}
 
-        {/* TEHLİKE BÖLGESİ */}
+        {/* TEHLÄ°KE BÃ–LGESÄ° */}
         <div className="bg-red-500/5 border border-red-500/30 rounded-2xl p-6">
-          <h3 className="font-bold text-red-300 mb-2">⚠️ Tehlike Bölgesi</h3>
-          <p className="text-sm text-slate-400 mb-4">Tüm ilerleme, favoriler, sınav sonuçları ve cevapları silebilirsin. Bu işlem geri alınamaz!</p>
+          <h3 className="font-bold text-red-300 mb-2">âš ï¸ Tehlike BÃ¶lgesi</h3>
+          <p className="text-sm text-slate-400 mb-4">TÃ¼m ilerleme, favoriler, sÄ±nav sonuÃ§larÄ± ve cevaplarÄ± silebilirsin. Bu iÅŸlem geri alÄ±namaz!</p>
           <button
             onClick={handleSifirla}
             className="bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition"
           >
-            🗑️ Tüm Verileri Sıfırla
+            ğŸ—‘ï¸ TÃ¼m Verileri SÄ±fÄ±rla
           </button>
         </div>
       </div>
       <SharedFooter />
 
-      {/* Sıfırlama onay modalı */}
+      {/* SÄ±fÄ±rlama onay modalÄ± */}
       {sifirlaModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 shadow-2xl w-full max-w-sm">
-            <div className="text-4xl text-center mb-4">🗑️</div>
-            <h3 className="text-white font-bold text-lg text-center mb-2">Tüm Verileri Sil?</h3>
+            <div className="text-4xl text-center mb-4">ğŸ—‘ï¸</div>
+            <h3 className="text-white font-bold text-lg text-center mb-2">TÃ¼m Verileri Sil?</h3>
             <p className="text-slate-400 text-sm text-center leading-relaxed mb-6">
-              İlerleme, favoriler, sınav sonuçları ve tüm cevaplar kalıcı olarak silinecek.
-              Bu işlem <span className="text-red-400 font-semibold">geri alınamaz.</span>
+              Ä°lerleme, favoriler, sÄ±nav sonuÃ§larÄ± ve tÃ¼m cevaplar kalÄ±cÄ± olarak silinecek.
+              Bu iÅŸlem <span className="text-red-400 font-semibold">geri alÄ±namaz.</span>
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setSifirlaModal(false)}
                 className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-4 py-3 rounded-xl font-semibold transition border border-slate-600"
               >
-                İptal
+                Ä°ptal
               </button>
               <button
                 onClick={sifirlaOnayla}
@@ -336,12 +336,12 @@ export default function IstatistiklerPage() {
 function StatKart({ icon, label, value, subtext, color }: { icon: string; label: string; value: string; subtext: string; color: string }) {
   const renkSinifi: Record<string, string> = {
     emerald: "from-emerald-500 to-emerald-600 shadow-emerald-500/40",
-    blue: "from-blue-500 to-blue-700 shadow-blue-500/40",
+    blue: "from-violet-500 to-violet-700 shadow-violet-500/40",
     amber: "from-amber-500 to-amber-600 shadow-amber-500/40",
     orange: "from-orange-500 to-orange-600 shadow-orange-500/40",
   };
   return (
-    <div className="bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-blue-900/30">
+    <div className="bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-violet-900/30">
       <div className="flex items-start justify-between mb-3">
         <div className="text-3xl">{icon}</div>
       </div>
@@ -363,12 +363,12 @@ function SinavKart({ sinav }: { sinav: SinavSonuc }) {
   return (
     <div className={`bg-slate-900/50 rounded-xl p-4 border ${gecti ? "border-emerald-500/30" : "border-amber-500/30"} flex items-center gap-4`}>
       <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${gecti ? "bg-emerald-500/20" : "bg-amber-500/20"}`}>
-        {gecti ? "🎉" : "💪"}
+        {gecti ? "ğŸ‰" : "ğŸ’ª"}
       </div>
       <div className="min-w-0 flex-1">
         <div className="font-semibold text-white text-sm">{sinav.sinavAdi}</div>
         <div className="text-xs text-slate-400 mt-0.5">
-          {tarih} · {dakika} dk · {sinav.dogruSayisi}/{sinav.toplamSoru}
+          {tarih} Â· {dakika} dk Â· {sinav.dogruSayisi}/{sinav.toplamSoru}
         </div>
       </div>
       <div className="flex items-center gap-3 flex-shrink-0">
@@ -377,9 +377,9 @@ function SinavKart({ sinav }: { sinav: SinavSonuc }) {
         </div>
         <Link
           href={sinavHref}
-          className="text-xs text-blue-400 hover:text-blue-300 font-semibold bg-blue-500/10 hover:bg-blue-500/20 border border-blue-400/30 px-2.5 py-1.5 rounded-lg transition whitespace-nowrap"
+          className="text-xs text-violet-400 hover:text-violet-300 font-semibold bg-violet-500/10 hover:bg-violet-500/20 border border-violet-400/30 px-2.5 py-1.5 rounded-lg transition whitespace-nowrap"
         >
-          Tekrar →
+          Tekrar â†’
         </Link>
       </div>
     </div>

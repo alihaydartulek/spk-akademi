@@ -7,31 +7,33 @@ html {
 }
 
 body {
+  font-family: 'Space Grotesk', sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   letter-spacing: -0.011em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.02em;
-  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #0f0f1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 5px;
+  background: #4c1d95;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #7c3aed;
 }
 
 .glass {
@@ -40,8 +42,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(139, 92, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -55,5 +57,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(124, 58, 237, 0.25);
 }
