@@ -252,22 +252,15 @@ export default function HomePage() {
             <p className="animate-hero-2 text-lg md:text-xl text-[var(--text-secondary)] mb-10 max-w-3xl mx-auto leading-relaxed font-light">
               SPK Lisanslama Sınavları için <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_MODUL} modül</span>, <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_DERS} ders</span> ve <span className="text-[var(--text-primary)] font-semibold">{TOPLAM_SORU} soru</span> ile sınava bir adım önde başlayın.
             </p>
-            <div className="animate-hero-3 flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link
-                href="/dashboard"
-                className="group relative overflow-hidden bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 hover:from-indigo-400 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-indigo-500/40 transition-all duration-250 hover:scale-105 hover:shadow-cyan-500/20 flex items-center justify-center gap-2"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Ücretsiz Başla <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-                </span>
-                {/* Shimmer overlay */}
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-              </Link>
+            <div className="animate-hero-3 flex justify-center mb-16">
               <Link
                 href="/sinav"
-                className="bg-[var(--bg-surface-2)]/60 hover:bg-[var(--bg-surface-2)] border border-[var(--border-base)] hover:border-indigo-400/50 text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-250 hover:scale-105 flex items-center justify-center gap-2"
+                className="group relative overflow-hidden bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 hover:from-indigo-400 hover:to-indigo-600 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-indigo-500/40 transition-all duration-250 hover:scale-105 hover:shadow-cyan-500/20 flex items-center justify-center gap-2"
               >
-                Sınav Simülasyonu
+                <span className="relative z-10 flex items-center gap-2">
+                  🎯 Sınav Simülasyonu <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               </Link>
             </div>
             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto pt-10 border-t border-[var(--border-base)]">
