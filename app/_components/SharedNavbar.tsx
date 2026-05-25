@@ -30,9 +30,16 @@ export default function SharedNavbar({
   const navLink = (href: string, label: string) => (
     <Link
       href={href}
-      className={`hover:text-violet-400 transition ${activeHref === href ? "text-violet-400 font-semibold" : ""}`}
+      className={`relative px-2.5 py-1.5 rounded-lg transition-all duration-200 ${
+        activeHref === href
+          ? "text-violet-300 font-semibold bg-violet-500/12 border border-violet-500/25"
+          : "text-slate-300 hover:text-violet-300 hover:bg-violet-500/8"
+      }`}
     >
       {label}
+      {activeHref === href && (
+        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(100%+1px)] w-4 h-0.5 rounded-full bg-gradient-to-r from-violet-400 to-purple-400" />
+      )}
     </Link>
   );
 
@@ -81,8 +88,9 @@ export default function SharedNavbar({
             <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[520px] transition-all duration-200 origin-top ${
               sinavMenuAcik ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
             }`}>
-              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-800 border-l border-t border-slate-600/60 rotate-45" />
-              <div className="bg-slate-900 border border-slate-700/70 rounded-2xl shadow-2xl shadow-violet-900/40 overflow-hidden">
+              {/* Caret arrow — matches panel bg */}
+              <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-slate-900 border-l border-t border-slate-700/70 rotate-45 z-10" />
+              <div className="bg-slate-900 border border-slate-700/70 rounded-2xl overflow-hidden" style={{ boxShadow: "0 24px 64px -8px hsl(263 70% 10% / 0.7), 0 0 0 1px hsl(263 70% 58% / 0.06)" }}>
                 <div className="px-5 py-3.5 border-b border-slate-700/60 flex items-center gap-2">
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">SPK Lisanslama Sınavları</span>
                   <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-violet-500/15 text-violet-400 rounded-full border border-violet-500/25">8 Sınav Türü</span>
@@ -93,10 +101,10 @@ export default function SharedNavbar({
                       key={sinav.href}
                       href={sinav.href}
                       onClick={() => setSinavMenuAcik(false)}
-                      className={`group flex items-start gap-3 px-4 py-3.5 rounded-xl transition-all ${
+                      className={`group flex items-start gap-3 px-4 py-3.5 rounded-xl transition-all duration-150 ${
                         activeHref === sinav.href
                           ? "bg-violet-500/15 border border-violet-500/30"
-                          : "bg-slate-900 hover:bg-violet-500/8"
+                          : "bg-slate-900 hover:bg-violet-500/10 hover:border hover:border-violet-500/15"
                       }`}
                     >
                       <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50 mt-1.5 flex-shrink-0" />
@@ -155,10 +163,26 @@ export default function SharedNavbar({
       {mobileMenuAcik && (
         <div className="md:hidden border-t border-slate-700/50 bg-slate-900/98 backdrop-blur-xl">
           <div className="px-5 py-4 space-y-1">
-            <Link href="/dashboard" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition text-sm font-medium">Modüller</Link>
-            <Link href="/sinav" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition text-sm font-medium">Hızlı Pratik</Link>
-            <Link href="/favoriler" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition text-sm font-medium">Favoriler</Link>
-            <Link href="/istatistikler" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-800 text-slate-300 hover:text-white transition text-sm font-medium">İstatistikler</Link>
+            {[
+              { href: "/dashboard", label: "Modüller" },
+              { href: "/sinav", label: "Hızlı Pratik" },
+              { href: "/favoriler", label: "Favoriler" },
+              { href: "/istatistikler", label: "İstatistikler" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMobileMenuAcik(false)}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition text-sm font-medium ${
+                  activeHref === href
+                    ? "bg-violet-500/15 border border-violet-500/25 text-violet-300"
+                    : "hover:bg-slate-800 text-slate-300 hover:text-white"
+                }`}
+              >
+                {activeHref === href && <span className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" />}
+                {label}
+              </Link>
+            ))}
             <div className="pt-3 mt-2 border-t border-slate-700/60">
               <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Sınavlar</div>
               {SINAV_MENUSU.map((sinav) => (

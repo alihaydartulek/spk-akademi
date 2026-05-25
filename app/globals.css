@@ -1,5 +1,57 @@
 @import "tailwindcss";
 
+/* ────────────────────────────────────────────
+ * SEMANTIC DESIGN TOKENS
+ * HSL-based custom properties for brand colors,
+ * shadows, borders, and effects. Reference these
+ * everywhere instead of raw color values.
+ * ──────────────────────────────────────────── */
+:root {
+  /* Brand colors — HSL channels only (used with hsl()) */
+  --color-primary-h: 263;
+  --color-primary-s: 70%;
+  --color-primary-l: 58%;
+
+  /* Convenience shorthand */
+  --primary: hsl(263 70% 58%);           /* violet-500 equivalent */
+  --primary-light: hsl(263 70% 70%);     /* hover / lighter states */
+  --primary-dim: hsl(263 70% 58% / 0.15);/* tinted backgrounds */
+  --primary-border: hsl(263 70% 58% / 0.35); /* border with opacity */
+
+  --accent: hsl(158 64% 52%);            /* emerald accent */
+  --accent-dim: hsl(158 64% 52% / 0.15);
+
+  /* Surface tokens — match existing slate palette */
+  --surface-base: hsl(222 47% 8%);       /* slate-900 */
+  --surface-raised: hsl(222 47% 12%);    /* slate-800 */
+  --surface-overlay: hsl(222 47% 16%);   /* slate-700 */
+
+  /* Border tokens */
+  --border-subtle: hsl(222 20% 25% / 0.5);   /* slate-700/50 */
+  --border-brand: hsl(263 70% 58% / 0.35);   /* violet tinted */
+  --border-brand-hover: hsl(263 70% 58% / 0.6);
+
+  /* Shadow tokens */
+  --shadow-card: 0 8px 32px -4px hsl(263 70% 20% / 0.35);
+  --shadow-card-hover: 0 16px 48px -8px hsl(263 70% 20% / 0.5);
+  --shadow-glow: 0 0 40px hsl(263 70% 58% / 0.3);
+  --shadow-glow-sm: 0 0 20px hsl(263 70% 58% / 0.2);
+  --shadow-accent-glow: 0 0 24px hsl(158 64% 52% / 0.3);
+
+  /* Gradient tokens */
+  --gradient-brand: linear-gradient(135deg, hsl(263 70% 55%), hsl(280 65% 60%));
+  --gradient-brand-cta: linear-gradient(135deg, hsl(263 70% 60%), hsl(263 70% 45%));
+  --gradient-hero-bg: linear-gradient(to bottom, hsl(222 47% 8%), hsl(263 50% 10%), hsl(222 47% 8%));
+
+  /* Typography scale tokens */
+  --text-hero: clamp(2.75rem, 6vw, 4.5rem);
+
+  /* Transition tokens */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -24,16 +76,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0f1a;
+  background: var(--surface-base);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4c1d95;
+  background: hsl(263 60% 35%);
   border-radius: 4px;
+  transition: background var(--transition-fast);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: var(--primary);
 }
 
 .glass {
@@ -42,13 +95,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(139, 92, 246, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
+  background-image:
+    linear-gradient(var(--primary-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-dim) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.25);
+  background: hsl(263 70% 58% / 0.28);
+  color: hsl(0 0% 100%);
+}
+
+/* ────────────────────────────────────────────
+ * SEMANTIC UTILITY CLASSES
+ * Use these in components instead of raw values
+ * ──────────────────────────────────────────── */
+
+/* Card surface with brand shadow */
+.card-base {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  border-radius: 1rem;
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.card-base:hover {
+  border-color: var(--border-brand);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Brand glow effect for primary interactive elements */
+.glow-primary {
+  box-shadow: var(--shadow-glow-sm);
+}
+
+.glow-primary:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Active nav link indicator */
+.nav-link-active {
+  color: var(--primary-light);
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  border-radius: 1px;
 }
 
 /* ────────────────────────────────────────────
@@ -224,6 +324,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────
+ * AMBIENT ANIMATIONS (subtle, continuous)
+ * ──────────────────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* Glow orb pulse for hero background elements */
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.15; }
+  50%       { transform: scale(1.08); opacity: 0.22; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-orb-pulse {
+  animation: orbPulse 6s ease-in-out infinite;
+}
+
+/* ────────────────────────────────────────────
  * BUTTON PRESS EFFECT (global)
  * All buttons & interactive elements get a
  * subtle scale-down on active unless overridden
@@ -239,16 +367,22 @@ button:not([disabled]):active {
   transform: scale(0.96);
 }
 
-/* Focus ring smooth */
+/* Focus ring — uses semantic primary token for consistency */
 button:focus-visible,
-a:focus-visible {
-  outline: 2px solid rgb(167 139 250);
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary-light);
   outline-offset: 2px;
-  transition: outline-offset 0.15s ease;
+  border-radius: 4px;
 }
 
 /* ────────────────────────────────────────────
  * REDUCED MOTION
+ * Covers all animations including Tailwind's
+ * animate-ping, animate-spin, animate-bounce,
+ * and all custom keyframe classes above.
  * ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -257,5 +391,17 @@ a:focus-visible {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Explicitly stop infinite Tailwind utility animations */
+  .animate-ping,
+  .animate-spin,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-float,
+  .animate-orb-pulse,
+  .animate-star-bounce {
+    animation: none !important;
   }
 }
