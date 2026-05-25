@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { modules } from "./index";
 import { modulIlerlemesi, tamamlananDersSayisi, getTamamlananDersler } from "./lib/storage";
@@ -234,26 +234,26 @@ export default function HomePage() {
         <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl" />
         <div className="relative max-w-7xl mx-auto px-6 py-28 lg:py-36">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/30 rounded-full px-4 py-2 mb-8">
+            <div className="animate-hero-1 inline-flex items-center gap-2 bg-violet-500/10 border border-violet-400/30 rounded-full px-4 py-2 mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
               <span className="text-sm text-violet-100 font-medium">SPK Sermaye Piyasası Lisanslama · Tüm Sınavlar</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+            <h1 className="animate-hero-1 text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
               Türkiye'nin<br />
               <span className="bg-gradient-to-r from-violet-400 via-purple-300 to-violet-400 bg-clip-text text-transparent">En Kapsamlı</span>{" "}
               <span className="text-white">SPL Platformu</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="animate-hero-2 text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
               SPK Lisanslama Sınavları için <span className="text-white font-semibold">{TOPLAM_MODUL} modül</span>, <span className="text-white font-semibold">{TOPLAM_DERS} ders</span> ve <span className="text-white font-semibold">{TOPLAM_SORU} soru</span> ile sınava bir adım önde başlayın.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/dashboard" className="group bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-2">
-                Ücretsiz Başla <span>→</span>
+            <div className="animate-hero-3 flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Link href="/dashboard" className="group bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl transition-all hover:scale-105 hover:shadow-white/20 flex items-center justify-center gap-2">
+                Ücretsiz Başla <span className="group-hover:translate-x-0.5 transition-transform">→</span>
               </Link>
-              <Link href="/sinav" className="bg-violet-500/10 hover:bg-violet-500/20 border border-violet-400/30 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105">
+              <Link href="/sinav" className="bg-violet-500/10 hover:bg-violet-500/20 border border-violet-400/30 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:scale-105 hover:border-violet-400/60">
                 ⏱️ Sınav Simülasyonu
               </Link>
             </div>
@@ -373,11 +373,13 @@ export default function HomePage() {
               const toplamSoruSayisi = modul.lessons.reduce((s, l) => s + l.questions.length, 0);
               const ilerleme = mounted ? modulIlerlemesi(modul.id, modul.lessons.length) : 0;
               const tamamlanan = mounted ? tamamlananDersSayisi(modul.id) : 0;
+              const staggerMs = Math.min(idx * 50, 400);
               return (
                 <Link
                   key={modul.id}
                   href={`/dashboard?modul=${modul.id}`}
-                  className="group relative bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-500/50 shadow-xl shadow-violet-900/30 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1"
+                  className="animate-card-stagger group relative bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-500/50 shadow-xl shadow-violet-900/30 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01]"
+                  style={{ "--stagger-delay": `${staggerMs}ms` } as React.CSSProperties}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-11 h-11 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-violet-500/50">
@@ -461,7 +463,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SINAVLAR.map((sinav) => {
+            {SINAVLAR.map((sinav, idx) => {
               const renkler: Record<string, { badge: string; dot: string; hover: string }> = {
                 blue:    { badge: "bg-violet-500/20 text-violet-300 border-violet-400/40",    dot: "bg-violet-400",    hover: "hover:border-violet-400/60" },
                 cyan:    { badge: "bg-purple-500/20 text-purple-300 border-purple-400/40",    dot: "bg-purple-400",    hover: "hover:border-purple-400/60" },
@@ -477,7 +479,8 @@ export default function HomePage() {
                 <Link
                   key={sinav.kod}
                   href={sinav.href}
-                  className={`group bg-slate-800 border border-slate-700 ${r.hover} rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-violet-900/40 hover:-translate-y-0.5 flex flex-col`}
+                  className={`animate-card-stagger group bg-slate-800 border border-slate-700 ${r.hover} rounded-2xl p-5 transition-all duration-200 hover:shadow-xl hover:shadow-violet-900/40 hover:-translate-y-1 hover:scale-[1.01] flex flex-col`}
+                  style={{ "--stagger-delay": `${idx * 50}ms` } as React.CSSProperties}
                 >
                   {/* Üst: kod badge + aktif gösterge */}
                   <div className="flex items-center justify-between mb-4">

@@ -286,7 +286,7 @@ export default function FavorilerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -327,10 +327,10 @@ export default function FavorilerPage() {
 
         {/* Liste */}
         {aktifTab === "favoriler" && (
-          <div className="space-y-4">
+          <div className="animate-fade-in space-y-4">
             {favoriler.length === 0 ? (
               <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
-                <div className="text-6xl mb-4">⭐</div>
+                <div className="text-6xl mb-4 animate-star-bounce inline-block">⭐</div>
                 <h3 className="text-xl font-bold text-white mb-2">Henüz favori eklemediniz</h3>
                 <p className="text-slate-400 mb-6">Sorulardaki yıldız ikonuna tıklayarak zor soruları kaydedin.</p>
                 <Link href="/dashboard" className="inline-block bg-gradient-to-br from-violet-500 to-violet-700 hover:from-violet-600 hover:to-violet-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg shadow-violet-500/40 transition">
@@ -373,7 +373,7 @@ export default function FavorilerPage() {
         )}
 
         {aktifTab === "yanlislar" && (
-          <div className="space-y-4">
+          <div className="animate-fade-in space-y-4">
             {yanlislar.length === 0 ? (
               <div className="bg-slate-800 rounded-2xl p-12 text-center border border-slate-700">
                 <div className="text-6xl mb-4">🎯</div>

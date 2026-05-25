@@ -13,6 +13,23 @@ import { modules } from "../../index";
 import type { Question } from "../../mevzuat";
 import { sinavSonucuKaydet, favoriEkle } from "../../lib/storage";
 
+/* ─── Yardımcı hook ─── */
+
+function useCountUpFloat(target: number, duration = 1500) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(parseFloat((progress * target).toFixed(1)));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration]);
+  return count;
+}
+
 /* ─── Tip Tanımları ─── */
 
 export type Konu = {
@@ -490,7 +507,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
           {/* İlerleme barı */}
           <div className="h-1 bg-slate-800">
             <div
-              className="h-full bg-gradient-to-r from-violet-500 to-purple-400 transition-all duration-300"
+              className="h-full bg-gradient-to-r from-violet-500 to-purple-400 transition-all duration-500 ease-out"
               style={{ width: `${(cevaplanan / sorular.length) * 100}%` }}
             />
           </div>
@@ -584,10 +601,10 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                     <button
                       key={opt.id}
                       onClick={() => cevapla(aktifIdx, opt.id)}
-                      className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-start gap-3 group ${
+                      className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start gap-3 group ${
                         secili
-                          ? "bg-violet-500/12 border-violet-400/60 shadow-lg shadow-violet-500/10"
-                          : "bg-slate-900/50 border-slate-700/60 hover:border-violet-400/40 hover:bg-violet-500/5"
+                          ? "bg-violet-500/12 border-violet-400/60 shadow-lg shadow-violet-500/20 scale-[1.01]"
+                          : "bg-slate-900/50 border-slate-700/60 hover:border-violet-400/40 hover:bg-violet-500/5 hover:scale-[1.005]"
                       }`}
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm flex-shrink-0 transition ${
@@ -758,51 +775,22 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
     const suSaniye = sureSaniye % 60;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 animate-page-in">
         <SinavNavbar config={config} asama="sonuc" />
         <div className="max-w-5xl mx-auto px-4 py-10">
 
           {/* Ana kart */}
-          <div className={`rounded-3xl p-8 md:p-12 border-2 shadow-2xl text-center mb-8 bg-slate-800/80 ${
-            gecti ? "border-emerald-500/40 shadow-emerald-500/15" : "border-amber-500/40 shadow-amber-500/15"
-          }`}>
-            <div className="text-6xl mb-4">{gecti ? "🎉" : "💪"}</div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {gecti ? "Tebrikler! Sınavı Geçtiniz!" : "Biraz Daha Çalışmanız Gerekiyor"}
-            </h1>
-            <p className="text-slate-400 mb-8">{config.tamAd} · {suDakika} dk {suSaniye} sn</p>
-
-            <div className="inline-flex flex-col items-center mb-8">
-              <div className={`text-7xl md:text-8xl font-bold mb-2 ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
-                %{puan.toFixed(1)}
-              </div>
-              <div className={`text-sm font-semibold px-4 py-1.5 rounded-full border ${
-                gecti ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
-                      : "bg-amber-500/15 text-amber-300 border-amber-500/30"
-              }`}>
-                {gecti ? `✓ Geçti (%${config.gecmeEsigi} eşiğinin üzerinde)` : `✗ Kaldı (%${config.gecmeEsigi} eşiğinin altında)`}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
-              <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-2xl p-4">
-                <div className="text-4xl font-bold text-emerald-400">{dogru}</div>
-                <div className="text-xs text-emerald-300 mt-1 uppercase tracking-wider font-semibold">Doğru</div>
-              </div>
-              <div className="bg-red-500/10 border border-red-500/25 rounded-2xl p-4">
-                <div className="text-4xl font-bold text-red-400">{yanlis}</div>
-                <div className="text-xs text-red-300 mt-1 uppercase tracking-wider font-semibold">Yanlış</div>
-              </div>
-              <div className="bg-slate-700/50 border border-slate-600 rounded-2xl p-4">
-                <div className="text-4xl font-bold text-slate-300">{bos}</div>
-                <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Boş</div>
-              </div>
-            </div>
-
-            <div className="mt-6 pt-6 border-t border-slate-700 text-sm text-slate-400">
-              Süre: {suDakika} dk {suSaniye} sn · Toplam {sorular.length} soru
-            </div>
-          </div>
+          <SonucKart
+            puan={puan}
+            gecti={gecti}
+            config={config}
+            suDakika={suDakika}
+            suSaniye={suSaniye}
+            dogru={dogru}
+            yanlis={yanlis}
+            bos={bos}
+            sorularLength={sorular.length}
+          />
 
           {/* Konu analizi */}
           <div className="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-8 shadow-xl shadow-violet-900/20">
@@ -826,7 +814,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
                       </span>
                     </div>
                     <div className="h-2.5 bg-slate-900 rounded-full overflow-hidden">
-                      <div className={`h-full rounded-full transition-all duration-700 ${
+                      <div className={`h-full rounded-full animate-progress ${
                         iyi ? "bg-gradient-to-r from-emerald-500 to-emerald-400"
                         : orta ? "bg-gradient-to-r from-amber-500 to-amber-400"
                         : "bg-gradient-to-r from-red-500 to-red-400"
@@ -938,6 +926,65 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
   }
 
   return null;
+}
+
+/* ─── Sonuç Ana Kart (hook kullanabilmek için ayrı bileşen) ─── */
+function SonucKart({
+  puan, gecti, config, suDakika, suSaniye, dogru, yanlis, bos, sorularLength,
+}: {
+  puan: number;
+  gecti: boolean;
+  config: SinavConfig;
+  suDakika: number;
+  suSaniye: number;
+  dogru: number;
+  yanlis: number;
+  bos: number;
+  sorularLength: number;
+}) {
+  const animPuan = useCountUpFloat(puan, 1500);
+  return (
+    <div className={`rounded-3xl p-8 md:p-12 border-2 shadow-2xl text-center mb-8 bg-slate-800/80 animate-fade-up ${
+      gecti ? "border-emerald-500/40 shadow-emerald-500/15" : "border-amber-500/40 shadow-amber-500/15"
+    }`}>
+      <div className="text-6xl mb-4">{gecti ? "🎉" : "💪"}</div>
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+        {gecti ? "Tebrikler! Sınavı Geçtiniz!" : "Biraz Daha Çalışmanız Gerekiyor"}
+      </h1>
+      <p className="text-slate-400 mb-8">{config.tamAd} · {suDakika} dk {suSaniye} sn</p>
+
+      <div className="inline-flex flex-col items-center mb-8">
+        <div className={`text-7xl md:text-8xl font-bold mb-2 tabular-nums ${gecti ? "text-emerald-400" : "text-amber-400"}`}>
+          %{animPuan.toFixed(1)}
+        </div>
+        <div className={`text-sm font-semibold px-4 py-1.5 rounded-full border ${
+          gecti ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                : "bg-amber-500/15 text-amber-300 border-amber-500/30"
+        }`}>
+          {gecti ? `✓ Geçti (%${config.gecmeEsigi} eşiğinin üzerinde)` : `✗ Kaldı (%${config.gecmeEsigi} eşiğinin altında)`}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+        <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-2xl p-4">
+          <div className="text-4xl font-bold text-emerald-400">{dogru}</div>
+          <div className="text-xs text-emerald-300 mt-1 uppercase tracking-wider font-semibold">Doğru</div>
+        </div>
+        <div className="bg-red-500/10 border border-red-500/25 rounded-2xl p-4">
+          <div className="text-4xl font-bold text-red-400">{yanlis}</div>
+          <div className="text-xs text-red-300 mt-1 uppercase tracking-wider font-semibold">Yanlış</div>
+        </div>
+        <div className="bg-slate-700/50 border border-slate-600 rounded-2xl p-4">
+          <div className="text-4xl font-bold text-slate-300">{bos}</div>
+          <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Boş</div>
+        </div>
+      </div>
+
+      <div className="mt-6 pt-6 border-t border-slate-700 text-sm text-slate-400">
+        Süre: {suDakika} dk {suSaniye} sn · Toplam {sorularLength} soru
+      </div>
+    </div>
+  );
 }
 
 /* ─── Custom Onay Modalı ─── */

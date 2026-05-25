@@ -24,7 +24,10 @@
       "Bash(git push *)",
       "WebFetch(domain:www.finlisans.com)",
       "Bash(powershell -Command ' *)",
-      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; npm run build 2>&1 | Where-Object { $_ -match \"warn|error|Warning|Error\" } | Select-Object -First 20)"
+      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; npm run build 2>&1 | Where-Object { $_ -match \"warn|error|Warning|Error\" } | Select-Object -First 20)",
+      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run dev\" -PassThru | Select-Object Id; Start-Sleep -Seconds 5; \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5\\).StatusCode)",
+      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Process powershell -ArgumentList \"-Command\", \"npm run dev\" -WorkingDirectory \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Sleep -Seconds 8; try { \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"Not ready yet: $_\" })",
+      "mcp__Claude_in_Chrome__list_connected_browsers"
     ]
   }
 }

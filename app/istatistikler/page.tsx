@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { modules } from "../index";
 import {
@@ -70,7 +70,7 @@ export default function IstatistiklerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -216,7 +216,7 @@ export default function IstatistiklerPage() {
                     </div>
                     <div className="h-2 bg-slate-900 rounded-full overflow-hidden">
                       <div
-                        className={`h-full bg-gradient-to-r ${renkSinifi} transition-all`}
+                        className={`h-full bg-gradient-to-r ${renkSinifi} animate-progress`}
                         style={{ width: `${m.oran}%` }}
                       />
                     </div>
@@ -333,6 +333,25 @@ export default function IstatistiklerPage() {
   );
 }
 
+function useCountUp(target: number, duration = 1200) {
+  const [count, setCount] = useState(0);
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    if (target === 0) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration]);
+  return count;
+}
+
 function StatKart({ icon, label, value, subtext, color }: { icon: string; label: string; value: string; subtext: string; color: string }) {
   const renkSinifi: Record<string, string> = {
     emerald: "from-emerald-500 to-emerald-600 shadow-emerald-500/40",
@@ -340,13 +359,21 @@ function StatKart({ icon, label, value, subtext, color }: { icon: string; label:
     amber: "from-amber-500 to-amber-600 shadow-amber-500/40",
     orange: "from-orange-500 to-orange-600 shadow-orange-500/40",
   };
+
+  // Try to extract a number from value (e.g. "%85" -> 85, "12" -> 12)
+  const numericMatch = value.match(/\d+/);
+  const numericTarget = numericMatch ? parseInt(numericMatch[0], 10) : 0;
+  const prefix = value.startsWith("%") ? "%" : "";
+  const animCount = useCountUp(numericTarget, 1200);
+  const displayValue = numericMatch ? `${prefix}${animCount}` : value;
+
   return (
-    <div className="bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-violet-900/30">
+    <div className="animate-fade-up bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-xl shadow-violet-900/30 hover:-translate-y-0.5 transition-transform duration-200">
       <div className="flex items-start justify-between mb-3">
         <div className="text-3xl">{icon}</div>
       </div>
-      <div className={`text-3xl font-bold bg-gradient-to-br ${renkSinifi[color]} bg-clip-text text-transparent mb-1`}>
-        {value}
+      <div className={`text-3xl font-bold tabular-nums bg-gradient-to-br ${renkSinifi[color]} bg-clip-text text-transparent mb-1`}>
+        {displayValue}
       </div>
       <div className="text-sm text-white font-semibold mb-0.5">{label}</div>
       <div className="text-xs text-slate-400">{subtext}</div>

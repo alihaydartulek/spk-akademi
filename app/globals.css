@@ -47,15 +47,215 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 60px 60px;
 }
 
+::selection {
+  background: rgba(124, 58, 237, 0.25);
+}
+
+/* ────────────────────────────────────────────
+ * KEYFRAME ANIMATIONS
+ * ──────────────────────────────────────────── */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInTop {
+  from { opacity: 0; transform: translateY(-48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutTop {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-48px); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
+  60%  { transform: translateX(-50%) translateY(-6px) scale(1.04); }
+  80%  { transform: translateX(-50%) translateY(2px) scale(0.98); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes checkmarkPop {
+  0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
+  60%  { transform: scale(1.3) rotate(5deg);  opacity: 1; }
+  100% { transform: scale(1) rotate(0);      opacity: 1; }
+}
+
+@keyframes pulseGreen {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  50%       { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.2); }
+}
+
+@keyframes shakeRed {
+  0%, 100% { transform: translateX(0); }
+  15%      { transform: translateX(-6px); }
+  30%      { transform: translateX(6px); }
+  45%      { transform: translateX(-4px); }
+  60%      { transform: translateX(4px); }
+  75%      { transform: translateX(-2px); }
+  90%      { transform: translateX(2px); }
+}
+
+@keyframes starBounce {
+  0%, 100% { transform: translateY(0); }
+  30%      { transform: translateY(-10px); }
+  50%      { transform: translateY(-6px); }
+  70%      { transform: translateY(-12px); }
+}
+
+@keyframes progressGrow {
+  from { width: 0%; }
+}
+
+@keyframes sidebarSlideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInStagger1 {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInStagger2 {
+  0%   { opacity: 0; transform: translateY(24px); }
+  40%  { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInStagger3 {
+  0%   { opacity: 0; transform: translateY(24px); }
+  55%  { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ────────────────────────────────────────────
+ * ANIMATION UTILITY CLASSES
+ * ──────────────────────────────────────────── */
 
 .animate-fade-in {
   animation: fadeIn 0.4s ease-out;
 }
 
-::selection {
-  background: rgba(124, 58, 237, 0.25);
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+.animate-page-in {
+  animation: fadeInPage 0.4s ease-out;
+}
+
+.animate-slide-in-top {
+  animation: slideInTop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.25s ease-out both;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-checkmark-pop {
+  animation: checkmarkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-pulse-green {
+  animation: pulseGreen 0.6s ease-out;
+}
+
+.animate-shake-red {
+  animation: shakeRed 0.5s ease-out;
+}
+
+.animate-star-bounce {
+  animation: starBounce 1.2s ease-in-out infinite;
+}
+
+.animate-sidebar-in {
+  animation: sidebarSlideIn 0.25s ease-out both;
+}
+
+/* Hero stagger — title / subtitle / buttons */
+.animate-hero-1 {
+  animation: fadeInStagger1 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-hero-2 {
+  animation: fadeInStagger2 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-hero-3 {
+  animation: fadeInStagger3 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Card stagger via CSS custom property */
+.animate-card-stagger {
+  animation: cardFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--stagger-delay, 0ms);
+}
+
+/* Progress bar animate from 0 on mount */
+.animate-progress {
+  animation: progressGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ────────────────────────────────────────────
+ * BUTTON PRESS EFFECT (global)
+ * All buttons & interactive elements get a
+ * subtle scale-down on active unless overridden
+ * ──────────────────────────────────────────── */
+button:not([disabled]),
+a[role="button"] {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+button:not([disabled]):active {
+  transform: scale(0.96);
+}
+
+/* Focus ring smooth */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgb(167 139 250);
+  outline-offset: 2px;
+  transition: outline-offset 0.15s ease;
+}
+
+/* ────────────────────────────────────────────
+ * REDUCED MOTION
+ * ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

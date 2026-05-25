@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { modules } from "../index";
 import type { Question } from "../mevzuat";
@@ -183,7 +183,7 @@ export default function SinavPage() {
   // ═══════════════════════════════════════════
   if (asama === "secim") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 flex flex-col animate-page-in">
         <div className="fixed top-1/4 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
         <SharedNavbar subtitle="Sınav Simülasyonu" activeHref="/sinav" />
 
@@ -203,11 +203,12 @@ export default function SinavPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-            {TAM_SINAVLAR.map((sinav) => (
+            {TAM_SINAVLAR.map((sinav, idx) => (
               <Link
                 key={sinav.href}
                 href={sinav.href}
-                className="group relative bg-slate-800/80 border border-slate-700 hover:border-violet-500/50 rounded-2xl p-6 shadow-xl shadow-violet-900/20 hover:shadow-2xl hover:shadow-violet-500/20 transition-all hover:-translate-y-1"
+                className="animate-card-stagger group relative bg-slate-800/80 border border-slate-700 hover:border-violet-500/50 rounded-2xl p-6 shadow-xl shadow-violet-900/20 hover:shadow-2xl hover:shadow-violet-500/20 transition-all hover:-translate-y-1.5 hover:scale-[1.01]"
+                style={{ "--stagger-delay": `${idx * 50}ms` } as React.CSSProperties}
               >
                 {/* Kod badge */}
                 <div className={`w-12 h-12 bg-gradient-to-br ${sinav.renk} rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg mb-4`}>
@@ -242,11 +243,12 @@ export default function SinavPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-              {SINAV_TANIMLARI.map((sinav) => (
+              {SINAV_TANIMLARI.map((sinav, idx) => (
                 <button
                   key={sinav.kod}
                   onClick={() => baslat(sinav.kod)}
-                  className="group text-left bg-slate-800/60 border border-slate-700/60 hover:border-violet-400/40 rounded-xl p-4 shadow-md hover:shadow-xl hover:shadow-violet-500/10 transition-all hover:-translate-y-0.5"
+                  className="animate-card-stagger group text-left bg-slate-800/60 border border-slate-700/60 hover:border-violet-400/40 rounded-xl p-4 shadow-md hover:shadow-xl hover:shadow-violet-500/10 transition-all hover:-translate-y-1 hover:scale-[1.01]"
+                  style={{ "--stagger-delay": `${idx * 40}ms` } as React.CSSProperties}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="font-bold text-base text-slate-200 group-hover:text-violet-300 transition">{sinav.ad}</h3>

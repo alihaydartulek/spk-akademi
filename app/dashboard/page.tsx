@@ -69,7 +69,7 @@ export default function DashboardPage() {
   }, [aramaMetni]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-violet-950 to-slate-900 relative animate-page-in">
       <div className="fixed top-1/4 right-0 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="fixed bottom-1/4 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -92,7 +92,7 @@ export default function DashboardPage() {
 
       <div className="relative max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-6 p-6">
         {/* SIDEBAR */}
-        <aside className={`${sidebarAcik ? "block" : "hidden"} lg:block w-full lg:w-80 flex-shrink-0`}>
+        <aside className={`${sidebarAcik ? "animate-sidebar-in" : "hidden"} lg:block lg:animate-sidebar-in w-full lg:w-80 flex-shrink-0`}>
           <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-xl shadow-violet-900/30 lg:sticky lg:top-24 max-h-[70vh] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden">
             <div className="p-5 border-b border-slate-700">
               <div className="flex items-center justify-between mb-3">
@@ -128,10 +128,10 @@ export default function DashboardPage() {
                           setSecilenDersId(modul.lessons[0]?.id || "");
                           // Mobilden modül seçilince ders listesi açılsın ama içerik için kapanmasın
                         }}
-                        className={`w-full text-left p-3 rounded-lg transition-all ${
+                        className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                           acikMi
-                            ? "bg-violet-500/10 border border-violet-400/30 shadow-md shadow-violet-500/20"
-                            : "hover:bg-slate-700/50 border border-transparent"
+                            ? "bg-violet-500/10 border border-violet-400/30 shadow-md shadow-violet-500/20 translate-x-0.5"
+                            : "hover:bg-slate-700/50 border border-transparent hover:translate-x-0.5"
                         }`}
                       >
                         <div className="flex items-start gap-3">
@@ -182,7 +182,7 @@ export default function DashboardPage() {
                                     : "text-slate-400 hover:bg-slate-700/50 hover:text-white"
                                 }`}
                               >
-                                {tamam && <span className="text-emerald-400 flex-shrink-0">✓</span>}
+                                {tamam && <span className="text-emerald-400 flex-shrink-0 animate-checkmark-pop inline-block">✓</span>}
                                 <span className="line-clamp-1">{ders.title}</span>
                               </button>
                             );
@@ -381,8 +381,8 @@ export default function DashboardPage() {
 
       {/* Tamamlama toast */}
       {tamamlaToast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] flex items-center gap-3 bg-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-emerald-500/40 animate-bounce-in font-semibold text-sm">
-          <span className="text-xl">✓</span>
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[200] flex items-center gap-3 bg-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-emerald-500/40 animate-slide-in-top font-semibold text-sm whitespace-nowrap">
+          <span className="text-xl animate-checkmark-pop inline-block">✓</span>
           Ders tamamlandı! 🎉
         </div>
       )}
