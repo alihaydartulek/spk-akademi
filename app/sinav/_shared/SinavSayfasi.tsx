@@ -12,6 +12,7 @@ import Link from "next/link";
 import { modules } from "../../index";
 import type { Question } from "../../mevzuat";
 import { sinavSonucuKaydet, favoriEkle } from "../../lib/storage";
+import LogoMark from "../../_components/LogoMark";
 
 /* ─── Yardımcı hook ─── */
 
@@ -469,9 +470,7 @@ export default function SinavSayfasi({ config }: { config: SinavConfig }) {
 
             {/* Sol: logo + bilgi */}
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0">
-                LP
-              </div>
+              <LogoMark size={36} />
               <div className="min-w-0">
                 <div className="font-bold text-[var(--text-primary)] text-sm leading-none">{config.tamAd}</div>
                 <div className="text-xs text-indigo-300 mt-0.5">
@@ -1027,7 +1026,7 @@ function SinavNavbar({ config, asama }: { config: SinavConfig; asama: Asama }) {
     <nav className="sticky top-0 z-50 bg-[var(--bg-base)]/85 backdrop-blur-xl border-b border-[var(--border-base)]">
       <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-indigo-500/30">SPK</div>
+          <LogoMark size={40} />
           <div>
             <div className="font-bold text-[var(--text-primary)] text-base leading-none">LisansPro</div>
             <div className="text-[10px] text-indigo-300 mt-0.5 tracking-wider uppercase">{config.sinavAdi} Simülasyonu</div>
