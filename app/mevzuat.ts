@@ -29,6 +29,10 @@ export type Lesson = {
       items: { strong: string; text: string }[];
     }[];
     tip: string;
+    /** Anahtar kavramlar sözlüğü (opsiyonel) */
+    kavramlar?: { terim: string; tanim: string }[];
+    /** Sınavda dikkat edilmesi gereken çok sayıda uyarı (opsiyonel) */
+    dikkatlar?: string[];
   };
   questions: Question[];
 };
@@ -56,7 +60,7 @@ export const mevzuatVerisi: Module[] = [
         summary: {
           title: "Sermaye Piyasası Kavramı ve Unsurları",
           intro:
-            "Sermaye piyasası; orta ve uzun vadeli ödünç verilebilir fonların, sermaye piyasası araçlarının alım satımı yoluyla tasarruf sahiplerinden fon talep edenlere aktarıldığı ve bu iki kesim arasında doğrudan finansman köprüsü kurulmasını sağlayan piyasanın adıdır. Para piyasasıyla birlikte finans piyasasının bir alt türünü oluşturur; özellikle riski dağıtma, mülkiyeti tabana yayma ve likidite sağlama fonksiyonları sermaye piyasasına özgüdür.",
+            "Sermaye piyasası; orta ve uzun vadeli fon ihtiyacının, sermaye piyasası araçlarının alım satımı aracılığıyla tasarruf sahiplerinden fon talep edenlere aktarıldığı, doğrudan finansman mekanizmasının işlediği organize piyasalar bütünüdür. Bu tanımın birkaç unsuru dikkat çeker: (i) vadeler orta-uzun vadelidir (para piyasasının kısa vade yapısından bu yönde ayrılır), (ii) transfer aracılığı 'sermaye piyasası aracı' ile gerçekleşir, (iii) banka benzeri aracılar devreye girmeksizin doğrudan finansman köprüsü kurulur. Para piyasasıyla birlikte finans piyasasının iki ana alt dalından birini oluşturur. Üç temel ekonomik işlevi vardır: (1) Riski dağıtma — birçok yatırımcının küçük paylar üstlenmesiyle büyük projelerin finansmanını mümkün kılar; (2) Mülkiyeti tabana yayma — küçük tasarrufçular büyük şirketlerin ortağı olabilir; (3) Likidite sağlama — araçların ikincil piyasada işlem görmesiyle yatırımcılar ihtiyaç duydukları anda pozisyonlarını nakde çevirebilir. Sermaye piyasası aynı zamanda ekonominin 'barometresi' işlevi görür: piyasa fiyatları beklentileri, büyüme dinamiklerini ve risk algısını anlık yansıtır.",
           sections: [
             {
               heading: "Birincil ve İkincil Piyasa Ayrımı",
@@ -64,46 +68,93 @@ export const mevzuatVerisi: Module[] = [
               items: [
                 {
                   strong: "Birincil Piyasa:",
-                  text: "Sermaye piyasası araçlarının ihraççı tarafından ilk kez piyasaya çıkarılarak alıcılara satıldığı piyasadır; ihraççıya doğrudan fon akışı sağlar.",
+                  text: "Sermaye piyasası araçlarının ihraççı tarafından ilk kez piyasaya çıkarılarak yatırımcılara satıldığı piyasadır. Halka arz ve nitelikli yatırımcıya satış yoluyla işler; fon doğrudan ihraççıya akar. Halka arz izahnamesinin SPK tarafından onaylanması zorunludur.",
                 },
                 {
                   strong: "İkincil Piyasa:",
-                  text: "Daha önce ihraç edilmiş araçların yatırımcılar arasında alınıp satıldığı piyasadır; likidite, fiyat oluşumu ve vade belirleme fonksiyonlarını üstlenir.",
+                  text: "Daha önce ihraç edilmiş araçların yatırımcılar arasında el değiştirdiği piyasadır. İhraççıya artık fon akışı sağlamaz; bununla birlikte birincil piyasa fiyatını doğrudan etkiler. Üç kritik fonksiyonu vardır: (a) likidite sağlama, (b) fiyat keşfi ve oluşumu, (c) borçlanma araçlarında vade belirleme.",
                 },
                 {
-                  strong: "Spot ve Vadeli Piyasalar:",
-                  text: "Spot piyasada işlem ve teslim aynı anda yapılır (Pay Piyasası, Tahvil ve Bono Piyasası); vadeli piyasalar forward, swap, futures ve opsiyon işlemlerini kapsar.",
+                  strong: "Spot Piyasa:",
+                  text: "İşlem ve teslimin eş zamanlı gerçekleştiği piyasadır. Borsa İstanbul Pay Piyasası ve Tahvil-Bono Piyasası bu kategorinin başlıca örneklerindendir. Uzlaşma süresi en fazla T+2 olup anlık fiyatlar piyasanın cari değerini yansıtır.",
+                },
+                {
+                  strong: "Vadeli Piyasa:",
+                  text: "İşlemin bugün yapıldığı, teslimatın ileriki bir tarihe bırakıldığı piyasalardır. Forward (tezgâhüstü/ikili sözleşme), swap (faiz/döviz/emtia takası), futures (standart borsada işlem gören vadeli sözleşme) ve opsiyon (alım-satım hakkı veren sözleşme) olmak üzere dört temel enstrüman barındırır. Borsa İstanbul Vadeli İşlem ve Opsiyon Piyasası (VİOP) organize vadeli piyasaların merkezidir.",
+                },
+                {
+                  strong: "Organize ve Tezgâhüstü (OTC) Piyasalar:",
+                  text: "Organize piyasalar standart sözleşmeler, merkezi takas ve kamuyu aydınlatma zorunluluklarıyla güvence altındadır (Borsa İstanbul). OTC piyasalar ise esneklik sunar; iki taraf arasında serbestçe belirlenen koşullarla işlemler yapılır (forward, tezgâhüstü swaplar).",
                 },
               ],
             },
             {
-              heading: "Sermaye Piyasasının Beş Unsuru",
+              heading: "Sermaye Piyasasının Beş Temel Unsuru",
               icon: "trend",
               items: [
                 {
-                  strong: "Fon Talep Edenler (İhraççılar):",
-                  text: "SPKn md. 3/1-h uyarınca sermaye piyasası araçlarını ihraç eden, bunun için Kurula başvuran veya araçları halka arz edilen tüzel kişiler ile yatırım fonlarıdır; gerçek kişiler ihraçcı olamaz.",
+                  strong: "Fon Talep Edenler — İhraççılar (md. 3/1-h):",
+                  text: "Sermaye piyasası araçlarını ihraç eden, ihraç için Kurula başvuran veya araçları halka arz edilen tüzel kişiler ile tüzel kişiliği bulunmasa da yatırım fonlarıdır. Gerçek kişiler ve donatma iştirakleri ihraççı olamaz. Kitle fonlama platformları aracılığıyla para toplayanlar ise tanımın açıkça dışında bırakılmıştır.",
                 },
                 {
-                  strong: "Fon Arz Edenler (Yatırımcılar):",
-                  text: "Bireysel-kurumsal, nitelikli-nitelikli olmayan şeklinde sınıflandırılır. Nitelikli yatırımcı, II-5.2 sayılı Tebliğ kapsamında talebe dayalı kabul edilenler dahil profesyonel müşterileri ifade eder.",
+                  strong: "Fon Arz Edenler — Yatırımcılar:",
+                  text: "Bireysel (perakende) ve kurumsal yatırımcılar ile nitelikli (profesyonel) yatırımcılar olarak sınıflandırılır. II-5.2 sayılı Tebliğ çerçevesinde 'nitelikli yatırımcı'; talebe dayalı kabul edilenler dahil profesyonel müşterilerdir. Halka arz ve nitelikli yatırımcıya satışta farklı bilgi sağlama yükümlülükleri geçerlidir.",
                 },
                 {
                   strong: "Sermaye Piyasası Araçları:",
-                  text: "İhraç ve alım yoluyla taraflar arasında ortaklık veya borç-alacak ilişkisi kuran, fon transferinin temelini oluşturan enstrümanlardır.",
+                  text: "Pay, borçlanma araçları, türev araçlar, yatırım fonu katılma belgeleri ve bunların kombinasyonu olan yapılandırılmış ürünler olmak üzere geniş bir yelpazeden oluşur. Araç, ihraç ve alım yoluyla taraflar arasında ortaklık ya da borç-alacak ilişkisi kurarak fon transferinin temelini oluşturur.",
                 },
                 {
-                  strong: "Yardımcı Kuruluşlar:",
-                  text: "SPKn md. 35'te 'sermaye piyasası kurumları' başlığı altında sayılır: yatırım kuruluşları, kolektif yatırım kuruluşları, bağımsız denetim, değerleme, derecelendirme şirketleri, portföy yönetim şirketleri, ipotek finansmanı kuruluşları, varlık kiralama şirketleri ve merkezi takas-saklama kuruluşları.",
+                  strong: "Yardımcı Kuruluşlar — Sermaye Piyasası Kurumları (md. 35):",
+                  text: "Kanun kapsamında sayılan sermaye piyasası kurumları şunlardır: yatırım kuruluşları (aracı kurumlar ve bankalar), kolektif yatırım kuruluşları, portföy yönetim şirketleri, bağımsız denetim kuruluşları, derecelendirme kuruluşları, değerleme şirketleri, ipotek finansmanı kuruluşları, varlık kiralama şirketleri, merkezi takas kuruluşları ve merkezi saklama kuruluşları. Mevduat bankaları bu listede yer almaz; ancak yetki belgesi alarak sermaye piyasası faaliyeti yürütebilirler.",
                 },
                 {
                   strong: "Borsalar ve Teşkilatlanmış Diğer Piyasalar:",
-                  text: "Likidite, fiyat oluşumu, ekonominin göstergesi olma, itibar sağlama ve öz düzenleyici kuruluş olarak meslek kurallarını belirleme fonksiyonlarını yürütür.",
+                  text: "Borsa İstanbul A.Ş., Türkiye'nin tek borsası olarak organize piyasaların tamamını bünyesinde toplar (pay piyasası, tahvil-bono piyasası, kıymetli madenler piyasası, VİOP). Borsa; likidite sağlama, fiyat keşfi, ekonominin barometresi olma, ihraççılara itibar kazandırma ve öz düzenleyici kuruluş olarak meslek standartlarını belirleme fonksiyonlarını üstlenir.",
+                },
+              ],
+            },
+            {
+              heading: "Sermaye Piyasasının Ekonomik Fonksiyonları",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Fon Aktarım Mekanizması:",
+                  text: "Atıl tasarrufları verimli yatırımlara yönlendirerek ekonominin büyüme potansiyelini artırır. Banka aracılığına gerek kalmaksızın doğrudan finansman köprüsü kurar.",
+                },
+                {
+                  strong: "Risk Dağıtımı:",
+                  text: "Büyük bir projenin riski, çok sayıda küçük yatırımcıya dağıtılır. Pay senetleri bu dağıtımın en tipik örneğidir; şirketin iyi veya kötü gidişatı hissedarlar arasında paylaşılır.",
+                },
+                {
+                  strong: "Mülkiyetin Tabana Yayılması:",
+                  text: "Halka arz mekanizması sayesinde küçük tasarrufçular büyük şirketlerin ortakları hâline gelerek servet birikimini kolektifleştirir. Bu özellik hem ekonomik adaleti hem de şirket yönetişimini güçlendirir.",
+                },
+                {
+                  strong: "Ekonomik Gösterge İşlevi:",
+                  text: "Hisse senedi endeksleri, getiri eğrileri ve CDS (kredi temerrüt swap) spreadleri ekonomik beklentilerin anlık termometresidir. Piyasa fiyatları; enflasyon, büyüme ve risk iştahını önceden sinyal verir.",
                 },
               ],
             },
           ],
-          tip: "İkincil piyasa ihraççıya fon sağlamaz; yalnızca yatırımcılar arasında el değiştirme sağlar. Buna rağmen birincil piyasa fiyatlarını doğrudan etkilediği için 'fiyat keşfi' fonksiyonu sınav sorularında sıkça karşımıza çıkar.",
+          tip: "İkincil piyasa ihraççıya fon sağlamaz; yalnızca yatırımcılar arasında el değiştirme sağlar. Buna rağmen birincil piyasa fiyat oluşumunu doğrudan etkiler. 'Fiyat keşfi (price discovery)' ifadesi çıktığında ikincil piyasayı işaretleyin. Ayrıca yatırım fonları tüzel kişilik sahibi olmasa da 'ihraççı' sayılır; bu ayrıntı sınav sorularında sık karşınıza çıkar.",
+          kavramlar: [
+            { terim: "Birincil Piyasa", tanim: "Araçların ihraççı tarafından ilk kez satıldığı; ihraççıya doğrudan fon akışının sağlandığı piyasa." },
+            { terim: "İkincil Piyasa", tanim: "Daha önce ihraç edilmiş araçların yatırımcılar arasında alınıp satıldığı; ihraççıya fon akışı sağlamayan ancak fiyat keşfini gerçekleştiren piyasa." },
+            { terim: "Spot Piyasa", tanim: "İşlem ve teslimatın eş zamanlı ya da T+2 içinde gerçekleştiği; anlık piyasa fiyatını yansıtan piyasa türü." },
+            { terim: "Vadeli Piyasa", tanim: "Teslimatın ileriki bir tarihe ertelendiği; forward, swap, futures ve opsiyon işlemlerini kapsayan piyasa türü." },
+            { terim: "İhraççı", tanim: "SPKn md. 3/1-h: Sermaye piyasası araçlarını ihraç eden tüzel kişiler ve yatırım fonları. Gerçek kişiler ve donatma iştirakleri kapsam dışıdır." },
+            { terim: "Nitelikli Yatırımcı", tanim: "II-5.2 sayılı Tebliğ kapsamında talebe dayalı kabul edilenler dahil profesyonel müşteriler." },
+            { terim: "OTC (Tezgâhüstü) Piyasa", tanim: "Standart borsa kuralları dışında, iki taraf arasında serbestçe belirlenen koşullarla işlemlerin yapıldığı piyasa." },
+            { terim: "Fiyat Keşfi", tanim: "İkincil piyasada arz-talep dengesiyle araçların piyasa değerinin belirlenmesi süreci." },
+          ],
+          dikkatlar: [
+            "İkincil piyasa ihraççıya fon SAĞLAMAZ — ancak birincil piyasa fiyatını doğrudan etkiler. Sınav sorularında bu iki özellik birbirine karıştırılır.",
+            "Yatırım fonları tüzel kişiliğe sahip olmasa da 'ihraççı' sayılır (md. 3/1-h). Donatma iştiraki ise tüzel kişiliği olmadığı için ihraççı OLAMAZ.",
+            "Kitle fonlama platformları aracılığıyla para toplayanlar ihraççı tanımının açıkça DIŞINDADIR.",
+            "Mevduat bankaları SPKn md. 35'te sayılan 'sermaye piyasası kurumları' arasında YER ALMAZ; yalnızca yetki belgesiyle sermaye piyasası faaliyetine katılabilirler.",
+            "Pay Piyasası ve Tahvil-Bono Piyasası SPOT piyasa örnekleridir; vadeli piyasayla karıştırmayın.",
+          ],
         },
         questions: [
           {
@@ -175,46 +226,94 @@ export const mevzuatVerisi: Module[] = [
         summary: {
           title: "6362 Sayılı SPKn'nun Amacı, Kapsamı ve Düzenleme İlkeleri",
           intro:
-            "30/12/2012 tarihinde yürürlüğe giren 6362 sayılı Sermaye Piyasası Kanunu, çerçeve kanun niteliğinde bir 'piyasa düzenleyici' metindir. Hazırlanmasında 6102 sayılı Türk Ticaret Kanunu'nun yürürlüğe girmesi, AB müktesebatına uyum, 2008 küresel krizinden çıkarılan dersler ve 2499 sayılı mülga Kanun'un yetersiz kalması belirleyici olmuştur.",
+            "30 Aralık 2012 tarihinde yürürlüğe giren 6362 sayılı Sermaye Piyasası Kanunu, yürürlükten kaldırılan 2499 sayılı Kanun'un çok daha kapsamlı ve çağdaş bir versiyonudur. Hazırlanmasında dört temel etken belirleyici olmuştur: (1) Aynı dönemde yürürlüğe giren 6102 sayılı Türk Ticaret Kanunu ile uyum zorunluluğu, (2) AB finans mevzuatına (MiFID, EMIR, AIFMD) entegrasyon ihtiyacı, (3) 2008 küresel finansal krizinin ortaya koyduğu sistem riskleri ve denetim açıkları, (4) 2499 sayılı eski Kanun'un piyasanın ölçek ve karmaşıklığı karşısında yetersiz kalması. Kanun, 'çerçeve kanun' (skeleton law) niteliğinde olup ayrıntı düzenlemeler Kurul tebliğ ve ilke kararlarına bırakılmıştır. Bu yapı hem esneklik sağlar (Kurul piyasa koşullarına hızlıca uyum sağlayabilir) hem de teknik konuların uzmanlaşmış otorite tarafından düzenlenmesine olanak tanır. Mevzuat hiyerarşisi şu şekildedir: 6362 sayılı SPKn (birincil kaynak) → Yönetmelik → Tebliğ → Kurul İlke Kararları.",
           sections: [
             {
-              heading: "Kanunun Amacı ve Uygulama Alanı",
+              heading: "Kanunun Amacı — Yedi Temel Değer",
               icon: "shield",
               items: [
                 {
-                  strong: "Temel Amaç:",
-                  text: "Sermaye piyasasının güvenilir, şeffaf, etkin, istikrarlı, adil ve rekabetçi bir ortamda işleyişini sağlamak; tasarruf sahiplerinin hak ve menfaatlerini korumaktır.",
+                  strong: "Güvenilirlik:",
+                  text: "Piyasanın tüm aktörleri arasında sözleşme ve taahhütlere sadakatin esas olduğu bir ortam oluşturulması; güvensizliğin piyasadan sermaye kaçışına yol açtığı gerçeğinden hareketle bu değer önceliklidir.",
                 },
                 {
-                  strong: "Uygulama Alanı (md. 136):",
-                  text: "Sınırlı olarak Kanuna tabi olan veya muafiyet kapsamında bulunan kurumlar dışında, halka açık ortaklıklar ile sermaye piyasası kurum ve kuruluşları Kanun kapsamındadır.",
+                  strong: "Şeffaflık:",
+                  text: "Kamuyu aydınlatma ilkesi kapsamında ihraççıların ve sermaye piyasası kurumlarının zamanında, doğru ve eksiksiz bilgi açıklaması. İçsel bilgi asimetrisi ile piyasa manipülasyonu şeffaflık ilkesinin ihlalidir.",
                 },
                 {
-                  strong: "Genel Hükümlerle İlişki (md. 2/2):",
-                  text: "Bu Kanun ve ikincil mevzuatta hüküm bulunmayan ve diğer kanunlarda SPKn'nun uygulanmayacağının belirtildiği hâllerde TMK, TBK, TTK, TCK gibi genel hükümler uygulanır.",
+                  strong: "Etkinlik:",
+                  text: "Fon transferinin ve fiyat keşfinin en düşük işlem maliyetiyle gerçekleşmesi; düzenleyici yükün piyasayı boğmadan koruma işlevini yerine getirmesi.",
+                },
+                {
+                  strong: "İstikrar:",
+                  text: "Ani ve aşırı oynaklıkların önlenmesi; sistemik riskin kontrol altında tutulması. 2008 sonrası düzenleyici çerçevenin belkemiğini oluşturmaktadır.",
+                },
+                {
+                  strong: "Adalet ve Rekabet:",
+                  text: "Tüm aktörlerin eşit kurallara tabi olması ve piyasada çarpıtıcı tekellerin oluşmasının engellenmesi. Haksız avantaj yaratan uygulamalar (manipülasyon, içeriden öğrenme) bu değerlerin doğrudan ihlalidir.",
+                },
+                {
+                  strong: "Tasarruf Sahiplerinin Korunması:",
+                  text: "Kanunun nihai amacı; bireysel yatırımcıların bilgi asimetrisinden, yanıltıcı uygulamalardan ve aracı kurumların ahlaki tehlikesinden (moral hazard) korunmasını güvence altına almaktır.",
                 },
               ],
             },
             {
-              heading: "Çerçeve Kanun Olmasının Üç Sonucu",
+              heading: "Uygulama Alanı ve Kapsam",
               icon: "trend",
               items: [
                 {
-                  strong: "İkincil Düzenleme Yetkisi:",
-                  text: "Kanun ana esasları belirler; detayları SPK tebliğ ve ilke kararlarıyla düzenler. Bu yetki SPK'ya geniş bir hareket alanı tanır.",
+                  strong: "Temel Kapsam (md. 1 ve 136):",
+                  text: "Halka açık ortaklıklar, tüm sermaye piyasası kurum ve kuruluşları ile bu Kanun'da düzenlenen faaliyetler Kanun kapsamındadır. Muafiyet tanınan kurumlar sınırlı sayıda olup bireysel muafiyet kararı Kurul tarafından verilir.",
                 },
                 {
-                  strong: "Sürekli İzleme Gereği:",
-                  text: "Düzenlemelerin piyasaya etkisi devamlı izlenmeli; piyasanın hassas ve dinamik yapısı nedeniyle sonuçlar hızla kendini gösterebilir.",
+                  strong: "Genel Hükümlerle İlişki (md. 2/2):",
+                  text: "Kanun ve ikincil düzenlemelerde hüküm bulunmayan; diğer kanunlarda bu Kanunun uygulanmayacağının belirtildiği hâllerde TMK, TBK, TTK ve TCK başta olmak üzere genel hükümler uygulanır. Bu kural SPKn'nu 'birincil mevzuat' statüsüne yerleştirir.",
                 },
                 {
-                  strong: "Yaptırım Yetkisi:",
-                  text: "SPK md. 103 vd. uyarınca idari para cezası verebilir; md. 106 vd.'deki suçlar için Cumhuriyet Başsavcılıklarına suç duyurusunda bulunabilir.",
+                  strong: "İkincil Mevzuat Zinciri:",
+                  text: "SPK, Kanun'dan aldığı yetki çerçevesinde yönetmelik, tebliğ ve ilke kararları çıkarır. Bir konuda önce Kanun, ardından ilgili tebliğ, son olarak ilke kararları uygulanır. Tebliğler Roma rakamıyla sınıflandırılır (örn. II-5.2 Satış Tebliği, III-35.1 Halka Arz Tebliği).",
+                },
+              ],
+            },
+            {
+              heading: "Çerçeve Kanun Niteliğinin Sonuçları",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Geniş İkincil Düzenleme Yetkisi:",
+                  text: "Kanun yalnızca ana esasları belirler; ayrıntıları Kurul düzenlemelerine bırakır. Bu esneklik sayesinde Kurul piyasa ihtiyaçlarına hızla yanıt verebilir.",
+                },
+                {
+                  strong: "Sürekli İzleme ve Güncelleme Yükümlülüğü:",
+                  text: "Piyasanın hassas ve dinamik yapısı nedeniyle düzenleyicinin piyasayı ve düzenlemelerin etkisini sürekli izlemesi, gerektiğinde tebliğ değişikliğine gitmesi zorunludur.",
+                },
+                {
+                  strong: "İdari ve Cezai Yaptırım Yetkisi:",
+                  text: "SPK; md. 103 vd. kapsamında idari para cezası, md. 106 vd. kapsamındaki suçlar için Cumhuriyet Başsavcılıklarına suç duyurusu ve md. 96 kapsamında faaliyet durdurma kararları verebilir.",
+                },
+                {
+                  strong: "Uluslararası Uyum Zorunluluğu:",
+                  text: "AB direktifleri ve IOSCO standartlarındaki değişiklikler periyodik olarak Kanun ve tebliğlere yansıtılmakta; bu durum mevzuatın sık güncellemesini zorunlu kılmaktadır.",
                 },
               ],
             },
           ],
-          tip: "SPKn'nun 'çerçeve kanun' niteliği, soyut hükümlerin Kurul tebliğleriyle somutlaşması anlamına gelir. Bu nedenle bir konunun çözümünde önce Kanun, ardından ilgili tebliğ ve son olarak ilke kararları zinciri takip edilir.",
+          tip: "Sınavlarda 'SPKn'nun temel amacı hangisi DEĞİLDİR?' soruları sıkça çıkar. 'Şirket kâr maksimizasyonu' ve 'ekonomik büyüme garantisi' Kanun'un amaçları arasında YOKTUR. Çerçeve kanun niteliği nedeniyle bir konunun çözümünde her zaman şu sıra izlenir: Kanun → Tebliğ → İlke Kararı.",
+          kavramlar: [
+            { terim: "Çerçeve Kanun", tanim: "Ana esasları belirleyip ayrıntı düzenlemeyi uzman otoriteye (SPK) devreden, dolayısıyla tebliğ ve ilke kararlarıyla yaşayan kanun türü." },
+            { terim: "Birincil Mevzuat", tanim: "Kanun ve Kanun'a dayanarak çıkarılan yönetmelikler; diğer düzenlemelere önceliklidir." },
+            { terim: "İkincil Mevzuat", tanim: "SPK tebliğleri ve ilke kararları; Kanun'dan yetki alarak çıkarılır, birincil mevzuatla çelişemez." },
+            { terim: "Kamuyu Aydınlatma", tanim: "Yatırımcıların bilinçli karar verebilmesi için ihraççı ve aracıların zamanında, tam ve doğru bilgi açıklaması yükümlülüğü." },
+            { terim: "Sistemik Risk", tanim: "Bir piyasa aktörünün sorunlarının tüm finansal sisteme sıçrama tehlikesi; SPKn'nun istikrar amacının temel gerekçesidir." },
+            { terim: "Moral Hazard (Ahlaki Tehlike)", tanim: "Riski başkasına transfer eden aktörün daha riskli davranma eğilimi; yatırımcı korumasının temel nedeni." },
+          ],
+          dikkatlar: [
+            "'Kâr maksimizasyonu', 'ekonomik büyüme garantisi' veya 'devlet geliri artırma' ifadeleri SPKn'nun amacı olarak sunulursa YANLIŞ seçenektir.",
+            "Genel hükümler (TTK, TBK vb.) Kanunda ve ikincil mevzuatta HÜKÜM BULUNMAMASI koşuluyla ve diğer kanunlarda özellikle 'bu kanun uygulanmaz' denmesi halinde devreye girer.",
+            "İdari para cezası md. 103 vd., cezai suçlar ise md. 106 vd.'de düzenlenir. Bu madde numaralarını karıştırmayın.",
+            "2499 sayılı eski Kanun yetersiz kaldığı için 6362 sayılı Kanun çıkarılmıştır; OECD kuralları veya IMF talepleri doğrudan hazırlanma gerekçesi olarak sayılmamaktadır.",
+          ],
         },
         questions: [
           {
@@ -286,58 +385,107 @@ export const mevzuatVerisi: Module[] = [
         summary: {
           title: "Sermaye Piyasası Suçları ve İdari Para Cezaları",
           intro:
-            "6362 sayılı SPKn, piyasanın bütünlüğünü ve yatırımcı güvenini korumak amacıyla özgün suç tipleri ve geniş kapsamlı idari yaptırım rejimi öngörmektedir. Suçlar md. 106-115'te, idari para cezaları ise md. 103 ve devamında düzenlenmiştir.",
+            "6362 sayılı Sermaye Piyasası Kanunu, piyasanın bütünlüğünü (market integrity) ve yatırımcı güvenini korumak için iki paralel yaptırım rejimi öngörmektedir: (1) Adli suçlar — md. 106-115 arasında düzenlenen, savcılık soruşturması ve mahkeme kararı gerektiren hapis ve adli para cezası içeren suçlar; (2) İdari yaptırımlar — md. 103 vd.'nde düzenlenen, doğrudan SPK kararıyla uygulanan idari para cezaları. İki rejim birbirinden bağımsız işler; aynı fiil hem suç hem de idari ihlal teşkil edebilir. Suçların büyük bölümü 'özel kanun' kapsamında olduğundan TCK'nın genel hükümleri tamamlayıcı niteliktedir. 2024 yılında yapılan değişiklikle kripto varlık hizmet sağlayıcılarına ilişkin zimmet suçu (md. 110/A) eklenmiş; yaptırım rejimi güçlendirilmiştir.",
           sections: [
             {
-              heading: "Sermaye Piyasasına Özgü Temel Suçlar",
+              heading: "Bilgi Suistimali — md. 106 (İçeriden Öğrenenlerin Ticareti)",
               icon: "shield",
               items: [
                 {
-                  strong: "Bilgi Suistimali (md. 106):",
-                  text: "İçsel bilgiyi kullanarak sermaye piyasası aracında işlem yapmak suçtur; kasıt ve haksız yarar sağlama bu suçun temel unsurlarıdır.",
+                  strong: "Tanım ve Unsurlar:",
+                  text: "İhraççı ya da faaliyetiyle bağlantılı kişilerin henüz kamuya açıklanmamış içsel bilgiyi kullanarak bizzat ya da başkası aracılığıyla sermaye piyasası araçlarında işlem yapmasıdır. Suçun üç unsuru: (a) içsel bilgiye erişim, (b) kasıt, (c) bu bilgiye dayanarak işlem yapmak veya yönlendirmek.",
                 },
                 {
-                  strong: "Piyasa Dolandırıcılığı (md. 107):",
-                  text: "Yapay arz-talep yaratma, fiyat manipülasyonu, yanıltıcı bilgi yayma gibi fiilleri kapsar; ağır hapis ve adli para cezaları öngörülmüştür.",
+                  strong: "Suçun Faili:",
+                  text: "Yönetim kurulu üyeleri, yöneticiler, denetçiler, çalışanlar ve bunların yakınları başta olmak üzere; işin, mesleğin ya da görevin yerine getirilmesi nedeniyle içsel bilgiye ulaşan herkes fail olabilir.",
                 },
                 {
-                  strong: "Güveni Kötüye Kullanma ve Zimmet (md. 110):",
-                  text: "Yatırım kuruluşlarında müşteri varlıklarının zimmete geçirilmesi 8-14 yıl hapis ve ağır adli para cezasıyla cezalandırılır.",
-                },
-                {
-                  strong: "Kripto Varlık Hizmet Sağlayıcılarda Zimmet (md. 110/A):",
-                  text: "2024 değişikliği ile eklenen bu hüküm, hizmet sağlayıcı yöneticilerinin müşteri varlıklarını zimmete geçirmesini ayrıca düzenler; hileli davranış halinde 14-20 yıl hapis öngörülür.",
-                },
-                {
-                  strong: "Bilgi-Belge Vermeme, Sır Saklama İhlali (md. 111-113):",
-                  text: "Kurul denetimine direnme, denetim sırasında istenen bilgileri açıklama suçları ayrı ayrı düzenlenmiş; 1-3 yıl hapis cezaları öngörülmüştür.",
+                  strong: "Ceza Miktarı:",
+                  text: "2 yıldan 5 yıla kadar hapis ve beş bin güne kadar adli para cezası. Suçun örgütlü biçimde ya da piyasa bozucu sonuçlar doğuracak şekilde işlenmesi hâlinde ceza artırılır.",
                 },
               ],
             },
             {
-              heading: "İdari Para Cezalarının Yapısı",
+              heading: "Piyasa Dolandırıcılığı — md. 107 (Manipülasyon)",
               icon: "trend",
               items: [
                 {
-                  strong: "Genel İdari Para Cezası (md. 103/1):",
-                  text: "Kurul düzenlemelerine, standart-formlara ve kararlara aykırılıkta belirlenen tutarlar arasında ceza verilir; tutarlar her yıl yeniden değerleme oranıyla güncellenir.",
+                  strong: "İşleme Dayalı Manipülasyon:",
+                  text: "Sermaye piyasası araçlarında yapay arz veya talep yaratmak, fiyatı yapay düzeyde tutmak ya da hareketini etkilemek amacıyla gerçek bir ekonomik gerekçe olmaksızın alım-satım yapmak. Wash trade (kendi kendine işlem) ve matched order (anlaşmalı alım-satım) bu kategoridedir.",
                 },
                 {
-                  strong: "Tüzel Kişiler İçin Hesaplama:",
-                  text: "Aykırılığın ağırlığı ve mağdur sayısı dikkate alınarak, son bağımsız denetimden geçmiş yıllık brüt satış hasılatının %1'i ile vergi öncesi kârın %20'sinden yüksek olanına kadar ceza uygulanabilir.",
+                  strong: "Bilgiye Dayalı Manipülasyon:",
+                  text: "Fiyatı etkileme amacıyla yanlış, yanıltıcı veya eksik bilgi, söylenti ya da haber yaymak; analiz raporu veya görüş bildirimiyle piyasayı yanlış yönlendirmek.",
+                },
+                {
+                  strong: "Ceza Miktarı:",
+                  text: "3 yıldan 5 yıla kadar hapis ve beş bin güne kadar adli para cezası. Suçun piyasayı ciddi biçimde bozması hâlinde üst sınırdan ceza uygulanır; ayrıca elde edilen kazanç müsadereye tabi tutulur.",
+                },
+              ],
+            },
+            {
+              heading: "Zimmet Suçu — md. 110 ve md. 110/A",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Yatırım Kuruluşlarında Zimmet (md. 110):",
+                  text: "Yatırım kuruluşu yönetici ve çalışanlarının müşteri varlıklarını (para, menkul kıymet, fiziki varlık) hizmet nedeniyle muhafazalarına bırakılmış olmalarını fırsat bilerek zimmete geçirmeleri. Temel ceza: 8 yıldan 14 yıla kadar hapis ve on bin güne kadar adli para cezası.",
+                },
+                {
+                  strong: "Nitelikli Hal — Hileli Davranış:",
+                  text: "Suçun açığa çıkmamasını sağlamak amacıyla hileli davranışlarla işlenmesi hâlinde ceza 14 yıldan 20 yıla kadar hapis olarak ağırlaştırılır.",
+                },
+                {
+                  strong: "Kripto Varlık Hizmet Sağlayıcılarda Zimmet (md. 110/A — 2024):",
+                  text: "2024 yılı değişikliğiyle eklenen bu hüküm, kripto varlık hizmet sağlayıcısı yönetici ve çalışanlarının müşteri kripto varlıklarını zimmete geçirmesini ayrı bir suç tipi olarak düzenler. Hileli davranış hâlinde 14-20 yıl hapis uygulanır.",
+                },
+              ],
+            },
+            {
+              heading: "İdari Para Cezalarının Yapısı — md. 103 vd.",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Genel Ceza Mekanizması (md. 103/1):",
+                  text: "SPK, Kanun ve ikincil mevzuat ihlallerinde belirlenen maktu alt ve üst sınırlar arasında idari para cezası uygular. Tutarlar her yıl yeniden değerleme oranıyla güncellenir. Bu ceza adli cezadan bağımsızdır; aynı fiil için her ikisi birden uygulanabilir.",
+                },
+                {
+                  strong: "Tüzel Kişilere Özel Hesaplama:",
+                  text: "Tüzel kişi ihlallerinde asgari maktu tutardan az olmamak üzere: son bağımsız denetimden geçmiş yıllık brüt satış hasılatının %1'i ile vergi öncesi kârın %20'sinden yüksek olanına kadar ceza uygulanabilir.",
                 },
                 {
                   strong: "Menfaat Temin Edilmesi Hâli:",
-                  text: "Aykırılık sonucu menfaat sağlanmışsa ceza, bu menfaatin iki katından az olamaz.",
+                  text: "Aykırılık sonucu haksız menfaat sağlanmışsa verilecek idari para cezası, elde edilen menfaatin iki katından az olamaz; bu kural maktu sınırın üzerinde bir sonuç doğursa bile uygulanır.",
                 },
                 {
                   strong: "Tekerrür Hâli:",
-                  text: "Aynı kabahatin idari yaptırım kararı verilinceye kadar birden çok işlenmesi hâlinde ceza iki kat artırılır; menfaat varsa cezanın menfaat veya zararın üç katından az olamayacağı kuralı geçerlidir.",
+                  text: "Aynı kabahatin idari yaptırım kararı kesinleşmeden birden çok işlenmesi (süregelen ihlal) hâlinde ceza iki kat artırılır. Menfaat varsa ceza, menfaat veya zararın üç katından az olamaz.",
+                },
+                {
+                  strong: "Diğer İdari Yaptırımlar:",
+                  text: "Yalnızca idari para cezası değil; faaliyet izninin iptali (md. 96), geçici faaliyet durdurma ve yöneticilerin görevden uzaklaştırılması da SPK'nın başvurduğu yaptırım araçlarındandır.",
                 },
               ],
             },
           ],
-          tip: "İdari para cezası ile adli para cezası birbirinden farklıdır: idari para cezası SPK'nın doğrudan tesis ettiği yaptırımdır, adli para cezası ise mahkeme kararıyla verilir ve hapis cezasının yanında uygulanabilir. Sınavda iki kavramın karıştırılmaması kritiktir.",
+          tip: "İdari para cezası (md. 103) ile adli para cezası (mahkeme kararıyla md. 106-115) birbirinden tamamen bağımsızdır; aynı eylem için ikisi birden uygulanabilir. Sınavlarda 'hangi madde?' sorusu sıkça çıkar: bilgi suistimali md. 106, piyasa dolandırıcılığı md. 107, zimmet md. 110, idari para cezası md. 103. Bu madde numaralarını ezberleyin.",
+          kavramlar: [
+            { terim: "İçeriden Öğrenenler Ticareti", tanim: "Henüz kamuya duyurulmamış içsel bilgiyi kullanarak sermaye piyasası aracında işlem yapma suçu (md. 106)." },
+            { terim: "Piyasa Manipülasyonu", tanim: "Yapay arz-talep yaratma veya yanıltıcı bilgi yayarak fiyatı etkileme suçu (md. 107)." },
+            { terim: "Wash Trade", tanim: "Kendi satışı ile kendi alışını eş zamanlı yaparak yoğun işlem izlenimi yaratmak; manipülasyon türü." },
+            { terim: "Zimmet", tanim: "Görev nedeniyle muhafaza edilen müşteri varlıklarını zimmete geçirme (md. 110, yatırım kuruluşları)." },
+            { terim: "İdari Para Cezası", tanim: "SPK'nın doğrudan kararıyla uygulanan, mahkeme kararı gerektirmeyen para yaptırımı (md. 103)." },
+            { terim: "Adli Para Cezası", tanim: "Mahkeme kararıyla verilen, hapis cezasına alternatif ya da ek olarak uygulanan para yaptırımı." },
+            { terim: "Tekerrür", tanim: "Aynı kabahatin yaptırım kararı kesinleşmeden tekrar işlenmesi; cezayı iki katına çıkaran ağırlaştırıcı neden." },
+            { terim: "Müsadere", tanim: "Suç yoluyla elde edilen kazanç ve araçların devlet hazinesine aktarılması; manipülasyon suçunda uygulanır." },
+          ],
+          dikkatlar: [
+            "md. 103 = İDARİ para cezası (SPK kararı); md. 106-115 = ADLİ suçlar (savcılık-mahkeme). Bunları kesinlikle karıştırmayın.",
+            "Bilgi suistimali (md. 106): 2-5 yıl hapis. Piyasa dolandırıcılığı (md. 107): 3-5 yıl hapis. Zimmet (md. 110): 8-14 yıl, hileli ise 14-20 yıl hapis.",
+            "Menfaat temin edilmişse idari para cezası menfaatin en az İKİ KATI; tekerrürde menfaat varsa en az ÜÇ KATI olur.",
+            "Kripto varlık hizmet sağlayıcılarda zimmet 2024 yılında eklenen md. 110/A ile ayrı suç tipi olarak düzenlenmiştir; yeni soru konusudur.",
+            "İdari yaptırımlar arasında sadece para cezası yoktur; faaliyet iptali ve yönetici görevden uzaklaştırma da SPK'nın elindeki araçlardandır.",
+          ],
         },
         questions: [
           {

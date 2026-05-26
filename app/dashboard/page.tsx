@@ -307,7 +307,9 @@ export default function DashboardPage() {
                 <div className="bg-[var(--bg-surface-2)] rounded-2xl p-8 border border-[var(--border-base)] shadow-[var(--shadow-card)] animate-fade-in">
                   <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4 tracking-tight">{secilenDers.summary.title}</h2>
                   <p className="text-[var(--text-secondary)] leading-relaxed text-base mb-8">{secilenDers.summary.intro}</p>
-                  <div className="space-y-8">
+
+                  {/* ── Ana bölümler ── */}
+                  <div className="space-y-8 mb-10">
                     {secilenDers.summary.sections.map((section, idx) => (
                       <div key={idx}>
                         <div className="flex items-center gap-3 mb-5">
@@ -333,7 +335,49 @@ export default function DashboardPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-8 p-6 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-l-4 border-amber-500 rounded-r-xl">
+
+                  {/* ── Anahtar Kavramlar (opsiyonel) ── */}
+                  {secilenDers.summary.kavramlar && secilenDers.summary.kavramlar.length > 0 && (
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                          <span className="text-white text-sm font-bold">📖</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">Anahtar Kavramlar</h3>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {secilenDers.summary.kavramlar.map((k, i) => (
+                          <div key={i} className="p-3.5 bg-cyan-500/5 border border-cyan-500/20 rounded-xl">
+                            <span className="block text-xs font-bold text-cyan-400 uppercase tracking-wider mb-1">{k.terim}</span>
+                            <span className="text-sm text-[var(--text-secondary)] leading-relaxed">{k.tanim}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ── Dikkat Noktaları (opsiyonel) ── */}
+                  {secilenDers.summary.dikkatlar && secilenDers.summary.dikkatlar.length > 0 && (
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-rose-500 to-red-700 flex items-center justify-center shadow-lg shadow-rose-500/30">
+                          <span className="text-white text-sm font-bold">⚠️</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">Sınavda Dikkat</h3>
+                      </div>
+                      <div className="space-y-2">
+                        {secilenDers.summary.dikkatlar.map((d, i) => (
+                          <div key={i} className="flex gap-3 items-start p-3.5 bg-rose-500/5 border border-rose-500/20 rounded-xl">
+                            <span className="text-rose-400 font-bold text-sm flex-shrink-0 mt-0.5">⚡</span>
+                            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{d}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ── Püf Noktası ── */}
+                  <div className="p-6 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-l-4 border-amber-500 rounded-r-xl">
                     <div className="flex items-start gap-3">
                       <div className="text-2xl flex-shrink-0">💡</div>
                       <div>
@@ -342,6 +386,7 @@ export default function DashboardPage() {
                       </div>
                     </div>
                   </div>
+
                   <div className="mt-8 pt-8 border-t border-[var(--border-base)] flex items-center justify-between flex-wrap gap-4">
                     <div className="text-sm text-[var(--text-secondary)]">Konuyu bitirdiniz mi? Şimdi soruları çözün.</div>
                     <button
