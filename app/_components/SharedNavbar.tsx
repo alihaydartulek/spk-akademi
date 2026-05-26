@@ -61,6 +61,7 @@ export default function SharedNavbar({
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--text-secondary)]">
           {navLink("/dashboard", "Modüller")}
+          {navLink("/pratik", "Pratik")}
           {navLink("/sinav", "Hızlı Pratik")}
 
           {/* Sınavlar Dropdown */}
@@ -168,6 +169,7 @@ export default function SharedNavbar({
           <div className="px-5 py-4 space-y-1">
             {[
               { href: "/dashboard", label: "Modüller" },
+              { href: "/pratik", label: "Pratik" },
               { href: "/sinav", label: "Hızlı Pratik" },
               { href: "/favoriler", label: "Favoriler" },
               { href: "/istatistikler", label: "İstatistikler" },
