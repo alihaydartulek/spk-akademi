@@ -10,6 +10,7 @@ export const SINAV_MENUSU = [
   { ad: "Kurumsal Yönetim Sınavı",      href: "/sinav/ky",     aciklama: "100 soru · 150 dk" },
   { ad: "Kredi Derecelendirme Sınavı",  href: "/sinav/kd",     aciklama: "100 soru · 150 dk" },
   { ad: "Gayrimenkul Değerleme Sınavı", href: "/sinav/gd",     aciklama: "75 soru · 120 dk"  },
+  { ad: "Konut Değerleme Sınavı",       href: "/sinav/kv",     aciklama: "50 soru · 90 dk"   },
   { ad: "Bilgi Sistemleri Denetim",     href: "/sinav/bs",     aciklama: "100 soru · 150 dk" },
 ] as const;
 
@@ -62,6 +63,13 @@ export const SINAVLAR = [
     href: "/sinav/gd",
     aciklama: "Gayrimenkul değerleme uzmanlığı lisansı",
     pdfler: ["1001", "1014", "1015", "1019"],
+  },
+  {
+    kod: "KV", ad: "Konut Değerleme",       pilAd: "Konut Değ.", renk: "yellow",
+    soruSayisi: 50,  sureDakika: 90,
+    href: "/sinav/kv",
+    aciklama: "Konut değerleme uzmanlığı lisansı",
+    pdfler: ["1001", "1014"],
   },
   {
     kod: "BS", ad: "Bilgi Sistemleri",      pilAd: "Bilgi Sis.", renk: "rose",
