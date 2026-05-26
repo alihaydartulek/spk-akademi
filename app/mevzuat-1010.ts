@@ -94,6 +94,22 @@ export const mevzuat1010: Module[] = [
             },
           ],
           tip: "Ticaret şirketleri kanunda 5 türle sınırlıdır (numerus clausus). Şahıs/sermaye ayrımı: kollektif+komandit = şahıs; AŞ+limited+SPB komandit = sermaye. Birleşme 2 türü var (devralma vs yeni kuruluş), bölünme 2 türü var (tam vs kısmi). Şirketler topluluğunda hâkim şirket bağlı şirket zararlarından sorumlu.",
+          kavramlar: [
+            { terim: "Numerus Clausus İlkesi", tanim: "TTK'da ticaret şirketleri türlerinin kanunla sınırlandırılması ilkesi; şirketler yalnızca kanunda öngörülen 5 türde kurulabilir." },
+            { terim: "Şahıs Şirketi", tanim: "Ortakların şirket borçlarından şahsen ve sınırsız sorumlu tutulduğu kollektif ve komandit şirket türleri." },
+            { terim: "Sermaye Şirketi", tanim: "Ortakların sorumluluğunun koydukları sermaye ile sınırlı olduğu anonim, limited ve paylı komandit şirket türleri." },
+            { terim: "Birleşme (Devralma)", tanim: "Bir şirketin diğerini mevcut bünyesinde erittiği ve devralan şirketin tüm hak ve borçları devralarak büyüdüğü yapısal değişiklik." },
+            { terim: "Bölünme (Tam/Kısmi)", tanim: "Şirketin tüm varlıklarını devretmesi (tam bölünme) veya bir kısmını devretmesi (kısmi bölünme); kısmi bölünmede şirket yaşamaya devam eder." },
+            { terim: "Şirketler Topluluğu", tanim: "Bir hâkim şirketin doğrudan veya dolaylı olarak diğer bağlı şirketleri kontrol ettiği, TTK md. 195-209'da düzenlenen ilişki yapısı." },
+            { terim: "Tür Değişikliği", tanim: "Şirketin mevcut tüzel kişiliğini koruyarak hukuki türünü değiştirmesi; örneğin limited şirketin anonim şirkete dönüşmesi." },
+          ],
+          dikkatlar: [
+            "TTK'da yalnızca 5 tür ticaret şirketi vardır: kollektif, komandit, anonim, limited ve paylı komandit — bunların dışında yeni tür icat edilemez (numerus clausus).",
+            "Şahıs şirketi = kollektif + komandit; sermaye şirketi = AŞ + limited + paylı komandit — tüm ortaklar sınırlı sorumlu olması sermaye şirketinin temel özelliği.",
+            "Birleşmede devralma (bir şirket diğerini alır) ve yeni kuruluş (her ikisi de kapanıp yeni şirket kurulur) olmak üzere iki yol vardır.",
+            "Kısmi bölünmede şirket yaşamaya devam eder; tam bölünmede şirket sona erer ve varlıkların tamamı başka şirketlere devredilir.",
+            "Şirketler topluluğunda hâkim şirket bağlı şirkete verilen zarardan sorumlu tutulabilir; azınlık pay sahipleri korunur.",
+          ],
         },
         questions: [
           {
@@ -222,6 +238,22 @@ export const mevzuat1010: Module[] = [
             },
           ],
           tip: "AŞ esas sermaye = 250.000 TL, kayıtlı sermaye = 500.000 TL minimum. Pay nominal = en az 1 kuruş. Sınırlı sorumluluk pay sahibinin temel güvencesidir. Emredici hükümler ilkesi (TTK m. 340) AŞ hukukunun çekirdeğidir — kanun izin vermedikçe sözleşmeyle değiştirilemez.",
+          kavramlar: [
+            { terim: "Anonim Şirket (AŞ)", tanim: "Sermayesi paylara bölünmüş, ortakların yalnızca taahhüt ettikleri sermaye miktarıyla sınırlı sorumlu olduğu, tüzel kişiliği haiz şirket türü." },
+            { terim: "Esas Sermaye Sistemi", tanim: "AŞ'nin kuruluşta belirlenen ve esas sözleşmede yer alan sabit sermaye tutarı; asgari 250.000 TL." },
+            { terim: "Kayıtlı Sermaye Sistemi", tanim: "AŞ'nin genel kurul kararı olmadan yönetim kurulunun tavan sınırına kadar sermaye artırabileceği sistem; asgari tavan 500.000 TL." },
+            { terim: "Sınırlı Sorumluluk", tanim: "Pay sahibinin şirket borçlarından yalnızca taahhüt ettiği pay bedeli kadar sorumlu tutulması; kişisel mal varlığı korunur." },
+            { terim: "Emredici Hükümler İlkesi (TTK m. 340)", tanim: "Esas sözleşme hükümlerinin kanunun emredici düzenlemelerine aykırı olamayacağı ilkesi; AŞ hukukunun temel sınırı." },
+            { terim: "Pay Nominal Değeri", tanim: "TTK'ya göre bir payın esas sözleşmede belirtilen en az değeri: 1 kuruş; borsada işlem değeri ile karıştırılmamalı." },
+            { terim: "Tek Ortaklı AŞ", tanim: "Yeni TTK ile gelen düzenleme; anonim şirket artık tek pay sahibiyle kurulabilir veya tek pay sahibine indirilebilir." },
+          ],
+          dikkatlar: [
+            "Esas sermaye asgari 250.000 TL; kayıtlı sermaye sistemi tavan asgari 500.000 TL — iki rakamı yer değiştirmek en yaygın hata.",
+            "Pay nominal değeri en az 1 kuruştur; 'en az 1 TL' veya 'en az 0,10 TL' seçenekleri yanıltıcıdır.",
+            "TTK m. 340 emredici hükümler ilkesi: esas sözleşme kanunun izin verdiği istisnalar dışında kanun hükümlerini değiştiremez.",
+            "Sınırlı sorumluluk: pay sahibi koyduğu sermayeyle sınırlı sorumludur; şirket borçları için kişisel malvarlığına gidilemez.",
+            "Yeni TTK'ya göre AŞ tek ortakla kurulabilir; eski hukukta 'en az 5 kurucu' şartı artık geçerli değildir.",
+          ],
         },
         questions: [
           {
@@ -350,6 +382,22 @@ export const mevzuat1010: Module[] = [
             },
           ],
           tip: "Yeni TTK önemli üç değişiklik getirdi: (1) YK en az 1 üye yeterli (eskiden 3), (2) tüzel kişi YK üyesi olabilir, (3) pay sahibi olma şartı kaldırıldı. Görev süresi maksimum 3 yıl. Devredilemez görevler (TTK m. 375) sınavın klasik soru kalıbıdır — 'üst düzey yönetim, denetim sistemi, faaliyet raporu' bunların başında gelir.",
+          kavramlar: [
+            { terim: "Yönetim Kurulu (YK)", tanim: "AŞ'nin yönetim ve temsil organı; en az 1 üyeden oluşabilir; tüzel kişi de üye olabilir ve pay sahibi olma şartı aranmaz." },
+            { terim: "YK Görev Süresi", tanim: "Yönetim kurulu üyelerinin görev süresi en fazla 3 yıldır; esas sözleşmede daha kısa süre belirlenebilir." },
+            { terim: "Devredilemez Görevler (TTK m. 375)", tanim: "YK'nın başka kişilere devredemeyeceği: üst düzey yönetim, denetim sisteminin kurulması, muhasebe ve finans denetimi, faaliyet raporu, genel kurul toplantısına hazırlık." },
+            { terim: "İcra Organı (CEO/Genel Müdür)", tanim: "YK'nın yönetim yetkisini devrettiği icra kurulu veya tek kişi; devredilemeyen YK görevleri hariç tüm yönetim işlevlerini yürütür." },
+            { terim: "İç Denetim Sistemi", tanim: "YK'nın kurmakla yükümlü olduğu, şirket risk yönetimini ve iç kontrol mekanizmalarını denetleyen sistem; bağımsız denetimden ayrı." },
+            { terim: "YK Üyesinin Sorumluluğu", tanim: "Üyelerin görevlerini yaparken kusurlarıyla şirkete verdikleri zararı tazmin borcu; iş görme standartlarına uyulmaması sorumluluğu doğurur." },
+            { terim: "Bağımsız Üye", tanim: "SPK düzenlemesine göre halka açık şirketlerde kurumsal yönetim ilkeleri çerçevesinde seçilen, bağımsızlık kriterlerini karşılayan YK üyesi." },
+          ],
+          dikkatlar: [
+            "YK en az 1 üyeden oluşabilir; 'en az 3 üye' eski TTK hükmüdür — yeni TTK'da bu şart kaldırılmıştır.",
+            "YK üyesinin pay sahibi olma zorunluluğu yeni TTK ile kaldırılmıştır; tüzel kişi de YK üyesi olabilir — her iki değişiklik sınavda sık sorulur.",
+            "TTK m. 375 devredilemez görevler: üst düzey yönetim örgütlenmesi, denetim sistemi kurulması, muhasebe denetimi, faaliyet raporu hazırlama ve genel kurul toplantısına hazırlık.",
+            "YK görev süresi maksimum 3 yıldır; her yıl yeniden seçim zorunluluğu yoktur — en fazla 3 yılda bir genel kurul onayı yeterlidir.",
+            "Halka açık şirketlerde bağımsız üye zorunluluğu SPK Kurumsal Yönetim Tebliği kapsamındadır; sayı ve kriterler tebliğde belirlenmiştir.",
+          ],
         },
         questions: [
           {
@@ -478,6 +526,22 @@ export const mevzuat1010: Module[] = [
             },
           ],
           tip: "Olağan genel kurul faaliyet döneminin bitiminden itibaren 3 ay içinde yapılır. Çağrı süresi 2 hafta. Toplantı nisabı = sermayenin 1/4'ü (olağan kararlar). Azlık = halka kapalıda %10, halka açıkta %5 — bu rakamlar sınavın klasiğidir. Bilgi alma hakkı (TTK m. 437) genel kurulda kullanılır; haklı sebep dışında reddedilemez.",
+          kavramlar: [
+            { terim: "Olağan Genel Kurul", tanim: "Her faaliyet dönemi sonunda, dönem bitiminden itibaren 3 ay içinde toplanan; yıllık hesapları, kâr dağıtımını ve YK seçimini onaylayan zorunlu toplantı." },
+            { terim: "Olağanüstü Genel Kurul", tanim: "Olağan toplantı dışında, gerektiğinde YK veya denetçi talep ya da çağrısıyla gerçekleştirilen özel amaçlı toplantı." },
+            { terim: "Toplantı Nisabı", tanim: "Genel kurulun geçerli karar alabilmesi için gerekli asgari katılım oranı; olağan kararlar için sermayenin 1/4'ü." },
+            { terim: "Azlık Hakkı", tanim: "Halka kapalı AŞ'de sermayenin %10'unu, halka açıkta %5'ini temsil eden pay sahiplerinin kullanabileceği özel denetim ve toplantı talep hakları." },
+            { terim: "Bilgi Alma Hakkı (TTK m. 437)", tanim: "Pay sahiplerinin genel kurulda şirkete ilişkin her konuda açıklama talep etme hakkı; haklı sebep olmaksızın reddedilemez." },
+            { terim: "Genel Kurul Çağrısı", tanim: "Olağan genel kurul için en az 2 hafta önceden ilan ve tescil yoluyla yapılan davet; süreye uyulmaması toplantıyı geçersiz kılabilir." },
+            { terim: "Karar Nisabı", tanim: "Alınan kararların geçerlilik kazanması için gereken oy çoğunluğu; olağan kararlar için oy çokluğu, esas sözleşme değişiklikleri için nitelikli çoğunluk gerekir." },
+          ],
+          dikkatlar: [
+            "Olağan genel kurul faaliyet dönemi bitiminden itibaren 3 ay içinde yapılmalıdır; 'yıl sonu + 6 ay' ifadesi yanıltıcıdır.",
+            "Genel kurul çağrı süresi en az 2 haftadır; bu sürenin altında yapılan çağrı genel kurul kararlarını sakatlar.",
+            "Azlık hakkı: halka kapalıda %10, halka açıkta %5 oranında pay gerektiren haklar — örneğin özel denetçi atanması talebi.",
+            "Bilgi alma hakkı (TTK m. 437) genel kurulda kullanılır; YK, 'ticari sırrı' gerekçe gösterse de haklı sebep dışında reddedemez.",
+            "Toplantı nisabı ile karar nisabı birbirinden farklıdır: toplantı nisabı meclisi toplamaya; karar nisabı kararı geçerli kılmaya yarar.",
+          ],
         },
         questions: [
           {
@@ -606,6 +670,22 @@ export const mevzuat1010: Module[] = [
             },
           ],
           tip: "Sermaye azaltımı = alacaklı koruma + bilirkişi raporu. Üç tür sermaye artırımı: iç kaynaklardan, taahhütlü (rüçhan), şarta bağlı (1/2 sınırı). Rüçhan hakkı kullanım süresi 15-60 gün arası. Bir paya max 15 oy ama esas sözleşme değişikliği/ibra/sorumluluk davasında oy imtiyazı kullanılamaz — sınavın kalıp tuzağı.",
+          kavramlar: [
+            { terim: "Sermaye Artırımı (İç Kaynak)", tanim: "Dağıtılmayan kârlar, yedekler veya yeniden değerleme farklarının sermayeye eklenmesiyle yapılan artırım; pay sahiplerine bedelsiz pay çıkarılır." },
+            { terim: "Taahhütlü Sermaye Artırımı", tanim: "Mevcut pay sahiplerinin rüçhan hakkı kullanarak veya yeni yatırımcıların para koyarak katıldığı nakdi sermaye artırımı." },
+            { terim: "Şarta Bağlı Sermaye Artırımı", tanim: "Dönüştürülebilir tahvil veya opsiyon senetleri karşılığında gerçekleştirilen artırım; esas sermayenin yarısıyla sınırlandırılmıştır." },
+            { terim: "Sermaye Azaltımı", tanim: "Şirket sermayesinin alacaklıların korunması prosedürü uygulanarak azaltılması; bilirkişi raporu ve ilan zorunluluğu gerektirir." },
+            { terim: "Rüçhan Hakkı Kısıtlaması", tanim: "YK veya genel kurul kararıyla rüçhan hakkının kısmen veya tamamen kısıtlanabileceği; haklı sebep ve pay sahiplerinin eşit muameleye tabi tutulması gerekir." },
+            { terim: "İmtiyazlı Pay", tanim: "Oy, kâr payı veya tasfiyede üstünlük tanınan özel pay türü; tek paya en fazla 15 oy hakkı, bazı gündem maddelerinde kullanım yasağı." },
+            { terim: "Hazine Payı", tanim: "Şirketin kendi paylarını geri satın aldığı ve bilançosunda tuttuğu öz paylar; belirli sınırlamalar dahilinde mümkündür." },
+          ],
+          dikkatlar: [
+            "Şarta bağlı sermaye artırımı esas sermayenin 1/2'si (yarısı) ile sınırlıdır; '1/4' veya '2 katı' seçenekleri yanıltıcıdır.",
+            "Sermaye azaltımında alacaklı koruma prosedürü uygulanmalıdır: ilan yapılır, alacaklılara itiraz süresi tanınır, bilirkişi raporu alınır.",
+            "Rüçhan hakkı kullanım süresi en az 15, en fazla 60 gündür; bu iki sınır değer de dahil olmak üzere geçerlidir.",
+            "İmtiyazlı oy hakkı esas sözleşme değişikliği, ibra ve sorumluluk davası konularında KULLANILAMAZ — 'her konuda kullanılabilir' yanıltıcıdır.",
+            "Hazine payı şirkete oy hakkı vermez; bilançoda indirilen bir kalem olarak gösterilir ve belirli oranlarda sınırlandırılmıştır.",
+          ],
         },
         questions: [
           {

@@ -95,6 +95,22 @@ export const mevzuat1014: Module[] = [
             },
           ],
           tip: "Dört değer faktörü: yararlılık, kıtlık, arzu, etkin alım gücü — birinin yokluğu değeri sıfırlar. Pazar değeri = istekli alıcı/satıcı, baskısız işlem. Yatırım değeri kişiye özel, makul değerden farklı. Tasfiye değeri pazar değerinin altındadır. UDS = Uluslararası Değerleme Standartları.",
+          kavramlar: [
+            { terim: "Pazar Değeri", tanim: "Yeterli pazarlama süresi sonunda, bilgili, istekli ve baskısız bir alıcı ile satıcı arasında gerçekleşecek tahmini işlem bedeli." },
+            { terim: "Yatırım Değeri", tanim: "Belirli bir yatırımcının kendi amaçları ve koşulları doğrultusunda belirlenen subjektif değer; pazar değerinden farklı olabilir." },
+            { terim: "Tasfiye Değeri", tanim: "Varlığın makul pazarlama süresi tanınmaksızın zorunlu satış koşullarında elde edilecek değer; pazar değerinin altındadır." },
+            { terim: "Dört Değer Faktörü", tanim: "Mülkün değer kazanabilmesi için gerekli dört koşul: yararlılık (fayda sağlaması), kıtlık (arzın sınırlı olması), arzu (talep yaratması), etkin alım gücü (karşılanabilir fiyat)." },
+            { terim: "UDS (Uluslararası Değerleme Standartları)", tanim: "IVS (International Valuation Standards) olarak bilinen; küresel gayrimenkul ve diğer varlık değerleme uygulamalarını standartlaştıran çerçeve." },
+            { terim: "En Verimli ve En İyi Kullanım", tanim: "Mülkün yasal, fiziksel ve finansal olarak mümkün ve değeri maksimize eden kullanımını belirleyen analiz; her değerlemenin temel adımı." },
+            { terim: "Değerleme Bağımsızlığı", tanim: "Değerleyicinin ihraçcı, müşteri veya üçüncü tarafların baskısından bağımsız, tarafsız değerleme yapma zorunluluğu." },
+          ],
+          dikkatlar: [
+            "Dört değer faktöründen birinin yokluğu değeri sıfırlar; 'yararlılıkla birlikte kıtlık da gerekli mi?' sorusunda cevap EVET.",
+            "Pazar değeri istekli + bilgili + baskısız alıcı ve satıcı varsayar; zorunlu satış koşulları pazar değerini oluşturmaz.",
+            "Yatırım değeri bireysel beklentilere göre değişen subjektif bir kavramdır; pazar değeriyle çakışabilir ama aynı değildir.",
+            "Tasfiye değeri pazar değerinden DÜŞÜKTÜR; 'tasfiyede daha yüksek fiyat alınır' ifadesi yanlıştır.",
+            "En verimli ve en iyi kullanım analizi yasal + fiziksel + finansal olarak mümkün ve maksimum değer sağlayan kullanımı belirler; bu analiz yapılmadan değerleme tamamlanamaz.",
+          ],
         },
         questions: [
           {
@@ -223,6 +239,22 @@ export const mevzuat1014: Module[] = [
             },
           ],
           tip: "Plan hiyerarşisi: Strateji → Çevre Düzeni → Nazım İmar (1/5000) → Uygulama İmar (1/1000). TAKS = taban alanı oranı, KAKS = toplam inşaat alanı oranı. Yapı ruhsatı = inşaata başlama izni, İskân = kullanma izni. İmar Barışı 31.12.2017 öncesi yapılar için geçici çözüm.",
+          kavramlar: [
+            { terim: "İmar Planı Hiyerarşisi", tanim: "En üst kademeden en alta: Strateji Planı → Çevre Düzeni Planı → Nazım İmar Planı (1/5000) → Uygulama İmar Planı (1/1000)." },
+            { terim: "TAKS (Taban Alan Kat Sayısı)", tanim: "Yapının zemin kattaki taban alanının parsel alanına oranı; yapının arsa üzerindeki yatay yayılımını sınırlar." },
+            { terim: "KAKS / Emsal", tanim: "Toplam inşaat alanının parsel alanına oranı; yapının toplam hacmini (kat sayısı × TAKS ile ilişkili) belirler." },
+            { terim: "Yapı Ruhsatı", tanim: "Yapıya başlamadan önce yetkili idareden alınan inşaata başlama izni; projenin imar planına uygunluğunu belgeler." },
+            { terim: "Yapı Kullanma İzni (İskân)", tanim: "İnşaatın tamamlanması ve projeye uygunluğunun denetlenmesi sonrası verilen; yapının kullanımına olanak tanıyan izin belgesi." },
+            { terim: "Uygulama İmar Planı", tanim: "1/1000 ölçekli, parsel bazında yapılaşma koşullarını belirleyen en alt kademeli ve en bağlayıcı imar planı türü." },
+            { terim: "İmar Barışı", tanim: "31.12.2017 tarihinden önce tamamlanmış imarsız veya ruhsatsız yapılara yapı kayıt belgesi verilmesine olanak tanıyan geçici düzenleme." },
+          ],
+          dikkatlar: [
+            "Plan hiyerarşisi: Strateji → Çevre Düzeni → Nazım İmar (1/5000) → Uygulama İmar (1/1000) — alt kademeler üst kademelere aykırı olamaz.",
+            "TAKS yatay yayılımı, KAKS/emsal toplam inşaat hacmini sınırlar — 'KAKS taban alanıdır' yanıltıcıdır, KAKS tüm katların toplamıdır.",
+            "Yapı ruhsatı inşaata başlamak için, iskân ise yapıyı kullanmak için gereklidir; ruhsatsız yapıda iskân alınamaz.",
+            "İmar Barışı yalnızca 31.12.2017 tarihi öncesi yapılar için geçerlidir; bu tarihten sonraki imarsız yapılara uygulanmaz.",
+            "Uygulama imar planı 1/1000 ölçekli ve parsel bazında en detaylı plan olup; buraya aykırı ruhsat düzenlenemez.",
+          ],
         },
         questions: [
           {
@@ -351,6 +383,22 @@ export const mevzuat1014: Module[] = [
             },
           ],
           tip: "Üç yaklaşım: Pazar (emsal), Gelir (nakit akışı), Maliyet (inşa+arsa). Konut için → Pazar, Ticari için → Gelir, Özel amaçlı için → Maliyet yaklaşımı en uygundur. En verimli ve en iyi kullanım analizi her değerlemenin temelidir. Doğrudan kapitalizasyon = Gelir / Cap Rate.",
+          kavramlar: [
+            { terim: "Pazar Yaklaşımı", tanim: "Değerleme konusu gayrimenkulün, piyasada yakın zamanda gerçekleşmiş benzer satışlarla (emsal) karşılaştırılması yoluyla değer tespiti." },
+            { terim: "Gelir Yaklaşımı", tanim: "Gayrimenkulün ileride yaratacağı nakit akışlarının bugünkü değere indirgenmesi; doğrudan kapitalizasyon veya DCF yöntemiyle uygulanır." },
+            { terim: "Maliyet Yaklaşımı", tanim: "Arsa değeri ile yapının yeniden inşa maliyetinden fiziksel/fonksiyonel/ekonomik yıpranmanın düşülmesiyle bulunan değer." },
+            { terim: "Doğrudan Kapitalizasyon", tanim: "Bir yıllık net faaliyet gelirinin kapitalizasyon oranına bölünmesiyle değer hesaplama yöntemi: Değer = NOI / Cap Rate." },
+            { terim: "Cap Rate (Kapitalizasyon Oranı)", tanim: "Net faaliyet gelirinin mülk değerine oranı; piyasa koşullarını ve yatırımcı beklentilerini yansıtır." },
+            { terim: "DCF (İndirgenmiş Nakit Akışı)", tanim: "Gelir yaklaşımının ileri versiyonu; birden fazla dönem için tahmini gelirler ve dönem sonu satış değeri uygun iskonto oranıyla bugüne indirgenir." },
+            { terim: "En İyi Kullanım Analizi", tanim: "Yasal açıdan mümkün, fiziksel açıdan olanaklı, finansal açıdan fizibıl ve maksimum değer yaratan kullanımı belirleyen analiz." },
+          ],
+          dikkatlar: [
+            "Konut değerlemesinde pazar (emsal karşılaştırma) yaklaşımı ön plana çıkar; yeterli emsal yoksa diğer yaklaşımlar devreye girer.",
+            "Ticari gayrimenkullerde (AVM, ofis) gelir yaklaşımı tercih edilir; kira geliri ve doluluk oranı kritik girdilerdir.",
+            "Özel amaçlı yapılarda (ibadet yeri, okul) pazar emsali bulunmadığından maliyet yaklaşımı esas alınır.",
+            "Doğrudan kapitalizasyonda Değer = Net Faaliyet Geliri / Cap Rate; cap rate'in küçük değişimi değeri büyük oranda etkiler.",
+            "En iyi kullanım analizi yalnızca 'boşmuş gibi' ve 'mevcut kullanımla' şeklinde iki ayrı biçimde yapılabilir.",
+          ],
         },
         questions: [
           {
@@ -479,6 +527,22 @@ export const mevzuat1014: Module[] = [
             },
           ],
           tip: "Mülkiyetin üç yetkisi: kullanma (utendi), yararlanma (fruendi), tasarruf (abutendi). Sınırlı ayni haklar: İntifa (kullan+yararlan), Sükna (sadece otur), İrtifak (taşınmazlar arası), Rehin (borç teminatı). Tapu kaydı resmi karinedir — aksi mahkemece ispatlanmadıkça doğru kabul edilir. Kat mülkiyeti = bağımsız bölüm + arsa payı.",
+          kavramlar: [
+            { terim: "Ayni Hak", tanim: "Bir eşya üzerinde doğrudan ve herkese karşı ileri sürülebilen mutlak hak; tapu siciline tescille kazanılır." },
+            { terim: "Mülkiyet Hakkı", tanim: "Bir taşınmaz üzerinde en geniş ayni hak; kullanma (utendi), yararlanma (fruendi) ve tasarruf (abutendi) yetkilerinin tamamını kapsar." },
+            { terim: "İntifa Hakkı", tanim: "Bir malı kullanma ve semerelerinden yararlanma hakkı; ancak tasarruf (devretme/tahrip) yetkisi yoktur." },
+            { terim: "Sükna Hakkı", tanim: "Bir yapıda veya yapının bir bölümünde oturma hakkı; intifakın daha dar biçimi olup alt kiraya verilmesi kural olarak yasaktır." },
+            { terim: "İrtifak Hakkı", tanim: "Bir taşınmaz (yüklü taşınmaz) üzerinde başka bir taşınmaz (yararlanan taşınmaz) ya da belirli kişi lehine kurulan sınırlı ayni hak." },
+            { terim: "İpotek", tanim: "Alacağı güvence altına almak için taşınmaz üzerinde kurulan taşınmaz rehni; borç ödenmezse taşınmaz paraya çevrilir." },
+            { terim: "Kat Mülkiyeti", tanim: "Tamamlanmış bir yapının bağımsız bölümlerinin ayrı mülkiyet konusu olduğu sistem; her bağımsız bölüme arsa payı tahsis edilir." },
+          ],
+          dikkatlar: [
+            "İntifa hakkı: kullanma + yararlanma yetkisi verir; tasarruf (devretme, tahrip etme) yetkisi mülkiyet sahibinde kalır.",
+            "Sükna hakkı intifakın daha dar biçimidir; hak sahibi yapıyı başkasına kiralayamaz/devredemez.",
+            "Tapu sicilinin aleniliği ilkesi: herkes tapu sicilini bildiğini kabul eder; 'bilmiyordum' savunması geçersizdir.",
+            "Kat irtifakı ≠ kat mülkiyeti; yapı tamamlandıktan sonra kat irtifakı kat mülkiyetine dönüştürülmelidir.",
+            "İpotekte kişisel borç ile taşınmaz yükü birbirinden ayrıdır; borç ödenmezse taşınmaz el değiştirmiş olsa dahi ipotek takip eder.",
+          ],
         },
         questions: [
           {
@@ -607,6 +671,22 @@ export const mevzuat1014: Module[] = [
             },
           ],
           tip: "İpotek kredisinde temel kavramlar: LTV (kredi/değer oranı), eşit taksitli (anüite) ödeme, sabit/değişken faiz. 2007'de 5582 ile modern sistem kuruldu. İDMK (mortgage-backed) = ipotek havuzunun menkul kıymetleştirilmesi. Erken ödemede banka tazminat talep edebilir. 6306 sayılı kanun kentsel dönüşümü düzenler.",
+          kavramlar: [
+            { terim: "LTV (Loan-to-Value)", tanim: "Kullandırılan kredi tutarının gayrimenkulün değerine oranı; bankalar genellikle %80 üst sınır uygular." },
+            { terim: "İpotek Kredisi (Mortgage)", tanim: "Taşınmaz ipoteği teminatıyla verilen uzun vadeli konut ya da ticari gayrimenkul alım kredisi." },
+            { terim: "Anüite (Eşit Taksitli Ödeme)", tanim: "Her dönem sabit tutarda ödenen kredi taksiti; başlangıçta faiz ağırlıklı, zamanla anapara ağırlıklı hale gelir." },
+            { terim: "İDMK (İpotek Teminatlı Menkul Kıymet)", tanim: "İpotek alacaklarından oluşturulan havuzun menkul kıymetleştirilmesiyle ihraç edilen araç; mortgage-backed security." },
+            { terim: "5582 Sayılı Kanun", tanim: "2007'de yürürlüğe giren konut finansmanı kanunu; ipotekli konut finansmanı sistemini, konut finansmanı kuruluşlarını ve İDMK ihracını düzenler." },
+            { terim: "6306 Sayılı Kanun", tanim: "Afet riski altındaki alanların dönüştürülmesini düzenleyen kentsel dönüşüm kanunu; riskli yapı tespiti ve yıkım-yeniden yapım sürecini kapsar." },
+            { terim: "Erken Ödeme Tazminatı", tanim: "Krediyi vadesinden önce kapatan borçlunun bankaya ödemesi gereken tazminat; bankanın faiz kaybını telafi etmeye yönelik yasal hak." },
+          ],
+          dikkatlar: [
+            "LTV oranı %80 ile sınırlandırılmıştır; değerin %80'inden fazla kredi kullandırılamaz.",
+            "Anüite ödemesinde ilk taksitlerde faiz payı yüksek, son taksitlerde anapara payı yüksektir; toplam ödeme sabit kalır.",
+            "İDMK = ipotek alacaklarının menkul kıymetleştirilmesi; 5582 sayılı Kanun bu sistemi mümkün kıldı.",
+            "Erken ödemede borçludan tazminat talep edilebilir; bu yasal bir haktır, sözleşmede önceden belirlenir.",
+            "6306 Kanunu riskli yapı tespiti yetkisini Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'na verir.",
+          ],
         },
         questions: [
           {

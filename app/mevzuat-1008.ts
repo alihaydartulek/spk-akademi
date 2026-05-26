@@ -94,6 +94,22 @@ export const mevzuat1008: Module[] = [
             },
           ],
           tip: "Talep esnekliğinde |E|>1 = esnek, |E|<1 = inelastik kuralı sınavın klasiğidir. Lüks mal = esnek talep, zorunlu mal = inelastik talep. Piyasa türleri 'satıcı sayısı + ürün farklılaşması' iki kriteriyle ayrılır: tam rekabet → monopolcü rekabet → oligopol → tekel.",
+          kavramlar: [
+            { terim: "Talep Esnekliği", tanim: "Fiyat değiştiğinde talep miktarının ne ölçüde değiştiğini ölçen katsayı; |E|>1 esnek, |E|<1 inelastik, |E|=1 birim esnekli." },
+            { terim: "Arz Eğrisi", tanim: "Fiyat arttıkça üreticilerin piyasaya arz etmek istediği miktar artar; pozitif eğimli ilişkiyi gösterir." },
+            { terim: "Talep Eğrisi", tanim: "Fiyat arttıkça tüketicilerin talep etmek istediği miktar azalır; negatif eğimli ilişkiyi gösterir." },
+            { terim: "Tam Rekabet Piyasası", tanim: "Çok sayıda alıcı ve satıcının homojen ürün alıp sattığı; hiçbir aktörün fiyatı etkileyemediği piyasa yapısı." },
+            { terim: "Tekel (Monopol)", tanim: "Tek satıcının homojen ürün sattığı; fiyat belirleyici konumunda olduğu piyasa yapısı; sosyal refah açısından en olumsuz yapı." },
+            { terim: "Oligopol", tanim: "Az sayıda büyük firmanın piyasayı paylaştığı; rakip kararlarına karşılıklı bağımlılığın yüksek olduğu piyasa yapısı." },
+            { terim: "Fiyat Esnekliği ve Gelir", tanim: "Esnek talepte fiyat düşüşü toplam geliri artırır; inelastik talepte fiyat düşüşü toplam geliri azaltır — bu ilişki fiyat stratejileri için kritiktir." },
+          ],
+          dikkatlar: [
+            "Talep esnekliği: |E| > 1 esnek (lüks mallar), |E| < 1 inelastik (zorunlu mallar), |E| = 1 birim elastik — mutlak değer kullanılır, işaret değil.",
+            "Piyasa yapıları satıcı sayısı ve ürün homojenliğine göre sıralanır: tam rekabet → monopolcü rekabet → oligopol → tekel.",
+            "Tam rekabette P = MC (marjinal maliyet); tekelde P > MC — bu fark tekel gelirini (monopoly rent) oluşturur.",
+            "Esnek talepte (|E|>1) fiyat artışı toplam geliri azaltır; inelastik talepte (|E|<1) fiyat artışı toplam geliri artırır — bu ters ilişki sınavda tuzak olarak sunulur.",
+            "Arz esnekliği kısa vadede düşük, uzun vadede yüksek olur; üretim kapasitesi genişledikçe arz daha esnek hale gelir.",
+          ],
         },
         questions: [
           {
@@ -222,6 +238,22 @@ export const mevzuat1008: Module[] = [
             },
           ],
           tip: "Üç temel para politikası aracı: Açık Piyasa İşlemleri, Zorunlu Karşılık Oranı, Reeskont (Politika) Faizi. APİ en esnek araçtır. Daraltıcı politika = enflasyonla mücadele, genişletici politika = resesyonla mücadele. TCMB'nin birincil amacı fiyat istikrarıdır — Kanun md. 4 ile sabittir.",
+          kavramlar: [
+            { terim: "Para Politikası", tanim: "Merkez Bankasının para arzını ve faiz oranlarını etkilemek amacıyla kullandığı araçlar bütünü; birincil amacı fiyat istikrarıdır." },
+            { terim: "Açık Piyasa İşlemleri (APİ)", tanim: "MB'nın devlet tahvili alım-satımıyla para arzını etkilediği en esnek ve en sık kullanılan para politikası aracı." },
+            { terim: "Zorunlu Karşılık Oranı", tanim: "Bankaların topladıkları mevduatın belirli bir yüzdesini MB'da tutma zorunluluğu; artırılması para arzını daraltır." },
+            { terim: "Politika Faizi (Reeskont)", tanim: "MB'nın bankalara borç verdiği temel faiz oranı; artırılması krediyi pahalılaştırarak para arzını daraltır." },
+            { terim: "Genişletici Para Politikası", tanim: "Para arzını artıran (APİ alım, düşük ZKO, düşük faiz) politika; resesyon dönemlerinde büyümeyi desteklemek için kullanılır." },
+            { terim: "Daraltıcı Para Politikası", tanim: "Para arzını azaltan (APİ satış, yüksek ZKO, yüksek faiz) politika; enflasyonla mücadelede başvurulan araçlar." },
+            { terim: "TCMB Bağımsızlığı", tanim: "TCMB'nin kendi yetkisi dahilindeki para politikası kararlarında hükümetten bağımsız hareket etme ilkesi; TCMB Kanunu'nda güvence altındadır." },
+          ],
+          dikkatlar: [
+            "TCMB'nin birincil amacı fiyat istikrarıdır (enflasyon hedeflemesi); büyüme ve istihdam ikincil amaçlardır — bu hiyerarşi Kanun md. 4'te sabittir.",
+            "APİ en esnek para politikası aracıdır; günlük bazda piyasaya yapılabilir — ZKO değişikliği ise daha kaba ve etkisi gecikmeli bir araçtır.",
+            "Daraltıcı politika: APİ satış + ZKO artışı + faiz artışı; genişletici politika: APİ alım + ZKO indirimi + faiz indirimi.",
+            "ZKO artırılırsa bankalar daha az kredi verebilir; bu para çarpanını küçülterek para arzını daraltır.",
+            "Politika faizi artışı hem krediyi pahalılaştırır hem de TL'yi değerlendirerek enflasyonu iki yoldan dizginler.",
+          ],
         },
         questions: [
           {
@@ -350,6 +382,22 @@ export const mevzuat1008: Module[] = [
             },
           ],
           tip: "Vergiler dolaylı/dolaysız ayrımı: dolaysız (gelir, kurumlar) gelir üzerinden, dolaylı (KDV, ÖTV) tüketim üzerinden. Maliye politikası çarpanı = 1/(1-MTE) — sınavın klasik formülüdür. IS-LM modeli para ve maliye politikalarının kesişimini gösterir; hem ekonomi öğrencileri hem SPL adayları için temel araçtır.",
+          kavramlar: [
+            { terim: "Dolaysız Vergi", tanim: "Gelir üzerinden alınan; mükellefi ile ekonomik yükü taşıyan kişinin aynı olduğu vergi türü — gelir vergisi, kurumlar vergisi." },
+            { terim: "Dolaylı Vergi", tanim: "Tüketim veya işlemler üzerinden alınan; yük başkasına yansıtılabilen vergi türü — KDV, ÖTV, damga vergisi." },
+            { terim: "Marjinal Tüketim Eğilimi (MTE)", tanim: "Ek gelirin ne kadarının tüketime harcandığını gösteren katsayı; 0 ile 1 arasındadır ve kamu harcaması çarpanını belirler." },
+            { terim: "Maliye Politikası Çarpanı", tanim: "Kamu harcamasındaki 1 birimlik artışın GSYH'yi kaç birim artırdığını gösteren katsayı: 1/(1-MTE)." },
+            { terim: "Genişletici Maliye Politikası", tanim: "Kamu harcamalarını artıran ve/veya vergileri düşüren; ekonomiyi canlandırmaya yönelik politika." },
+            { terim: "Daraltıcı Maliye Politikası", tanim: "Kamu harcamalarını kısan ve/veya vergileri artıran; enflasyonu ve aşırı ısınmayı frenleyen politika." },
+            { terim: "IS-LM Modeli", tanim: "IS eğrisi (mal piyasası dengesi) ile LM eğrisinin (para piyasası dengesi) kesişimiyle faiz oranı ve milli geliri belirleyen makroekonomik çerçeve." },
+          ],
+          dikkatlar: [
+            "Maliye politikası çarpanı = 1/(1-MTE); MTE = 0,8 ise çarpan = 5 — yüksek MTE yüksek çarpan anlamına gelir.",
+            "Dolaysız vergi gelire göre (gelir vergisi, kurumlar vergisi); dolaylı vergi tüketime göre (KDV, ÖTV) alınır — sınırda 'damga vergisi' dolaylı kategorisindedir.",
+            "Genişletici maliye politikası kısa vadede canlandırma sağlar; uzun vadede kamu borcu artışı özel yatırımları dışlayabilir (crowding out).",
+            "IS eğrisi mal piyasası dengelerini; LM eğrisi para piyasası dengelerini gösterir — kesişme noktası faiz-gelir dengesini verir.",
+            "Vergi çarpanı harcama çarpanından küçüktür: vergi indirimi GSYH'yi tam çarpan etkisiyle değil, (MTE/(1-MTE)) kadar artırır.",
+          ],
         },
         questions: [
           {
@@ -478,6 +526,22 @@ export const mevzuat1008: Module[] = [
             },
           ],
           tip: "Nominal GSYH cari fiyatlarla, Reel GSYH sabit fiyatlarla — sınavın klasik tuzağıdır. Cobb-Douglas formülünde toplam üs = 1 (α + (1-α) = 1) sabit ölçeklere getiri varsayımıdır. TÜFE = tüketici, ÜFE = üretici, Çekirdek = gıda+enerji hariç. İşsizlik oranı paydası 'işgücü', toplam nüfus değil.",
+          kavramlar: [
+            { terim: "Nominal GSYH", tanim: "Cari (o yılın) fiyatlarıyla hesaplanan GSYH; enflasyonun etkisini içerdiğinden büyüme karşılaştırmasında yanıltıcı olabilir." },
+            { terim: "Reel GSYH", tanim: "Sabit baz yıl fiyatlarıyla hesaplanan GSYH; enflasyondan arındırılmış gerçek büyüme göstergesi." },
+            { terim: "TÜFE (CPI)", tanim: "Tüketici Fiyat Endeksi; hanehalkının satın aldığı mal ve hizmetlerin fiyat değişimini ölçen enflasyon göstergesi." },
+            { terim: "ÜFE (PPI)", tanim: "Üretici Fiyat Endeksi; üreticilerin sattığı mal ve hizmetlerin fiyat değişimini ölçen; genellikle TÜFE'nin öncü göstergesidir." },
+            { terim: "Çekirdek Enflasyon", tanim: "Gıda ve enerji fiyatları çıkarılmış enflasyon; daha istikrarlı olduğundan para politikası kararlarında tercih edilen ölçüt." },
+            { terim: "İşsizlik Oranı", tanim: "İşsiz sayısının işgücüne (çalışan + iş arayan) oranı; paydası toplam nüfus değil, yalnızca işgücüdür." },
+            { terim: "Cobb-Douglas Üretim Fonksiyonu", tanim: "Y = A × K^α × L^(1-α) şeklinde gösterilen; sermaye ve emeğin toplam üretimdeki katkısını modelleyen üretim fonksiyonu; α+( 1-α)=1 sabit ölçek varsayımını temsil eder." },
+          ],
+          dikkatlar: [
+            "Nominal GSYH cari fiyatlarla, Reel GSYH sabit fiyatlarla ölçülür; 'ekonomi büyüdü' derken reel GSYH artışı kastedilir.",
+            "İşsizlik oranı = (İşsiz / İşgücü) × 100; payda 'toplam nüfus' değil 'aktif işgücü'dür — eve dönmüş kişiler işsiz sayılmaz.",
+            "TÜFE tüketici enflasyonunu, ÜFE üretici enflasyonunu ölçer; ÜFE artışı ilerleyen aylarda TÜFE'ye yansıyabilir.",
+            "Çekirdek enflasyon gıda ve enerjiyi dışarıda bırakır; para politikası kararları genellikle çekirdek enflasyona göre alınır.",
+            "Deflasyon (negatif enflasyon) talep düşüşü, borç deflasyonu ve yatırım caydırıcılığı nedeniyle enflasyondan daha tehlikeli olabilir.",
+          ],
         },
         questions: [
           {
@@ -606,6 +670,22 @@ export const mevzuat1008: Module[] = [
             },
           ],
           tip: "Karşılaştırmalı üstünlük teorisi sınavın klasiğidir — bir ülke tüm mallarda mutlak üstünlüğe sahip olsa bile, ticaret yapması karşılıklı kazanç sağlar. Cari işlemler dengesi = Mal+Hizmet+Birincil+İkincil gelirler. REDK > 100 = TL aşırı değerli, REDK < 100 = TL ucuz. Türkiye 2001 sonrası serbest dalgalanma rejimindedir.",
+          kavramlar: [
+            { terim: "Karşılaştırmalı Üstünlük", tanim: "David Ricardo'nun teorisi; bir ülke tüm mallarda daha az verimli olsa bile, en az dezavantajlı olduğu malı üretip ihraç ederek ticaretten kazanç sağlar." },
+            { terim: "Mutlak Üstünlük", tanim: "Adam Smith'in teorisi; bir ülkenin diğerine göre daha az kaynak kullanarak mal üretmesi; ticaret temelini açıklamada yetersiz kalır." },
+            { terim: "Cari İşlemler Dengesi", tanim: "Ödemeler dengesi içinde mal ticareti, hizmet ticareti, birincil gelirler (faiz, kâr) ve ikincil gelirleri (transferler) kapsayan denge kalemi." },
+            { terim: "Reel Efektif Döviz Kuru (REDK)", tanim: "TL'nin enflasyon farkına göre düzeltilmiş çok taraflı döviz kuru; >100 TL aşırı değerli, <100 TL rekabetçi düzeyde değersiz." },
+            { terim: "Sabit Döviz Kuru Rejimi", tanim: "Ulusal paranın değerinin yabancı bir para birimine sabitlendiği kur sistemi; dış rekabetçilik esnekliği sınırlıdır." },
+            { terim: "Serbest Dalgalanma Rejimi", tanim: "Döviz kurunun piyasa arz-talebine göre serbestçe belirlendiği kur sistemi; Türkiye 2001 krizinden sonra bu rejime geçmiştir." },
+            { terim: "Dış Ticaret Açığı", tanim: "İthalatın ihracatı aşması; cari açığın en büyük bileşeni olan ve finansman için sermaye girişi gerektiren durum." },
+          ],
+          dikkatlar: [
+            "Karşılaştırmalı üstünlük mutlak üstünlük gerektirmez; fırsat maliyeti en düşük olan mal ihraç edilir — 'en iyi olmak zorunlu değil' sınavın temel mesajıdır.",
+            "REDK > 100 = TL aşırı değerli = ihracat pahalanır, ithalat ucuzlar; REDK < 100 = TL rekabetçi = ihracat canlanır.",
+            "Cari işlemler dengesi dört bileşenden oluşur: mal ticareti + hizmet ticareti + birincil gelirler + ikincil gelirler — 'sermaye hesabı' cari işlemlerde yer almaz.",
+            "Türkiye 2001 krizinden sonra serbest dalgalanma rejimine geçmiştir; sabit kur sistemini 2001 öncesiyle bağdaştırmak yanıltıcıdır.",
+            "Dış ticaret açığı cari açığın en büyük kalemidir; finansmanı için yabancı sermaye girişi (FDI, portföy yatırımı, borç) gerekir.",
+          ],
         },
         questions: [
           {

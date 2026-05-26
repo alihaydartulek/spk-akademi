@@ -94,6 +94,22 @@ export const mevzuat1012: Module[] = [
             },
           ],
           tip: "Üç temel kurum: Takasbank (takas+saklama), MKK (kaydileştirme), VİOP/Pay Piyasası (işlem). DvP (Delivery vs Payment) takasta anapara riskini sıfırlar. Pay piyasası takas süresi T+2 — sınavın klasiğidir. Açık teklif yöntemi = CCP mekanizması.",
+          kavramlar: [
+            { terim: "Takas", tanim: "Menkul kıymet alım-satımında para ve menkul kıymet değişiminin gerçekleştirilmesi; BİAŞ pay piyasasında T+2 günde tamamlanır." },
+            { terim: "Saklama", tanim: "Müşterilere ait menkul kıymetlerin yetkili kuruluşlarda güvenle muhafaza edilmesi ve kayıt altına alınması işlevi." },
+            { terim: "DvP (Teslimat - Ödeme Karşılığı)", tanim: "Menkul kıymet teslimi ile paranın ödenmesinin eş zamanlı gerçekleştirilmesi; anapara riskini ortadan kaldıran takas prensibi." },
+            { terim: "Takasbank", tanim: "Türkiye'nin merkezi takas ve saklama kuruluşu; pay piyasası, türev ve borçlanma araçları takasını yürütür, CCP işlevi görür." },
+            { terim: "MKK (Merkezi Kayıt Kuruluşu)", tanim: "Türkiye'de menkul kıymetlerin elektronik ortamda kaydileştirilmesinden ve yatırımcı bazlı saklamasından sorumlu merkezi kuruluş." },
+            { terim: "Açık Teklif Yöntemi (CCP)", tanim: "Takasbank'ın her alım-satım işleminde hem alıcının hem satıcının karşı tarafı olarak araya girmesi; temerrüt riskini merkezi yönetir." },
+            { terim: "T+2 Takas Süresi", tanim: "BİAŞ pay piyasasında işlem günü (T) dahil olmak üzere 2 iş günü sonrasında (T+2) takas işleminin tamamlanması." },
+          ],
+          dikkatlar: [
+            "Pay piyasasında takas süresi T+2; türev (VİOP) işlemlerde takas T+0 (aynı gün) gerçekleşir — bu iki süre sınavın en temel takas sorusudur.",
+            "DvP prensibi anapara riskini sıfırlar; menkul kıymet teslimi ile ödeme eş zamanlıdır — 'önce teslim sonra ödeme' gibi sıralı modeller DvP değildir.",
+            "Takasbank takas + saklama işlevini birlikte yürütür; MKK ise kaydileştirme ve yatırımcı bazlı saklama kaydıyla sorumludur.",
+            "Açık teklif yöntemi (novation) Takasbank'ın CCP rolüdür; her işlemde alıcıya satıcı, satıcıya alıcı olarak araya girer.",
+            "Menkul kıymet saklama BİAŞ değil Takasbank ve MKK tarafından yapılır — 'BİAŞ saklama kuruluşu' ifadesi yanlıştır.",
+          ],
         },
         questions: [
           {
@@ -222,6 +238,22 @@ export const mevzuat1012: Module[] = [
             },
           ],
           tip: "Türkiye'nin yatırımcı bazlı saklama sistemi dünyada nadirdir — uluslararası standartta omnibüs (toplu) hesap kullanılır. Pay senetleri 2005'te kaydileştirildi. Kaydileştirmenin 5 temel faydası: sahtecilik, kayıp, hız, maliyet, şeffaflık. Sahiplik MKK kaydıyla doğar — pay defteri ikincildir.",
+          kavramlar: [
+            { terim: "Kaydileştirme", tanim: "Fiziksel menkul kıymet senetlerinin kaldırılarak elektronik kayıt sistemine geçilmesi; Türkiye'de 2005 yılında tamamlanmıştır." },
+            { terim: "MKK Kaydının Hukuki Etkisi", tanim: "Menkul kıymet sahipliğinin MKK'daki elektronik kayıtla belgelenmesi; pay defteri sahipliği değil MKK kaydı esastır." },
+            { terim: "Yatırımcı Bazlı Saklama", tanim: "Her yatırımcının MKK'da ayrı hesap altında tanımlandığı ve paylarının bireysel olarak kaydedildiği Türkiye'ye özgü sistem." },
+            { terim: "Omnibüs Hesap", tanim: "Uluslararası piyasalarda yaygın olan; birden fazla yatırımcının varlıklarının tek hesapta toplandığı saklama modeli." },
+            { terim: "Yabancı Yatırımcı Tanımlaması", tanim: "MKK'da yabancı yatırımcıların da bireysel bazda kaydedilmesi; Türkiye sistemi uluslararası omnibüs modelden bu nedenle ayrışır." },
+            { terim: "İhraçcı Bazlı Kayıt", tanim: "MKK'nın her ihraçcının menkul kıymetlerine kimin ne kadar sahip olduğunu şeffaf biçimde tuttuğu kayıt sistemi." },
+            { terim: "Kıymet Hesabı", tanim: "Yatırımcının sahip olduğu menkul kıymetlerin MKK'da tutulduğu elektronik hesap; alım-satım ve haklar bu hesap üzerinden işler." },
+          ],
+          dikkatlar: [
+            "Türkiye yatırımcı bazlı saklama sistemi uygular; her yatırımcının MKK'da ayrı hesabı vardır — omnibüs hesap sistemi Türkiye'nin değil uluslararası standarttır.",
+            "Menkul kıymet sahipliğinin kanıtı MKK kaydıdır; pay defteri artık ikincil öneme sahiptir — 'pay defteri esas' ifadesi yanlıştır.",
+            "Pay senetleri 2005 yılında kaydileştirildi; bu tarihten itibaren fiziksel senet geçerliliği kalmadı.",
+            "Kaydileştirmenin faydaları: sahtecilik önleme, kayıp/çalınma riski ortadan kalkma, işlem hızlanma, maliyet düşüşü, şeffaflık artışı.",
+            "Yabancı yatırımcılar da MKK'da bireysel bazda tanımlanır; bu özellik Türkiye'yi uluslararası omnibüs modelinden ayıran yapısal bir farktır.",
+          ],
         },
         questions: [
           {
@@ -350,6 +382,22 @@ export const mevzuat1012: Module[] = [
             },
           ],
           tip: "Pay piyasası T+2, türev T+0 — kritik ayrım. BISTECH Marjin Yöntemi = portföy bazlı (riski azaltır), Brüt Teminat = her müşteri ayrı (üyeyi koruma altına alır). Temerrüt 'falanjı' (default waterfall): teminat → garanti fonu → Takasbank özsermayesi sırasıyla kullanılır. CCP'yi koruyan çok katmanlı yapı.",
+          kavramlar: [
+            { terim: "T+2 Takas Döngüsü", tanim: "Pay piyasasında işlem gününden itibaren 2 iş günü sonrasında para ve menkul kıymetin el değiştirdiği standart takas süreci." },
+            { terim: "BISTECH Marjin Yöntemi", tanim: "Takasbank'ın portföy bazlı teminat yönetimi; birbiriyle korelasyonu olan pozisyonlar netleştirilerek teminat miktarı azaltılır." },
+            { terim: "Brüt Teminat Yöntemi", tanim: "Her müşteri pozisyonu için ayrı teminat hesaplanan yöntem; üyenin müşteri risklerinden korunmasını sağlar." },
+            { terim: "Temerrüt Yönetimi (Default Waterfall)", tanim: "Temerrüt halinde kayıpların karşılanacağı kaynak sırası: 1. temerrüt eden üyenin teminatı → 2. garanti fonu → 3. Takasbank özsermayesi." },
+            { terim: "Garanti Fonu", tanim: "Tüm Takasbank üyelerinin katkısıyla oluşturulan; birinin temerrüt halinde sistem genelini korumak için kullanılan ortak güvence fonu." },
+            { terim: "Temerrüt Prosedürü", tanim: "Takas yükümlülüğünü yerine getiremeyen üye için Takasbank'ın borç menkul kıymeti piyasadan temin ettiği ve maliyeti temerrüt eden üyeye yüklediği prosedür." },
+            { terim: "Net Takas", tanim: "Alım ve satım emirleri arasındaki farkın netleştirilerek takas yükümlülüğünün küçültüldüğü yöntem; ödeme ve teslimat sayısını azaltır." },
+          ],
+          dikkatlar: [
+            "Takas süreleri: Pay piyasası T+2, türev piyasa (VİOP) T+0 — bu temel ayrım sınavda her zaman sorulur.",
+            "Temerrüt yönetiminde kaynak sırası: önce temerrüt eden üyenin teminatı → sonra garanti fonu → en son Takasbank özsermayesi.",
+            "BISTECH marjin portföy bazlı (riski azaltır); brüt teminat müşteri bazlı (üyeyi korur) — iki yöntemin amacı ve hesaplama mantığı farklıdır.",
+            "Garanti fonu üyelerin ortak katkısıyla oluşur; bir üyenin temerrüdü tüm sistemi değil yalnızca o üyenin teminatını etkiler.",
+            "Net takas, brüt takasa kıyasla daha az ödeme ve teslimat işlemi gerektirdiğinden sistem verimliliğini artırır.",
+          ],
         },
         questions: [
           {
@@ -478,6 +526,22 @@ export const mevzuat1012: Module[] = [
             },
           ],
           tip: "Türev piyasada üç teminat: başlangıç, sürdürme, olağanüstü. Sürdürme genelde başlangıcın %75'i. Garanti fonu = ortak fon (loss sharing). 2008 sonrası OTC zorunlu CCP — sınavın yeni klasik konusu. Vadede iki çıkış: ters işlem (yaygın) veya fiziki teslim/nakdi uzlaşı.",
+          kavramlar: [
+            { terim: "Başlangıç Teminatı (IM)", tanim: "Türev pozisyonu açmak için Takasbank'a yatırılan ve pozisyonun risk miktarına göre hesaplanan ilk teminat tutarı." },
+            { terim: "Sürdürme Teminatı", tanim: "Pozisyon açık olduğu süre boyunca hesapta bulunması gereken asgari teminat düzeyi; genellikle başlangıç teminatının %75'i." },
+            { terim: "Olağanüstü Teminat", tanim: "Piyasa koşullarının aşırı dalgalandığı dönemlerde Takasbank'ın ek teminat talep edebildiği özel mekanizma." },
+            { terim: "Pozisyon Kapatma Yöntemleri", tanim: "Türev pozisyon vadeye kadar ters işlemle kapatılabilir (en yaygın) veya vadede fiziki teslimat/nakit uzlaşmayla sona erdirilebilir." },
+            { terim: "OTC Türev CCP Zorunluluğu", tanim: "2008 krizi sonrası G20 kararlarıyla standart OTC türev işlemlerin merkezi takas kuruluşu (CCP) aracılığıyla tasfiye edilmesi zorunluluğu." },
+            { terim: "Günlük Kâr-Zarar Hesabı", tanim: "Her gün kapanış fiyatına göre futures pozisyonlarının değerlenerek kâr/zararın teminat hesabına yansıtılması (mark-to-market)." },
+            { terim: "Vade Sonu Uzlaşma", tanim: "Futures kontratının vadesi dolduğunda nakit (pay/endeks) veya fiziki teslimat (emtia/döviz) ile kapatılması." },
+          ],
+          dikkatlar: [
+            "Türev piyasada üç teminat türü: başlangıç (pozisyon açma) > sürdürme (asgari düzey, genellikle başlangıcın %75'i) > olağanüstü (kriz döneminde ek).",
+            "Sürdürme teminatı başlangıç teminatının yaklaşık %75'idir; 'başlangıca eşittir' veya '%50' seçenekleri yanıltıcıdır.",
+            "2008 krizi sonrası OTC standart türevler CCP üzerinden takasla zorunlu hale geldi; bu düzenleme G20 kararları çerçevesinde uygulanmaktadır.",
+            "Türev pozisyon çoğunlukla ters işlemle kapatılır; fiziki teslimat yalnızca belirli emtia ve döviz sözleşmelerinde geçerlidir.",
+            "Günlük mark-to-market forward'da yoktur; futures'ta her gün kapanış fiyatına göre teminat hesabı otomatik güncellenir.",
+          ],
         },
         questions: [
           {
@@ -606,6 +670,22 @@ export const mevzuat1012: Module[] = [
             },
           ],
           tip: "Teminat varlık türleri 5 ana grup: nakit, DİBS, pay, döviz, altın. Haircut = risk indirimi (volatil varlıkta yüksek). Portföy saklama = PYŞ'den bağımsız saklayıcı; çıkar çatışmasını önler. III-56.1 Tebliği bu alanı düzenler. Saklayıcının NAV doğruluğunu kontrol etmesi yatırımcı koruma açısından kritik.",
+          kavramlar: [
+            { terim: "Teminat Türleri", tanim: "Takasbank'a kabul edilen teminat varlıkları: nakit (TL/döviz), devlet iç borçlanma senetleri (DİBS), pay senetleri, döviz ve altın." },
+            { terim: "Haircut (Değer İndirimi)", tanim: "Teminat olarak sunulan varlığın piyasa değerinden belirli bir oranda indirim uygulanması; volatil varlıklarda haircut daha yüksektir." },
+            { terim: "Portföy Saklama Hizmeti", tanim: "PYŞ'nin kurucusu olduğu fonların varlıklarını bağımsız bir saklayıcı kuruluşta tutması; çıkar çatışmasını önleyen yasal zorunluluk." },
+            { terim: "Portföy Saklayıcısı", tanim: "III-56.1 sayılı Tebliğ kapsamında yetkilendirilmiş; fon varlıklarını saklayan, NAV doğruluğunu kontrol eden bağımsız kuruluş." },
+            { terim: "NAV (Net Varlık Değeri) Kontrolü", tanim: "Portföy saklayıcısının fon portföyünün bağımsız değerlemesini yaparak birim pay değerinin doğruluğunu doğrulaması." },
+            { terim: "Teminat Yönetim Sistemi", tanim: "Takasbank'ın farklı ürün ve pazarlar için teminat hesaplama, takip ve optimizasyon işlemlerini yürüttüğü merkezi sistem." },
+            { terim: "Müşteri Varlıklarının Ayrıştırılması", tanim: "Aracı kurumların müşterilere ait menkul kıymet ve nakit varlıklarını kendi varlıklarından kayıt ve hesap bazında ayrı tutma zorunluluğu." },
+          ],
+          dikkatlar: [
+            "Haircut volatil ve likit olmayan varlıklarda yüksektir; nakit'e genellikle sıfır haircut uygulanır, pay senetlerine yüksek haircut.",
+            "Portföy saklayıcısı PYŞ'den bağımsız olmalıdır; saklayıcının PYŞ ile aynı grup şirketi olması çıkar çatışması doğurur.",
+            "Saklayıcı NAV doğruluğunu kontrol eder; bu görev yatırımcı koruma açısından kritiktir — saklayıcı hata veya usulsüzlüğü tespit ederse Kurul'a bildirmekle yükümlüdür.",
+            "Teminat varlıkları sırası likit → az likit: nakit > DİBS > döviz > pay > altın şeklinde Takasbank tarafından ağırlıklandırılır.",
+            "Müşteri varlıklarının ayrıştırılması zorunluluğu aracı kurum iflasında müşteri varlıklarını korur; 'müşteri varlığı iflas masasına dahil edilemez' kuralıdır.",
+          ],
         },
         questions: [
           {

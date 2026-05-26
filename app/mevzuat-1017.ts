@@ -97,6 +97,22 @@ export const mevzuat1017: Module[] = [
             },
           ],
           tip: "Kredi derecelendirmesi = GÖRÜŞ, garanti değil. Sembollerde S&P/Fitch (AAA-D) ve Moody's (Aaa-C) farklı. BBB-/Baa3 = yatırım yapılabilir eşik. Türkiye'de düzenleyici tebliğ: Seri VIII No 51. İki tür: talebe bağlı (yaygın) ve talebe bağlı olmayan. Bağımsızlık ilkesi kritik — danışmanlık + derecelendirme aynı şirkete yapılamaz.",
+          kavramlar: [
+            { terim: "Kredi Derecelendirmesi", tanim: "Bir borçlunun veya borçlanma aracının geri ödeme kapasitesine ilişkin bağımsız görüş; garanti ya da yatırım tavsiyesi değildir." },
+            { terim: "Yatırım Yapılabilir Eşik", tanim: "S&P/Fitch'te BBB-, Moody's'de Baa3 notu; bu eşiğin altındaki notlar spekülatif (high yield/junk) kategorisindedir." },
+            { terim: "Talebe Bağlı Derecelendirme", tanim: "İhraçcının başvurusu ve bedel ödemesiyle başlatılan derecelendirme; piyasada en yaygın model." },
+            { terim: "Talebe Bağlı Olmayan Derecelendirme", tanim: "Derecelendirme kuruluşunun kamuya açık verilerle re'sen yaptığı değerlendirme; ihraçcının onayı gerekmez." },
+            { terim: "Seri VIII No 51 Tebliği", tanim: "SPK'nın kredi derecelendirme kuruluşlarını düzenleyen tebliği; bağımsızlık, yöntem açıklığı ve çıkar çatışması kurallarını içerir." },
+            { terim: "Bağımsızlık İlkesi", tanim: "Kredi derecelendirme kuruluşunun derecelendirdiği ihraçcıya danışmanlık veremeyeceği kuralı; çıkar çatışmasını önlemeye yönelik." },
+            { terim: "Spekülatif Derece", tanim: "S&P/Fitch'te BB+ ve altı, Moody's'de Ba1 ve altı notlar; temerrüt riski yüksek, kurumsal yatırımcılar genellikle alamaz." },
+          ],
+          dikkatlar: [
+            "Kredi notu bir görüştür; garanti, tavsiye veya satın alma/satma kararı değildir — sınav sorusu favorisi.",
+            "Yatırım yapılabilir eşik: S&P'de BBB- (üçlü B eksi), Moody's'de Baa3; bu sınırın altı spekülatif (junk) kategorisidir.",
+            "Bağımsızlık ilkesi gereği aynı kuruluş hem danışmanlık hem derecelendirme hizmeti veremez.",
+            "Talebe bağlı model çıkar çatışması riski taşır (ihraçcı ödüyor); 2008 krizi sonrası düzenlemeler bu riski azaltmaya çalışmıştır.",
+            "Türkiye'de kredi derecelendirme kuruluşları Seri VIII No 51 tebliği kapsamında SPK'ya yetkilendirilir.",
+          ],
         },
         questions: [
           {
@@ -225,6 +241,22 @@ export const mevzuat1017: Module[] = [
             },
           ],
           tip: "Notlama (scoring) = bireysel/perakende, otomatik. Derecelendirme (rating) = kurumsal, uzman görüşü dahil. Altman Z-Skor klasik iflas tahmin modeli — Z<1.81 tehlikeli. Validasyon = modelin doğruluğunun düzenli kontrolü. Gini ve AUC = ayırt etme gücü metrikleri. Logistic regresyon en yaygın istatistik model.",
+          kavramlar: [
+            { terim: "Kredi Skoru (Scoring)", tanim: "Bireysel/perakende müşterilere ait verilerin istatistiksel modelle otomatik puanlanması; insan müdahalesi asgaridir." },
+            { terim: "Kredi Notu (Rating)", tanim: "Kurumsal borçlular için uzman analistlerin hem nicel hem nitel faktörleri değerlendirerek belirlediği kategorik değerlendirme." },
+            { terim: "Altman Z-Skor", tanim: "Beş finansal oran kullanarak iflas olasılığını tahmin eden model; Z < 1,81 yüksek iflas riski, Z > 2,99 güvenli bölge." },
+            { terim: "Lojistik Regresyon", tanim: "İkili bağımlı değişken (iflas/iflas yok) için bağımsız değişkenlerin ağırlıklı kombinasyonunu kullanarak olasılık tahmin eden model." },
+            { terim: "Gini Katsayısı", tanim: "Kredi modelinin iyi ve kötü borçluları birbirinden ne kadar iyi ayırt ettiğini ölçen performans metriği; 1'e yakın mükemmel." },
+            { terim: "AUC (ROC Eğrisi Altındaki Alan)", tanim: "Sınıflandırma modelinin genel ayırt etme performansını gösteren metrik; 0,5 tesadüf, 1 mükemmel sınıflandırma." },
+            { terim: "Model Validasyonu", tanim: "Kredi modelinin doğruluk, istikrar ve ayrımcılık gücünün düzenli aralıklarla test edilmesi; Basel II IRB modelleri için zorunlu." },
+          ],
+          dikkatlar: [
+            "Scoring bireysel müşteriler için otomatik; rating kurumsal müşteriler için uzman analistli — ikisini karıştırmayın.",
+            "Altman Z < 1,81 = tehlike bölgesi, 1,81-2,99 = gri bölge, > 2,99 = güvenli bölge.",
+            "Lojistik regresyon en yaygın istatistik model; makine öğrenmesi modelleri (XGBoost, Random Forest) açıklanabilirlik sorunuyla karşı karşıyadır.",
+            "Gini ve AUC ayırt etme gücü ölçer; iyi bir model için Gini > 0,40 hedeflenir.",
+            "Model validasyonu düzenli yapılmazsa zaman içinde modelin ayrımcılık gücü düşer (model drift); Basel II bunu zorunlu kılar.",
+          ],
         },
         questions: [
           {
@@ -353,6 +385,22 @@ export const mevzuat1017: Module[] = [
             },
           ],
           tip: "Kredi analizinin temeli: 4 oran kategorisi (likidite, borçluluk, kârlılık, faaliyet) + nakit akış. 'Quality of Earnings' = net kârın gerçekten nakde dönüşmesi. Erken uyarı sinyalleri 3 tabloya göre ayrı düşünülür. Stokta/alacakta ani büyüme klasik kırmızı bayrak. Denetçi değişikliği + finans direktörü ayrılması = ciddi sinyal.",
+          kavramlar: [
+            { terim: "Quality of Earnings", tanim: "Net kârın nakit akışına ne ölçüde dönüştüğünü ölçen kavram; yüksek tahakkuk farkı (kâr > nakit akışı) düşük kaliteye işaret eder." },
+            { terim: "Kırmızı Bayrak (Red Flag)", tanim: "Finansal tablolarda muhasebe manipülasyonuna ya da artan kredi riskine işaret eden anormallik; stok/alacak ani büyümesi, denetçi değişikliği." },
+            { terim: "DSCR (Borç Servis Karşılama Oranı)", tanim: "Faaliyet nakit akışının dönem borç anapara ve faiz ödemelerine oranı; 1'in altı geri ödeme güçlüğü sinyali." },
+            { terim: "Likidite Analizi", tanim: "Cari oran, asit-test ve nakit oran gibi göstergelerle işletmenin kısa vadeli yükümlülüklerini karşılama gücünün ölçülmesi." },
+            { terim: "Borçluluk Analizi", tanim: "Borç/özkaynak ve borç/varlık oranlarıyla finansal kaldıraç ve uzun vadeli ödeme gücünün değerlendirilmesi." },
+            { terim: "Faaliyet Nakit Akışı", tanim: "Nakit akış tablosunun ana bölümü; esas ticari faaliyetten sağlanan nakit, borç servisinin gerçek kaynağıdır." },
+            { terim: "Erken Uyarı Sinyali", tanim: "Kredi kalitesi kötüleşmeden önce ortaya çıkan bilanço, gelir tablosu veya nakit akış kaynaklı olumsuz değişim göstergeleri." },
+          ],
+          dikkatlar: [
+            "Quality of Earnings: net kâr yüksek ama nakit akışı düşükse muhasebe manüplasyonu veya alacak/stok birikimi olabilir.",
+            "Stok veya alacaklarda sektör ortalamasının çok üzerinde ani büyüme klasik kırmızı bayraktır.",
+            "Denetçi değişikliği + finans direktörü ayrılması aynı dönemde gerçekleşmesi ciddi bağımsız sinyal kabul edilir.",
+            "DSCR < 1: faaliyet nakit akışı borç servisini karşılamıyor; kredi kararında kritik gösterge.",
+            "Likidite, borçluluk, kârlılık ve faaliyet etkinliği oranları birlikte değerlendirilmeli; tek oran kararı yanıltabilir.",
+          ],
         },
         questions: [
           {
@@ -481,6 +529,22 @@ export const mevzuat1017: Module[] = [
             },
           ],
           tip: "Big Three: S&P (40%), Moody's (40%), Fitch (15%) = küresel pazarın %95'i. S&P/Fitch 'AAA-D', Moody's 'Aaa-C' sembol sistemi. Outlook orta vade, Watch kısa vade. Rating = İş Riski + Finansal Risk → Anchor → Modifierler. Banka ratingi farklı çerçeve (CAMELS). 2008 krizinden sonra yapılandırılmış araç ratingi sıkı denetime alındı.",
+          kavramlar: [
+            { terim: "S&P / Moody's / Fitch (Big Three)", tanim: "Küresel kredi derecelendirme pazarının %95'ini paylaşan üç büyük kuruluş; S&P ve Moody's yaklaşık %40'ar, Fitch %15 paya sahip." },
+            { terim: "Outlook (Görünüm)", tanim: "Bir notun önümüzdeki 12-24 aylık orta vadeli değişim yönünü gösteren ifade: Pozitif, Negatif, Durağan veya Gelişen." },
+            { terim: "Rating Watch (İzleme)", tanim: "Kısa vadede (genellikle 90 gün) not değişikliğine yol açabilecek önemli bir olayın (birleşme, kriz) takip altına alınması." },
+            { terim: "Anchor Rating", tanim: "S&P metodolojisinde iş riski profili ve finansal risk profilinin birleştirilmesiyle bulunan başlangıç notu; modifierler uygulanmadan önceki değer." },
+            { terim: "CAMELS Çerçevesi", tanim: "Banka kredi analizinde kullanılan çok boyutlu değerlendirme; Sermaye Yeterliliği, Varlık Kalitesi, Yönetim, Kazanç, Likidite, Piyasa Riski." },
+            { terim: "Yapılandırılmış Ürün Derecelendirmesi", tanim: "ABS, CDO gibi karmaşık araçlara verilen notlar; 2008 krizinde aşırı yüksek not verilmesiyle eleştirilen alan." },
+            { terim: "İş Riski Profili", tanim: "Sektör riski, rekabet konumu, ülke riski gibi operasyonel faktörlerin bütününü kapsayan S&P rating metodolojisi bileşeni." },
+          ],
+          dikkatlar: [
+            "Big Three pazar konsantrasyonu: S&P ≈ %40, Moody's ≈ %40, Fitch ≈ %15; geri kalan yaklaşık %5 diğerleri.",
+            "Outlook: orta vade (12-24 ay) sinyal; Watch: kısa vade (<90 gün) acil değişim olasılığı — karıştırmayın.",
+            "Rating metodolojisi: İş Riski + Finansal Risk → Anchor → Modifierler (yönetim, likidite, dış destek) → Son Not.",
+            "CAMELS banka analizine özgüdür; kurumsal şirketlere değil bankalara uygulanan çerçeve.",
+            "2008 krizi yapılandırılmış ürün notlarının (CDO, MBS) güvenilirliğini sarstı; reform düzenlemeleri sonrası metodoloji şeffaflığı zorunlu hale geldi.",
+          ],
         },
         questions: [
           {
@@ -609,6 +673,22 @@ export const mevzuat1017: Module[] = [
             },
           ],
           tip: "Basel I = sermaye/RWA ≥ %8 (basit). Basel II = 3 sütun + IRB modeller (PD, LGD, EAD, M). Basel II.5 = krize acil yanıt. Basel III = sıkılaştırma — CET1 %4.5, %2.5 tampon, kaldıraç %3, LCR %100, NSFR. Türkiye BDDK Basel III uygular. 2008 krizi Basel II'nin zayıflığını gösterdi.",
+          kavramlar: [
+            { terim: "Basel I", tanim: "1988'de BIS tarafından yayımlanan ilk uluslararası sermaye standardı; sermaye/RWA oranının en az %8 olmasını zorunlu kılar." },
+            { terim: "Basel II (3 Sütun)", tanim: "Asgari sermaye (Sütun 1) + denetim gözden geçirmesi (Sütun 2) + piyasa disiplini/açıklama (Sütun 3) çerçevesi." },
+            { terim: "IRB Yaklaşımı (İçsel Derecelendirmeye Dayalı)", tanim: "Basel II'de bankaların kendi PD, LGD, EAD modellerini kullanarak sermaye gereksinimini hesaplaması; Temel ve Gelişmiş IRB olarak ikiye ayrılır." },
+            { terim: "CET1 (Çekirdek Sermaye)", tanim: "Basel III'te en kaliteli sermaye bileşeni; ödenmiş sermaye + dağıtılmamış kârlar; minimum %4,5 oranı zorunludur." },
+            { terim: "LCR (Likidite Karşılama Oranı)", tanim: "30 günlük stres senaryosunda yüksek kaliteli likit varlıkların net nakit çıkışına oranı; Basel III'te %100 minimum." },
+            { terim: "NSFR (Net İstikrarlı Fonlama Oranı)", tanim: "1 yıllık perspektifte istikrarlı fonlama kaynaklarının zorunlu istikrarlı fonlamaya oranı; Basel III'te %100 minimum." },
+            { terim: "PD / LGD / EAD", tanim: "Basel II IRB'nin temel risk parametreleri: Temerrüt Olasılığı / Temerrüt Halinde Kayıp / Temerrüt Anında Risk Tutarı." },
+          ],
+          dikkatlar: [
+            "Basel II 3 sütunu: (1) asgari sermaye hesabı, (2) denetsel inceleme, (3) kamuya açıklama/piyasa disiplini.",
+            "IRB modelleri: Temel IRB = banka sadece PD'yi tahmin eder; Gelişmiş IRB = banka PD+LGD+EAD'yi de tahmin eder.",
+            "Basel III CET1 asgari: %4,5 + %2,5 sermaye koruma tamponu = fiili %7; sistemik bankalar için ek tampon gerekir.",
+            "LCR kısa vade (30 gün stres), NSFR uzun vade (1 yıl yapısal); her ikisi de Basel III'te %100 zorunlu.",
+            "Türkiye'de BDDK Basel III uygular; hesaplama yöntemi BDDK yönetmelikleriyle belirlenmiştir.",
+          ],
         },
         questions: [
           {

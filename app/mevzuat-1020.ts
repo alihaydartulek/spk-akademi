@@ -99,6 +99,22 @@ export const mevzuat1020: Module[] = [
             },
           ],
           tip: "BS Yönetişimi = stratejik yön belirleme (üst yönetim), BS Yönetimi = operasyonel uygulama. CIA üçgeni: Confidentiality (gizlilik), Integrity (bütünlük), Availability (erişilebilirlik). Kurumsal Mimari 4 katman: İş + Veri + Uygulama + Teknoloji. TOGAF = en yaygın EA çerçevesi. BS-İş Uyumu kritik — iş ve teknoloji entegrasyonu.",
+          kavramlar: [
+            { terim: "BS Yönetişimi (IT Governance)", tanim: "Bilgi sistemlerine ilişkin stratejik kararların üst yönetim tarafından alınması; yatırım önceliklendirme, risk ve değer oluşturma odaklı." },
+            { terim: "CIA Üçgeni", tanim: "Bilgi güvenliğinin üç temel hedefi: Gizlilik (yetkisiz erişim engeli), Bütünlük (veri doğruluğu), Erişilebilirlik (yetkili kullanıcı erişimi)." },
+            { terim: "Kurumsal Mimari (EA)", tanim: "Kurumun iş süreçleri, veriler, uygulamalar ve teknoloji altyapısının bütünleşik tasarım ve yönetim çerçevesi." },
+            { terim: "TOGAF", tanim: "The Open Group'un geliştirdiği en yaygın kurumsal mimari çerçevesi; ADM (Architecture Development Method) döngüsüne dayanır." },
+            { terim: "BS-İş Uyumu", tanim: "Bilgi sistemi stratejisinin iş stratejisiyle örtüşmesi; IT yatırımlarının iş hedeflerine katkısı ve değer oluşturması." },
+            { terim: "COBIT", tanim: "ISACA'nın geliştirdiği BT yönetişim ve yönetim çerçevesi; yönetişim (EDM) ve yönetim (APO, BAI, DSS, MEA) alanlarını kapsar." },
+            { terim: "IT Risk Yönetimi", tanim: "Bilgi sistemlerindeki tehditlerin tanımlanması, değerlendirilmesi ve kontrol önlemleriyle azaltılması süreci." },
+          ],
+          dikkatlar: [
+            "BS Yönetişimi üst yönetim sorumluluğundadır; BS Yönetimi operasyonel — ikisini karıştırmayın.",
+            "CIA üçgeninde gizlilik yetkisiz erişim engeli, bütünlük veri değiştirilmemesi, erişilebilirlik yetkili kullanıcının sisteme ulaşabilmesidir.",
+            "Kurumsal Mimari 4 katmanı: İş (süreçler) → Veri → Uygulama → Teknoloji; her katman bir altındakini destekler.",
+            "TOGAF: kurumsal mimaride fiilî endüstri standardı; sınav sorusunda EA çerçevesi olarak TOGAF = doğru cevap.",
+            "COBIT: hem yönetişim (stratejik) hem yönetim (operasyonel) boyutuyla IT çerçevelerinin en kapsamlısıdır.",
+          ],
         },
         questions: [
           {
@@ -227,6 +243,22 @@ export const mevzuat1020: Module[] = [
             },
           ],
           tip: "BS Denetim Türleri: Genel kontrol + Uygulama kontrolü + Sistem geliştirme + Güvenlik + Uyum. Kontrol Amaçları: ÖN-LEYİCİ (önle), TES-PİT EDİCİ (gör), DÜ-ZELTİCİ (düzelt) — bunlar 3'lü bir hattır. ITGC (Genel Kontroller) = altyapı düzeyinde, Uygulama Kontrolleri = iş süreci düzeyinde. SDLC = sistem geliştirme yaşam döngüsü.",
+          kavramlar: [
+            { terim: "ITGC (IT Genel Kontrolleri)", tanim: "Erişim yönetimi, değişim kontrolü, operasyon ve altyapı gibi altyapı düzeyinde uygulanan kontroller; tüm uygulamaları etkiler." },
+            { terim: "Uygulama Kontrolleri", tanim: "Belirli bir iş sürecine veya uygulamaya özgü giriş, işleme ve çıkış doğruluğunu sağlayan kontroller." },
+            { terim: "Önleyici Kontrol", tanim: "Hatanın veya ihlalın gerçekleşmesini önceden engellemeye yönelik kontrol; şifre politikası, erişim kısıtlama, input validation." },
+            { terim: "Tespit Edici Kontrol", tanim: "Gerçekleşen hata ya da ihlali sonradan fark eden kontrol; log analizi, anormallik tespiti, uzlaştırma işlemleri." },
+            { terim: "Düzeltici Kontrol", tanim: "Tespit edilen hatayı veya ihlali gidermek için devreye giren kontrol; yedekten geri yükleme, olay müdahale planı." },
+            { terim: "SDLC (Sistem Geliştirme Yaşam Döngüsü)", tanim: "Sistem geliştirme sürecinin Planlama → Analiz → Tasarım → Geliştirme → Test → Uygulama → Bakım aşamalarını kapsayan döngü." },
+            { terim: "Değişim Kontrolü", tanim: "Üretim ortamına yapılan değişikliklerin onaylı, test edilmiş ve izlenmiş biçimde yönetilmesini sağlayan ITGC süreç kontrolü." },
+          ],
+          dikkatlar: [
+            "Kontrol katmanları: Önleyici (engelle) → Tespit Edici (gör) → Düzeltici (düzelt); üçü birbirini tamamlar.",
+            "ITGC altyapı düzeyinde çalışır ve tüm uygulamaları etkiler; uygulama kontrolü ise sadece o uygulamaya özgüdür.",
+            "SDLC'de denetçi en kritik olarak Tasarım ve Test aşamalarına katılmalı; üretim öncesi son onay aşaması kritiktir.",
+            "Değişim kontrolü zayıfsa yetkisiz değişiklikler finansal tablolardaki verileri etkileyebilir; dış denetçi ITGC'yi bu nedenle inceler.",
+            "Güvenlik denetimi: erişim yetkileri, ayrımcı görev (segregation of duties) ve loglama ITGC'nin temel alt başlıklarıdır.",
+          ],
         },
         questions: [
           {
@@ -355,6 +387,22 @@ export const mevzuat1020: Module[] = [
             },
           ],
           tip: "Denetim 3 aşaması: Planlama → Gerçekleştirme → Raporlama. Denetim Riski = Doğal Risk × Kontrol Riski × Tespit Riski. Önemlilik (materiality) hem kantitatif hem kalitatif. Kanıt türleri: fiziksel, belge, gözlem, sorgulama, yeniden hesaplama, analitik. Örnekleme: istatistiksel veya yargı bazlı. Raporda 4 görüş tipi: olumlu/şartlı/olumsuz/kaçınma.",
+          kavramlar: [
+            { terim: "Denetim Riski Modeli", tanim: "Denetim Riski = Doğal Risk × Kontrol Riski × Tespit Riski; denetçi tespit riskini kontrol ederek toplam denetim riskini yönetir." },
+            { terim: "Doğal Risk", tanim: "Herhangi bir kontrol önlemi bulunmaksızın bir hesabın veya işlemin önemli yanlış beyan içerme olasılığı." },
+            { terim: "Kontrol Riski", tanim: "Mevcut iç kontrollerin önemli yanlış beyanı önleyememe ya da zamanında tespit edememe olasılığı." },
+            { terim: "Tespit Riski", tanim: "Denetçinin uyguladığı prosedürlerin önemli yanlış beyanı yakalayamama olasılığı; denetçinin kontrol edebildiği tek risk bileşeni." },
+            { terim: "Denetim Kanıtı", tanim: "Denetçinin görüş oluşturmasına esas teşkil eden bilgi; fiziksel gözlem, belge, sorgulama, yeniden hesaplama, analitik prosedür gibi türleri vardır." },
+            { terim: "Örnekleme (Sampling)", tanim: "Tüm kitleyi incelemek yerine seçilen örnekten elde edilen bulgular aracılığıyla kitle hakkında sonuca ulaşma yöntemi." },
+            { terim: "Denetim Görüşü Türleri", tanim: "Olumlu: sorun yok; Şartlı: sınırlı sorun; Olumsuz: tablolar yanıltıcı; Görüş Bildirmeme: kapsam son derece dar." },
+          ],
+          dikkatlar: [
+            "Denetim riskini düşürmek için tespit riski azaltılır; bu daha fazla denetim prosedürü/örnekleme anlamına gelir.",
+            "Kontrol riski yüksekse denetçi iç kontrollere dayanamaz, esaslı testleri artırır.",
+            "Denetim kanıtları hiyerarşisi: fiziksel gözlem > belgesel kanıt > dışarıdan alınan teyit > denetçi hesaplaması > yazılı beyan > sözlü sorgulama.",
+            "Örnekleme: istatistiksel örnekleme, örnekleme riskini nicel olarak ölçer; yargı bazlı örneklemede risk nicel değerlendirilemez.",
+            "4 görüş türü sıralamayı öğren: olumlu → şartlı → olumsuz → kaçınma (ağırlaşan sırayla).",
+          ],
         },
         questions: [
           {
@@ -483,6 +531,22 @@ export const mevzuat1020: Module[] = [
             },
           ],
           tip: "3 ana SPK BS Tebliği: VII-128.10 (Yönetim), III-62.2 (Denetim), Seri X No 22 (Genel BD çerçevesi). BS denetimi periyodu: en az 2 yılda bir. CISA = BS denetim için altın sertifika. Bankalar = BDDK ek düzenlemeleri. Dış kaynak (bulut, IT outsourcing) yazılı sözleşme + SLA + denetim hakkı gerektirir.",
+          kavramlar: [
+            { terim: "SPK VII-128.10 Tebliği", tanim: "Sermaye piyasası kurumlarının bilgi sistemleri yönetimine ilişkin temel SPK düzenlemesi; BS stratejisi, risk yönetimi ve iç kontrolü kapsar." },
+            { terim: "SPK III-62.2 Tebliği", tanim: "Gayrimenkul değerleme kuruluşları dahil SPK kapsamındaki kuruluşların bilgi sistemleri denetimine ilişkin tebliğ." },
+            { terim: "CISA (Certified Information Systems Auditor)", tanim: "ISACA'nın bilgi sistemleri denetçileri için verdiği uluslararası sertifika; BS denetiminde altın standart." },
+            { terim: "SLA (Hizmet Seviyesi Anlaşması)", tanim: "Dış kaynak sağlayıcısıyla yapılan ve hizmet kalitesi, erişilebilirlik ve müdahale sürelerini belirleyen sözleşme eki." },
+            { terim: "IT Outsourcing (Dış Kaynak)", tanim: "IT hizmetlerinin (altyapı, yazılım geliştirme, güvenlik) üçüncü taraflara devredilmesi; denetim hakkı ve SLA sözleşmede yer almalı." },
+            { terim: "BDDK IT Düzenlemeleri", tanim: "Bankacılık sektöründe BDDK'nın SPK düzenlemelerine ek olarak getirdiği bilgi sistemleri yönetim ve denetim yükümlülükleri." },
+            { terim: "BS Denetim Periyodu", tanim: "SPK kapsamındaki kuruluşlarda bağımsız BS denetiminin en az 2 yılda bir yaptırılması zorunluluğu." },
+          ],
+          dikkatlar: [
+            "BS denetimi periyodu SPK kapsamındaki kuruluşlar için en az 2 yılda bir zorunludur.",
+            "Dış kaynak kullanımında denetim hakkı sözleşmede yer almalı; aksi hâlde denetçi hizmet sağlayıcıya erişemez.",
+            "CISA = BS denetim sertifikası; CISSP = güvenlik yönetim sertifikası — ikisini karıştırmayın.",
+            "Bulut hizmetinde SLA: uptime garantisi, veri yedekleme periyodu, güvenlik seviyesi ve denetim hakkı kritik maddelerdir.",
+            "Bankalar hem SPK hem BDDK IT düzenlemelerine tabi; ikisi arasında çakışma varsa daha katı olan uygulanır.",
+          ],
         },
         questions: [
           {
@@ -611,6 +675,22 @@ export const mevzuat1020: Module[] = [
             },
           ],
           tip: "5 ana çerçeve: COBIT (yönetişim) + ISO 27001 (bilgi güvenliği) + ITIL (hizmet yönetimi) + COSO (iç kontrol) + ITAF (BS denetim). COSO 5 bileşen × 17 ilke. ISO 27001 = sertifikasyon standardı (BSI/TSE/TÜV). ISACA = COBIT ve ITAF'ın sahibi. ETİK = KGK (denetçi) + ISACA (BS uzmanı) iki ayrı kural seti.",
+          kavramlar: [
+            { terim: "COBIT", tanim: "ISACA'nın BT yönetişim ve yönetim çerçevesi; EDM (yönetişim) ve APO/BAI/DSS/MEA (yönetim) alanlarını kapsar, 40+ yönetim hedefi içerir." },
+            { terim: "ISO 27001", tanim: "Bilgi güvenliği yönetim sistemi (BGYS) için uluslararası sertifikasyon standardı; risk tabanlı yaklaşım, Annex A kontrollerini içerir." },
+            { terim: "ITIL (IT Infrastructure Library)", tanim: "IT hizmet yönetimi için en yaygın çerçeve; servis stratejisi, tasarımı, geçişi, işletimi ve sürekli iyileştirmeyi kapsar." },
+            { terim: "COSO İç Kontrol Çerçevesi", tanim: "5 bileşen (kontrol ortamı, risk değerlendirme, kontrol faaliyetleri, bilgi/iletişim, izleme) × 17 ilkeden oluşan iç kontrol standardı." },
+            { terim: "ITAF (IT Assurance Framework)", tanim: "ISACA'nın BS denetim ve güvence hizmetleri için geliştirdiği standartlar ve rehberler çerçevesi; CISA bağlamında uygulanır." },
+            { terim: "ISACA", tanim: "Uluslararası bilgi sistemleri denetim ve kontrol derneği; COBIT, ITAF, CISA, CISM, CRISC gibi çerçeve ve sertifikaların sahibi." },
+            { terim: "BGYS (Bilgi Güvenliği Yönetim Sistemi)", tanim: "ISO 27001 standardına dayanan, kurumun bilgi varlıklarını koruma politika, prosedür ve kontrollerinin bütünü." },
+          ],
+          dikkatlar: [
+            "5 çerçeve + işlevleri: COBIT = yönetişim, ISO 27001 = bilgi güvenliği sertifikasyon, ITIL = hizmet yönetimi, COSO = iç kontrol, ITAF = BS denetim.",
+            "COSO 5 bileşeni: Kontrol Ortamı, Risk Değerlendirme, Kontrol Faaliyetleri, Bilgi ve İletişim, İzleme faaliyetleri.",
+            "ISO 27001 sertifikasyon standardı; uyumluluk değil sertifikasyon için bağımsız denetimden geçmek gerekir.",
+            "ITIL hizmet yönetimine odaklanır; COBIT yönetişim ve kontrol odaklıdır — farklı katmanlar.",
+            "Etik kurallar: KGK standartları finansal denetçiler için, ISACA etik kuralları BS denetçileri için bağlayıcı.",
+          ],
         },
         questions: [
           {

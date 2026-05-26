@@ -103,6 +103,22 @@ export const mevzuat1019: Module[] = [
             },
           ],
           tip: "III-62.3 Tebliği = SPK'nın gayrimenkul değerleme kuruluşları için temel düzenleme. Min sermaye 1 milyon TL, min 2 sorumlu uzman. Aynı uzman aynı gayrimenkulü 5 yılda max 3 defa değerleyebilir (rotasyon). Mesleki sorumluluk sigortası ZORUNLU. TDUB = kamu kurumu niteliğindeki meslek kuruluşu (SPKn md. 76).",
+          kavramlar: [
+            { terim: "SPK III-62.3 Tebliği", tanim: "Gayrimenkul değerleme kuruluşlarının kuruluş, faaliyet, lisans ve sorumluluk esaslarını düzenleyen temel SPK tebliği." },
+            { terim: "Gayrimenkul Değerleme Uzmanı (GDU)", tanim: "SPK tarafından lisanslandırılan, gayrimenkul değerleme hizmeti sunma yetkisine sahip meslek mensubu." },
+            { terim: "Sorumlu Değerleme Uzmanı", tanim: "Değerleme kuruluşunda en az lisans için sorumlu olan ve raporları imzalama yetkisi bulunan uzman; asgari 2 kişi zorunlu." },
+            { terim: "Rotasyon Kuralı", tanim: "Aynı değerleme uzmanının aynı gayrimenkulü 5 yıl içinde en fazla 3 kez değerleyebilmesi kuralı; bağımsızlığı koruma amaçlı." },
+            { terim: "Mesleki Sorumluluk Sigortası", tanim: "Değerleme kuruluşlarının mesleki hatalarından doğabilecek zararları güvence altına almak için yaptırmak zorunda olduğu sigorta." },
+            { terim: "TDUB (Türkiye Değerleme Uzmanları Birliği)", tanim: "SPK Kanunu md. 76 kapsamında kamu kurumu niteliğinde kurulan meslek kuruluşu; lisanslama ve etik denetimde rol üstlenir." },
+            { terim: "Değerleme Raporu", tanim: "Değerleme uzmanının belirlenen standartlara uygun biçimde hazırladığı, işlem kararlarında esas alınan resmi belge." },
+          ],
+          dikkatlar: [
+            "Minimum sermaye şartı 1 milyon TL ve minimum 2 sorumlu değerleme uzmanı — kurumsal yeterliliğin iki temel koşulu.",
+            "Rotasyon: aynı uzman + aynı gayrimenkul = 5 yılda en fazla 3 değerleme; bu sınır bağımsızlığı koruma amaçlıdır.",
+            "Mesleki sorumluluk sigortası zorunludur; sigorta olmaksızın faaliyet yürütülemez.",
+            "TDUB kamu kurumu niteliğindedir; üyelik zorunludur, etik kuralları ve disiplin yaptırımları bağlayıcıdır.",
+            "Değerleme raporu imzalanma yetkisi yalnızca sorumlu değerleme uzmanına aittir.",
+          ],
         },
         questions: [
           {
@@ -231,6 +247,22 @@ export const mevzuat1019: Module[] = [
             },
           ],
           tip: "Ayni haklar = mülkiyet + sınırlı ayni haklar (irtifak, taşınmaz yükü, rehin). Zilyetlik = fiili hakimiyet (mülkiyet karinesi). Tapu sicilinin 7 unsuru var; ana sicil = Tapu Kütüğü. Devletin sorumluluğu TMK md. 1007 — objektif sorumluluk, 1 yıl içinde Hazine'ye dava. Kadastro = taşınmazların hukuki-teknik tespiti (3402 sk).",
+          kavramlar: [
+            { terim: "Ayni Hak", tanim: "Eşya üzerinde doğrudan ve herkese karşı ileri sürülebilen mutlak hak; tapu siciline tescil ile kazanılır." },
+            { terim: "Zilyetlik", tanim: "Bir taşınmaz veya taşınır üzerinde fiili hakimiyet kurma; mülkiyet karinesi doğurur ve kazandırıcı zamanaşımına zemin oluşturur." },
+            { terim: "Tapu Kütüğü", tanim: "Tapu sicilinin ana unsuru; her taşınmaz için bir sayfa açılır, mülkiyet ve sınırlı ayni haklar burada tescil edilir." },
+            { terim: "TMK Md. 1007 (Devlet Sorumluluğu)", tanim: "Tapu sicilindeki yanlış kayıt veya işlemden zarar görenlerin Hazine'ye karşı bir yıl içinde tazminat davası açabileceği objektif sorumluluk kuralı." },
+            { terim: "Kadastro", tanim: "3402 sayılı Kadastro Kanunu kapsamında taşınmazların sınır, yüzölçüm ve hukuki durumunun teknik ve hukuki olarak tespit edilmesi." },
+            { terim: "Tapu Sicilinin Aleniliği", tanim: "Tapu sicilini herkesin inceleyebileceği ilkesi; kayıtlı bilgileri bilmemek mazeret sayılmaz." },
+            { terim: "Taşınmaz Yükü", tanim: "Belirli edimlerin sürekli olarak taşınmazdan karşılanmasını öngören sınırlı ayni hak; irtifaktan farkı bir edimi kapsamasıdır." },
+          ],
+          dikkatlar: [
+            "Tapu sicilinin 7 unsuru: Tapu Kütüğü (ana), Yevmiye Defteri, Belgeler Defterleri, Planlar, Yardımcı Siciller, Kat Mülkiyeti Sicili, Devre Mülk Sicili.",
+            "Devlet sorumluluğu TMK 1007: objektif sorumluluk — hata ispatı gerekmez; 1 yıllık hak düşürücü süre içinde Hazine'ye dava açılmalıdır.",
+            "Zilyetlik mülkiyet değildir; ancak mülkiyet karinesi doğurur ve olağan zamanaşımıyla (20 yıl iyiniyetli olmayan) mülk kazanılabilir.",
+            "Kadastro kesinleşince tescil olmaksızın mülkiyet devlet tarafından tapu siciline re'sen işlenir.",
+            "Tapu sicilinin aleniliği: 'bilmiyordum' geçerli mazeret değil — tescilli bilgiler herkese karşı ileri sürülebilir.",
+          ],
         },
         questions: [
           {
@@ -359,6 +391,22 @@ export const mevzuat1019: Module[] = [
             },
           ],
           tip: "İmar Kanunu = 3194 sk, Yapı Denetim = 4708 sk, İskân = 5543 sk, Kentsel Dönüşüm = 6306 sk. Plan hiyerarşisi: Strateji → Çevre Düzeni → Nazım (1/5000) → Uygulama (1/1000). İmar Barışı 31.12.2017 öncesi. Yapı Denetim 3'lü yapı: müellif + fenni mesul + denetim kuruluşu. 6306'da 2/3 çoğunluk + anlaşmazlıkta hak sahibi çıkarılabilir.",
+          kavramlar: [
+            { terim: "İmar Kanunu (3194)", tanim: "Türkiye'de arazi kullanımı, yapılaşma ve imar planlarını düzenleyen temel kanun; ruhsat, iskân ve aykırı yapı hükümlerini kapsar." },
+            { terim: "Yapı Denetim Kanunu (4708)", tanim: "İnşaatların teknik denetimini yapı denetim kuruluşlarına yükleyen kanun; müellif, fenni mesul ve denetim kuruluşu üçlü yapısını oluşturur." },
+            { terim: "İskân Kanunu (5543)", tanim: "Yapı kullanma izni (iskân) ve iskan belgelerini düzenleyen kanun; iskânsız yapıda oturmak suç teşkil eder." },
+            { terim: "Kentsel Dönüşüm Kanunu (6306)", tanim: "Riskli yapıların yıkılıp yenilenmesi ve rezerv yapı alanı oluşturulmasını düzenleyen kanun; 2/3 çoğunluk kararı ile yıkım başlatılabilir." },
+            { terim: "İmar Barışı", tanim: "31.12.2017 tarihi öncesinde tamamlanmış yapılara yapı kayıt belgesi düzenlenmesine imkân tanıyan geçici çözüm (3194 sk. geçici md.)." },
+            { terim: "Uygulama İmar Planı (UİP)", tanim: "1/1000 ölçekli ve hâlihazır haritaya dayalı en alt kademedeki imar planı; parsel bazında yapılaşma koşullarını belirler." },
+            { terim: "Yapı Denetim Üçlü Yapısı", tanim: "4708 kapsamında projeden sorumlu proje müellifi, fenni mesul mühendis ve bağımsız yapı denetim kuruluşunun birlikte sorumluluk taşıması." },
+          ],
+          dikkatlar: [
+            "Kanun numaraları: İmar = 3194, Yapı Denetim = 4708, İskân = 5543, Kentsel Dönüşüm = 6306.",
+            "Plan hiyerarşisi: Strateji → Çevre Düzeni → Nazım İmar (1/5000) → Uygulama İmar (1/1000); alt plan üst plana aykırı olamaz.",
+            "6306 kentsel dönüşümde karar nisabı: kat maliklerinin en az 2/3'ünün kararı yeterli; azınlık çıkmazsa tahliye zorla yapılabilir.",
+            "İmar Barışı kapsam tarihi: 31.12.2017 öncesi tamamlanmış yapılar; bu tarihten sonraki aykırı yapılar kapsam dışı.",
+            "Yapı denetim kuruluşu bağımsızdır; mal sahibiyle iş ilişkisi dışında organik bağ yasaktır.",
+          ],
         },
         questions: [
           {
@@ -487,6 +535,22 @@ export const mevzuat1019: Module[] = [
             },
           ],
           tip: "Kat İrtifakı = inşaat halinde, Kat Mülkiyeti = iskandan sonra. Bağımsız bölüm = ayrı tapu + arsa payı. Devre mülk = belirli dönem kullanım hakkı. Belediye Kanunu 5393, Büyükşehir 5216 (6360 ile sınırlar genişledi). Kamulaştırma 2942 sk + Anayasa md. 46. Tam kamulaştırma yerine irtifak kamulaştırması mümkün.",
+          kavramlar: [
+            { terim: "Kat İrtifakı", tanim: "Yapı inşaat halindeyken tapuya tescil edilen ve ileride kat mülkiyetine dönüşecek olan geçici hak." },
+            { terim: "Kat Mülkiyeti", tanim: "Tamamlanmış yapılarda iskân belgesi alındıktan sonra her bağımsız bölüme ayrı tapu verilen ve arsa payını içeren hak." },
+            { terim: "Devre Mülk", tanim: "Bir taşınmazın belirli dönem kullanım hakkının birden fazla kişi arasında paylaşıldığı özel tapu hakkı; turizm tesislerinde yaygın." },
+            { terim: "Kamulaştırma (2942 sk)", tanim: "Devletin kamu yararı gerekçesiyle özel mülkiyetteki taşınmazı bedel ödeyerek zorla alması; Anayasa md. 46 güvencesi altında." },
+            { terim: "İrtifak Kamulaştırması", tanim: "Tam mülkiyet yerine taşınmaz üzerinde irtifak hakkı kurulması; kısmen etkilenen taşınmazlarda tercih edilir." },
+            { terim: "Belediye Kanunu (5393)", tanim: "Normal ölçekli belediyelerin kuruluş, organlar ve görevlerini düzenleyen kanun; imar yetkisi belediye meclisine aittir." },
+            { terim: "Büyükşehir Belediye Kanunu (5216)", tanim: "Büyükşehir belediyelerini düzenleyen kanun; 6360 ile il bütününü kapsayan sınır genişlemesi sağlandı." },
+          ],
+          dikkatlar: [
+            "Kat irtifakı inşaat aşamasında; kat mülkiyeti iskân sonrası — geçiş zorunludur, kat irtifakı süresiz kalamaz.",
+            "Bağımsız bölüm: ayrı tapu + belirli arsa payı + ortak alanlar üzerinde paydaşlık hakkı birlikte var.",
+            "Kamulaştırmada bedel önceden, peşin ve nakden ödenir; 'acele kamulaştırma' istisnasında Danıştay onayı gerekir.",
+            "İrtifak kamulaştırması tam kamulaştırma yerine geçebilir; bedeli tam mülkiyet bedelinden düşüktür.",
+            "6360 ile nüfusu 750.000'i aşan illerde il bütünü büyükşehir belediyesi sınırı oldu; köyler mahalle statüsüne geçti.",
+          ],
         },
         questions: [
           {
@@ -615,6 +679,22 @@ export const mevzuat1019: Module[] = [
             },
           ],
           tip: "TBK md. 299 = kira sözleşmesi tanımı. Konut kira artışı = TÜFE 12 aylık ortalaması (özel düzenleme %25 oldu). Emlak vergisi = bina/arazi yıllık vergisi (konut binde 1, büyükşehirde 2 kat). GMSİ = kira geliri (GVK md. 70). 5 yıl kuralı = satın alınan gayrimenkul 5 yıl içinde satılırsa değer artış vergisi. İşyeri kirasında stopaj %20.",
+          kavramlar: [
+            { terim: "Kira Sözleşmesi (TBK 299)", tanim: "Kiraya verenin kiracıya bir şeyin kullanımını, kiracının da belirli bir bedel ödemesini taahhüt ettiği TBK md. 299'da tanımlanan sözleşme." },
+            { terim: "Konut Kira Artış Sınırı", tanim: "Konut kiralarında yıllık artış TÜFE 12 aylık ortalamasıyla sınırlandırılmış; geçici dönemde %25 üst sınır uygulaması yapıldı." },
+            { terim: "Emlak Vergisi", tanim: "Bina ve arazi üzerinden her yıl alınan yerel vergi; konutlarda binde 1, büyükşehirlerde binde 2 oranı uygulanır." },
+            { terim: "GMSİ (Gayrimenkul Sermaye İradı)", tanim: "GVK md. 70 kapsamında kira gelirleri; konutlarda istisna sonrası kalan kısım gelir vergisine tabi, işyerlerinde %20 stopaj uygulanır." },
+            { terim: "Değer Artış Kazancı (5 Yıl Kuralı)", tanim: "GVK kapsamında edinim tarihinden itibaren 5 yıl içinde elden çıkarılan gayrimenkulden elde edilen kazancın gelir vergisine tabi tutulması." },
+            { terim: "İşyeri Kirası Stopajı", tanim: "Konut dışı (işyeri) kiralarında kiracı tarafından %20 oranında yapılan gelir vergisi stopajı; kiracı kira bedelinden keserek vergi dairesine öder." },
+            { terim: "Tapu Harcı", tanim: "Tapu devir işlemlerinde satış bedeli üzerinden alıcı ve satıcıdan ayrı ayrı alınan; 2024 itibarıyla binde 20 oranında harç." },
+          ],
+          dikkatlar: [
+            "Kira artışında taraflarca belirlenen oran TÜFE 12 aylık ortalamasını aşamaz; aşan kısım geçersizdir.",
+            "GMSİ'de konut kiracıları stopaj yapmaz; işyeri kiracıları %20 stopaj yapar ve muhtasar beyannamesiyle beyan eder.",
+            "Değer artış kazancında 5 yıl: tescil tarihinden 5 tam yıl geçtikten sonra satılan gayrimenkulde vergi doğmaz.",
+            "Emlak vergisi oranları: konut binde 1, işyeri binde 2; büyükşehirlerde bu oranlar 2 katıyla uygulanır.",
+            "İstisna haddi: konut kira gelirinde GVK'da belirlenen istisna tutarının altındaki gelirler vergiden muaf; üstü beyan edilir.",
+          ],
         },
         questions: [
           {

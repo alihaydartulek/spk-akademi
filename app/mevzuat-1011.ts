@@ -95,6 +95,22 @@ export const mevzuat1011: Module[] = [
             },
           ],
           tip: "Forward = OTC + standart yok + karşı taraf riski yüksek; Futures = borsa + standart + CCP + teminat sistemi. Üç temel teminat kavramı: başlangıç (pozisyon açma), sürdürme (minimum), tamamlama (margin call). Türkiye'de futures = VİOP, CCP = Takasbank — bunlar sınavın klasik soru kalıbıdır.",
+          kavramlar: [
+            { terim: "Forward Sözleşmesi", tanim: "İki taraf arasında OTC olarak standart olmayan koşullarla yapılan; ileriki tarihte belirli fiyattan teslimatı öngören vadeli sözleşme." },
+            { terim: "Futures Sözleşmesi", tanim: "Organize borsada (VİOP) işlem gören, standartlaştırılmış vadeli sözleşme; Takasbank CCP olarak karşı taraf riskini üstlenir." },
+            { terim: "Başlangıç Teminatı", tanim: "Futures pozisyonu açmak için yatırılan asgari teminat; piyasa değerine göre günlük güncellenir." },
+            { terim: "Sürdürme Teminatı", tanim: "Pozisyon açık olduğu sürece hesapta tutulması gereken asgari teminat düzeyi; altına düşülünce tamamlama çağrısı gelir." },
+            { terim: "Teminat Tamamlama Çağrısı (Margin Call)", tanim: "Hesaptaki teminatın sürdürme düzeyinin altına düşmesi durumunda aracı kurumun ek teminat talep etmesi." },
+            { terim: "Günlük Uzlaşma (Mark-to-Market)", tanim: "Futures pozisyonlarının her gün kapanış fiyatına göre değerlenerek kâr/zararın teminat hesabına yansıtılması." },
+            { terim: "Teslimat Yükümlülüğü", tanim: "Futures sözleşmesinde vade sonunda dayanak varlığın fiziki teslim edilmesi veya nakit uzlaşmayla pozisyonun kapatılması." },
+          ],
+          dikkatlar: [
+            "Forward OTC + standart değil + karşı taraf riski taraflarda; Futures borsa + standart + Takasbank (CCP) karşı taraf riskini üstlenir — bu temel ayrım türev araçların 1 numaralı soru kalıbıdır.",
+            "Teminat sıralaması: başlangıç (pozisyon açma) > sürdürme (minimum düzey) → altına düşünce tamamlama çağrısı.",
+            "Günlük uzlaşma (mark-to-market) futures'a özgüdür; forward'da günlük teminat güncellemesi yoktur.",
+            "Türkiye'de organize vadeli borsa = VİOP; merkezi karşı taraf = Takasbank — 'İMKB' veya 'SPK' seçenekleri yanıltıcıdır.",
+            "Fiziki teslimat tüm futures sözleşmelerinde zorunlu değildir; pay ve endeks sözleşmelerinde nakit uzlaşma yapılır.",
+          ],
         },
         questions: [
           {
@@ -223,6 +239,22 @@ export const mevzuat1011: Module[] = [
             },
           ],
           tip: "Opsiyon = HAKK ama yükümlülük YOK. Alıcı (long) hak sahibi, satıcı (short/writer) yükümlü. ITM = karda, ATM = başabaş, OTM = zararda. Beş fiyatlama faktörü: S, K, T, σ, r — Black-Scholes modelinin de girdileridir. Volatilite arttıkça hem call hem put değerlenir — sınavın klasik tuzağı.",
+          kavramlar: [
+            { terim: "Alım Opsiyonu (Call)", tanim: "Sahibine dayanak varlığı kullanım fiyatından satın alma HAKKI veren opsiyon; satıcı ise bu fiyattan satmak YÜKÜMLÜLÜĞÜNDEDIR." },
+            { terim: "Satım Opsiyonu (Put)", tanim: "Sahibine dayanak varlığı kullanım fiyatından satma HAKKI veren opsiyon; satıcı ise bu fiyattan almak YÜKÜMLÜLÜĞÜNDEDIR." },
+            { terim: "Karda (In-the-Money / ITM)", tanim: "Call için piyasa fiyatı > kullanım fiyatı; Put için piyasa fiyatı < kullanım fiyatı olan, hemen kullanılırsa kâr sağlayan durum." },
+            { terim: "Para Başı (At-the-Money / ATM)", tanim: "Piyasa fiyatı ile kullanım fiyatının eşit olduğu, kullanıma nötr olan opsiyon durumu." },
+            { terim: "Zararda (Out-of-the-Money / OTM)", tanim: "Hemen kullanılırsa zarara yol açan opsiyon durumu; Call için piyasa < kullanım, Put için piyasa > kullanım." },
+            { terim: "Volatilite (σ)", tanim: "Dayanak varlık fiyatının dalgalanma oranı; arttığında hem call hem put değerini yükseltir — yüksek belirsizlik yüksek opsiyon değeri demektir." },
+            { terim: "Black-Scholes Modeli", tanim: "Avrupa tipi opsiyonların teorik değerini beş girdiye (S, K, T, σ, r) göre hesaplayan en yaygın opsiyon fiyatlama modeli." },
+          ],
+          dikkatlar: [
+            "Opsiyon alıcısı hak sahibidir ve kullanmak zorunda değildir; maksimum kaybı ödediği primdir. Satıcı yükümlüdür; alıcı kullanırsa yerine getirmek zorundadır.",
+            "ITM = karda, ATM = başabaş, OTM = zararda — Call ve Put için yönler farklıdır: Call'da fiyat kullanım üstünde ITM, Put'ta kullanım üstünde OTM.",
+            "Volatilite arttıkça hem call hem put değerini YÜKSELTİR; 'put değer kaybeder' yanıltıcıdır — belirsizlik her iki tarafa da yarar.",
+            "Opsiyon fiyatlama faktörleri: S (spot fiyat), K (kullanım fiyatı), T (vadeye kalan süre), σ (volatilite), r (risksiz faiz) — Black-Scholes'ün 5 girdisi.",
+            "Avrupa tipi opsiyon yalnızca vadede kullanılabilir; Amerikan tipi her zaman kullanılabilir — daha fazla esneklik Amerikan tipini daha değerli kılar.",
+          ],
         },
         questions: [
           {
@@ -351,6 +383,22 @@ export const mevzuat1011: Module[] = [
             },
           ],
           tip: "Faiz swapında anapara el DEĞİŞTİRMEZ — sadece netleştirme yapılır. Döviz swapında anapara fiilen el DEĞİŞTİR — sözleşme başı ve sonunda. Karşılaştırmalı üstünlük teorisi swap'ın temel mantığıdır: her taraf avantajlı olduğu piyasadan borçlanıp swap ile tercih ettiği yapıya geçer.",
+          kavramlar: [
+            { terim: "Faiz Swapı (IRS)", tanim: "Bir tarafın sabit faiz ödemesi karşılığında diğer tarafın değişken faiz ödediği anlaşma; anapara el değiştirmez, yalnızca fark netleştirilir." },
+            { terim: "Döviz Swapı (CCS)", tanim: "İki tarafın farklı para birimlerinde anapara ve faiz ödemelerini değiştirdiği anlaşma; sözleşme başı ve sonunda anapara fiziken el değiştirir." },
+            { terim: "Netleştirme (Netting)", tanim: "Faiz swapında iki tarafın birbirine olan ödeme yükümlülüklerinin netleştirilmesi; yalnızca fark tutarı ödenir." },
+            { terim: "Karşılaştırmalı Üstünlük ve Swap", tanim: "Her tarafın göreli avantajına sahip olduğu piyasadan borçlanıp swap ile tercih ettiği yapıya geçmesi; karşılıklı faiz tasarrufu sağlar." },
+            { terim: "Sabit/Değişken Faiz Dönüşümü", tanim: "Faiz swapının en yaygın amacı; değişken faizli borç taşıyan firma sabit faiz ödeyerek kur/faiz riskini azaltır." },
+            { terim: "Bazis (Basis) Riski", tanim: "Swap'ta kullanılan değişken faiz göstergesinin (örn. LIBOR) ile firmanın borçlandığı oranın tam örtüşmemesinden doğan artık risk." },
+            { terim: "Tezgah Üstü Swap", tanim: "Büyük çoğunluğu organize borsa dışında, bankalar ve kurumsal taraflar arasında ikili sözleşmeyle yapılan swap işlemi." },
+          ],
+          dikkatlar: [
+            "Faiz swapında ANAPARA EL DEĞİŞTİRMEZ; yalnızca faiz farkı netleştirilir — 'anapara da değişir' ifadesi yanlıştır.",
+            "Döviz swapında ise sözleşme başında ve sonunda anapara fiilen el DEĞİŞTİRİR; bu faiz swapından temel farkıdır.",
+            "Karşılaştırmalı üstünlük teorisi swap mantığını açıklar: her taraf avantajlı borçlanma piyasasına gidip swap ile tercih ettiği para/faiz yapısına geçer.",
+            "Sabit faiz ödeyen swap tarafı faiz yükselince kazanır (değişken yerine sabit ödüyor); değişken faiz ödeyen taraf faiz düşünce kazanır.",
+            "Swap OTC işlemdir ve standart değildir; ancak 2008 krizinden sonra bazı standart swaplar merkezi takas (CCP) aracılığıyla işleme konulmaktadır.",
+          ],
         },
         questions: [
           {
@@ -479,6 +527,22 @@ export const mevzuat1011: Module[] = [
             },
           ],
           tip: "İhracatçı = USD short forward (USD satım), İthalatçı = USD long forward (USD alım) — bu eşleşme sınavın klasik soru kalıbıdır. Hisse portföyü hedging'inde 'beta' kritik girdi; beta yüksekse daha çok futures ile hedge gerekir. Put opsiyonu = portföy sigortası — prim karşılığında taban koruması sağlar.",
+          kavramlar: [
+            { terim: "Hedging (Korunma)", tanim: "Mevcut bir riske karşı zıt yönde türev pozisyonu alarak olası zararı sınırlandırma stratejisi." },
+            { terim: "Döviz Riski Korunması", tanim: "İhracatçının alacağı dövizi forward ile satması (short), ithalatçının ödemesi dövizi forward ile satın alması (long) yoluyla kur riskini kilitleme." },
+            { terim: "Portföy Sigortası", tanim: "Hisse portföyüne karşı put opsiyonu satın alarak aşağı yönlü riske karşı koruma; prim ödeme karşılığında taban fiyat garantisi." },
+            { terim: "Beta ile Hedge Oranı", tanim: "Hisse portföyünü endeks futures ile hedgelemede kullanılan oran: Hedge = (Portföy Değeri × Beta) / Sözleşme Değeri." },
+            { terim: "Çapraz Hedging", tanim: "Riskten korunulacak varlıkla tam örtüşmeyen bir dayanak varlığa sahip türev araç kullanılarak yapılan koruma; bazis riski içerir." },
+            { terim: "Tam Hedge (Perfect Hedge)", tanim: "Türev pozisyonunun korunulan riskle tam olarak örtüştüğü ideal durum; pratikte nadiren mümkündür." },
+            { terim: "Spekülatif Pozisyon", tanim: "Riskten korunma amacı taşımayan; fiyat tahminlerine dayanarak kâr elde etmek için alınan türev pozisyonu." },
+          ],
+          dikkatlar: [
+            "İhracatçı ileride USD alacak → bu riski ortadan kaldırmak için şimdi USD satış (short) forward alır; ithalatçı USD ödeyecek → USD alış (long) forward alır.",
+            "Hisse portföyü hedginginde beta kullanılır; hedge edilecek futures sözleşme sayısı = (Portföy Değeri × Beta) / Futures Sözleşme Değeri.",
+            "Put opsiyonu portföy sigortası işlevi görür; kâr potansiyeli limitsiz kalırken kayıp prim + kullanım fiyatı altındaki değerle sınırlanır.",
+            "Çapraz hedgingde korunulan varlık ile futures dayanak varlığı aynı değilse bazis riski doğar; bu risk tam elimine edilemez.",
+            "Spekülatör ile hedger arasındaki fark: hedger zaten bir riske maruz kalıp onu azaltır; spekülatör risk almak için piyasaya girer.",
+          ],
         },
         questions: [
           {
@@ -607,6 +671,22 @@ export const mevzuat1011: Module[] = [
             },
           ],
           tip: "Cost-of-carry: F = S(1+r-q)^T — vadeli fiyatın spot fiyattan farkı taşıma maliyeti kadardır. Beş Greek (Delta, Gamma, Vega, Theta, Rho) opsiyon riskini ölçer. Put-Call Paritesi C - P = S - Ke^(-rT); Avrupa opsiyonları için temel arbitraj denklemi. CDS = kredi sigortası — 2008 krizinin yıldızı.",
+          kavramlar: [
+            { terim: "Taşıma Maliyeti (Cost-of-Carry)", tanim: "Futures fiyatının spot fiyata kıyasla içerdiği ek maliyet; F = S × (1 + r − q)^T — r finansman maliyeti, q temettü getirisi." },
+            { terim: "Delta (Δ)", tanim: "Dayanak varlık fiyatındaki 1 birimlik değişime karşı opsiyon fiyatının değişimi; 0 ile 1 arasında değişir, call için pozitif, put için negatif." },
+            { terim: "Vega", tanim: "Volatilitedeki 1 puanlık değişime karşı opsiyon fiyatının değişimi; volatilite arttıkça her iki yön opsiyonu da değer kazanır." },
+            { terim: "Theta (Zaman Değeri Erimesi)", tanim: "Vadeye kalan süre azaldıkça opsiyon değerinin düşmesi; alıcı için negatif (değer kaybeder), satıcı için pozitif etkidir." },
+            { terim: "Put-Call Paritesi", tanim: "Avrupa opsiyonları için C − P = S − K·e^(−rT) denklemi; aynı dayanak, kullanım fiyatı ve vadeye sahip call ile put arasındaki denge ilişkisi." },
+            { terim: "Kredi Temerrüt Swapı (CDS)", tanim: "Bir referans varlığın (genellikle tahvil) kredi riskine karşı koruma sağlayan türev araç; alıcı prim öder, satıcı temerrüt halinde tazminat öder." },
+            { terim: "Egzotik Opsiyon", tanim: "Standart Avrupa/Amerikan opsiyonlarından farklı, özel ödeme yapısına sahip; bariyer, Asya, dijital gibi karmaşık opsiyon türleri." },
+          ],
+          dikkatlar: [
+            "Taşıma maliyeti formülü: F = S × (1 + r − q)^T; temettü getirisi (q) futures fiyatını düşürür — 'temettü vadeli fiyatı artırır' yanıltıcıdır.",
+            "Delta call için pozitif (0 ile 1 arası), put için negatif (-1 ile 0 arası); delta = 0.5 yaklaşık ATM durumunu gösterir.",
+            "Vega hem call hem put için POZİTİF; volatilite yükselince her iki opsiyon türü de değer kazanır — 'put volatilite artınca değer kaybeder' yanıltıcıdır.",
+            "Theta zaman opsiyonu satıcısı lehinedir; alıcı her gün değer kaybeder (negatif theta), satıcı ise zaman erimesinden kâr eder.",
+            "Put-Call Paritesi Avrupa opsiyonları için geçerlidir; Amerikan tipi opsiyonlarda erken kullanım hakkı bu denklemi bozar.",
+          ],
         },
         questions: [
           {

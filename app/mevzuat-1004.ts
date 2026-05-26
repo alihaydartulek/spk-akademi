@@ -91,6 +91,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "İzahname geçerlilik süresi 12 ay, satış süresi en az 2 / en fazla 30 iş günü, yurtiçi bireysel yatırımcılara tahsisat asgari %10 — bu sayılar her sınavda mutlaka karşımıza çıkar. Tek belgeli vs. üç belgeli izahname ayrımı da klasik bir tuzaktır.",
+          kavramlar: [
+            { terim: "İzahname", tanim: "Halka arzlarda yatırımcıya sunulan, ihraçcı ve ihraç edilen araca ilişkin tüm bilgileri içeren Kurul onaylı kapsamlı belge; geçerlilik süresi 12 aydır." },
+            { terim: "İhraç Belgesi", tanim: "Nitelikli yatırımcılara yapılan satışlarda izahname yerine kullanılan daha basit bilgi dokümanı; halka arz için düzenlenmez." },
+            { terim: "Satış Tebliği", tanim: "Halka arz sürecinde satışın usul ve esaslarını düzenleyen; satış süresinin en az 2 iş günü, en fazla 30 iş günü olduğunu belirleyen tebliğ." },
+            { terim: "Tahsisat Kuralı", tanim: "Yurtiçi bireysel yatırımcılara halka arzda asgari %10 tahsisat yapılması zorunluluğu; talep yetersizse bu oran düşebilir." },
+            { terim: "Tek Belgeli İzahname", tanim: "İhraçcı bilgileri ile ihraç bilgilerinin tek bir belgede bir araya getirildiği izahname formu." },
+            { terim: "Üç Belgeli İzahname", tanim: "Kayıt belgesi, menkul kıymet notu ve özet olmak üzere üç ayrı belgeden oluşan, büyük ve halka açık şirketlerin kullandığı izahname sistemi." },
+            { terim: "Halka Arz", tanim: "Sermaye piyasası araçlarının ilk kez veya çok sayıda yatırımcıya Kurul onaylı izahname ile duyurularak satışa sunulması işlemi." },
+          ],
+          dikkatlar: [
+            "İzahname geçerlilik süresi 12 aydır; bu süre içinde ek pay ihracı veya yeni halka arz için aynı izahname güncellenebilir.",
+            "Satış süresi en az 2 iş günü, en fazla 30 iş günü; '30 takvim günü' veya '2 hafta' seçenekleri yanıltıcıdır.",
+            "Yurtiçi bireysel yatırımcılara asgari %10 tahsisat yapılmalıdır; talep bu oranı karşılamıyorsa ayrılan miktar o kadarda kalır.",
+            "Tek belgeli izahnameyle üç belgeli izahname arasındaki fark yapı değil amaçtır: büyük, halka açık ve sürekli ihraç yapan şirketler üç belgeli sistemi tercih eder.",
+            "İhraç belgesi halka arz içermez; yalnızca nitelikli yatırımcılara yönelik özel satışlarda kullanılır — izahname ile ihraç belgesi arasındaki bu fark sınavın temel sorusudur.",
+          ],
         },
         questions: [
           {
@@ -219,6 +235,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "VDMK ile TMK arasındaki fark sınavın klasiği: VDMK'da varlıklar fona devredilir (bilanço dışı), TMK'da bilançoda kalır (covered bond). Risk tutma %5 kuralı 2008 krizi sonrası geldi — kurucunun 'skin in the game'ini garantiler. Bankalarda TMK tedavül limiti %10.",
+          kavramlar: [
+            { terim: "VDMK (Varlığa Dayalı MK)", tanim: "Varlıkların özel amaçlı bir fona devredilmesiyle bilanço dışı olarak ihraç edilen menkul kıymet; riski ihraçcıdan bağımsızdır." },
+            { terim: "TMK (Teminatlı MK)", tanim: "İhraçcının bilançosunda kalan varlıkların teminat olarak gösterilmesiyle ihraç edilen covered bond; ihraçcı temerrüdünde teminata başvurulur." },
+            { terim: "Risk Tutma Kuralı (%5)", tanim: "VDMK ihraçcılarının ihraç ettiği menkul kıymet risk havuzunun asgari %5'ini elinde tutması zorunluluğu; kurucunun riske ortak olmasını sağlar." },
+            { terim: "İpotek Teminatlı MK (İTMK)", tanim: "Teminat havuzunun yalnızca ipotek kredilerinden oluştuğu özel teminatlı menkul kıymet türü." },
+            { terim: "Varlık Finansmanı Fonu", tanim: "VDMK ihracında varlıkların devredildiği, tüzel kişiliği bulunmayan özel amaçlı yapı; SPK düzenlemesine tabidir." },
+            { terim: "Bilanço Dışı Finansman", tanim: "Varlıkların fona devri yoluyla ihraçcının bilançosundan çıkarılması; ihraçcının borçlanma kapasitesini genişletir." },
+            { terim: "TMK Tedavül Limiti", tanim: "Bankaların ihraç edebileceği toplam TMK tutarının özkaynaklarının %10'uyla sınırlandırılması." },
+          ],
+          dikkatlar: [
+            "VDMK bilanço DIŞI (varlıklar fona devredilir); TMK bilanço İÇİ (varlıklar bilançoda kalır, teminat gösterilir) — bu temel ayrım her sınavda farklı formatlarda sorulur.",
+            "Risk tutma kuralı gereği VDMK ihraçcıları risk havuzunun en az %5'ini elinde tutmak zorundadır; bu oran 2008 küresel kriziyle gündeme gelmiştir.",
+            "Bankalarda TMK tedavül limiti özkaynaklarının %10'udur; bu sınırı aşan ihraç yapılamaz.",
+            "İTMK teminat havuzu yalnızca ipotek kredilerinden oluşur; ticari kredi veya tüketici kredisi bu havaza dahil edilemez.",
+            "VDMK'da ihraçcı temerrüdü doğrudan yatırımcıyı etkilemez; varlıklar ayrı fonda olduğundan ihraçcı riskinden bağımsızdır — TMK'da ihraçcı temerrüdü risk yaratır.",
+          ],
         },
         questions: [
           {
@@ -347,6 +379,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "Beş kira sertifikası türü dört faizsiz finans işleminden türemiştir: İcara (kiralama), Murabaha (peşin al-vadeli sat), Müşareke/Mudaraba (ortaklık), İstisna (sipariş). Sınavda 'hangisi sahipliğe dayalı, hangisi alım-satıma dayalı?' kalıp soru olarak gelir.",
+          kavramlar: [
+            { terim: "Kira Sertifikası (Sukuk)", tanim: "Varlığa dayalı, faiz içermeyen; sahibine kiralama, ortaklık veya alım-satım işlemlerinden periyodik gelir ve vade sonu anapara sağlayan İslami finansman aracı." },
+            { terim: "İcara (Kiralama) Sukuk", tanim: "Varlığın ihraçcıya kiralanması modeline dayanan, sahibine kira geliri ödeyen; en yaygın sukuk türü." },
+            { terim: "Murabaha Sukuk", tanim: "Peşin alım-vadeli satım işlemine dayanan sukuk; sahibine vadeli satış kâr payı öder — alım-satıma dayalı türdür." },
+            { terim: "Müşareke/Mudaraba Sukuk", tanim: "Ortaklık (müşareke) veya emek-sermaye ortaklığı (mudaraba) sözleşmesine dayanan sukuk; sahibine kâr payı öder." },
+            { terim: "İstisna Sukuk", tanim: "Henüz inşa edilmemiş bir varlığı sipariş eden ve üretim/inşaat sürecini finanse eden sukuk türü; proje finansmanında kullanılır." },
+            { terim: "Kaynak Kuruluş", tanim: "Kira sertifikası ihracında varlıklarını devreden veya işleme konu eden, SPK'ya kayıtlı ihraçcı kuruluş." },
+            { terim: "Faizsiz Finans İlkesi", tanim: "İslami finans ilkeleri uyarınca faiz (riba) içermeyen, gerçek bir varlık veya işleme dayanan finansman yapısı." },
+          ],
+          dikkatlar: [
+            "İcara (kiralama) sukuk sahipliğe dayalıdır; Murabaha sukuk ise alım-satıma dayalıdır — 'hangisi kira geliri, hangisi kâr payı öder?' sorusu sınavın klasiğidir.",
+            "Kira sertifikasında faiz yasağı vardır; 'faiz geliri' yerine 'kira geliri' veya 'kâr payı' kavramları kullanılır.",
+            "Müşareke ve Mudaraba benzerdir ancak farklıdır: müşareke her iki tarafın sermaye koyduğu ortaklık; mudaraba ise bir tarafın sermaye diğerinin emek koyduğu yapıdır.",
+            "İstisna sukuk tamamlanmamış varlıkları finanse eder; bu özellik inşaat ve altyapı projelerini İslami finansmanla mümkün kılar.",
+            "Kira sertifikası ihraç eden 'kaynak kuruluş'tan farklı olarak SPK'ya kayıtlı özel amaçlı ihraç yapısı oluşturulabilir; hukuki yapı ihraca göre değişir.",
+          ],
         },
         questions: [
           {
@@ -475,6 +523,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "Asli edim - tali edim ayrımı sınavın klasiği: asli = bağımsız bölüm teslimi, tali = nakit ödeme. İhraçcı son 3 yılda en az bir benzer proje tamamlamış olmalı; teminat zorunluluğu tutar bazlı, %100 oranında. GYO ile karıştırılmamalı: gayrimenkul sertifikası tek bir projeye, GYO portföye yatırım yapar.",
+          kavramlar: [
+            { terim: "Gayrimenkul Sertifikası", tanim: "Belirli bir gayrimenkul projesinin bağımsız bölümlerine ortak olunmasını sağlayan, proje tamamlandığında daire teslimi veya nakit ödeme hakkı veren menkul kıymet." },
+            { terim: "Asli Edim", tanim: "Gayrimenkul sertifikasında vade sonunda yerine getirilecek temel yükümlülük: proje tamamlanırsa bağımsız bölüm teslimi." },
+            { terim: "Tali Edim", tanim: "Asli edimin yerine getirilememesi durumunda devreye giren alternatif yükümlülük: sertifika bedelinin nakit olarak ödenmesi." },
+            { terim: "Proje Tamamlama Teminatı", tanim: "İhraçcının projeyi tamamlayacağını garanti eden ve ihraç tutarının %100'ü oranında zorunlu tutulan teminat." },
+            { terim: "İhraçcı Deneyim Şartı", tanim: "Gayrimenkul sertifikası ihraç edecek kuruluşun son 3 yılda en az bir benzer projeyi tamamlamış olması zorunluluğu." },
+            { terim: "Bağımsız Bölüm", tanim: "Gayrimenkul projesinde sertifika sahiplerine tahsis edilecek daire, dükkân veya ofis gibi ayrı mülkiyet konusu olan kısım." },
+            { terim: "GYS-GYO Farkı", tanim: "Gayrimenkul sertifikası tek bir projeye yatırım sağlar; GYO ise çeşitlendirilmiş gayrimenkul portföyü işletir." },
+          ],
+          dikkatlar: [
+            "Asli edim = bağımsız bölüm teslimi; tali edim = nakit ödeme — vade sonunda proje tamamlandıysa asli edim, tamamlanamadıysa tali edim devreye girer.",
+            "İhraçcının son 3 yılda en az bir benzer projeyi tamamlamış olması zorunludur; deneyim şartı sınavda 'son 2 yıl' veya '5 yıl' seçenekleriyle yanıltıcı biçimde sunulabilir.",
+            "Teminat zorunluluğu ihraç tutarının %100'ü oranında gerçekleştirilir; '50%' veya 'sabit tutar' ifadeleri yanlıştır.",
+            "Gayrimenkul sertifikası tek bir projeye yatırım aracıdır; GYO ise çok sayıda gayrimenkul içeren portföy yapısıdır — bu iki araç karıştırılmamalıdır.",
+            "Sertifika sahibi proje tamamlanmadan önce BİAŞ'ta sertifikasını ikincil piyasada satabilir; bu özellik gayrimenkul yatırımının likiditesini artırır.",
+          ],
         },
         questions: [
           {
@@ -603,6 +667,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "Varant ile opsiyon karıştırılmamalı: opsiyon türev araç (sözleşme), varant ise menkul kıymet. Türkiye'de ortaklık varantları sadece alım varantı olabilir — satım varantı şeklinde ihraç edilemez. Kaldıraç özellikleri sınavın klasik tuzağıdır.",
+          kavramlar: [
+            { terim: "Varant", tanim: "Belirli bir varlığı önceden belirlenen fiyat ve tarihte alma/satma hakkı tanıyan, borsada işlem gören menkul kıymet; türev araç değil sermaye piyasası aracıdır." },
+            { terim: "Ortaklık Varantı", tanim: "Sahibine ihraçcı şirketin hisse senetlerini belirlenen fiyattan satın alma hakkı veren varant türü; Türkiye'de yalnızca alım varantı şeklinde ihraç edilebilir." },
+            { terim: "Aracı Kuruluş Varantı", tanim: "Aracı kurumların bir dayanak varlık üzerine ihraç ettiği, alım veya satım hakkı içerebilen varant türü." },
+            { terim: "Yatırım Kuruluşu Sertifikası", tanim: "Aracı kurumlar tarafından ihraç edilen, belirli bir getiri formülüne bağlı yapılandırılmış ürün niteliğinde menkul kıymet." },
+            { terim: "Kaldıraç Etkisi", tanim: "Varantın dayanak varlıktaki küçük bir fiyat hareketini büyütülmüş getiri/zarar olarak yatırımcıya yansıtması; risk de büyür." },
+            { terim: "Varant-Opsiyon Farkı", tanim: "Opsiyon: türev araç (sözleşme), tezgah üstü veya organize borsada; Varant: menkul kıymet, borsada işlem gören, ihraçcı tarafından çıkarılmış." },
+            { terim: "Varant Primı (Delta)", tanim: "Dayanak varlık fiyatı değiştiğinde varant fiyatının ne ölçüde değişeceğini gösteren duyarlılık katsayısı." },
+          ],
+          dikkatlar: [
+            "Varant menkul kıymettir, türev araç değildir; opsiyon sözleşmedir — bu temel ayrım sınavda en sık karşılaşılan tuzaktır.",
+            "Türkiye'de ortaklık varantları yalnızca ALIM varantı olarak ihraç edilebilir; 'satım varantı' şeklinde ortaklık varantı ihracı yasaktır.",
+            "Aracı kuruluş varantları hem alım hem satım içerebilir; ortaklık varantı sadece alım hakkı içerir — iki tür arasındaki bu fark sınavda sorulur.",
+            "Varantın kaldıraç etkisi hem kâr hem de zarar potansiyelini büyütür; prim kaybı riski yüksektir çünkü dayanak varlık beklenen yönde hareket etmezse tüm prim yitirilir.",
+            "Yatırım kuruluşu sertifikası sabit veya değişken getirili olabilir; yapılandırılmış ürün niteliği taşır ve anapara koruması içerebilir.",
+          ],
         },
         questions: [
           {
@@ -727,6 +807,22 @@ export const mevzuat1004: Module[] = [
             },
           ],
           tip: "Depo sertifikası 'yabancı varlığa dolaylı yatırım' aracıdır. ADR (Amerikan), GDR (global), TDS (Türkiye) — üçü de aynı mantık. Karşılıklılık ilkesi sınavda klasik soru; SPK ile yabancı otorite arasında işbirliği anlaşması zorunlu.",
+          kavramlar: [
+            { terim: "Depo Sertifikası", tanim: "Yabancı bir şirketin hisse senetlerini temsil eden, yurt içi borsada yerel para cinsinden işlem gören dolaylı yatırım aracı." },
+            { terim: "ADR (American Depositary Receipt)", tanim: "Yabancı şirket hisselerini temsil eden ABD piyasasında USD cinsinden işlem gören depo sertifikası." },
+            { terim: "GDR (Global Depositary Receipt)", tanim: "Aynı anda birden fazla ülke piyasasında işlem görebilen global depo sertifikası." },
+            { terim: "TDS (Türkiye Depo Sertifikası)", tanim: "Yabancı şirket hisselerini temsil eden Türkiye piyasasında TL cinsinden işlem gören depo sertifikası." },
+            { terim: "Karşılıklılık İlkesi", tanim: "Türkiye'nin yabancı ülke otorite ilkeleriyle çelişmemesi koşuluyla, yabancı SPK araçlarına Türkiye'de işlem izni verilmesi." },
+            { terim: "Depo Bankası", tanim: "Yabancı hisse senetlerini kendi kasasında tutarken bunları temsil eden sertifikaları ihraç eden aracı banka." },
+            { terim: "İşbirliği Anlaşması", tanim: "SPK ile yabancı ülke sermaye piyasası otoritesi arasında bilgi paylaşımı ve denetim işbirliğini düzenleyen ikili anlaşma; yabancı araçların Türkiye'de kotasyonu için ön koşul." },
+          ],
+          dikkatlar: [
+            "Depo sertifikası dolaylı yatırım aracıdır; yatırımcı yabancı hisse senedini doğrudan değil depo sertifikası üzerinden tutar.",
+            "ADR Amerika'da, GDR uluslararası çoklu piyasalarda, TDS ise Türkiye'de işlem görür — üç kısaltma ve piyasaları eşleştirilmelidir.",
+            "Yabancı SPK araçlarının Türkiye'de kotasyonu için SPK ile yabancı otorite arasında işbirliği anlaşması zorunludur; karşılıklılık ilkesi uygulanır.",
+            "Depo sertifikası sahibi temettü ve sermaye artırımı haklarından yararlanır; oy hakkı kullanımı ise depo bankası aracılığıyla sağlanır.",
+            "TDS ihracında asgari halka açıklık ve şeffaflık şartları Türk mevzuatına göre belirlenir; yabancı şirket SPK düzenlemelerine tabi olur.",
+          ],
         },
         questions: [
           {

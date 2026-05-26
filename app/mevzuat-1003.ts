@@ -91,6 +91,22 @@ export const mevzuat1003: Module[] = [
             },
           ],
           tip: "Pay imtiyazlarında sınav klasiği: bir paya en çok 15 oy hakkı tanınabilir ancak esas sözleşme değişikliği, ibra ve sorumluluk davasında oy imtiyazı kullanılamaz. KİS ihraç limiti %50, rüçhan hakkı süresi 15-60 gün arası — bu rakamlar ezberlenmesi gereken kalıp bilgilerdir.",
+          kavramlar: [
+            { terim: "Pay (Hisse Senedi)", tanim: "Anonim ortaklığın bölünmüş sermaye payını temsil eden, sahibine ortak sıfatı ve ortaklık hakları kazandıran menkul kıymet." },
+            { terim: "İmtiyazlı Pay", tanim: "Oy, kâr payı veya tasfiye payında diğer paylara üstünlük tanınan özel pay türü; tek bir paya en fazla 15 oy hakkı verilebilir." },
+            { terim: "Kurucu İntifa Senedi (KİS)", tanim: "Kurucuya verilen, pay niteliği taşımayan, şirketin belirli gelirlerinden pay alma hakkı sağlayan intifa senedi; ihraç sınırı özsermayenin %50'si." },
+            { terim: "Rüçhan Hakkı", tanim: "Mevcut pay sahiplerinin yeni pay ihraçlarında öncelikli olarak pay satın alma hakkı; kullanım süresi en az 15, en fazla 60 gündür." },
+            { terim: "Bedelsiz Pay", tanim: "Özkaynak artışı veya yeniden değerleme sonucu mevcut pay sahiplerine bedel alınmaksızın dağıtılan yeni hisse." },
+            { terim: "Oy İmtiyazı Sınırlaması", tanim: "Esas sözleşme değişikliği, ibra ve sorumluluk davası konularında oy imtiyazlarının kullanılamaması; bu durumlarda herkes eşit oyla oy kullanır." },
+            { terim: "İlmühaber", tanim: "Payların devir ve tescilinden önce, pay yerine geçen ve ortaklık haklarını taşıyan geçici menkul kıymet belgesi." },
+          ],
+          dikkatlar: [
+            "Bir paya en fazla 15 oy hakkı tanınabilir; esas sözleşme değişikliği, ibra ve sorumluluk davası konularında oy imtiyazı KULLANILAMAZ — bu üç istisna sınavda ayrı ayrı sorulabilir.",
+            "KİS ihraç sınırı şirket özsermayesinin %50'sidir; KİS pay değil intifa senetidir ve sahibine ortak sıfatı kazandırmaz.",
+            "Rüçhan hakkı kullanım süresi 15 günden az, 60 günden fazla olamaz; tam 15 ve tam 60 gün sınır değerler olup geçerlidirler.",
+            "Bedelsiz hisseler pay sahibine ücretsiz dağıtılır ancak şirketin toplam değerini artırmaz; pay başına değer düşer, toplam servet aynı kalır.",
+            "İlmühaber payın tüm haklarını taşır; paylar tescil edilene kadar devir işlemleri ilmühaber üzerinden yapılabilir.",
+          ],
         },
         questions: [
           {
@@ -219,6 +235,22 @@ export const mevzuat1003: Module[] = [
             },
           ],
           tip: "Borçlanma araçlarında ihraç limitleri sınavın kalbidir: halka arzda 5x özkaynak (halka açık), 3x özkaynak (halka açık olmayan); nitelikli yatırımcıya satışta 10x ve 6x. Vade ayrımı da klasiktir: tahvil ≥365 gün, finansman bonosu <365 gün.",
+          kavramlar: [
+            { terim: "Tahvil", tanim: "Vadesi 365 gün ve üzeri olan, ihraçcının belirlenmiş faiz ödeyeceğini taahhüt ettiği, kuponlu veya kuponsuz borçlanma aracı." },
+            { terim: "Finansman Bonosu", tanim: "Vadesi 365 günden kısa olan kısa vadeli borçlanma aracı; genellikle iskontolu ihraç edilir." },
+            { terim: "İhraç Limiti", tanim: "Halka arz + halka açık = özkaynak 5 katı; halka arz + halka açık olmayan = 3 katı; NKY satış + halka açık = 10 katı; NKY + halka açık olmayan = 6 katı." },
+            { terim: "Kira Sertifikası (Sukuk)", tanim: "Varlığa dayalı, faiz içermeyen İslami finansman aracı; sahibine kira geliri ve vade sonu anapara öder." },
+            { terim: "Dönüştürülebilir Tahvil", tanim: "Belirli koşullarda ihraçcı şirketin hisse senetlerine dönüştürülebilen tahvil türü; dönüşüm hakkı tahvil alıcısına aittir." },
+            { terim: "Değişken Faizli Tahvil", tanim: "Faiz oranı piyasa göstergelerine (TÜFE, LIBOR vb.) bağlı olarak dönemsel güncellenen tahvil türü." },
+            { terim: "İhraç Belgesi", tanim: "Borçlanma araçları ihraçlarında Kurul'a sunulan, izahname yerine geçen basitleştirilmiş bilgi dokümanı." },
+          ],
+          dikkatlar: [
+            "Vade sınırı: 365 gün ve üzeri = TAHVİL, altı = FİNANSMAN BONOSU; tam 365. gün tahvil tarafındadır — '1 yıldan uzun' ifadesi yanıltıcıdır, 365. gün dahildir.",
+            "İhraç limitleri: halka arz halka açık = 5x; halka arz halka açık olmayan = 3x; NKY satış halka açık = 10x; NKY satış halka açık olmayan = 6x — bu dört senaryo ezberlenmelidir.",
+            "Kira sertifikasında faiz yoktur; 'kira geliri' kavramı kullanılır ve varlığa dayalı gerçek bir sözleşme ilişkisi bulunur.",
+            "Dönüştürülebilir tahvilden hisse senedine dönüşme hakkı alıcıya aittir; ihraçcı tek taraflı dönüştürme kararı alamaz.",
+            "Banka bonosu bankalarca ihraç edilen kısa vadeli araçtır; banka tahvili ise uzun vadeli borçlanmadır — bu iki araç karıştırılmamalı.",
+          ],
         },
         questions: [
           {
@@ -347,6 +379,22 @@ export const mevzuat1003: Module[] = [
             },
           ],
           tip: "Şemsiye fon türlerindeki %80 eşiği bir 'altın oran'dır: borçlanma araçları, hisse senedi ve yabancı fonlarda devamlı sağlanmak zorundadır. Para Piyasası fonunda ise farklı kurallar geçerli — vadeye en fazla 184 gün ve günlük ağırlıklı ortalama vade en fazla 45 gün. Bu rakamlar her sınavda mutlaka gelir.",
+          kavramlar: [
+            { terim: "Şemsiye Fon", tanim: "Farklı yatırım stratejilerine sahip alt fonları ortak içtüzük ve PYŞ altında birleştiren fon çatı yapısı." },
+            { terim: "Alt Fon", tanim: "Şemsiye fon bünyesinde ayrı portföy ve hesapla yönetilen, belirli bir yatırım türüne odaklanan bağımsız fon." },
+            { terim: "%80 Kuralı", tanim: "Hisse senedi, borçlanma araçları ve yabancı fon türlerinde portföyün devamlı olarak en az %80'inin ilgili varlık sınıfına yatırılması zorunluluğu." },
+            { terim: "Para Piyasası Fonu", tanim: "Vadesi 184 günü aşmayan kısa vadeli araçlara yatırım yapan; günlük ağırlıklı ortalama vadesi 45 günü geçemeyen fon türü." },
+            { terim: "Katılım Fonu", tanim: "Portföyünü faizsiz araçlarla (sukuk, kira sertifikası, katılım hesabı vb.) oluşturan; faiz içermeyen yatırım fonu." },
+            { terim: "Serbest Fon", tanim: "Portföy kısıtlamalarına tabi olmayan, yalnızca nitelikli yatırımcılara satılabilen ve izahname yerine ihraç belgesiyle kamuya açıklanan fon türü." },
+            { terim: "Fon Toplam Değeri (FTD)", tanim: "Portföydeki tüm varlıkların değeri artı nakit ve alacaklar eksi fon borçlarından oluşan, birim pay değerinin hesabında kullanılan temel gösterge." },
+          ],
+          dikkatlar: [
+            "Para piyasası fonunda araçların vadesi 184 günü aşamaz; günlük ağırlıklı ortalama vade ise en fazla 45 gündür — bu iki sınır birbirinden farklı ve ikisi de sınavda ayrı ayrı sorulabilir.",
+            "Hisse senedi, borçlanma araçları ve yabancı fon türlerinde DEVAMLI %80 kuralı uygulanır; bu eşiğin tek bir gün bile altına düşülmesi mevzuat ihlalidir.",
+            "Katılım fonu portföyüne hiçbir faiz içeren araç alınamaz; sukuk, kira sertifikası ve faizsiz mevduat (katılım hesabı) bu fonun temel araçlarıdır.",
+            "Serbest fonlar yalnızca nitelikli yatırımcılara satılır; bu fonlar için izahname yerine ihraç belgesi düzenlenir ve kısıtlamalar uygulanmaz.",
+            "Şemsiye fon bünyesinde alt fonlar arasında geçiş yapılabilir; bu geçişler vergi ve maliyet avantajı sağladığından yatırımcı için tercih edilebilir bir yapıdır.",
+          ],
         },
         questions: [
           {
@@ -471,6 +519,22 @@ export const mevzuat1003: Module[] = [
             },
           ],
           tip: "Forward ile futures arasındaki ayrım klasik sınav sorusudur: forward standart değil, OTC, karşı taraf riski yüksek; futures standart, organize borsa, takas merkezi karşı taraf riskini üstlenir. Opsiyonda 'alıcı hak sahibi, satıcı yükümlü' kuralı her sınavda gelir.",
+          kavramlar: [
+            { terim: "Forward", tanim: "Tezgah üstü (OTC) piyasada taraflar arasında standart olmayan koşullarla yapılan, ileriki tarihte teslimatı öngören vadeli sözleşme." },
+            { terim: "Futures", tanim: "Organize borsada işlem gören standartlaştırılmış vadeli sözleşme; takas merkezi (CCP) her iki tarafın karşı tarafı olarak temerrüt riskini üstlenir." },
+            { terim: "Opsiyon", tanim: "Alıcıya belirli bir varlığı belirli fiyat ve tarihte alma/satma hakkı (yükümlülüğü değil) veren; satıcıya yükümlülük yükleyen türev araç." },
+            { terim: "Swap", tanim: "İki tarafın belirli nakit akışlarını (faiz, döviz vb.) karşılıklı olarak değiştirdiği, genellikle OTC olarak düzenlenen türev sözleşme." },
+            { terim: "Avrupa Tipi Opsiyon", tanim: "Yalnızca vade tarihinde kullanılabilen opsiyon türü; Amerikan tipinde ise vade tarihine kadar her zaman kullanılabilir." },
+            { terim: "Takas Merkezi (CCP)", tanim: "Futures ve diğer organize türev işlemlerde her iki tarafın karşı tarafı konumuna girerek temerrüt riskini merkezi olarak üstlenen kuruluş." },
+            { terim: "Opsiyon Primi", tanim: "Opsiyon alıcısının satıcıya peşin olarak ödediği sözleşme bedeli; alıcının maksimum kaybı primle sınırlıdır." },
+          ],
+          dikkatlar: [
+            "Forward OTC + standart değil + karşı taraf riski taraflarda; Futures organize borsa + standart + CCP karşı taraf riskini üstlenir — bu temel ayrım her sınavda farklı formatlarda sorulur.",
+            "Opsiyon alıcısı hak sahibidir ve kullanmak zorunda değildir (maksimum kaybı prim); satıcı yükümlüdür ve alıcı kullanmak isterse yerine getirmek zorundadır.",
+            "Avrupa tipi opsiyon yalnızca vadede kullanılabilir; Amerikan tipi her zaman kullanılabilir — 'Amerika daha kısıtlayıcı' çağrışımı yanıltıcıdır, tam tersi doğrudur.",
+            "Futures pozisyonunda günlük teminat (marjin) hesabı yapılır ve yetersizlik halinde ek teminat (margin call) istenir; forward'da bu mekanizma yoktur.",
+            "Swap genellikle OTC yapılır ve standart değildir; bazı standart faiz swapları ise merkezi takas aracılığıyla da işleme konulabilir.",
+          ],
         },
         questions: [
           {
@@ -599,6 +663,22 @@ export const mevzuat1003: Module[] = [
             },
           ],
           tip: "DİBS'lerde temel ayrım vade üzerinden yapılır: vadesi 1 yıldan kısa olan 'Hazine Bonosu', 1 yıl ve üzeri 'Devlet Tahvili'. Hazine bonosunda kupon yoktur, iskontolu satılır. Eurobond yabancı para cinsinden ve uluslararası piyasalarda ihraç edilir — bu üç tanım sınavın klasiğidir.",
+          kavramlar: [
+            { terim: "Devlet Tahvili (DİBS)", tanim: "Hazine'nin 1 yıl (365 gün) ve üzeri vadelerle ihraç ettiği devlet iç borçlanma senedi; kuponlu veya kuponsuz olabilir." },
+            { terim: "Hazine Bonosu", tanim: "Hazine'nin 1 yıldan (365 günden) kısa vadeli ihraç ettiği iskontolu borçlanma aracı; kupon içermez, nominal değer altında satılır." },
+            { terim: "Eurobond", tanim: "Türkiye'nin uluslararası piyasalarda yabancı para birimi (USD, EUR vb.) cinsinden ihraç ettiği dış borçlanma aracı." },
+            { terim: "İskontolu İhraç", tanim: "Menkul kıymetin nominal değerinin altında ihraç edilmesi; getiri nominal değer ile alış fiyatı arasındaki fark olarak gerçekleşir." },
+            { terim: "Kuponlu Tahvil", tanim: "Periyodik faiz ödemesi (kupon) yapılan ve vade sonunda anaparanın iade edildiği devlet tahvili türü; değişken veya sabit kuponlu olabilir." },
+            { terim: "DİBS İhale Sistemi", tanim: "Hazine'nin birincil piyasada yetkilendirilmiş banka ve aracı kurumlara ihaleli olarak tahvil ve bono sattığı mekanizma." },
+            { terim: "İkincil Piyasa", tanim: "Devlet tahvillerinin Borsa İstanbul Tahvil ve Bono Piyasası'nda yatırımcılar arasında alınıp satıldığı piyasa." },
+          ],
+          dikkatlar: [
+            "Vade sınırı: tam 365. günden başlayarak DEV­LET TAHVİLİ; 364. güne kadar HAZİNE BONOSU — '1 yıldan uzun' ifadesi yanıltıcıdır, 365. gün tahvil tarafındadır.",
+            "Hazine bonosu HER ZAMAN iskontolu satılır ve kupon ödemesi yoktur; 'Hazine bonosunda faiz ödemesi' sorusunda doğru yanıt iskontodan kaynaklanan getiridir.",
+            "Eurobond yabancı para cinsinden ihraç edildiği için döviz kuru riskine maruz kalır; Türk vergi stopajı oranı iç piyasa araçlarından farklıdır.",
+            "DİBS'ler Türkiye'nin en güvenli yatırım aracı sayılır; tüm portföy modellerinde 'risksiz varlık' (risk-free asset) olarak kullanılır.",
+            "Sınavda 'hangi ülke iç borçlanma senetleri DİBS dışında işlem görür?' sorusu sıkça gelir — Eurobond iç değil DIŞ borçlanma aracıdır.",
+          ],
         },
         questions: [
           {

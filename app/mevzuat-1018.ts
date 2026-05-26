@@ -97,6 +97,22 @@ export const mevzuat1018: Module[] = [
             },
           ],
           tip: "İşletmenin 4 temel fonksiyonu: Yönetim, Üretim, Pazarlama, Finansman. Yönetimin 5 fonksiyonu: Planlama-Organize-Koordinasyon-Yürütme-Kontrol. Bilimsel yönetim = Taylor, 14 ilke = Fayol, ideal bürokrasi = Weber, Hawthorne deneyleri = Mayo. Modern yaklaşımlarda 'tek doğru' yoktur, durumsallık esastır.",
+          kavramlar: [
+            { terim: "Yönetimin 5 Fonksiyonu", tanim: "Fayol'ün klasik çerçevesi: Planlama (ne, ne zaman), Organizasyon (yapı), Koordinasyon (uyum), Yürütme (uygulama), Kontrol (sapma düzeltme)." },
+            { terim: "Bilimsel Yönetim (Taylor)", tanim: "Frederick Taylor'ın iş süreçlerini bilimsel yöntemlerle optimize etme yaklaşımı; zaman-hareket etüdleri, iş standartları ve performans bazlı ücret." },
+            { terim: "Fayol'ün 14 İlkesi", tanim: "Henri Fayol'ün yönetim sürecini evrensel 14 ilkeyle tanımlayan klasik okul yaklaşımı; iş bölümü, yetki-sorumluluk dengesi vs." },
+            { terim: "Bürokrasi Teorisi (Weber)", tanim: "Max Weber'in kurallara dayalı, hiyerarşik, kişisellik dışı ideal örgüt modeli; modern kamu yönetiminin temeli." },
+            { terim: "Hawthorne Deneyleri (Mayo)", tanim: "1920-30'larda Western Electric'te yapılan deneyler; çalışan verimliliğinin sosyal faktörler ve grup dinamiklerinden etkilendiğini ortaya koydu." },
+            { terim: "Durumsallık Yaklaşımı", tanim: "Tek doğru yönetim anlayışını reddeden modern yaklaşım; en iyi yönetim biçiminin duruma, çevreye ve koşullara göre değiştiğini savunur." },
+            { terim: "Örgütsel Yapı", tanim: "İşletmenin görev, yetki ve iletişim ilişkilerini belirleyen resmi çerçeve; işlevsel, bölümsel, matris ve ağ başlıca yapı türleridir." },
+          ],
+          dikkatlar: [
+            "Bilimsel yönetim = Taylor (verimlilik/iş analizi), 14 ilke = Fayol (yönetim fonksiyonları), bürokrasi = Weber, insan ilişkileri = Mayo.",
+            "Hawthorne etkisi: çalışanlar gözlemlendiğinde verimliliklerinin arttığı sosyal psikolojik olgu.",
+            "Durumsallık yaklaşımında 'en iyi örgüt yapısı yoktur'; çevre, strateji ve teknoloji yapıyı belirler.",
+            "Yönetimin 5 fonksiyonu sınavda sıklıkla sorulur; 'koordinasyon' ile 'kontrol'ü birbirinden ayırt edin.",
+            "İşletmenin 4 temel fonksiyonu: Yönetim + Üretim + Pazarlama + Finansman; insan kaynakları bazı modellemelerde 5. olarak eklenir.",
+          ],
         },
         questions: [
           {
@@ -225,6 +241,22 @@ export const mevzuat1018: Module[] = [
             },
           ],
           tip: "Kurumsal yönetimin 4 ilkesi: Adillik-Şeffaflık-Hesap Verebilirlik-Sorumluluk (ASHS). Vekalet sorunu = pay sahibi-yönetici çıkar çatışması. Sarbanes-Oxley 2002 ABD'de Enron sonrası. G20/OECD ilkeleri küresel referans. ESG modern KY'nin merkezi unsuru. Entegre Raporlama 6 sermayeyi bütüncül raporlar.",
+          kavramlar: [
+            { terim: "Kurumsal Yönetim (KY)", tanim: "Şirketin yönetim, denetim ve kontrolünü düzenleyen kurallar, uygulamalar ve süreçler bütünü; pay sahipleri ile diğer paydaşların çıkarını dengeler." },
+            { terim: "Vekalet Sorunu (Agency Problem)", tanim: "Pay sahipleri (asıl) ve yöneticiler (vekil) arasındaki çıkar çatışması; yöneticilerin hissedar değerini maksimize etmek yerine kendi çıkarlarını gözetmesi." },
+            { terim: "OECD KY İlkeleri", tanim: "G20/OECD tarafından hazırlanan küresel kurumsal yönetim referans çerçevesi; pay sahipliği hakları, şeffaflık, YK sorumluluğunu kapsar." },
+            { terim: "Sarbanes-Oxley (SOX 2002)", tanim: "ABD'de Enron skandalı sonrasında çıkarılan yasa; CEO/CFO'nun finansal tablo onayı, iç kontrol raporlaması ve denetçi bağımsızlığı." },
+            { terim: "ESG (Çevre-Sosyal-Yönetişim)", tanim: "Finansal olmayan sürdürülebilirlik ve yönetişim faktörlerini yatırım kararlarına entegre eden çerçeve; kurumsal yatırımcıların temel değerlendirme aracı." },
+            { terim: "Entegre Raporlama (<IR>)", tanim: "IIRC çerçevesine göre finansal ve finansal olmayan sermaye (finansal, üretilmiş, fikri, insan, sosyal-ilişki, doğal) raporlamasının birleştirilmesi." },
+            { terim: "Paydaş Teorisi (Stakeholder Theory)", tanim: "İşletmenin yalnızca hissedarlara değil çalışanlar, tedarikçiler, müşteriler, toplum ve çevreye karşı da sorumlu olduğunu savunan yaklaşım." },
+          ],
+          dikkatlar: [
+            "KY'nin 4 ilkesi (ASHS): Adillik, Şeffaflık, Hesap Verebilirlik, Sorumluluk — sıralamayı ve içeriği tam bilin.",
+            "Vekalet sorunu çözümleri: performansa dayalı ücret, bağımsız yönetim kurulu, yoğun açıklama yükümlülükleri.",
+            "ESG, yalnızca çevre değil; S (sosyal: çalışan, insan hakları) ve G (yönetişim: YK, etik, şeffaflık) bileşenlerini de kapsar.",
+            "Entegre raporlama 6 sermayesi: finansal, üretilmiş, fikri, insan, sosyal-ilişkisel, doğal sermaye.",
+            "SOX'un en önemli hükmü: CEO ve CFO finansal tabloların doğruluğunu kişisel olarak imzalayarak onaylamak zorundadır.",
+          ],
         },
         questions: [
           {
@@ -353,6 +385,22 @@ export const mevzuat1018: Module[] = [
             },
           ],
           tip: "TTK 6102 (2012) kurumsal yönetimi entegre etti. SPK II-17.1 = halka açık şirketler için KY tebliği. 'Comply or Explain' = gönüllü ilkelere uy ya da uymama nedenini açıkla. Şirketler 3 gruba ayrılır: A-B-C. Bağımsız üye min 1/3. Denetim Komitesi tüm üyeleri bağımsız olmalı (zorunlu komite).",
+          kavramlar: [
+            { terim: "SPK II-17.1 Tebliği", tanim: "SPK'nın halka açık şirketlere yönelik kurumsal yönetim ilkelerini düzenleyen tebliği; zorunlu ve gönüllü ilkeler şeklinde ikiye ayrılır." },
+            { terim: "Comply or Explain", tanim: "Gönüllü kurumsal yönetim ilkelerine uyan şirketin uyum beyan etmesi, uymayan şirketin gerekçesini açıklaması ilkesi." },
+            { terim: "KY Gruplandırması (A-B-C)", tanim: "SPK'nın şirketleri piyasa değeri ve halka açıklık oranına göre üç gruba ayırması; A grubu en kapsamlı zorunlulukları taşır." },
+            { terim: "Bağımsız Yönetim Kurulu Üyesi", tanim: "Şirketle veya önemli pay sahipleriyle organik bağı bulunmayan, nesnel değerlendirme yapabilen YK üyesi; min 1/3 zorunlu." },
+            { terim: "Denetim Komitesi", tanim: "Finansal raporlama, iç denetim ve bağımsız denetim süreçlerini gözetleyen zorunlu komite; tüm üyeleri bağımsız olmak zorunda." },
+            { terim: "Kurumsal Yönetim Komitesi", tanim: "KY uygulamalarını izleyen, aday gösterme ve ücretlendirme işlevlerini de üstlenebilen zorunlu komite." },
+            { terim: "Riskin Erken Saptanması Komitesi", tanim: "Şirketi tehdit eden riskleri önceden belirleyip YK'ya raporlayan zorunlu komite; halka açık şirketlerde SPK tarafından zorunlu tutulur." },
+          ],
+          dikkatlar: [
+            "Zorunlu 3 komite: Denetim Komitesi + Kurumsal Yönetim Komitesi + Riskin Erken Saptanması Komitesi.",
+            "Denetim Komitesi'nin tüm üyeleri bağımsız olmak zorundadır; diğer komitelerde yalnızca başkan bağımsız olabilir.",
+            "Bağımsız YK üyesi oranı en az 1/3; A grubu şirketlerde bu oran daha kritiktir.",
+            "Comply or Explain prensibi: gönüllü ilkelere uymayan şirket gerekçesini KAP'ta kamuya açıklamak zorunda.",
+            "TTK 6102 (2012): pay sahipliği hakları, kurumsal yönetim yükümlülükleri ve elektronik genel kurul gibi modern düzenlemeleri entegre etti.",
+          ],
         },
         questions: [
           {
@@ -481,6 +529,22 @@ export const mevzuat1018: Module[] = [
             },
           ],
           tip: "SPK KY İlkeleri 4 bölüm: (1) Pay Sahipleri, (2) Kamuyu Aydınlatma ve Şeffaflık, (3) Menfaat Sahipleri (paydaşlar), (4) Yönetim Kurulu. Üç zorunlu komite: Denetim, Kurumsal Yönetim, Riskin Erken Saptanması. Yatırımcı ilişkileri bölümü zorunlu. Genel kurul A grubunda canlı yayın zorunlu. Kâr dağıtım politikası yazılı olmalı.",
+          kavramlar: [
+            { terim: "Pay Sahipleri Bölümü", tanim: "SPK KY İlkeleri'nin 1. bölümü; pay sahipliği haklarının kullanımı, bilgi alma hakkı, kâr payı ve genel kurul hakları." },
+            { terim: "Kamuyu Aydınlatma Bölümü", tanim: "SPK KY İlkeleri'nin 2. bölümü; özel durum açıklamaları, yıllık rapor, KAP kullanımı ve yatırımcı ilişkileri birimi." },
+            { terim: "Menfaat Sahipleri Bölümü", tanim: "SPK KY İlkeleri'nin 3. bölümü; çalışanlar, tedarikçiler, müşteriler ve toplumun haklarının gözetilmesi." },
+            { terim: "Yönetim Kurulu Bölümü", tanim: "SPK KY İlkeleri'nin 4. bölümü; YK yapısı ve çalışma esasları, bağımsız üyeler, komiteler ve ücretlendirme politikası." },
+            { terim: "Yatırımcı İlişkileri Birimi", tanim: "Kamuyu aydınlatma yükümlülüklerini koordine eden, pay sahipleriyle iletişimi yürüten zorunlu birim; SPK'ya birimin sorumlusunu bildirmek gerekir." },
+            { terim: "Kâr Dağıtım Politikası", tanim: "Şirketin kâr payı dağıtımına ilişkin esas ve yöntemlerini belirleyen yazılı politika; genel kurulda onaylanır ve kamuya açıklanır." },
+            { terim: "Elektronik Genel Kurul", tanim: "Pay sahiplerinin fiziksel katılım olmaksızın elektronik ortamda oy kullandığı genel kurul; A grubu şirketlerde canlı yayın zorunludur." },
+          ],
+          dikkatlar: [
+            "SPK KY İlkeleri 4 bölümü sırayla: Pay Sahipleri → Kamuyu Aydınlatma → Menfaat Sahipleri → Yönetim Kurulu.",
+            "Yatırımcı ilişkileri birimi kurulması ve SPK'ya bildirimi zorunlu; e-posta ve telefon bilgileri kamuya açıklanmalıdır.",
+            "A grubu şirketlerde genel kurulun internet üzerinden canlı yayınlanması zorunludur.",
+            "Kâr dağıtım politikası yazılı olmalı ve genel kurulda onaylanmalı; öngörülebilir ve tutarlı olması beklenir.",
+            "4. bölüm (Yönetim Kurulu) en ağır zorunlulukları içerir: bağımsız üye, 3 komite, ücretlendirme politikası.",
+          ],
         },
         questions: [
           {
@@ -609,6 +673,22 @@ export const mevzuat1018: Module[] = [
             },
           ],
           tip: "KY derecelendirme = 4 bölüm: Pay Sahipleri %25 + Kamuyu Aydınlatma %25 + Menfaat Sahipleri %15 + Yönetim Kurulu %35. Not 0-10. BIST KY Endeksi eşiği 7. ESG = Environmental, Social, Governance. GRI/SASB/TCFD/ISSB sürdürülebilirlik çerçeveleri. Yabancı kurumsal yatırımcılar KY notunu ciddi alır.",
+          kavramlar: [
+            { terim: "KY Derecelendirme Notu", tanim: "Şirketin 4 bölüm bazında kurumsal yönetim uyumunun 0-10 ölçeğinde değerlendirildiği not; BIST KY Endeksi için min 7 gerekir." },
+            { terim: "BIST Kurumsal Yönetim Endeksi", tanim: "KY notu en az 7 olan halka açık şirketlerin yer aldığı BİAŞ endeksi; yüksek kurumsal yönetim kalitesini temsil eder." },
+            { terim: "GRI (Global Raporlama Girişimi)", tanim: "Kurumların ekonomik, çevresel ve sosyal etkilerini raporlamaları için uluslararası standartlar belirleyen çerçeve; sürdürülebilirlik raporlamada en yaygın." },
+            { terim: "TCFD (İklimle Bağlantılı Finansal Açıklamalar)", tanim: "FSB'nin iklim risklerinin finansal etkilerinin kurumlar tarafından raporlanması için geliştirdiği çerçeve; yönetim, strateji, risk yönetimi, metrikler." },
+            { terim: "ISSB (Uluslararası Sürdürülebilirlik Standartları Kurulu)", tanim: "IFRS Vakfı bünyesinde kurulan, küresel sürdürülebilirlik raporlama standartlarını (IFRS S1-S2) yayımlayan kuruluş." },
+            { terim: "SASB Standartları", tanim: "Sektöre özgü ESG açıklama standartları; yatırımcıların sektörler arası karşılaştırma yapmasına olanak tanır." },
+            { terim: "Kurumsal Yatırımcı Aktivizmi", tanim: "Kurumsal yatırımcıların oy hakları ve diyalog yoluyla şirketlerin ESG ve yönetişim uygulamalarını etkilemeye çalışması." },
+          ],
+          dikkatlar: [
+            "KY derecelendirme ağırlıkları: Pay Sahipleri %25, Kamuyu Aydınlatma %25, Menfaat Sahipleri %15, Yönetim Kurulu %35 — toplam %100.",
+            "BIST KY Endeksi'ne girebilmek için KY notu 0-10 ölçeğinde en az 7 olmalıdır.",
+            "Yönetim Kurulu bölümü %35 ile en yüksek ağırlığa sahiptir; bağımsız üye sayısı ve komite yapısı burada değerlendirilir.",
+            "GRI = en geniş kapsamlı sürdürülebilirlik raporlama çerçevesi; TCFD = iklim riski odaklı; ISSB = IFRS uyumlu tek küresel standart.",
+            "Uluslararası kurumsal yatırımcılar (BlackRock, Vanguard gibi) şirketlerin ESG ve KY notlarını yatırım kararlarında aktif biçimde kullanır.",
+          ],
         },
         questions: [
           {

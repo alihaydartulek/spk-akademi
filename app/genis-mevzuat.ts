@@ -89,6 +89,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "GYO'larda 'aktif toplamının asgari %51'i' kuralı esastır; bu eşik bir kez bile altına düşerse Kurul'a uyum süresi talebiyle başvurulması gerekir. Sınavda %25 (halka arz oranı), %51 (gayrimenkul yatırım oranı) ve 5 katı (kredi sınırı) rakamları en sık karşılaşılan kalıp sorulardır.",
+          kavramlar: [
+            { terim: "GYO", tanim: "Kayıtlı sermaye sistemine tabi, gayrimenkul, gayrimenkul projeleri ve hakları portföyünde bulunduran halka açık anonim ortaklık." },
+            { terim: "Ayni Sermaye", tanim: "İpotek veya değeri etkileyecek takyidat bulunmayan gayrimenkul ve gayrimenkule dayalı ayni hakların ortaklığa sermaye olarak konulması." },
+            { terim: "Borçlanma Sınırı", tanim: "GYO'ların kısa vadeli fon ihtiyacı için kullanabileceği toplam kredinin özsermayenin en fazla 5 katıyla sınırlandırılması." },
+            { terim: "Değerleme Kuruluşu", tanim: "Kurul listesinde yer alan, GYO portföyüne girecek veya çıkacak her varlığı bağımsız olarak değerlemekle yükümlü kuruluş." },
+            { terim: "Altyapı GYO'su", tanim: "Altyapı projelerine odaklanan, sermaye büyüklüğüne göre 2 veya 4 yıl halka arz süresi tanınan özel GYO türü." },
+            { terim: "İmtiyazlı Pay Yasağı", tanim: "GYO'ların oy ve kâr payında imtiyaz sağlayan pay ihraç edememesi; yalnızca YK aday gösterme imtiyazlı pay izin verilmesi." },
+            { terim: "Kotasyon Zorunluluğu", tanim: "Halka arzın tamamlanmasından itibaren 15 gün içinde payların BİAŞ kotuna alınması için Kurul'a başvurma yükümlülüğü." },
+          ],
+          dikkatlar: [
+            "Aktif toplamının asgari %51'i gayrimenkul bileşimini oluşturmak zorundadır; bu eşiğin altına düşülmesi halinde Kurul'a uyum programı sunulması gerekir — ihlal anında feshe yol açmaz.",
+            "Tek bir ihraççıya ait sermaye piyasası araçlarına yapılan yatırım aktif toplamın %10'unu aşamaz; toplam para ve SPK araçlarına %50 sınırı ayrıca uygulanır.",
+            "GYO'lar otel, hastane gibi gayrimenkulleri portföye alabilir ancak bunların işletmeciliğini yapamaz; 'alma' ile 'işletme' arasındaki fark sınavda çelmeli soru olarak gelir.",
+            "Altyapı GYO'larında eşik 3 milyar TL: altında 2 yıl, üstünde 4 yıl halka arz süresine izin verilir — rakamları ters sıralamak yaygın hata.",
+            "Halka arz sonrasında kotasyon başvurusu 15 gün içinde yapılmalıdır; seçeneklerde '30 gün' veya '1 ay' sunulabilir, doğru yanıt 15 gündür.",
+          ],
         },
         questions: [
           {
@@ -213,6 +229,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "MKYO ile DSYO arasındaki temel ayrım kapalı uçlu/açık uçlu yapıdır: MKYO'da paylar borsada işlem görür ve sayı sabit kalır; DSYO'da ise yatırımcı talebine göre paylar sürekli ihraç edilip geri alınır. UCITs'in Türkiye uygulaması olarak DSYO'lar fonlarla yatırım ortaklıkları arasında bir geçiş köprüsüdür.",
+          kavramlar: [
+            { terim: "MKYO", tanim: "Menkul Kıymet Yatırım Ortaklığı; sermaye piyasası araçları portföyü işleten, tüzel kişiliği olan kapalı uçlu ortaklık." },
+            { terim: "DSYO", tanim: "Değişken Sermayeli Yatırım Ortaklığı; sermayesi yatırım varlıklarının değerine göre değişen, payların ihraç/geri alımıyla çalışan açık uçlu ortaklık." },
+            { terim: "Kapalı Uçlu Yapı", tanim: "Yeni pay ihracının söz konusu olmadığı, mevcut payların yalnızca borsada el değiştirebildiği yatırım ortaklığı yapısı." },
+            { terim: "Açık Uçlu Yapı", tanim: "Yatırımcı talebi üzerine yeni pay ihraç edilip geri alınabilen, dolayısıyla toplam pay sayısının değiştiği fon/ortaklık yapısı." },
+            { terim: "Serbest Portföy", tanim: "DSYO bünyesinde portföy kısıtlamalarına tabi olmayan, yalnızca nitelikli yatırımcılara satılabilen portföy türü." },
+            { terim: "Yatırımcı Payı", tanim: "DSYO'da yatırımcı tarafından talep üzerine satın alınan ve iade edilebilen, değeri net varlık değerine göre belirlenen pay." },
+            { terim: "İç Kontrol Sistemi", tanim: "MKYO yönetim kurulunca oluşturulması zorunlu; faaliyetlerin mevzuata uygunluğunu sağlayan bağımsız denetim yapılanması." },
+          ],
+          dikkatlar: [
+            "MKYO kapalı uçlu = sabit sermaye = paylar sadece borsada el değiştirir; DSYO açık uçlu = değişken sermaye = yatırımcı talebine göre pay ihraç ve geri alımı yapılır.",
+            "DSYO'da kredi sınırı net varlık değerinin %10'udur; GYF'de bu oran toplam değerin %50'sidir — fonlar arasındaki oran farkı sınavda sık karşılaşılan tuzaktır.",
+            "DSYO'nun serbest portföyleri yalnızca nitelikli yatırımcılara satılabilir; bu portföyler için izahname yerine ihraç belgesi düzenlenir.",
+            "DSYO portföy türlerinde (hisse senedi, borçlanma vb.) her türün asgari %80'i ilgili varlık sınıfına yatırılmalıdır — aynı %80 kuralı BYF için de geçerlidir.",
+            "MKYO'larda iç kontrol, risk yönetim sistemi ve teftiş birimi oluşturulması yönetim kurulunun zorunlu görevidir; bunlar opsiyonel değildir.",
+          ],
         },
         questions: [
           {
@@ -341,6 +373,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "PYŞ'nin temel sorumluluğu 'inançlı mülkiyet' esasına dayanır: yönettiği fon malvarlığı kendi mülkiyetinden ayrı tutulur ve yatırımcı çıkarına yönetilir. Sınavda en sık karşılaşılan tuzak, mevduat kabulü ile fon kuruculuğunun karıştırılmasıdır — PYŞ asla mevduat kabul etmez, yalnızca fon kurar ve yönetir.",
+          kavramlar: [
+            { terim: "PYŞ", tanim: "Portföy Yönetim Şirketi; yatırım fonu kuran ve yöneten, Kurul'dan faaliyet izni almış anonim ortaklık." },
+            { terim: "İnançlı Mülkiyet", tanim: "PYŞ'nin yönettiği fon varlıklarının kendi malvarlığından hukuken ayrı tutulmasını sağlayan, yatırımcıyı koruyucu temel ilke." },
+            { terim: "Kolektif Portföy Yöneticiliği", tanim: "Birçok yatırımcıdan toplanan fonları havuzda birleştirerek ortak kurallara göre yönetme faaliyeti; PYŞ'nin asıl faaliyet alanı." },
+            { terim: "Bireysel Portföy Yöneticiliği", tanim: "Tek bir müşteriye ait portföyü bireysel sözleşmeyle yönetme; PYŞ'nin yetki belgesiyle yapabileceği ek faaliyet." },
+            { terim: "Portföy Saklayıcısı", tanim: "Kanun'un 56. maddesi kapsamında yetkilendirilmiş, PYŞ'nin kurucusu olduğu fon varlıklarını bağımsız olarak saklayan kuruluş." },
+            { terim: "İhtisas Personeli", tanim: "PYŞ bünyesinde portföy yöneticisi, fon müdürü, araştırma uzmanı, iç kontrol elemanı, müfettiş, risk yönetim personeli ve yatırım danışmanını kapsayan lisans gerektiren personel." },
+            { terim: "Çıkar Çatışması Yönetimi", tanim: "Müşteriler arası, müşteri-PYŞ arası ve müşteri-çalışan arası çatışmaları önlemek için hazırlanan yazılı politika ve prosedürler." },
+          ],
+          dikkatlar: [
+            "PYŞ hiçbir koşulda mevduat veya katılım fonu kabul edemez; bu faaliyet bankacılığa özgüdür — 'PYŞ mevduat kabul eder mi?' sorusuna kesinlikle hayır.",
+            "Portföy yönetim hizmeti dışarıdan alınsa bile, kurucu PYŞ'nin fonun yönetimindeki hukuki sorumluluğu devam eder; sorumluluk hizmet sağlayıcıya geçmez.",
+            "Sır saklama yükümlülüğü görevden ayrıldıktan sonra da geçerliliğini korur; 'görev süresince' ifadesi eksik ve yanıltıcıdır.",
+            "GYF veya GSYF kurmak üzere kurulan faaliyetleri sınırlı PYŞ'de başlangıç sermayesi standart tutarın yarısına indirilmektedir.",
+            "Çıkar çatışması önleme politikasının yazılı olarak hazırlanması ve iç kontrol mekanizmalarıyla uyumlu tutulması zorunludur — opsiyonel değildir.",
+          ],
         },
         questions: [
           {
@@ -469,6 +517,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "BYF, MKYO ve klasik yatırım fonu üçlüsü sınavda sıkça karşılaştırılır: tüzel kişiliği yalnızca MKYO'da var, ikincil piyasa işlemi yatırım fonunda yok, birincil piyasa işlemi yalnızca yatırım fonu ile BYF'de var. Birincil piyasa işlemleri sayesinde BYF'lerde MKYO'lardaki iskontolu işlem sorunu yaşanmaz.",
+          kavramlar: [
+            { terim: "BYF", tanim: "Borsa Yatırım Fonu; katılma payları borsada işlem gören, endeksi pasif olarak takip eden tüzel kişiliği olmayan açık uçlu fon." },
+            { terim: "Birincil Piyasa İşlemi", tanim: "BYF'de büyük lotlar halinde (örn. 50.000 pay) ayni ve/veya nakdi olarak gerçekleştirilen katılma payı oluşturma veya iade etme işlemi." },
+            { terim: "İkincil Piyasa İşlemi", tanim: "BYF paylarının borsada alıcı ile satıcı arasında normal hisse senedi gibi gerçekleşen alım-satım işlemleri." },
+            { terim: "Creation/Redemption", tanim: "BYF'nin işlem fiyatını net varlık değerine (NAV) yakın tutan; yetkili katılımcıların arbitraj yapmasına dayanan birincil piyasa mekanizması." },
+            { terim: "Takip Hatası (Tracking Error)", tanim: "BYF getirisi ile takip edilen endeks getirisi arasındaki dönemsel standart sapma; yönetim kalitesinin göstergesi." },
+            { terim: "Takip Farkı (Tracking Difference)", tanim: "Belirli bir dönemde BYF'nin kümülatif getirisi ile endeks getirisi arasındaki fark; maliyetleri de yansıtır." },
+            { terim: "Swap'a Dayalı BYF", tanim: "Endeks bileşenlerini fiziksel olarak değil swap sözleşmesiyle takip eden dolaylı yapıdaki BYF; karşı taraf riski %10 ile sınırlıdır." },
+          ],
+          dikkatlar: [
+            "BYF portföyünün devamlı olarak en az %80'i takip edilen endeks kapsamındaki varlıklara yatırılmak zorundadır; bu oran BYF için mutlak alt sınırdır.",
+            "Halka arz aşamasında asgari 50 milyon TL konulması zorunlu; faal dönemde fon toplam değerinin son üç aylık ortalaması 25 milyon TL'nin altına düşemez — iki farklı rakam karıştırılmamalı.",
+            "Swap'a dayalı BYF'lerde karşı taraf riski fon toplam değerinin %10'unu aşamaz; fon unvanında 'dolaylı endeks' ibaresine yer verilmesi zorunludur.",
+            "Birincil piyasa işlemleri büyük lotlar ve katlarıyla yapılır; bu nedenle bireysel yatırımcılar genellikle ikincil piyasada işlem yapar — 'birincil piyasa yatırımcıya açık değil' ifadesi yanıltıcıdır, teknik olarak açık ama pratikte erişilmez.",
+            "Yatırım fonunda ikincil piyasa işlemi YOKTUR; BYF ve MKYO'da her ikisi de borsada işlem görür — üç araç arasındaki bu ayrım en sık sınav sorusu konusudur.",
+          ],
         },
         questions: [
           {
@@ -597,6 +661,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "GYO ile GYF, GSYO ile GSYF arasındaki temel ayrım hukuki yapıdadır: ortaklıklar (GYO/GSYO) tüzel kişiliğe sahip ve halka açık iken, fonlar (GYF/GSYF) tüzel kişiliği olmayan ve yalnızca nitelikli yatırımcılara açık yapılardır. Vergi avantajı açısından da GSYF, GSYO'ya kıyasla genellikle daha avantajlı bir yapı sunar.",
+          kavramlar: [
+            { terim: "GYF", tanim: "Gayrimenkul Yatırım Fonu; tüzel kişiliği olmayan, PYŞ tarafından kurulan, nitelikli yatırımcılara açık kapalı uçlu gayrimenkul fonu." },
+            { terim: "GSYF", tanim: "Girişim Sermayesi Yatırım Fonu; tüzel kişiliği olmayan, nitelikli yatırımcılara açık, girişim şirketlerine yatırım yapan kapalı uçlu fon." },
+            { terim: "Nitelikli Yatırımcı", tanim: "Mevzuatta belirlenen servet/deneyim eşiklerini aşan, karmaşık ve riskli ürünlere yatırım yapabilen profesyonel veya kurumsal yatırımcı." },
+            { terim: "Kapalı Uçlu Fon", tanim: "Belirli bir süre veya süresiz olarak kurulan, katılma paylarının vadeden önce iade edilemediği, likiditesi sınırlı fon yapısı." },
+            { terim: "İhraç Belgesi", tanim: "GYF ve GSYF katılma payları için izahname yerine düzenlenen, nitelikli yatırımcılara sunulan daha basit bilgi dokümanı." },
+            { terim: "Yatırım Komitesi", tanim: "GSYF bünyesinde en az 3 kişiden oluşan, girişim sermayesi yatırım kararlarını veren; üyelerinde en az 5 yıl tecrübe aranan komite." },
+            { terim: "GYO-GYF Karşılaştırması", tanim: "GYO: tüzel kişi + halka açık + %51 gayrimenkul; GYF: tüzel kişiliği yok + sadece NKY + %80 gayrimenkul oranı zorunluluğu." },
+          ],
+          dikkatlar: [
+            "GYF'de gayrimenkul yatırımı oranı en az %80 olmalıdır; GYO'da bu oran %51'dir — oran farkı sınavın en temel karşılaştırma sorusudur.",
+            "GSYF en fazla 12 yıllık süreyle kurulabilir; bu süre Kurul izniyle uzatılabilir — '10 yıl' seçeneği yanıltıcıdır.",
+            "GSYF yatırım komitesinde en az 3 üye bulunmalı; ilgili üyeler girişim sermayesinde en az 5 yıl tecrübeli olmalıdır — 'en az 2 yıl' veya '3 kişi' gibi hatalı seçenekler sunulabilir.",
+            "GYF borçlanma limiti fon toplam değerinin %50'sidir; GYO'da ise özsermayenin 5 katı esas alınır — iki farklı hesaplama yöntemi karıştırılmamalı.",
+            "GYF ve GSYF katılma payları borsada işlem görmez, yalnızca nitelikli yatırımcılara ihraç belgesiyle satılır — 'BİAŞ'ta işlem görür' ifadesi yanlıştır.",
+          ],
         },
         questions: [
           {
@@ -725,6 +805,22 @@ export const genisMevzuat: Module[] = [
             },
           ],
           tip: "Etik ilkelerde 'daha katı olan düzenlemeye uyma' kuralı temel pusuladır: iki mevzuat çelişiyorsa veya konu hiç düzenlenmemişse, çalışan her zaman daha sıkı olan kurala uyacaktır. İçsel bilgi kullanımı ise bilginin fiyata yansıyıp yansımadığına bakılmaksızın ihlal teşkil eder — bu ayrım sınavda çelmeli soru olarak sıkça karşımıza çıkar.",
+          kavramlar: [
+            { terim: "Mesleki Uzmanlık", tanim: "Sermaye piyasası çalışanının mevzuatı tam ve yetkin biçimde öğrenip uygulaması; bilgi eksikliğini 'mazeret' saymaması yükümlülüğü." },
+            { terim: "Bağımsızlık İlkesi", tanim: "Çalışanın hediye, menfaat veya baskıyla bağımsızlığını yitirmemesini; mütevazı hediyeler dışında her teklifi reddetmesini gerektiren ilke." },
+            { terim: "Daha Katı Düzenlemeye Uyma", tanim: "İki mevzuat çeliştiğinde veya konu düzenlenmediğinde, çalışanın her zaman daha sıkı olan kurala uyması zorunluluğu." },
+            { terim: "İçsel Bilgi", tanim: "Kamuoyuna açıklanmamış, şirket pay fiyatını etkileyebilecek nitelikteki gizli bilgi; kullanımı hem yasal suç hem etik ihlaldir." },
+            { terim: "Mütevazı Hediye", tanim: "Bağımsızlığı tehdit etmeyecek nitelikte, sembolik olarak kabul edilebilen hediyeler; lüks eğlence ve pahalı biletler bu kapsamda değildir." },
+            { terim: "İhlal Bildirimi", tanim: "Çalışanın mevzuata aykırılığı önce sıralı amirlerine, sonuç alınamazsa SPK/MASAK/TSPB'ye bildirme yükümlülüğü." },
+            { terim: "İlişki Kesme", tanim: "Uyarılara rağmen aykırılık sürdüğünde çalışanın söz konusu işlem veya gerekirse kurumla ilişkisini kesmesi zorunluluğu." },
+          ],
+          dikkatlar: [
+            "İçsel bilginin kullanımı bilginin fiyata yansıyıp yansımamasından bağımsız olarak etik ihlaldir — 'fiyata zaten yansıdı, sorun yok' argümanı geçersizdir.",
+            "İhlal bildirim sıralaması: önce sıralı amirler → sonuç alınamazsa SPK/MASAK/TSPB; doğrudan basına sızdırma etik dışı bir davranıştır.",
+            "Mevzuat çelişkisinde en sıkı düzenleme geçerlidir; 'daha esnek olan uygulanır' veya 'çalışan seçim yapabilir' ifadeleri yanlıştır.",
+            "Lüks eğlence davetleri, pahalı konser biletleri ve halka arz önceliği vaadi mütevazı hediye sayılmaz; bunların kabulü etik ihlaldir.",
+            "Sır saklama yükümlülüğü görevden ayrıldıktan sonra da devam eder; 'yalnızca çalışma süresinde geçerli' ifadesi yanlıştır.",
+          ],
         },
         questions: [
           {

@@ -101,6 +101,22 @@ export const mevzuat1022: Module[] = [
             },
           ],
           tip: "Sunucu türleri: Web, Uygulama, Veritabanı, Dosya, Posta. Mimari: Tower → Rack → Blade → Hyper-Converged. Hardening = güvenlik için yapılandırma sıkılaştırma. Hypervisor = sanal makineleri yöneten katman. ACID = ilişkisel DB özelliği (Atomicity, Consistency, Isolation, Durability). Veri Ambarı ≠ İşlemsel DB (analitik vs operasyonel).",
+          kavramlar: [
+            { terim: "Hypervisor", tanim: "Fiziksel donanım üzerinde birden fazla sanal makineyi çalıştıran sanallaştırma katmanı; Type 1 (bare-metal) ve Type 2 (hosted) olmak üzere ikiye ayrılır." },
+            { terim: "ACID Özellikleri", tanim: "İlişkisel veritabanlarındaki işlem güvenilirliği ilkeleri: Atomicity (bütün ya da hiç), Consistency (bütünlük), Isolation (yalıtım), Durability (kalıcılık)." },
+            { terim: "Hardening (Sıkılaştırma)", tanim: "Sunucu ve sistemlerin gereksiz hizmet, port ve hesapların kapatılmasıyla saldırı yüzeyinin azaltılması; güvenli yapılandırma süreci." },
+            { terim: "Veri Ambarı (Data Warehouse)", tanim: "Analitik ve raporlama amaçlı yapılandırılmış büyük veri deposu; işlemsel veritabanından ayrı tutulur, OLAP sorguları için optimize edilir." },
+            { terim: "İlişkisel Veritabanı (RDBMS)", tanim: "Verilerin tablolar halinde ve ilişkiler aracılığıyla depolandığı, SQL ile yönetilen veritabanı sistemi; ACID özelliklerini destekler." },
+            { terim: "Blade Sunucu", tanim: "Yüksek yoğunluklu raf içinde minimum yer kaplayan modüler sunucu kartı; ortak güç kaynağı ve soğutma altyapısıyla çalışır." },
+            { terim: "Hyper-Converged Altyapı (HCI)", tanim: "İşlem, depolama ve ağ bileşenlerinin tek bir yazılım tanımlı platformda birleştirildiği modern veri merkezi mimarisi." },
+          ],
+          dikkatlar: [
+            "ACID özellikleri: Atomicity (ya hepsi ya hiç), Consistency (tutarlılık), Isolation (işlemler birbirini etkilemez), Durability (commit sonrası kalıcı).",
+            "Veri ambarı ≠ işlemsel DB: ambar analitik (OLAP, raporlama), işlemsel DB anlık işlemler (OLTP) için optimize edilmiştir.",
+            "Hardening: varsayılan şifre değiştirme, gereksiz portları kapatma, en az yetki ilkesi — güvenlik temelinin ilk adımı.",
+            "Type 1 hypervisor (VMware ESXi) doğrudan donanım üzerinde; Type 2 (VirtualBox) işletim sistemi üzerinde çalışır — performans farkı önemli.",
+            "Sunucu mimarisi: Tower (küçük), Rack (orta), Blade (yüksek yoğunluk), HCI (yazılım tanımlı modern).",
+          ],
         },
         questions: [
           {
@@ -229,6 +245,22 @@ export const mevzuat1022: Module[] = [
             },
           ],
           tip: "Bulut 3 hizmet modeli: IaaS (altyapı) + PaaS (platform) + SaaS (yazılım). 4 dağıtım: Public + Private + Hybrid + Community. Big Data 5V. AI/ML = veriden öğrenme. IoT = bağlı cihazlar. RPA = kural tabanlı otomasyon (UiPath). Blok Zincir = dağıtık defter, merkezi otorite YOK, kripto + konsensüs ile.",
+          kavramlar: [
+            { terim: "IaaS (Infrastructure as a Service)", tanim: "Bulutta sanal sunucu, depolama ve ağ altyapısının kiralanması; müşteri işletim sistemi ve üstünü yönetir (AWS EC2, Azure VM)." },
+            { terim: "PaaS (Platform as a Service)", tanim: "Uygulama geliştirme ve çalıştırma için hazır platform; müşteri yalnızca uygulama kodunu yönetir (Google App Engine, Heroku)." },
+            { terim: "SaaS (Software as a Service)", tanim: "Hazır yazılımın internet üzerinden kullanıma sunulması; müşteri yalnızca uygulamayı kullanır (Salesforce, Microsoft 365)." },
+            { terim: "Big Data 5V", tanim: "Büyük verinin 5 temel özelliği: Volume (hacim), Velocity (hız), Variety (çeşitlilik), Veracity (doğruluk), Value (değer)." },
+            { terim: "Blok Zincir (Blockchain)", tanim: "Merkezi otoriteye gerek duymadan dağıtık düğümler arasında kriptografik olarak güvence altına alınmış ve değiştirilemez dağıtık defter teknolojisi." },
+            { terim: "RPA (Robotic Process Automation)", tanim: "Tekrarlayan kural tabanlı iş süreçlerinin yazılım robotlarıyla otomatikleştirilmesi; kullanıcı arayüzünü taklit eder, entegrasyon gerektirmez." },
+            { terim: "IoT (Nesnelerin İnterneti)", tanim: "İnternet aracılığıyla birbirine bağlı cihazların veri toplaması ve paylaşması; akıllı sensörler, wearable cihazlar, endüstriyel otomasyon." },
+          ],
+          dikkatlar: [
+            "Bulut hizmet sorumluluğu: IaaS (altyapı bulutta, OS ve üstü müşteri), PaaS (platform bulutta, kod müşteri), SaaS (her şey bulutta).",
+            "Big Data 5V: Volume (TB/PB büyüklük), Velocity (gerçek zamanlı hız), Variety (yapılandırılmamış dahil), Veracity (kalite), Value (anlam).",
+            "Blok zincir: değiştirilemez kayıt, merkezi otorite yok, konsensüs mekanizması (PoW, PoS); finans, tedarik zinciri kullanım alanları.",
+            "RPA kural tabanlı ve deterministik; AI/ML ise öğrenme ve tahmin kapasitesi olan — ikisini karıştırmayın.",
+            "Hibrit bulut = özel + genel bulut kombinasyonu; hassas veriler özel, esnek kapasite genel bulutta.",
+          ],
         },
         questions: [
           {
@@ -357,6 +389,22 @@ export const mevzuat1022: Module[] = [
             },
           ],
           tip: "ITIL = ITSM dünya standardı. Hizmet Masası = TEK temas noktası, L1-L2-L3 seviyeler. Olay (hızlı çöz) ≠ Problem (kök nedeni bul). Değişiklik 3 tür: Standart-Normal-Acil. CAB = Change Advisory Board onaylar. CMDB = BT varlık veritabanı. SLA (dış müşteri) vs OLA (iç birim) anlaşmaları. Patch Tuesday = MS aylık güvenlik yamaları.",
+          kavramlar: [
+            { terim: "Hizmet Masası (Service Desk)", tanim: "IT ile son kullanıcı arasındaki tek temas noktası; olayları kayıt altına alır, L1 çözüm dener, gerekirse L2/L3'e yönlendirir." },
+            { terim: "Olay Yönetimi (Incident Management)", tanim: "Hizmet kesintisini veya bozulmayı mümkün olan en kısa sürede normal işleyişe döndürmeyi amaçlayan ITIL süreci; kök neden araştırması değil." },
+            { terim: "Problem Yönetimi (Problem Management)", tanim: "Olayların kök nedenini belirleyerek tekrarlayan kesintileri önlemeye odaklanan ITIL süreci; bilinen hata (known error) kaydını yönetir." },
+            { terim: "CAB (Değişiklik Danışma Kurulu)", tanim: "Önerilen değişiklikleri değerlendiren ve onaylayan çapraz fonksiyonel komite; normal ve majör değişiklikler CAB onayına tabidir." },
+            { terim: "CMDB (Yapılandırma Yönetim Veritabanı)", tanim: "IT altyapısındaki yapılandırma öğelerini (CI) ve aralarındaki ilişkileri kaydeden merkezi veritabanı; değişiklik ve olay yönetiminin temelidir." },
+            { terim: "SLA vs OLA", tanim: "SLA (Service Level Agreement) = IT ve dış müşteri arasındaki hizmet seviyesi anlaşması; OLA (Operational Level Agreement) = IT'nin iç birimlerle anlaşması." },
+            { terim: "Acil Değişiklik", tanim: "Kritik bir arızayı gidermek için CAB sürecini beklemeden hızlandırılmış prosedürle onaylanan ve uygulanan ITIL değişiklik türü." },
+          ],
+          dikkatlar: [
+            "Olay ≠ Problem: olay hızlı çözüm (hizmet restore), problem kök neden analizi (tekrarlamayı engelleme).",
+            "Değişiklik 3 türü: Standart (önceden onaylı, rutin) → Normal (CAB incelemesi) → Acil (ECAB hızlandırılmış onay).",
+            "CMDB bir veritabanı değil; yapılandırma öğelerini ve ilişkilerini gösteren kayıt sistemi — değişiklik etkisini analiz etmede kritik.",
+            "SLA dışarıya (müşteri), OLA içeriye (departman), UC (Underpinning Contract) dış tedarikçiye — üç katman birbirini destekler.",
+            "L1: hizmet masası ilk yanıt; L2: uzman teknik destek; L3: üretici/mühendis — yükseltme süreci otomatik tetiklenmelidir.",
+          ],
         },
         questions: [
           {
@@ -485,6 +533,22 @@ export const mevzuat1022: Module[] = [
             },
           ],
           tip: "3-2-1 Yedekleme: 3 kopya + 2 ortam + 1 off-site. Yedek türleri: Tam (yavaş), Incremental (hızlı), Differential (orta). RAID 1 = mirror, RAID 5 = parity. Erişilebilirlik: %99.9 = 8.76 sa/yıl, %99.99 = 52 dk/yıl. Kapasite yönetimi 3 düzey: İş, Hizmet, Bileşen. PDCA = sürekli iyileştirme döngüsü.",
+          kavramlar: [
+            { terim: "3-2-1 Yedekleme Kuralı", tanim: "En az 3 kopya + 2 farklı ortam türü + 1 tesis dışı (off-site) depolama; silinmiş verilerin kurtarılabilmesini güvence altına alır." },
+            { terim: "Artımlı Yedekleme (Incremental Backup)", tanim: "Son yedekten bu yana değişen verileri kayıt altına alan yedekleme; en hızlı alınır ancak geri yükleme en uzundur." },
+            { terim: "Diferansiyel Yedekleme (Differential Backup)", tanim: "Son tam yedekten bu yana değişen tüm verileri içeren yedekleme; artımlıdan daha büyük ama geri yükleme daha hızlı." },
+            { terim: "RAID 5", tanim: "En az 3 diskten oluşan, parite dağıtımıyla tek disk arızasına toleranslı depolama RAID seviyesi; okuma hızlı, yazma görece yavaş." },
+            { terim: "Erişilebilirlik (Availability) SLA", tanim: "%99.9 = yılda 8,76 saat kesinti; %99.99 = 52 dakika; %99.999 = 5 dakika — beş dokuz kritik sistemler için hedef." },
+            { terim: "PDCA (Deming Döngüsü)", tanim: "Plan-Do-Check-Act sürekli iyileştirme döngüsü; ITIL ve ISO 27001 dahil pek çok yönetim sisteminin temel yapısı." },
+            { terim: "Kapasite Yönetimi", tanim: "IT kaynaklarının iş talebini karşılayacak düzeyde planlanması ve izlenmesi; iş (business), hizmet (service) ve bileşen (component) düzeyinde yürütülür." },
+          ],
+          dikkatlar: [
+            "3-2-1 kuralını tam öğren: 3 kopya, 2 ortam (disk+bant gibi), 1 dışarıda — herhangi biri eksik kural sağlanmaz.",
+            "Yedek hiyerarşisi: Tam > Diferansiyel > Artımlı (boyut büyüklüğü); geri yükleme hızı tam > diferansiyel > artımlı.",
+            "RAID yedek değildir; RAID sadece disk arızasına karşı korur, silinmiş/üzerine yazılmış veriye karşı korumaz.",
+            "Erişilebilirlik hesabı: %99.9 ≈ 8,76 saat yıllık kesinti; %99.99 ≈ 52 dakika; sınav sorusunda hangi seviyenin kaç dakikaya karşılık geldiğini bilin.",
+            "PDCA Deming döngüsü: Plan (planla) → Do (uygula) → Check (kontrol et) → Act (düzelt ve standartlaştır).",
+          ],
         },
         questions: [
           {
@@ -613,6 +677,22 @@ export const mevzuat1022: Module[] = [
             },
           ],
           tip: "BCP (geniş, tüm iş) ⊃ DRP (BT odaklı). RTO = ne kadar sürede çalışır hale gelecek? RPO = ne kadar veri kaybı kabul edilebilir? BIA = kritikliği belirleme. ISO 22301 = uluslararası BC standardı. Site türleri: Hot (saatler/pahalı) > Warm > Cold (günler/ucuz). Test türleri: Tabletop → Walkthrough → Simulation → Parallel → Full Interruption.",
+          kavramlar: [
+            { terim: "BCP (İş Sürekliliği Planı)", tanim: "Felaket veya büyük kesinti durumunda kritik iş işlevlerinin sürekliliğini sağlamak için hazırlanan kapsamlı plan; DRP'yi de kapsar." },
+            { terim: "DRP (Felaket Kurtarma Planı)", tanim: "BT altyapısının ve sistemlerinin bir felaket sonrasında belirlenen süreler içinde yeniden çalışır hale getirilmesine yönelik BT odaklı plan." },
+            { terim: "RTO (Kurtarma Süresi Hedefi)", tanim: "Bir hizmetin veya sistemin kesintiden sonra ne kadar sürede çalışır hale getirilmesi gerektiğini belirten hedef süre." },
+            { terim: "RPO (Kurtarma Noktası Hedefi)", tanim: "Felaket durumunda kabul edilebilir maksimum veri kaybı süresi; son yedek ile kesinti anı arasında geçen süre RPO sınırını belirler." },
+            { terim: "BIA (İş Etki Analizi)", tanim: "İş süreçlerinin kesintiden nasıl etkileneceğini ve hangi süreçlerin kritik olduğunu belirleyen analiz; BCP'nin temelini oluşturur." },
+            { terim: "Hot Site", tanim: "Tam donanımlı, veri yansıtmalı ve kısa sürede devreye alınabilir yedek tesis; en pahalı ama en hızlı kurtarma seçeneği." },
+            { terim: "ISO 22301", tanim: "İş sürekliliği yönetim sistemleri için uluslararası standart; BCP kurulumu, işletilmesi ve iyileştirilmesine ilişkin gereksinimleri tanımlar." },
+          ],
+          dikkatlar: [
+            "BCP ≠ DRP: BCP tüm iş işlevlerini kapsar, DRP yalnızca BT'yi; DRP, BCP'nin bir alt bileşenidir.",
+            "RTO (süre) ve RPO (veri) iki ayrı hedef; RTO kısa + RPO kısa = maliyetli — ikisinin dengelenmesi gerekir.",
+            "Site türleri: Hot (saatler içinde, pahalı) → Warm (günler içinde, orta) → Cold (haftalar içinde, ucuz).",
+            "BIA olmadan BCP yapılamaz; hangi sürecin kritik olduğu BIA ile belirlenir.",
+            "Test hiyerarşisi: Tabletop (masa başı) → Walkthrough (adım adım) → Simulation → Parallel (iki sistem) → Full Interruption (gerçek kesinti).",
+          ],
         },
         questions: [
           {

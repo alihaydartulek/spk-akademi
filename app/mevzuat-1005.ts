@@ -94,6 +94,22 @@ export const mevzuat1005: Module[] = [
             },
           ],
           tip: "Aracı kurum gruplandırmasında 'dar < kısmi < geniş' yetkili sıralaması kalıp soru olarak gelir. Portföy aracılığı en riskli faaliyet olduğundan en kapsamlı izni gerektirir; bankalar paylarda portföy aracılığı yapamaz — bu bankacılık-aracılık ayrımının temelidir.",
+          kavramlar: [
+            { terim: "Yatırım Hizmeti", tanim: "SPKn md. 37 kapsamında sermaye piyasası araçlarına yönelik emir iletimi, işlem aracılığı, portföy aracılığı, portföy yönetimi, yatırım danışmanlığı ve halka arza aracılık faaliyetleri." },
+            { terim: "Dar Yetkili Aracı Kurum", tanim: "Yalnızca emir iletimi ve işlem aracılığı yapabilen; portföy aracılığı, bireysel portföy yönetimi ve danışmanlık yapamayan aracı kurum." },
+            { terim: "Kısmi Yetkili Aracı Kurum", tanim: "Dar yetki kapsamına ek olarak yatırım danışmanlığı yapabilen; ancak portföy aracılığı ve bireysel portföy yönetimi yapmayan aracı kurum." },
+            { terim: "Geniş Yetkili Aracı Kurum", tanim: "Tüm yatırım hizmetlerini yapabilen, portföy aracılığı dahil en kapsamlı faaliyet iznine sahip aracı kurum." },
+            { terim: "Portföy Aracılığı", tanim: "Müşteriden tam yetki alarak müşteri adına ve hesabına işlem yapma; en kapsamlı ve riskli yatırım hizmeti türü." },
+            { terim: "Bankacılık-Aracılık Ayrımı", tanim: "Bankaların pay senetlerinde portföy aracılığı yapamayacağı, aracı kurumların ise mevduat kabul edemeyeceği temel yasal sınır." },
+            { terim: "Mevzuata Uyum Birimi", tanim: "Aracı kurumun yatırım hizmetlerinin mevzuata uygunluğunu izleyen, iç kontrol ve denetim işlevlerini yerine getiren birim." },
+          ],
+          dikkatlar: [
+            "Yetki sıralaması: dar < kısmi < geniş; portföy aracılığı yalnızca geniş yetkili aracı kurumlar tarafından yapılabilir.",
+            "Bankalar pay senetleri piyasasında portföy aracılığı YAPAMAZ; banka-aracı kurum ayrımının temel kural.",
+            "Emir iletimi (dar yetki) ile işlem aracılığı arasındaki fark: emir iletimine müşteri kendi hesabına karar verir; işlem aracılığında aracı kurum kendi adına da işlem yapabilir.",
+            "Portföy aracılığı en riskli hizmettir çünkü müşteri adına tam yetki gerektiren karar verme yetkisi doğurur; en kapsamlı izni gerektirir.",
+            "'Yatırım danışmanlığı' ile 'portföy yönetimi' karıştırılmamalı: danışmanlık öneri sunar, portföy yönetimi ise fiilen işlem yapar.",
+          ],
         },
         questions: [
           {
@@ -222,6 +238,22 @@ export const mevzuat1005: Module[] = [
             },
           ],
           tip: "Aracı kurum yalnızca anonim ortaklık şeklinde kurulur — limited şirket veya kollektif şirket olamaz. Talebe bağlı profesyonel müşteri için '1 milyon TL + 10 işlem + 2 yıl deneyim' üçlüsü sınavın klasiğidir. Mevduat kabulü kesinlikle yasak; bu bankacılık-aracılık ayrımının çekirdeğidir.",
+          kavramlar: [
+            { terim: "Aracı Kurum", tanim: "Sermaye piyasası faaliyetleri için Kurul'dan izin almış, yalnızca anonim ortaklık şeklinde kurulabilen yatırım kuruluşu." },
+            { terim: "Profesyonel Müşteri", tanim: "Finansal piyasalarda deneyim ve bilgi sahibi olduğu kabul edilen, belirli eşikleri aşan kurumsal veya bireysel müşteri; daha az koruma kapsamındadır." },
+            { terim: "Talebe Bağlı Profesyonel Müşteri", tanim: "1 milyon TL varlık + son 1 yılda 10 işlem + 2 yıl finans sektörü deneyimi üçlüsünü sağlayan ve talep eden bireysel yatırımcı." },
+            { terim: "Genel Müşteri", tanim: "Profesyonel müşteri kriterlerini karşılamayan, en yüksek yatırımcı koruma standartlarından yararlanan standart müşteri kategorisi." },
+            { terim: "Mevduat Yasağı", tanim: "Aracı kurumların her türlü mevduat veya katılım fonu kabul etmesi yasaktır; bu yalnızca bankalara özgü faaliyettir." },
+            { terim: "Sermaye Yeterliliği", tanim: "Aracı kurumların sahip olması gereken asgari özkaynak tutarı; faaliyet türü ve yetki genişliğine göre kademeli olarak belirlenir." },
+            { terim: "Uygunluk Testi", tanim: "Aracı kurumun müşteriye ürün sunmadan önce müşterinin bilgi, deneyim ve risk profilini değerlendirdiği test." },
+          ],
+          dikkatlar: [
+            "Aracı kurum YALNIZCA anonim ortaklık olabilir; limited veya şahıs şirketi şeklinde kurulamaz — bu kural mutlak istisnasızdır.",
+            "Talebe bağlı profesyonel müşteri olabilmek için üç koşulun tamamı birlikte sağlanmalıdır: 1 milyon TL varlık + son 1 yılda 10 işlem + 2 yıl finans deneyimi.",
+            "Mevduat kabulü aracı kurumlar için KESİNLİKLE YASAK; 'aracı kurum mevduat alabilir mi?' sorusuna cevap her zaman hayırdır.",
+            "Uygunluk testi ile yerindelik testi farklı kavramlardır: uygunluk bilgi-deneyim bazlı; yerindelik ek olarak finansal durumu ve hedefleri de kapsar.",
+            "Profesyonel müşteri daha az koruma kapsamındadır; örneğin bazı uyarı yükümlülükleri genel müşterilere uygulanırken profesyonellere uygulanmayabilir.",
+          ],
         },
         questions: [
           {
@@ -346,6 +378,22 @@ export const mevzuat1005: Module[] = [
             },
           ],
           tip: "Çerçeve sözleşme = ana sözleşme, yazılı şekil zorunlu. Belge saklama süresi 5 yıl — bu rakam tüm sınavlarda gelir. Hesap ekstresi gönderim süresi 7 iş günü, müşteri şikayetlerine yanıt süresi 20 iş günü.",
+          kavramlar: [
+            { terim: "Çerçeve Sözleşme", tanim: "Aracı kurum ile müşteri arasındaki yatırım hizmetlerinin tüm şartlarını düzenleyen ana sözleşme; yazılı şekil zorunludur." },
+            { terim: "Belge Saklama Yükümlülüğü", tanim: "Aracı kurumların müşterilere ait tüm belge ve kayıtları asgari 5 yıl süreyle muhafaza etme zorunluluğu." },
+            { terim: "Hesap Ekstresi", tanim: "Müşterinin portföy ve işlem durumunu özetleyen, işlem tarihini izleyen 7 iş günü içinde gönderilmesi gereken belge." },
+            { terim: "Şikayet Yanıt Süresi", tanim: "Müşteri şikayetlerine aracı kurumun 20 iş günü içinde yazılı olarak yanıt verme zorunluluğu." },
+            { terim: "Emir Kaydı", tanim: "Alınan her müşteri emrinin zaman damgası, tutar, fiyat ve diğer detaylarıyla kaydedildiği zorunlu işlem kaydı." },
+            { terim: "Elektronik Kayıt", tanim: "Ses kayıtları dahil tüm iletişim kayıtlarının asgari 5 yıl saklanması; telefon emirlerinde ses kaydı zorunludur." },
+            { terim: "En İyi Emir Politikası", tanim: "Müşteri emrini en iyi fiyat, hız ve koşullarla gerçekleştirme yükümlülüğünü belirleyen yazılı politika." },
+          ],
+          dikkatlar: [
+            "Belge ve kayıt saklama süresi 5 yıldır; '3 yıl', '7 yıl' veya '10 yıl' seçenekleri yanıltıcıdır — kesin rakam 5 yıldır.",
+            "Hesap ekstresi işlem tarihini izleyen 7 iş günü içinde gönderilmelidir; 'takvim günü' ile 'iş günü' farkı sınavda sorulabilir.",
+            "Müşteri şikayetlerine yanıt süresi 20 iş günüdür; bu sürenin aşılması mevzuat ihlali sayılır.",
+            "Çerçeve sözleşme YAZILI olarak yapılmak zorundadır; sözlü veya elektronik onay yeterli değildir.",
+            "Telefon yoluyla alınan emirlerde ses kaydı zorunludur; bu kayıtlar da 5 yıl süreyle saklanmalıdır.",
+          ],
         },
         questions: [
           {
@@ -474,6 +522,22 @@ export const mevzuat1005: Module[] = [
             },
           ],
           tip: "Kredili işlemde özkaynak oranları sınavın klasiği: başlangıç %50, sürdürme %35, tamamlama 2 iş günü. Açığa satışın 'uncovered' (çıplak) yapılması yasaktır — önce ödünç sözleşmesi imzalanmalıdır. İlk halka arz sonrası kredili alım yasağı manipülasyon önleme tedbiridir.",
+          kavramlar: [
+            { terim: "Kredili Alım", tanim: "Müşterinin aracı kurumdan kredi kullanarak hisse senedi satın aldığı işlem; başlangıç özkaynak oranı portföyün %50'si olmalıdır." },
+            { terim: "Açığa Satış", tanim: "Ödünç alınan menkul kıymetin satılması ve fiyat düştüğünde geri satın alınarak kârın elde edildiği işlem." },
+            { terim: "Çıplak Açığa Satış", tanim: "Önce ödünç sözleşmesi imzalanmadan yapılan açığa satış; Türkiye'de kesinlikle yasaktır." },
+            { terim: "Başlangıç Özkaynak Oranı", tanim: "Kredili alım işleminde müşterinin portföy değerine koyması gereken asgari özkaynak oranı: %50." },
+            { terim: "Sürdürme Özkaynak Oranı", tanim: "Kredili alım sonrası portföy değerinin düşmesiyle birlikte özkaynak oranının düşebileceği alt sınır: %35." },
+            { terim: "Tamamlama Süresi", tanim: "Sürdürme özkaynak oranının altına düşen müşterinin teminat tamamlama çağrısına yanıt vermesi için tanınan süre: 2 iş günü." },
+            { terim: "Ödünç İşlemi", tanim: "Menkul kıymetin geçici olarak devredildiği, vade sonunda aynı tür ve miktarda menkul kıymetin iade edildiği işlem; açığa satış için ön koşuldur." },
+          ],
+          dikkatlar: [
+            "Kredili alımda başlangıç özkaynak = %50, sürdürme = %35, tamamlama süresi = 2 iş günü — bu üç rakam sınavın temel kalıp sorusudur.",
+            "Çıplak (teminat almadan) açığa satış KESİNLİKLE YASAK; önce ödünç sözleşmesi imzalanmadan açığa satış yapılamaz.",
+            "İlk halka arzı takiben belirli bir süre kredili alım yapılamaz; bu kural fiyat manipülasyonunu önlemeye yöneliktir.",
+            "Teminat tamamlama çağrısına 2 iş günü içinde yanıt verilmezse aracı kurum zorla tasfiye (liquidation) yapabilir; 'takvim günü' değil 'iş günü' önemlidir.",
+            "Ödünç alan taraf borçlu, veren taraf alacaklıdır; vade sonunda aynı tür menkul kıymet iade edilir — nakit değil menkul kıymet.",
+          ],
         },
         questions: [
           {
@@ -602,6 +666,22 @@ export const mevzuat1005: Module[] = [
             },
           ],
           tip: "Kitle fonlaması iki türlüdür: paya dayalı (ortaklık) ve borçlanmaya dayalı. Platform 'gayrimenkul kitle fonlaması' yapamaz — bu Tebliğ'in özgün yasağıdır. Kampanya başarısı için hedef tutarın %90'ı eşiği klasik soru kalıbıdır.",
+          kavramlar: [
+            { terim: "Kitle Fonlaması", tanim: "Girişimlerin internet tabanlı platform üzerinden çok sayıda yatırımcıdan küçük miktarlarla fon toplaması; paya dayalı veya borçlanmaya dayalı olabilir." },
+            { terim: "Paya Dayalı Kitle Fonlaması", tanim: "Girişim şirketinin paylarının platform aracılığıyla satılarak fon toplandığı model; yatırımcı ortak olur." },
+            { terim: "Borçlanmaya Dayalı Kitle Fonlaması", tanim: "Girişimin borçlanma aracı ihraç ederek platform üzerinden fon topladığı model; yatırımcı alacaklı olur." },
+            { terim: "Kitle Fonlaması Platformu", tanim: "SPK'dan yetki almış, kampanyaları internet üzerinden yayınlayan ve yönetimine aracılık eden yetkili elektronik platform." },
+            { terim: "Hedef Tutar", tanim: "Kampanyanın başarılı sayılabilmesi için toplanması gereken asgari fon miktarı; kampanya bitiminde hedefin %90'ı sağlanmazsa kampanya iptal sayılır." },
+            { terim: "Gayrimenkul Kitle Fonlaması Yasağı", tanim: "Platformların gayrimenkule dayalı kitle fonlaması kampanyası yürütemeyeceği, Tebliğ'de yer alan özgün yasak." },
+            { terim: "Yatırım Limiti", tanim: "Bireysel yatırımcıların her bir kampanya ve yıllık bazda yatırım yapabileceği azami tutar; bilgisizlik riskini sınırlandırmaya yöneliktir." },
+          ],
+          dikkatlar: [
+            "Kitle fonlaması iki türdür: paya dayalı (ortak olma) ve borçlanmaya dayalı (alacaklı olma) — üçüncü tür olarak 'gayrimenkul' kesinlikle YASAKTIR.",
+            "Kampanya başarı eşiği hedef tutarın %90'ıdır; bu orana ulaşılamazsa kampanya iptal edilir ve toplanan fonlar yatırımcılara iade edilir.",
+            "Platform yalnızca aracılık yapar; yatırım tavsiyesi vermek yetkisi dışındadır — platform ve tavsiye arasındaki sınır sınavda sorulabilir.",
+            "Yatırımcı limitleri uygulanır; bireysel yatırımcılar yıllık belirli bir tutarın üzerinde kitle fonlamasına yatırım yapamaz.",
+            "Gayrimenkul kitle fonlaması yasağı Tebliğ'in özgün düzenlemesidir; 'Platform gayrimenkul kampanyası yürütebilir mi?' sorusuna cevap HEP HAYIR.",
+          ],
         },
         questions: [
           {

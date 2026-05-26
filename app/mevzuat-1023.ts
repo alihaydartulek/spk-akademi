@@ -45,6 +45,22 @@ export const mevzuat1023: Module[] = [
             },
           ],
           tip: "CIA = Confidentiality + Integrity + Availability. Veri Sahibi (sınıflandırma) ≠ Veri Bekçisi (koruma). 4 sınıflandırma seviyesi: Public-Internal-Confidential-Top Secret. KVKK özel nitelikli veri ek koruma gerektirir. BYOD modelleri: COBO/COPE/CYOD.",
+          kavramlar: [
+            { terim: "CIA Üçgeni", tanim: "Bilgi güvenliğinin üç temel hedefi: Gizlilik (yetkisiz erişim engeli), Bütünlük (veri doğruluğu/değişmezliği), Erişilebilirlik (yetkili kullanıcı erişimi)." },
+            { terim: "Veri Sahibi (Data Owner)", tanim: "Verinin içeriğinden ve sınıflandırılmasından sorumlu iş birimi yöneticisi; hangi bilginin ne kadar hassas olduğuna karar verir." },
+            { terim: "Veri Bekçisi (Data Custodian)", tanim: "Veri sahibinin belirlediği politikayı teknik olarak uygulayan IT personeli; yedekleme, erişim kontrolü, şifreleme gibi teknik koruma önlemleri." },
+            { terim: "Veri Sınıflandırma Seviyeleri", tanim: "Gizlilik düzeyine göre: Public (herkese açık) → Internal (iç kullanım) → Confidential (gizli) → Top Secret (çok gizli)." },
+            { terim: "KVKK Özel Nitelikli Veri", tanim: "Sağlık, biyometrik, genetik, ırk/etnik köken, siyasi görüş, din gibi hassas kişisel veriler; standart veriye kıyasla ek güvenlik önlemi gerektirir." },
+            { terim: "BYOD (Kendi Cihazını Getir)", tanim: "Çalışanların kişisel cihazlarıyla kurumsal kaynaklara eriştiği model; COBO (kurumsal cihaz), COPE (kurumsal ama kişisel de), CYOD (seç+kendin al) alternatifleri." },
+            { terim: "Veri Yaşam Döngüsü", tanim: "Verinin oluşturulması, depolanması, kullanılması, paylaşılması ve imha edilmesini kapsayan aşamalar; her aşamada farklı güvenlik önlemleri gerekir." },
+          ],
+          dikkatlar: [
+            "Veri sahibi sınıflandırma kararını verir; veri bekçisi teknik uygulamayı yapar — roller farklı, aynı kişi olamaz.",
+            "KVKK özel nitelikli verilerin işlenmesi için kural olarak açık rıza gerekir; istisna halleri sınırlıdır.",
+            "BYOD en büyük riski veri sızıntısı ve cihaz kaybıdır; MDM (Mobil Cihaz Yönetimi) ile yönetilir.",
+            "CIA'de herhangi bir bileşen ihlali güvenlik başarısızlığıdır; DDoS saldırısı Availability'i, ransomware Confidentiality'i hedef alır.",
+            "Sınıflandırma seviyeleri: Public açıklanabilir, Internal dahili, Confidential kısıtlı, Top Secret kritik — her seviye için farklı işleme kuralları.",
+          ],
         },
         questions: [
           {
@@ -138,6 +154,22 @@ export const mevzuat1023: Module[] = [
             },
           ],
           tip: "Veri merkezi Tier: III (en yaygın) = %99.982. Gazlı söndürme (FM-200) donanım korur. Sıcaklık 18-27°C, nem %40-60. UPS (anlık) + Jeneratör (uzun süreli). Mantrap = tailgating önler. CCTV 30-90 gün saklanır.",
+          kavramlar: [
+            { terim: "Veri Merkezi Tier Sınıflaması", tanim: "Uptime Institute'ün veri merkezlerini erişilebilirlik ve artıklığa göre derecelendirdiği 4 katmanlı sistem; Tier III = %99,982 (en yaygın ticari)." },
+            { terim: "Gazlı Söndürme (FM-200/Novec)", tanim: "Elektronik ekipmanı korumak için su yerine gaz kullanan yangın söndürme sistemi; donanıma zarar vermez." },
+            { terim: "UPS (Kesintisiz Güç Kaynağı)", tanim: "Şebeke kesintisinde batarya desteğiyle anlık güç sağlayan sistem; jeneratör devreye girene kadar kritik sistemleri ayakta tutar." },
+            { terim: "Mantrap (Hava Kilidi)", tanim: "Bir kapıdan girmeden diğer kapıyı açmanın mümkün olmadığı çift kapılı fiziksel güvenlik sistemi; tailgating (izinsiz takip) saldırısını önler." },
+            { terim: "Tailgating (Kuyruk Takma)", tanim: "Yetkili birinin ardından yetkisiz kişinin güvenli alana girmesi; fiziksel güvenlik ihlalinin en yaygın türü." },
+            { terim: "Soğuk Koridor / Sıcak Koridor", tanim: "Veri merkezinde sunucu raflarının yüz yüze (soğuk hava) veya sırt sırta (sıcak hava) yerleştirildiği termal verimlilik düzenlemesi." },
+            { terim: "CCTV Saklama Süresi", tanim: "Güvenlik kamera kayıtlarının saklanması gereken süre; operasyonel alanlarda 30-90 gün standarttır, düzenleyici gereklilikler daha uzun süre öngörebilir." },
+          ],
+          dikkatlar: [
+            "Tier III veri merkezi N+1 artıklık ve bakım için kesinti gerekmez özelliği ile en yaygın ticari standarttır.",
+            "FM-200 gazlı söndürme su değil; donanımı korur, ancak insan sağlığına zararlı konsantrasyonlarda kullanılırsa tahliye gerekir.",
+            "UPS anlık koruma sağlar (saniyeler/dakikalar); uzun süreli kesintide jeneratör devreye girer — ikisi birbirini tamamlar.",
+            "Mantrap tailgating saldırısına karşı en etkili fiziksel kontrol; biyometrik kapı kilidiyle güçlendirilmesi önerilir.",
+            "Veri merkezi sıcaklık ve nem: 18-27°C, %40-60 nem — bu aralık dışı ekipman arızası riskini artırır.",
+          ],
         },
         questions: [
           {
@@ -231,6 +263,22 @@ export const mevzuat1023: Module[] = [
             },
           ],
           tip: "OSI 7 vs TCP/IP 4. TCP (güvenilir) vs UDP (hızlı). Önemli portlar: HTTP 80, HTTPS 443, SSH 22, DNS 53. Kill Chain 7 adım. Defense in Depth + Zero Trust. APT = gelişmiş kalıcı tehdit. SIEM = log toplama ve analiz.",
+          kavramlar: [
+            { terim: "OSI 7 Katman Modeli", tanim: "Ağ iletişimini 7 katmana ayıran referans modeli: Fiziksel → Veri Bağı → Ağ → Taşıma → Oturum → Sunum → Uygulama." },
+            { terim: "Cyber Kill Chain", tanim: "Lockheed Martin'in saldırı aşamalarını modelleyen çerçeve: Keşif → Silahlandırma → Teslim → İstismar → Kurulum → C2 → Hedef Eylem (7 adım)." },
+            { terim: "Zero Trust Mimarisi", tanim: "'Hiçbir zaman güvenme, her zaman doğrula' ilkesine dayanan güvenlik yaklaşımı; iç ağdaki kullanıcılar da sürekli kimlik doğrulamasına tabi tutulur." },
+            { terim: "APT (Gelişmiş Kalıcı Tehdit)", tanim: "Uzun süre hedef sistemde gizli kalan, devlet destekli veya organize tehdit aktörlerince yürütülen sofistike siber saldırı." },
+            { terim: "SIEM (Güvenlik Bilgisi ve Olay Yönetimi)", tanim: "Farklı kaynaklardan log ve olay verisi toplayarak gerçek zamanlı analiz ve uyarı üreten merkezi güvenlik yönetim platformu." },
+            { terim: "Defense in Depth", tanim: "Tek bir güvenlik katmanına bağımlı olmak yerine birden fazla katmanlı savunma mekanizmasının (ağ, uygulama, veri) birlikte kullanılması." },
+            { terim: "IDS/IPS", tanim: "Intrusion Detection System (saldırıyı tespit eder, alarm üretir) ve Intrusion Prevention System (saldırıyı tespit eder ve otomatik engeller)." },
+          ],
+          dikkatlar: [
+            "Önemli portlar: HTTP 80, HTTPS 443, SSH 22, DNS 53, FTP 21, SMTP 25 — sınav sorusu favorisi.",
+            "Zero Trust: 'içerideysen güvenli' varsayımını reddeder; her erişim isteği kimlik doğrulama + yetkilendirme + bağlam kontrolüne tabi.",
+            "Kill Chain 7 adımı: Keşif → Silahlandırma → Teslim → İstismar → Kurulum → C2 (Command & Control) → Hedef Eylem.",
+            "APT uzun süre tespit edilmeden sistemde kalır; SIEM ve davranışsal analitik APT tespitinde kritik rol oynar.",
+            "IDS tespit eder alarm üretir; IPS tespit eder VE engeller — pasif vs aktif savunma ayrımı.",
+          ],
         },
         questions: [
           {
@@ -324,6 +372,22 @@ export const mevzuat1023: Module[] = [
             },
           ],
           tip: "3 faktör: Bildiğin + Sahip Olduğun + Olduğun. MFA %99.9 güvenlik. FIDO2/Passkey en güçlü, SMS en zayıf. Biyometri: FAR (sahte kabul), FRR (gerçek red), CER (kesişim). RBAC en yaygın model. Least Privilege = altın kural.",
+          kavramlar: [
+            { terim: "MFA (Çok Faktörlü Kimlik Doğrulama)", tanim: "Kimliği doğrulamak için iki veya daha fazla farklı faktörün (bilgi + sahiplik + biyometri) bir arada kullanılması; hesap ihlali riskini %99'u aşkın oranda azaltır." },
+            { terim: "FIDO2 / Passkey", tanim: "Şifresiz kimlik doğrulama için FIDO Alliance standardı; public-key kriptografisine dayalı, kimlik avına dirençli en güçlü kimlik doğrulama yöntemi." },
+            { terim: "FAR ve FRR (Biyometri)", tanim: "FAR (False Acceptance Rate): yetkisiz kişinin kabul edilme oranı; FRR (False Rejection Rate): yetkili kişinin reddedilme oranı; CER ikisinin kesişim noktası." },
+            { terim: "RBAC (Rol Tabanlı Erişim Kontrolü)", tanim: "Kullanıcılara rol atanması ve rollere izin verilmesi esasına dayanan en yaygın erişim kontrol modeli; yönetimi kolaylaştırır." },
+            { terim: "Least Privilege (En Az Yetki İlkesi)", tanim: "Kullanıcı veya uygulamanın yalnızca işini yapması için gereken minimum yetkilere sahip olması; yetki yayılması riskini azaltır." },
+            { terim: "Segregation of Duties (Görev Ayrılığı)", tanim: "Kritik bir işlemin tek kişi tarafından başlatılıp tamamlanmasını engelleyen kontrol; hile ve hatayı önlemeye yönelik." },
+            { terim: "SSO (Tek Oturum Açma)", tanim: "Kullanıcının bir kez kimlik doğrulamasıyla birden fazla sisteme erişmesini sağlayan yönetim; SAML, OAuth, OIDC protokollerine dayanır." },
+          ],
+          dikkatlar: [
+            "3 kimlik doğrulama faktörü: Bildiğin (şifre/PIN), Sahip Olduğun (OTP/token), Olduğun (parmak izi/yüz) — aynı türden iki faktör MFA sayılmaz.",
+            "FIDO2 en güçlü; SMS OTP en zayıf MFA yöntemi — SIM swap saldırısına açık.",
+            "Biyometride FAR düşükse güvenli ama FRR yüksek olur; ikisi arasındaki optimum nokta CER (eşit hata oranı).",
+            "Least Privilege altın kural: hiç kimse görevinin ötesinde yetki taşımamalı; periyodik erişim gözden geçirmesiyle denetlenmeli.",
+            "RBAC'ta kullanıcılar bireysel değil rol bazında yetkilendirilir; organizasyon büyüdükçe yönetimi kolaylaşır.",
+          ],
         },
         questions: [
           {
@@ -417,6 +481,22 @@ export const mevzuat1023: Module[] = [
             },
           ],
           tip: "Hash = tek yönlü (SHA-256). Simetrik (AES) = hızlı + anahtar dağıtım sorunu. Asimetrik (RSA/ECC) = yavaş + anahtar paylaşım çözümü. Hybrid (HTTPS) = ikisini birleştirir. PKI = CA + CRL + OCSP + X.509. Türkiye e-imza: 5070 sayılı Kanun, NES ıslak imza eşdeğeri. Dijital imza = non-repudiation. Tedarikçi 3 aşama.",
+          kavramlar: [
+            { terim: "Hash Fonksiyonu", tanim: "Herhangi uzunluktaki girdiyi sabit uzunluklu çıktıya dönüştüren tek yönlü matematiksel işlev; SHA-256, veri bütünlüğü doğrulamasında kullanılır." },
+            { terim: "Simetrik Şifreleme (AES)", tanim: "Şifreleme ve şifre çözme için aynı anahtarın kullanıldığı hızlı şifreleme; temel sorunu güvenli anahtar dağıtımıdır." },
+            { terim: "Asimetrik Şifreleme (RSA/ECC)", tanim: "Genel (public) ve özel (private) anahtar çiftini kullanan şifreleme; anahtar dağıtım sorununu çözer ama simetrikten yavaştır." },
+            { terim: "PKI (Açık Anahtar Altyapısı)", tanim: "Dijital sertifikaların oluşturulmasını, dağıtımını ve doğrulanmasını yöneten sistem; CA, CRL, OCSP ve X.509 sertifikalarını kapsar." },
+            { terim: "NES (Nitelikli Elektronik İmza)", tanim: "5070 sayılı Kanun kapsamında ıslak imza ile aynı hukuki değere sahip güvenli elektronik imza; sertifika yetkili bir TSP tarafından sağlanır." },
+            { terim: "Non-Repudiation (İnkâr Edilemezlik)", tanim: "Dijital imzanın imzalayanın işlemi gerçekleştirdiğini kanıtlaması; gönderici mesajı gönderdiğini inkâr edemez." },
+            { terim: "Hibrit Şifreleme (HTTPS/TLS)", tanim: "Anahtar değişimi için asimetrik, veri şifreleme için simetrik şifrelemeyi birleştiren yöntem; HTTPS/TLS bu modeli kullanır." },
+          ],
+          dikkatlar: [
+            "Hash tek yönlüdür; aynı girdi her zaman aynı çıktıyı verir ama geri dönüştürülemez — şifre saklama ve bütünlük doğrulama.",
+            "Simetrik (AES): hızlı, büyük veri şifrelemede kullanılır; asimetrik (RSA): yavaş, anahtar değişiminde ve dijital imzada kullanılır.",
+            "HTTPS/TLS hibrit modeli: RSA ile oturum anahtarı paylaşılır, AES ile veri şifrelenir — hız + güvenlik dengesi.",
+            "PKI'da CA (Certificate Authority) sertifika verir; CRL iptal listesi, OCSP gerçek zamanlı iptal doğrulaması.",
+            "NES ıslak imzayla eşdeğer hukuki değer taşır; elektronik imzanın en güçlü türüdür.",
+          ],
         },
         questions: [
           {

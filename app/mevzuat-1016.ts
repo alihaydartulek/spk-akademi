@@ -98,6 +98,22 @@ export const mevzuat1016: Module[] = [
             },
           ],
           tip: "12 temel kavram muhasebenin felsefi temelidir — 4'ü en kritik: süreklilik, dönemsellik, ihtiyatlılık, özün önceliği. Aktif hesaplar BORÇ'ta artar, Pasif hesaplar ALACAK'ta artar. Temel denklem: Varlık = Borç + Özkaynak. Çift taraflı kayıt = her işlemin hem borç hem alacak tarafı vardır, ikisi eşittir.",
+          kavramlar: [
+            { terim: "Muhasebenin Temel Denklemi", tanim: "Varlık = Borç + Özkaynak; bilanço bu denklemi yansıtır, her muhasebe işleminde denklemin iki tarafı eşit kalmaya devam eder." },
+            { terim: "Çift Taraflı Kayıt", tanim: "Her muhasebe işleminin borç ve alacak olmak üzere iki farklı hesabı eş tutarlarda etkilemesi ilkesi; denge her zaman korunur." },
+            { terim: "Süreklilik İlkesi", tanim: "İşletmenin öngörülebilecek gelecekte faaliyetlerini sürdüreceği varsayımı; tasfiye edilmeyeceği kabul edilerek değerleme yapılır." },
+            { terim: "Dönemsellik İlkesi", tanim: "İşletmenin ekonomik faaliyetlerinin belirli dönemlere bölünerek her dönemin gelir-giderinin o dönemde raporlanması." },
+            { terim: "İhtiyatlılık İlkesi", tanim: "Belirsiz durumda varlık ve gelirlerin düşük, borç ve giderlerin yüksek tahmin edilmesi; güvensizlik yönünde muhafazakâr tutum." },
+            { terim: "Özün Önceliği İlkesi", tanim: "İşlemlerin hukuki biçimine değil ekonomik özüne göre muhasebeleştirilmesi; TFRS'de esas, VUK'ta daha sınırlı uygulanır." },
+            { terim: "Tahakkuk Esası", tanim: "Gelir ve giderlerin nakit akışından bağımsız olarak hak kazanıldığında veya yükümlülük doğduğunda kayıt altına alınması." },
+          ],
+          dikkatlar: [
+            "Aktif (varlık) hesaplar borç tarafında, pasif (kaynak) hesaplar alacak tarafında artar; azalışlar ters tarafta gösterilir.",
+            "Süreklilik varsayımı çökmüşse tablolar tasfiye esasına göre hazırlanır; bu durum bağımsız denetçi raporunda vurgulanır.",
+            "İhtiyatlılık ihtiyatı aşarsa gizli yedek oluşur; bu da finansal tablolarda yanıltıcılık yaratır.",
+            "Özün önceliği TMS/TFRS'de temel ilkedir; VUK muhasebesi şekli esas alır, bu iki sistem arasında farklılık yaratır.",
+            "Dönemsellik gereği dönem sonu tahakkuk/karşılık kayıtları zorunludur; atlanırsa dönem net kâr yanıltıcı olur.",
+          ],
         },
         questions: [
           {
@@ -226,6 +242,22 @@ export const mevzuat1016: Module[] = [
             },
           ],
           tip: "Hesap kodları 1-9: 1 (Dönen), 2 (Duran), 3 (KVYK), 4 (UVYK), 5 (Özkaynak), 6 (Gelir Tablosu), 7 (Maliyet). LIFO Türkiye'de YASAK. Birikmiş amortismanlar (257) eksili hesap olarak çalışır. Şüpheli alacaklar karşılığı (129) ihtiyatlılık ilkesinin uygulamasıdır. Kıdem tazminatı karşılığı her yıl ayrılır.",
+          kavramlar: [
+            { terim: "Tekdüzen Hesap Planı (THP)", tanim: "Türkiye'de muhasebe kayıtlarını standartlaştıran plan; 1-8 ana grup, her grup altında üç haneli hesap kodu bulunur." },
+            { terim: "Birikmiş Amortisman (257)", tanim: "Maddi duran varlıkların değer azalışını izleyen eksili hesap; ilgili varlık hesabının altında raporlanır, dönem amortismanı 730/770'e gider." },
+            { terim: "Şüpheli Alacaklar Karşılığı (129)", tanim: "Tahsil riski doğan alacaklar için ayrılan karşılık; ihtiyatlılık ilkesinin uygulaması, gider yazılarak ayrılır." },
+            { terim: "LIFO Yasağı", tanim: "Son giren ilk çıkar stok yönteminin Türkiye'de hem VUK hem TMS 2 açısından yasaklı olması; FIFO veya ağırlıklı ortalama uygulanır." },
+            { terim: "Kıdem Tazminatı Karşılığı", tanim: "Çalışanların hak kazandıkları kıdem tazminatı için her yıl dönem gideri yazılarak ayrılan uzun vadeli karşılık (472 hesabı)." },
+            { terim: "Karşılık Hesapları", tanim: "Tutarı ya vadesi belirsiz borç ve giderleri bilançoda temsil eden hesaplar; ihtiyatlılık ve dönemsellik ilkesinin gereği." },
+            { terim: "Yeniden Değerleme", tanim: "TMS 16 altında maddi duran varlıkların gerçeğe uygun değerle ölçülmesi; artış özkaynak altında 'yeniden değerleme fonu'na alınır." },
+          ],
+          dikkatlar: [
+            "LIFO Türkiye'de yasaklıdır; sınavda 'LIFO uygulandı' ifadesi hatalı bir seçenektir.",
+            "Birikmiş amortisman (257) eksili (karşı) hesaptır; dönem amortismanı gider hesaplarına aktarılır, 257 alacaklanır.",
+            "Şüpheli alacak karşılığı VUK'ta icra/dava şartı aranır; TMS 9'da tüm beklenen kredi kayıpları için ayrılır.",
+            "Kıdem tazminatı karşılığı TMS 19 kapsamında aktüeryal yöntemle hesaplanır; VUK karşılık ayrımından farklıdır.",
+            "Özkaynak değişim tablosu, dönem başı-sonu özkaynak bileşenlerinin tüm hareketini gösterir; kâr dağıtımı burada izlenir.",
+          ],
         },
         questions: [
           {
@@ -354,6 +386,22 @@ export const mevzuat1016: Module[] = [
             },
           ],
           tip: "Gelir tablosu basamaklı: Net Satışlar → Brüt Kâr → Faaliyet Kârı → Olağan Kâr → Vergi Öncesi Kâr → Net Kâr. Dönem sonu envanter iki tür: muhasebe DIŞI (fiili sayım) ve muhasebe İÇİ (kayıtların düzeltilmesi). Tahakkuk esası dönemsellik ilkesinin uygulamasıdır. Yıl sonu gelir tablosu hesapları 690'a kapatılır, bilanço hesapları taşınır.",
+          kavramlar: [
+            { terim: "Brüt Kâr", tanim: "Net satışlardan satılan malın maliyeti düşüldükten sonra kalan tutar; işletmenin ticari faaliyetinin ilk kârlılık göstergesi." },
+            { terim: "Faaliyet Kârı (FVÖK)", tanim: "Brüt kârdan faaliyet giderlerinin (pazarlama, genel yönetim, Ar-Ge) düşülmesiyle bulunan; faiz ve vergi öncesi faaliyet sonucu." },
+            { terim: "690 Dönem Kârı/Zararı Hesabı", tanim: "Yıl sonunda tüm gelir ve gider hesaplarının kapatılarak aktarıldığı özet hesap; dönem net kârını veya zararını gösterir." },
+            { terim: "Muhasebe Dışı Envanter", tanim: "Fiziksel sayım, tartım ve ölçümle gerçek stok miktarını belirleme; dönem sonu kayıt düzeltmelerine esas oluşturur." },
+            { terim: "Muhasebe İçi Envanter", tanim: "Kayıt bakiyelerinin gerçek durumla karşılaştırılarak düzeltici kayıtların yapılması; dönemsellik gereği tahakkuk, karşılık, reeskont işlemleri." },
+            { terim: "Reeskont", tanim: "Bilanço tarihinde vadesi gelmemiş senetlerin iskonto oranıyla bugünkü değere indirgenmesi işlemi; dönem sonu gider/gelir düzeltmesi." },
+            { terim: "Kapanış Kaydı", tanim: "Dönem sonunda gelir tablosu hesaplarının 690'a devredilmesi ve ardından 690 bakiyesinin bilanço hesabına (570/580) aktarılması." },
+          ],
+          dikkatlar: [
+            "Gelir tablosu sıralaması: Net Satışlar → Brüt Kâr → Faaliyet Kârı → Olağan Kâr → Vergi Öncesi Kâr → Net Kâr; atlamak hata yaratır.",
+            "Dönem sonu muhasebe dışı envanterde eksiklik varsa stok gider yazılır; fazlalık varsa gelir yazılır.",
+            "Reeskont hesaplamada senet nominal değeri değil bugünkü değeri esas alınır; faiz gideri/geliri dönemsellik gereği tanınır.",
+            "Kapanış kaydında yalnızca gelir tablosu (6. grup) hesaplar 690'a kapatılır; bilanço hesapları kapatılmaz, bir sonraki döneme devredilir.",
+            "FVÖK = Faaliyet Kârı; faiz giderlerinden etkilenmez — farklı finansman yapısındaki şirketleri kıyaslamada kullanılır.",
+          ],
         },
         questions: [
           {
@@ -482,6 +530,22 @@ export const mevzuat1016: Module[] = [
             },
           ],
           tip: "Faydalı bilgi 2 temel özellik: ihtiyaca uygunluk + gerçeğe uygun sunum. 4 destekleyici özellik: karşılaştırılabilirlik, doğrulanabilirlik, zamanlılık, anlaşılabilirlik. KGK = Türkiye'nin standart koyucu kurumu. II-14.1 = SPK'nın finansal raporlama tebliği. KAYİK = halka açık + bankalar + sigorta. Konsolide tablo = grup tablosu (bağlı ortaklıklar dahil).",
+          kavramlar: [
+            { terim: "İhtiyaca Uygunluk", tanim: "Finansal bilginin kullanıcının kararlarını etkileyebilmesi; tahmin değeri veya doğrulayıcı değer taşıması." },
+            { terim: "Gerçeğe Uygun Sunum", tanim: "Finansal bilginin tam, tarafsız ve hatasız olması; ekonomik gerçeği doğru biçimde yansıtması." },
+            { terim: "KGK (Kamu Gözetimi, Muhasebe ve Denetim Standartları Kurumu)", tanim: "Türkiye'de muhasebe ve denetim standartlarını belirleyen bağımsız idari otorite; ISA uyumlu BDS, TMS/TFRS yayımlar." },
+            { terim: "KAYİK (Kamuyu Aydınlatma Yükümlülüğü İçeren Kuruluş)", tanim: "Halka açık şirketler, bankalar, sigortacılar, emeklilik şirketleri; TMS/TFRS uygulamak zorunludur." },
+            { terim: "Konsolide Finansal Tablolar", tanim: "Ana ortaklık ve bağlı ortaklıklarının tek bir ekonomik işletme gibi raporlandığı finansal tablolar; TFRS 10 kapsamında." },
+            { terim: "SPK Tebliği II-14.1", tanim: "Sermaye piyasası mevzuatı kapsamındaki şirketlerin finansal raporlamasını düzenleyen tebliğ; TFRS uyumunu ve KAP açıklamalarını zorunlu kılar." },
+            { terim: "Karşılaştırılabilirlik İlkesi", tanim: "Finansal bilgilerin dönemler ve işletmeler arasında tutarlı yöntemlerle karşılaştırılabilmesini sağlayan destekleyici niteliksel özellik." },
+          ],
+          dikkatlar: [
+            "Temel iki niteliksel özellik: ihtiyaca uygunluk + gerçeğe uygun sunum; destekleyiciler (4 adet) bunları pekiştirir.",
+            "KGK = standart koyucu; bağımsız denetçileri lisanslar, disiplin kararları verir, ISA uyumlu BDS'leri yayımlar.",
+            "KAYİK kapsamındaki şirketler TMS/TFRS'ye tabidir; küçük işletmeler KÜMİ FRS'yi kullanabilir.",
+            "Konsolidasyonda ana ortaklık + bağlı ortaklıklar tek tabloda gösterilir; grup içi işlemler elimine edilir.",
+            "SPK II-14.1 tebliği halka açık şirketlere hem TFRS uyumunu hem KAP'ta belirli sürelerde açıklama yapmayı zorunlu kılar.",
+          ],
         },
         questions: [
           {
@@ -610,6 +674,22 @@ export const mevzuat1016: Module[] = [
             },
           ],
           tip: "Denetim 4 türü: finansal, faaliyet, uygunluk, IT. Denetçi 3 türü: bağımsız (dış), iç, kamu. Modern yaklaşım = risk bazlı denetim. İç kontrol güçlüyse esaslı test azalır. Önemlilik = denetim planlamanın temel kavramı. 4 denetim görüşü: olumlu, şartlı, olumsuz, görüş bildirmeme. KGK = TR'de standart koyucu, ISA ile uyumlu BDS yayımlar.",
+          kavramlar: [
+            { terim: "Risk Bazlı Denetim", tanim: "Önemli yanlış beyan riskinin yüksek olduğu alanlara denetim kaynaklarını yoğunlaştıran modern denetim yaklaşımı." },
+            { terim: "Önemlilik (Materiality)", tanim: "Finansal tablolardaki hata veya ihmalin kullanıcı kararlarını etkileyebileceği eşik; denetim planı ve test kapsamını belirler." },
+            { terim: "İç Kontrol", tanim: "Finansal raporlamanın güvenilirliği, faaliyetlerin etkinliği ve mevzuata uyumu güvenceye almak için yönetimce kurulan süreç." },
+            { terim: "Esaslı Test", tanim: "Finansal tablo tutarlarını ve açıklamalarını doğrudan test eden denetim prosedürü; iç kontrol zayıfsa kapsamı artar." },
+            { terim: "Olumlu Görüş", tanim: "Finansal tabloların tüm önemli yönleriyle geçerli çerçeveye uygun hazırlandığını belirten bağımsız denetçi görüşü." },
+            { terim: "Şartlı Görüş", tanim: "Belirli konular dışında finansal tabloların uygun hazırlandığını belirten görüş; önemli ama tüm tabloyu etkileyen bir sorun yoktur." },
+            { terim: "BDS (Bağımsız Denetim Standartları)", tanim: "KGK'nın ISA uyumlu olarak yayımladığı denetim standartları; Türkiye'de bağımsız denetim bu standartlara göre yapılır." },
+          ],
+          dikkatlar: [
+            "4 denetim görüşü: olumlu (sorun yok) → şartlı (sınırlı sorun) → olumsuz (tablolar yanıltıcı) → görüş bildirmeme (kapsam çok dar).",
+            "Risk bazlı denetimde önce yanlış beyan riski değerlendirilir; yüksek riskli hesaplara daha fazla esaslı test uygulanır.",
+            "İç kontrol testleri güçlü iç kontrol varlığında esaslı testleri azaltır; ancak tümüyle kaldırmaz.",
+            "Önemlilik eşiği genellikle toplam varlıkların veya gelirin %0,5-2'si arasında belirlenir; eşik altı hatalar raporlanmaz.",
+            "KGK = denetim standartları (BDS) + muhasebe standartları (TMS/TFRS) + etik kurallar; hem bağımsız hem iç denetçileri düzenler.",
+          ],
         },
         questions: [
           {

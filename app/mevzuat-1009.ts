@@ -94,6 +94,22 @@ export const mevzuat1009: Module[] = [
             },
           ],
           tip: "Bileşik faiz formülü FV = PV × (1+r)^n her sınavda mutlaka çıkar. Sıradan anüite ile peşin anüite farkı: peşin = sıradan × (1+r). Sürekli anüite formülü PV = PMT / r — basit ama önemli, özellikle imtiyazlı pay değerlemesinde kullanılır.",
+          kavramlar: [
+            { terim: "Paranın Zaman Değeri", tanim: "Bugünkü bir para biriminin gelecekteki aynı tutardan daha değerli olduğu ilke; tüm finansal değerleme modellerinin temeli." },
+            { terim: "Bileşik Faiz", tanim: "Faizin faize eklenerek büyümesi; FV = PV × (1+r)^n formülüyle hesaplanır — n dönem sayısı, r dönemlik faiz oranı." },
+            { terim: "Anüite", tanim: "Eşit aralıklarla yapılan eşit tutarlı ödeme serisi; sıradan anüitede ödemeler dönem sonunda, peşin anüitede dönem başında yapılır." },
+            { terim: "Peşin Anüite", tanim: "Ödemelerin dönem başında gerçekleştiği anüite türü; değeri sıradan anüite değeri × (1+r) ile hesaplanır." },
+            { terim: "Sürekli Anüite (Perpetüite)", tanim: "Sonsuza kadar devam eden eşit ödeme serisi; PV = PMT/r formülüyle değerlenir; imtiyazlı paylar ve konsoller için kullanılır." },
+            { terim: "İskonto Oranı", tanim: "Gelecekteki nakit akışlarını bugüne indirgemede kullanılan faiz oranı; risk primini ve risksiz faiz oranını içerir." },
+            { terim: "Efektif Faiz Oranı", tanim: "Nominal faizin bileşik hesaba göre yıllık gerçek maliyeti; bileşik dönem sayısı arttıkça efektif oran nominalin üzerine çıkar." },
+          ],
+          dikkatlar: [
+            "FV = PV × (1+r)^n bileşik faiz; basit faizde FV = PV × (1 + r × n) — uzun vadede iki formül arasındaki fark büyür.",
+            "Peşin anüite = sıradan anüite × (1+r); ödemelerin dönem başında yapılması bir dönem daha faiz kazandırır.",
+            "Sürekli anüite formülü PV = PMT/r; büyüme varsa PV = D1/(r−g) — Gordon Büyüme Modeli ile aynı matematiksel yapıdadır.",
+            "Efektif faiz oranı nominal faize her zaman eşit veya büyüktür; bileşik dönem sıklaştıkça (aylık → günlük) efektif oran yükselir.",
+            "İskonto oranı yükseldikçe gelecekteki nakit akışlarının bugünkü değeri düşer; ters ilişki tüm değerleme sorularının temelidir.",
+          ],
         },
         questions: [
           {
@@ -222,6 +238,22 @@ export const mevzuat1009: Module[] = [
             },
           ],
           tip: "Para-ağırlıklı getiri = İVO (yatırımcı için), Zaman-ağırlıklı getiri = geometrik ortalama (yönetici için) — sınavın klasik tuzağıdır. İki varlıklı portföyde korelasyon (ρ) ne kadar düşükse çeşitlendirme yararı o kadar büyük. Sistematik risk = piyasa riski = beta ile ölçülür; çeşitlendirilemez.",
+          kavramlar: [
+            { terim: "Beklenen Getiri", tanim: "Olası senaryoların olasılıkla ağırlıklandırılmış ortalama getirisi; E(R) = Σ[P(i) × R(i)] formülüyle hesaplanır." },
+            { terim: "Standart Sapma (Risk)", tanim: "Getirinin beklenen değerden ortalama sapmasının kare kökü; toplam riski ölçer ve portföy dağılımını gösterir." },
+            { terim: "Sistematik Risk", tanim: "Tüm piyasayı etkileyen, çeşitlendirmeyle giderilemeyen risk; beta katsayısıyla ölçülür (faiz, ekonomik konjonktür vb.)." },
+            { terim: "Sistematik Olmayan Risk", tanim: "Şirkete veya sektöre özgü, çeşitlendirmeyle azaltılabilen risk; yeterli çeşitlendirme sonrası sıfıra yaklaşır." },
+            { terim: "Korelasyon Katsayısı (ρ)", tanim: "İki varlık getirisinin birlikte hareket derecesini -1 ile +1 arasında gösteren katsayı; ρ = -1 tam ters hareket, ρ = +1 tam aynı yönde hareket." },
+            { terim: "Para-Ağırlıklı Getiri", tanim: "İVO yöntemiyle hesaplanan, nakit akışlarının zamanlamasına duyarlı getiri; yatırımcının gerçek deneyimini yansıtır." },
+            { terim: "Zaman-Ağırlıklı Getiri", tanim: "Nakit akışlarından bağımsız, geometrik ortalama yöntemiyle hesaplanan getiri; portföy yöneticisinin performansını ölçmede kullanılır." },
+          ],
+          dikkatlar: [
+            "Para-ağırlıklı getiri = İVO (yatırımcı için); zaman-ağırlıklı getiri = geometrik ortalama (yönetici performansı için) — 'hangisi için kullanılır' sorusu sınavın klasiğidir.",
+            "Korelasyon ρ = -1 portföy riskini en fazla azaltır; ρ = +1 çeşitlendirme sağlamaz; pratikte ρ < 1 her koşulda bir miktar çeşitlendirme sunar.",
+            "Sistematik risk çeşitlendirmeyle giderilemez; yeterli sayıda hisse eklendikten sonra kalan risk sistematik risktir.",
+            "Standart sapma toplam riski ölçer; CAPM'de ise yalnızca sistematik risk (beta) fiyatlanır — bu ayrım sınavda karışıklığa neden olur.",
+            "Portföy standart sapması bireysel standart sapmaların ağırlıklı ortalamasından KÜÇÜKtür (ρ < 1 olduğunda); tam formül kovaryansı içerir.",
+          ],
         },
         questions: [
           {
@@ -350,6 +382,22 @@ export const mevzuat1009: Module[] = [
             },
           ],
           tip: "Markowitz'in MPT teorisi 1990 Nobel ödülü kazandı. Etkin sınır = sol üst eğri, risksiz varlık eklendiğinde doğrusal CML olur. Tobin'in ayrılık teoremi: tüm yatırımcılar aynı riskli portföyü (pazar portföyü) tutar — sadece risksiz varlık ile ağırlıklarını değiştirir.",
+          kavramlar: [
+            { terim: "Modern Portföy Teorisi (MPT)", tanim: "Harry Markowitz'in 1952'de geliştirdiği; varlıklar arasındaki korelasyonu kullanarak belirli risk düzeyi için getiriyi maksimize eden portföy oluşturma çerçevesi." },
+            { terim: "Etkin Sınır", tanim: "Belirli bir risk düzeyinde en yüksek beklenen getiriyi sağlayan portföylerin oluşturduğu eğri; sol üst kısımda yer alan portföyler etkindir." },
+            { terim: "Sermaye Piyasası Doğrusu (CML)", tanim: "Risksiz varlık ile pazar portföyünü birleştiren doğrusal yatırım fırsatı seti; tüm etkin portföyler bu doğru üzerindedir." },
+            { terim: "Pazar Portföyü", tanim: "Piyasadaki tüm riskli varlıkları piyasa değeri ağırlıklarıyla içeren teorik portföy; CML'nin riskli uç noktasıdır." },
+            { terim: "Tobin'in Ayrılık Teoremi", tanim: "Risk tercihinden bağımsız olarak tüm yatırımcıların aynı riskli portföyü (pazar portföyü) tutacağını; sadece risksiz varlıkla oranı değiştireceğini öne süren teorem." },
+            { terim: "Minimum Varyans Portföyü", tanim: "Etkin sınır üzerinde en düşük riske (varyansa) sahip olan portföy; bunun solundaki portföyler etkin değildir." },
+            { terim: "Çeşitlendirme Faydası", tanim: "Mükemmel korelasyonu olmayan varlıkları birleştirmenin portföy riskini bireysel varlıkların ağırlıklı ortalamasının altına düşürmesi." },
+          ],
+          dikkatlar: [
+            "Etkin sınır, tüm mümkün portföylerin sol üst köşesini oluşturan eğridir; aynı risk için daha yüksek getiri sağlar.",
+            "Risksiz varlık eklenince etkin sınır CML'ye (doğruya) dönüşür; CML etkin sınırın üzerinde kalan portföyleri mümkün kılar.",
+            "Tobin'in ayrılık teoreminde risk tercihinden bağımsız olarak tüm yatırımcılar aynı riskli portföyü (pazar portföyü) tutar; sadece risksiz varlıkla oran değişir.",
+            "Minimum varyans portföyü etkin sınırın en sol noktasıdır; bu noktanın solundaki portföyler etkin değildir.",
+            "MPT çeşitlendirme faydasını matematiksel olarak kanıtlar: ρ < 1 iken portföy riski bireysel risklerin ağırlıklı ortalamasından KÜÇÜKTÜR.",
+          ],
         },
         questions: [
           {
@@ -478,6 +526,22 @@ export const mevzuat1009: Module[] = [
             },
           ],
           tip: "FVFM formülü E(R) = Rf + β(Rm − Rf) sınavın olmazsa olmazıdır. Beta = sistematik risk ölçüsü, pazar betası 1 referans noktasıdır. Fama-French = CAPM + SMB + HML; üç faktör modeli akademide CAPM'den daha yaygın kullanılır.",
+          kavramlar: [
+            { terim: "FVFM (CAPM)", tanim: "Finansal Varlık Fiyatlama Modeli; E(R) = Rf + β(Rm − Rf) formülüyle varlığın beklenen getirisini sistematik riske (beta) göre hesaplar." },
+            { terim: "Beta (β)", tanim: "Varlığın getirisinin piyasa getirisine olan duyarlılığı; β=1 piyasayla aynı, β>1 piyasadan daha riskli, β<1 piyasadan daha az riskli." },
+            { terim: "Menkul Kıymet Piyasa Doğrusu (SML)", tanim: "Beklenen getirinin beta'ya göre doğrusal ilişkisini gösteren grafik; SML üzerindeki varlıklar doğru fiyatlanmış, altındakiler pahalı, üstündekiler ucuzdur." },
+            { terim: "Fama-French 3 Faktör Modeli", tanim: "CAPM'e SMB (küçük - büyük şirket farkı) ve HML (yüksek - düşük defter/piyasa değeri farkı) faktörlerini ekleyen geliştirilmiş model." },
+            { terim: "Arbitraj Fiyatlama Teorisi (AFT)", tanim: "Varlık getirisinin birden fazla makroekonomik faktöre (enflasyon, GSYİH, vb.) duyarlı olduğunu öne süren çok faktörlü fiyatlama modeli." },
+            { terim: "Pazar Risk Primi", tanim: "Risksiz faiz oranının üzerinde piyasa portföyünden beklenen ek getiri: (Rm − Rf); yatırımcının sistematik riske katlanma bedeli." },
+            { terim: "Alfa (α)", tanim: "Gerçekleşen getirinin CAPM'in öngördüğü getiriden sapması; α > 0 varlık modelden daha fazla getiri sağlamıştır, α < 0 daha az." },
+          ],
+          dikkatlar: [
+            "FVFM formülü: E(R) = Rf + β × (Rm − Rf) — her terimi bilmek şart: Rf risksiz oran, β sistematik risk, (Rm-Rf) piyasa risk primi.",
+            "β = 1 piyasayla aynı hareket; β > 1 piyasadan daha oynak (daha riskli); β < 1 daha az oynak (daha az riskli); β = 0 risksiz varlık.",
+            "SML üzerindeki varlıklar doğru fiyatlanmış; SML altında ise fiyat yüksek (düşük getiri beklentisi); SML üstünde ise fiyat düşük (yüksek getiri fırsatı).",
+            "Fama-French modeli: CAPM + SMB (küçük şirket primine) + HML (değer hissesi primine) — CAPM'in açıklayamadığı anomalileri kapsar.",
+            "AFT'de birden fazla faktör kullanılır; CAPM sadece pazar faktörü kullanır — bu esneklik AFT'yi teoride daha güçlü kılar ancak faktörlerin seçimi öznel kalır.",
+          ],
         },
         questions: [
           {
@@ -606,6 +670,22 @@ export const mevzuat1009: Module[] = [
             },
           ],
           tip: "Temel analiz 'gerçek değer'i bulur, teknik analiz 'fiyat hareketini' tahmin eder — ikisi rakip değil, tamamlayıcıdır. DCF yöntemi en kapsamlı temel değerleme yöntemidir. RSI 70/30 sınırları sınavın klasik tuzağıdır — bu eşikler aşırı alım/satım sinyali verir. Gordon Büyüme Modeli D1/(r-g) öncelikli pay değerlemesinde de kullanılır.",
+          kavramlar: [
+            { terim: "Temel Analiz", tanim: "Şirketin finansal tablolarını, rekabet pozisyonunu ve makroekonomik koşulları inceleyerek içsel (gerçek) değeri tahmin eden analiz yöntemi." },
+            { terim: "Teknik Analiz", tanim: "Geçmiş fiyat ve hacim verilerini kullanarak gelecekteki fiyat hareketlerini tahmin etmeye çalışan analiz yöntemi." },
+            { terim: "DCF (İndirgenmiş Nakit Akışı)", tanim: "Gelecekteki serbest nakit akışlarını uygun iskonto oranıyla bugüne indirgeyen en kapsamlı temel değerleme yöntemi." },
+            { terim: "Gordon Büyüme Modeli", tanim: "Sabit büyüme hızında temettü ödeyen hisseyi değerleyen model: P = D1 / (r − g); imtiyazlı paylar için g=0 kullanılır." },
+            { terim: "Göreceli Güç Endeksi (RSI)", tanim: "0-100 arasında değişen momentum göstergesi; RSI > 70 aşırı alım (satış sinyali), RSI < 30 aşırı satım (alım sinyali)." },
+            { terim: "Hareketli Ortalama (MA)", tanim: "Belirli dönemlerin kapanış fiyatlarının ortalamasından oluşan trend göstergesi; kısa dönem MA uzun dönem MA'yı yukarı keserse 'altın çapraz' oluşur." },
+            { terim: "F/K Oranı (P/E)", tanim: "Hisse fiyatının hisse başına kâra oranı; yüksek F/K yüksek büyüme beklentisi veya aşırı değerleme gösterebilir." },
+          ],
+          dikkatlar: [
+            "RSI eşikleri: > 70 aşırı alım (düşüş sinyali), < 30 aşırı satım (yükseliş sinyali) — '50 sınırı' veya '60/40' gibi seçenekler yanıltıcıdır.",
+            "Gordon Büyüme Modeli: P = D1/(r−g); D1 = gelecek yıl beklenen temettü, r = gerekli getiri, g = sürekli büyüme oranı; g < r koşulu zorunludur.",
+            "DCF yönteminde şirket değeri serbest nakit akışlarının toplamıdır; terminal değer genellikle toplam değerin büyük bölümünü oluşturur.",
+            "Teknik analizde trend yönü önemlidir: hareketli ortalama kesişimleri alım-satım sinyali üretir; temel analizin aksine şirket verisine bakmaz.",
+            "F/K oranı sektöre göre yorumlanmalıdır; yüksek büyüme beklentisindeki teknoloji şirketleri yüksek F/K taşıyabilir — mutlak karşılaştırma yanıltıcıdır.",
+          ],
         },
         questions: [
           {

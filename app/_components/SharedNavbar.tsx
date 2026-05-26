@@ -17,6 +17,7 @@ export default function SharedNavbar({
 }) {
   const [sinavMenuAcik, setSinavMenuAcik] = useState(false);
   const [mobileMenuAcik, setMobileMenuAcik] = useState(false);
+  const [mobileSinavAcik, setMobileSinavAcik] = useState(false);
   const sinavMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -148,7 +149,7 @@ export default function SharedNavbar({
           {extraMobileAction}
           <ThemeToggle />
           <button
-            onClick={() => setMobileMenuAcik((v) => !v)}
+            onClick={() => { setMobileMenuAcik((v) => { if (v) setMobileSinavAcik(false); return !v; }); }}
             className="w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-[var(--bg-surface-2)] transition"
             aria-label="Menüyü aç"
           >
@@ -187,19 +188,34 @@ export default function SharedNavbar({
               </Link>
             ))}
             <div className="pt-3 mt-2 border-t border-[var(--border-base)]">
-              <div className="text-[10px] font-bold text-[var(--text-faint)] uppercase tracking-widest px-3 mb-2">Sınavlar</div>
-              {SINAV_MENUSU.map((sinav) => (
-                <Link
-                  key={sinav.href}
-                  href={sinav.href}
-                  onClick={() => setMobileMenuAcik(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-500/8 border border-indigo-500/20 mb-1 hover:bg-indigo-500/15 transition"
+              <button
+                onClick={() => setMobileSinavAcik((v) => !v)}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-xl hover:bg-[var(--bg-surface-2)] transition"
+              >
+                <span className="text-[10px] font-bold text-[var(--text-faint)] uppercase tracking-widest">Sınavlar</span>
+                <svg
+                  className={`w-3.5 h-3.5 text-[var(--text-muted)] transition-transform duration-200 ${mobileSinavAcik ? "rotate-180" : ""}`}
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
-                  <span className="text-sm font-semibold text-indigo-300">{sinav.ad}</span>
-                  <span className="ml-auto text-xs text-[var(--text-muted)]">{sinav.aciklama}</span>
-                </Link>
-              ))}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileSinavAcik && (
+                <div className="mt-1 space-y-1">
+                  {SINAV_MENUSU.map((sinav) => (
+                    <Link
+                      key={sinav.href}
+                      href={sinav.href}
+                      onClick={() => setMobileMenuAcik(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-500/8 border border-indigo-500/20 hover:bg-indigo-500/15 transition"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                      <span className="text-sm font-semibold text-indigo-300">{sinav.ad}</span>
+                      <span className="ml-auto text-xs text-[var(--text-muted)]">{sinav.aciklama}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

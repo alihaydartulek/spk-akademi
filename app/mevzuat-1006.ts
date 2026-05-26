@@ -92,6 +92,22 @@ export const mevzuat1006: Module[] = [
             },
           ],
           tip: "Borsa = Anonim Ortaklık + SRO niteliği; SPK denetimine tabidir ama kendi kurallarını koyabilir. TVF'nin %48 payı sınavın klasik soru kalıbıdır. Üç piyasa ana yönetmeliği ezberlenmesi gereken yapı taşıdır.",
+          kavramlar: [
+            { terim: "Borsa İstanbul (BİAŞ)", tanim: "Türkiye'nin tek organize menkul kıymet borsası; anonim ortaklık yapısında olup kendi düzenleyici gücüne (SRO) sahip, SPK denetimine tabi kuruluş." },
+            { terim: "Öz Düzenleyici Kuruluş (SRO)", tanim: "Kendi üyelerine yönelik kural ve standartlar koyabilen, iç disiplin mekanizması bulunan borsalar ve meslek birlikleri gibi kuruluşlar." },
+            { terim: "Türkiye Varlık Fonu (TVF)", tanim: "Borsa İstanbul'un %48 pay sahibi olan kamu yatırım fonu; BİAŞ'ın en büyük hissedarı." },
+            { terim: "Piyasa Bölümlendirmesi", tanim: "BİAŞ bünyesindeki Pay Piyasası, Borçlanma Araçları Piyasası ve VİOP'un her birini ayrı yönetmelikle düzenleyen yapısal ayrım." },
+            { terim: "Borsa Yönetim Kurulu", tanim: "BİAŞ'ın tepe yönetim organı; borsa kurallarını belirler, piyasa işleyişini denetler ve SPK'ya karşı sorumludur." },
+            { terim: "Borsa Kotasyon", tanim: "Menkul kıymetlerin BİAŞ'ta işlem görebilmesi için belirli finansal ve yönetim şartlarını sağlaması zorunluluğu." },
+            { terim: "Piyasa Mekanizması", tanim: "BİAŞ'ta sürekli müzayede veya tek fiyat yöntemiyle alış-satış emirlerinin eşleştirildiği elektronik alım-satım sistemi." },
+          ],
+          dikkatlar: [
+            "BİAŞ anonim ortaklıktır ve öz düzenleyici kuruluş (SRO) niteliği taşır; kendi kurallarını koyabilir ancak SPK denetimine tabidir.",
+            "TVF BİAŞ'ın %48 pay sahibidir; bu oran sınavda '%50 devlet payı' veya '%35 TVF' gibi yanıltıcı seçeneklerle sunulabilir.",
+            "BİAŞ üç ana piyasayı işletir: Pay Piyasası, Borçlanma Araçları Piyasası ve VİOP; her birinin ayrı yönetmeliği vardır.",
+            "Borsa kotasyonu ile borsa kaydı farklı kavramlardır; kotasyonsuz menkul kıymetler de borsa kaydına alınabilir.",
+            "BİAŞ'ın kendi kurallarını çiğneyen üyelerine disiplin cezası verme yetkisi vardır; bu SRO niteliğinin doğal sonucudur.",
+          ],
         },
         questions: [
           {
@@ -220,6 +236,22 @@ export const mevzuat1006: Module[] = [
             },
           ],
           tip: "Pazar sınıflandırması FDPD bazlı: Yıldız > Ana > Alt. 450 ve 750 milyon TL eşikleri sınavın klasik soru kalıbıdır. Emir önceliklerinde 'fiyat > zaman' kuralı kesindir — aynı fiyatta zaman önceliği geçer.",
+          kavramlar: [
+            { terim: "Yıldız Pazar", tanim: "BİAŞ Pay Piyasasında FDPD'si 750 milyon TL ve üzeri olan büyük şirketlerin işlem gördüğü en üst pazar." },
+            { terim: "Ana Pazar", tanim: "FDPD'si 450-750 milyon TL arasındaki orta büyüklükteki şirketlerin işlem gördüğü pazar." },
+            { terim: "Alt Pazar", tanim: "FDPD'si 450 milyon TL'nin altında olan küçük şirketlerin işlem gördüğü pazar; BİAŞ'ta en az likiditeye sahip pazar." },
+            { terim: "Fiyat Önceliği", tanim: "Emir eşleştirmesinde en yüksek alış fiyatının ve en düşük satış fiyatının öncelikle gerçekleştirilmesi kuralı." },
+            { terim: "Zaman Önceliği", tanim: "Aynı fiyattaki emirlerde daha önce girilmiş emrin önce gerçekleştirilmesi ilkesi." },
+            { terim: "Sürekli Müzayede", tanim: "Emirlerin sürekli olarak sıraya alınıp eşleşme koşulu sağlandığında anında gerçekleştirildiği borsa işlem yöntemi." },
+            { terim: "Tek Fiyat Yöntemi", tanim: "Belirli bir zaman diliminde biriken emirlerin tamamını tek bir denge fiyatıyla eşleştiren borsa işlem yöntemi; alt pazar hisselerinde kullanılır." },
+          ],
+          dikkatlar: [
+            "Pazar sıralaması: Yıldız (750M+ TL FDPD) > Ana (450-750M TL) > Alt (<450M TL) — rakamlar sınavda yer değiştirilerek sorulabilir.",
+            "Emir önceliği: önce fiyat, aynı fiyatta zaman; 'miktar önceliği' veya 'müşteri önceliği' gibi seçenekler yanıltıcıdır.",
+            "Sürekli müzayede yönteminde emirler anlık eşleşirken, tek fiyat yönteminde belirli saatlerde toplama yapılır — alt pazar hisseleri genellikle tek fiyat yöntemiyle işlem görür.",
+            "450 ve 750 milyon TL eşikleri FDPD (Fiili Dolaşımdaki Pay Değeri) bazındadır; 'piyasa değeri' değil FDPD kullanılmaktadır.",
+            "BİAŞ'ta emir türleri: limit emir (fiyat belirlenir), piyasa emri (en iyi fiyat), şartlı emir — her birinin özellikleri sınavda farklı formatlarda sorulabilir.",
+          ],
         },
         questions: [
           {
@@ -348,6 +380,22 @@ export const mevzuat1006: Module[] = [
             },
           ],
           tip: "Borçlanma Araçları Piyasası'nda 7 farklı pazar var: Kesin Alım Satım, 4 Repo Pazarı (klasik, tercihli, pay, taahhütlü), Uluslararası Tahvil, Nitelikli Yatırımcı, Gözaltı. Repo türleri arasındaki ayrım sınavın klasik tuzağıdır — özellikle 'menkul kıymet tercihli repo' tek bir kıymeti hedefler.",
+          kavramlar: [
+            { terim: "Kesin Alım Satım Pazarı", tanim: "BİAŞ Borçlanma Araçları Piyasasında DİBS ve diğer sabit getirili menkul kıymetlerin spot (kesin) alım-satımının yapıldığı pazar." },
+            { terim: "Repo İşlemi", tanim: "Menkul kıymetin belirli bir fiyatla satılıp önceden belirlenen geri alım fiyatı ve tarihiyle geri alınmasını taahhüt eden kısa vadeli finansman işlemi." },
+            { terim: "Klasik Repo Pazarı", tanim: "Standart geri alım taahhüdü içeren, en yaygın kullanılan repo türünün gerçekleştirildiği pazar." },
+            { terim: "Menkul Kıymet Tercihli Repo", tanim: "Tarafların belirli bir menkul kıymeti teminat olarak kullanmayı kararlaştırdığı; teminat konulan kıymeti önceden belirleyen repo türü." },
+            { terim: "Nitelikli Yatırımcı Pazarı", tanim: "Yalnızca nitelikli yatırımcıların katılabildiği, özel borçlanma araçlarının işlem gördüğü BİAŞ alt pazarı." },
+            { terim: "Gözaltı Pazarı", tanim: "Yatırımcıların bilgilendirilmesi amacıyla finansal durumu zayıflamış veya mevzuatı ihlal eden şirketlerin menkul kıymetlerinin işlem gördüğü pazar." },
+            { terim: "Uluslararası Tahvil Pazarı", tanim: "BİAŞ bünyesinde yabancı para biriminde ihraç edilmiş tahvillerin işlem gördüğü pazar bölümü." },
+          ],
+          dikkatlar: [
+            "BAP'ta 7 farklı pazar bölümü vardır; 'kaç tür repo pazarı var?' sorusunda cevap 4'tür (klasik, tercihli, pay, taahhütlü).",
+            "Menkul kıymet tercihli repo belirli bir menkul kıymeti teminat olarak belirler; 'hangi kıymeti' konusundaki spesifiklik onu diğer repo türlerinden ayırır.",
+            "Gözaltı Pazarı'nda işlem görmek yatırımcı için risk sinyali olarak kabul edilir; borsadan ihraç anlamına gelmez, sadece özel platform olarak izlenir.",
+            "Nitelikli Yatırımcı Pazarı'nda işlem yapabilmek için Kurul'un belirlediği servet/deneyim eşiklerini karşılamak gerekir.",
+            "Kesin Alım Satım ile repo arasındaki temel fark: kesin alım-satımda geri alım taahhüdü yoktur; repoda ise geri alım zorunludur.",
+          ],
         },
         questions: [
           {
@@ -476,6 +524,22 @@ export const mevzuat1006: Module[] = [
             },
           ],
           tip: "VİOP'ta CCP olarak Takasbank'ın rolü kritiktir — karşı taraf riskini sıfırlar. Pay sözleşmesi büyüklüğü = 100 pay, endeks sözleşme değeri = endeks x 100 TL kalıp formülleridir. Akşam seansı uluslararası piyasalarla senkronizasyon için kullanılır — özellikle bakır ve döviz işlemlerinde.",
+          kavramlar: [
+            { terim: "VİOP", tanim: "BİAŞ bünyesindeki Vadeli İşlem ve Opsiyon Piyasası; futures ve opsiyon sözleşmelerinin işlem gördüğü organize türev borsası." },
+            { terim: "Takasbank (CCP)", tanim: "VİOP işlemlerinde merkezi karşı taraf olarak her iki tarafın karşı tarafı olan ve temerrüt riskini üstlenen takas kuruluşu." },
+            { terim: "Teminat (Marjin)", tanim: "VİOP'ta pozisyon açarken yatırılan ve piyasa değeri düştükçe ek yatırım gerektiren güvence tutarı; başlangıç ve sürdürme olmak üzere iki türü vardır." },
+            { terim: "Fiziki Teslimat", tanim: "Bazı emtia ve döviz futures sözleşmelerinde vade sonunda dayanak varlığın fiilen teslim edilmesi; pay ve endeks sözleşmeleri nakit uzlaşmalıdır." },
+            { terim: "Nakit Uzlaşma", tanim: "Vade sonunda fiziki teslimat yerine pozisyon kâr/zararının nakden ödenmesi; pay ve endeks futures sözleşmelerinde kullanılan yöntem." },
+            { terim: "VİOP Akşam Seansı", tanim: "Gündüz seansından sonra döviz ve emtia sözleşmelerinde açılan ek işlem seansı; uluslararası piyasalarla senkronizasyon sağlar." },
+            { terim: "Pay Sözleşme Büyüklüğü", tanim: "VİOP'ta bir pay futures sözleşmesinin 100 paya karşılık geldiği standart kontrat büyüklüğü; endeks sözleşmesinde değer = endeks x 100 TL." },
+          ],
+          dikkatlar: [
+            "Takasbank VİOP'ta CCP (merkezi karşı taraf) olarak görev yapar; bu karşı taraf temerrüt riskini ortadan kaldırır — OTC türevlerde böyle bir mekanizma yoktur.",
+            "Pay futures sözleşmesi 100 paya, endeks futures sözleşmesi ise endeks değeri x 100 TL'ye eşittir — sözleşme değeri hesaplama soruları sınavda çıkar.",
+            "Teminat tutarı yeterliliği günlük olarak kontrol edilir; yetersiz kaldığında tamamlama çağrısı (margin call) gelir.",
+            "VİOP akşam seansı gündüz seansından farklı ürünleri kapsar: döviz ve emtia sözleşmeleri — pay sözleşmeleri akşam seansında işlem GÖRMEZ.",
+            "Pay ve endeks sözleşmeleri nakit uzlaşmalıdır; fiziki hisse teslimi yapılmaz — 'vade sonunda hisse teslimi' ifadesi yanlıştır.",
+          ],
         },
         questions: [
           {
@@ -604,6 +668,22 @@ export const mevzuat1006: Module[] = [
             },
           ],
           tip: "TEFAS = fonların 'merkez bankası'; istisnaları (garantili ve anapara koruma fonları) sınavda mutlaka sorulur. Çapraz dağıtıcı erişimi TEFAS'ın temel avantajıdır — yatırımcı bir kuruluşta hesabı varsa tüm fonlara ulaşır. Takasbank dört piyasa işletir: Para, Ödünç Pay, BPP ve Swap takası.",
+          kavramlar: [
+            { terim: "TEFAS", tanim: "Türkiye Elektronik Fon Alım Satım Platformu; farklı aracı kuruluşlar aracılığıyla yatırımcılara tüm fonlara tek noktadan erişim imkanı sunan elektronik sistem." },
+            { terim: "Çapraz Dağıtım", tanim: "TEFAS'ta bir aracı kuruluşta hesabı olan yatırımcının, başka PYŞ'lerin kurucusu olduğu fonlara da aynı hesaptan erişebilmesi." },
+            { terim: "TEFAS İstisnası", tanim: "Garantili fonlar ve anapara korumalı fonlar TEFAS'ta zorunlu olarak işlem görmez; bu fonlar münhasıran kurucusu aracılığıyla satılabilir." },
+            { terim: "Takasbank Para Piyasası", tanim: "Takasbank bünyesinde bankaların ve aracı kurumların kısa vadeli (gecelik dahil) nakit alışverişi yaptığı organize para piyasası." },
+            { terim: "Ödünç Pay Piyasası", tanim: "Takasbank bünyesinde hisse senetlerinin geçici olarak ödünç alınıp verildiği; açığa satış için kullanılan organize piyasa." },
+            { terim: "Borsa Para Piyasası (BPP)", tanim: "BİAŞ bünyesinde kısa vadeli borçlanma işlemlerinin gerçekleştirildiği piyasa; Takasbank takas işlevini üstlenir." },
+            { terim: "Swap Takası", tanim: "Takasbank'ın faiz swapı ve döviz swapı gibi OTC türev işlemler için merkezi takas (CCP) hizmeti sunduğu faaliyet alanı." },
+          ],
+          dikkatlar: [
+            "TEFAS'ta işlem görme zorunluluğu olan fonlar dışında, garantili fonlar ve anapara korumalı fonlar TEFAS'a dahil olmak zorunda değildir — bu istisna sınavda mutlaka sorulur.",
+            "Çapraz dağıtım sayesinde yatırımcı tek bir kuruluştan tüm PYŞ'lerin fonlarına ulaşabilir; bu avantaj TEFAS'ın temel katma değeridir.",
+            "Takasbank Para Piyasası kısa vadeli; Borsa Para Piyasası ise BİAŞ bünyesinde çalışır — iki ayrı piyasadır, karıştırılmamalı.",
+            "Ödünç Pay Piyasası açığa satış işlemleri için zorunlu ön adımdır; ödünç sözleşmesi olmadan açığa satış yapılamaz.",
+            "Takasbank'ın swap takası hizmeti merkezi takas anlamına gelir; OTC swapları için karşı taraf riskini azaltır.",
+          ],
         },
         questions: [
           {

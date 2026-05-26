@@ -28,7 +28,8 @@
       "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run dev\" -PassThru | Select-Object Id; Start-Sleep -Seconds 5; \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5\\).StatusCode)",
       "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Process powershell -ArgumentList \"-Command\", \"npm run dev\" -WorkingDirectory \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; Start-Sleep -Seconds 8; try { \\(Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"Not ready yet: $_\" })",
       "mcp__Claude_in_Chrome__list_connected_browsers",
-      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; $content = [System.IO.File]::ReadAllText\\(\"app/mevzuat-1023.ts\", [System.Text.Encoding]::UTF8\\); $idx = $content.IndexOf\\([char]0xFFFD\\); $content.Substring\\([Math]::Max\\(0,$idx-80\\), 160\\))"
+      "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; $content = [System.IO.File]::ReadAllText\\(\"app/mevzuat-1023.ts\", [System.Text.Encoding]::UTF8\\); $idx = $content.IndexOf\\([char]0xFFFD\\); $content.Substring\\([Math]::Max\\(0,$idx-80\\), 160\\))",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }

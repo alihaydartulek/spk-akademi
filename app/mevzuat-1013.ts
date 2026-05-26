@@ -95,6 +95,22 @@ export const mevzuat1013: Module[] = [
             },
           ],
           tip: "Tam mükellef: Türkiye'de yerleşik = tüm dünya geliri vergilenir. Dar mükellef: Türkiye dışı yerleşik = sadece TR kaynaklı gelir. Kurumlar için kriter: kanuni VEYA iş merkezi (biri bile Türkiye'deyse tam mükellef). Tarh-Tahakkuk-Tahsil sıralaması sınavın klasik soru kalıbıdır.",
+          kavramlar: [
+            { terim: "Tam Mükellefiyet", tanim: "Türkiye'de yerleşik kişi veya kuruluşların tüm dünya geliri üzerinden vergilendirilmesi; ikametgâh veya kanuni/iş merkezi esas alınır." },
+            { terim: "Dar Mükellefiyet", tanim: "Türkiye dışında yerleşik kişi veya kuruluşların yalnızca Türkiye kaynaklı gelirleri üzerinden vergilendirilmesi." },
+            { terim: "Kanuni/İş Merkezi Kriteri", tanim: "Kurumlar için tam mükellef tespitinde kanuni merkezi VEYA iş merkezinin Türkiye'de bulunması yeterlidir; ikisinden biri olması tam mükellefiyeti doğurur." },
+            { terim: "Tarh", tanim: "Vergi dairesinin mükellef veya sorumluyu, ödenmesi gereken vergi miktarını hesap ve takdir yoluyla borclandırması işlemi." },
+            { terim: "Tahakkuk", tanim: "Tarhiyatın mükellefe tebliğiyle verginin kesinleşmesi ve ödeme aşamasına geçilmesi; tahsil edilebilirlik bu aşamada doğar." },
+            { terim: "Tahsil", tanim: "Tahakkuk eden verginin mükellef tarafından fiilen ödenmesi; vergi borcunun son aşaması." },
+            { terim: "Vergi Sorumlusu", tanim: "Verginin mükellef yerine vergi dairesine ödemekle yükümlü kişi; stopajlarda tevkifat yapan işveren veya kuruluş bu sıfatı taşır." },
+          ],
+          dikkatlar: [
+            "Tam mükellef = tüm dünya geliri vergilenir; dar mükellef = yalnızca Türkiye kaynaklı gelir — 'yurt içi gelir' ifadesi de Türkiye kaynaklı anlamındadır.",
+            "Kurumlar için tam mükellef kriteri: kanuni merkez VEYA iş merkezi Türkiye'de olması yeterlidir — iki koşulun birlikte gerçekleşmesi aranmaz.",
+            "Vergilendirme sırası: Tarh → Tahakkuk → Tahsil — bu üç aşamanın sırası ve tanımı sınavın en temel vergi hukuku sorusudur.",
+            "Vergi mükellefinden farklı olarak vergi sorumlusu, başkasına ait vergiyi tahsil edip devlete öder; stopajlarda aracı kurum/işveren bu roldedir.",
+            "Çifte vergilendirme önleme anlaşmaları (ÇVÖA) tam ve dar mükellef arasındaki vergi yükünü belirler; anlaşma varsa iç hukuktan önce uygulanır.",
+          ],
         },
         questions: [
           {
@@ -223,6 +239,22 @@ export const mevzuat1013: Module[] = [
             },
           ],
           tip: "Kurumlar vergisi oranı %25, finansal kuruluşlarda %30. İştirak kazançları istisnası %100 — çifte vergilendirme önleme amacıyla. Beyan: Nisan 1-25, ödeme 30 Nisan'a kadar. 4 dönemlik geçici vergi (3 ayda bir). Ar-Ge harcamaları %100 indirilir, üst sınır yoktur. Standart bağış indirimi %5 sınırlıdır.",
+          kavramlar: [
+            { terim: "Kurumlar Vergisi Oranı", tanim: "Standart kurum kazançları üzerinden %25; bankalar ve finansal kuruluşlar için %30 oranında uygulanan vergi." },
+            { terim: "İştirak Kazançları İstisnası", tanim: "Tam mükellef kurumların diğer tam mükellef kurumlardan elde ettiği kâr paylarının kurumlar vergisinden %100 istisna tutulması; çifte vergilendirmeyi önler." },
+            { terim: "Geçici Vergi", tanim: "Kurumların üçer aylık dönemlerde cari yıl kazancı üzerinden ödediği peşin vergi; 4 dönem olup yıl sonu kurumlar vergisinden mahsup edilir." },
+            { terim: "Kurumlar Vergisi Beyan Süresi", tanim: "Kurumlar vergisi beyannamesi Nisan 1-25 arasında verilir; verginin tamamı 30 Nisan'a kadar ödenir." },
+            { terim: "Ar-Ge İndirimi", tanim: "Kurumların Ar-Ge harcamalarını kurumlar vergisi matrahından %100 oranında indirme hakkı; ayrıca ek indirim de uygulanabilir ve üst sınır yoktur." },
+            { terim: "Bağış İndirimi", tanim: "Kurumların beyan ettikleri kazançtan indirebilecekleri standart bağış tutarının kurum kazancının %5'iyle sınırlı tutulması." },
+            { terim: "Yatırım İndirimi", tanim: "Belirli nitelikteki yatırım harcamalarının vergi matrahından indirilmesine olanak tanıyan; yatırımı teşvik amaçlı vergi avantajı." },
+          ],
+          dikkatlar: [
+            "Kurumlar vergisi genel oran %25; bankalar ve finansal kuruluşlar için %30 — 'tüm kurumlarda %25' ifadesi eksiktir.",
+            "İştirak kazançları istisnası tam mükellefler arası kâr payı dağıtımında %100 istisna tanır; bu çifte vergilendirmeyi önlemek içindir.",
+            "Geçici vergi 3 ayda bir, 4 dönem halinde ödenir; yıl sonu kurumlar vergisi beyanında geçici vergiler mahsup edilir.",
+            "Ar-Ge harcamaları %100 indirilebilir; üst sınır yoktur — standart gider indiriminden farklıdır, sınırsız indirim imkânı vardır.",
+            "Standart bağış indirimi %5 ile sınırlıdır; ancak eğitim ve sağlık amaçlı bazı bağışlarda bu sınır uygulanmayabilir.",
+          ],
         },
         questions: [
           {
@@ -351,6 +383,22 @@ export const mevzuat1013: Module[] = [
             },
           ],
           tip: "GVK Geçici 67 = sermaye piyasasının vergi rejimi; tevkifat (stopaj) ana mekanizmadır. Tam mükellef gerçek kişide tevkifat NİHAİ vergi (beyan vermeye gerek yok). Saklamacı kuruluşlar (Takasbank-MKK) tevkifat sorumlusu. Üç aylık mahsup imkanı = zararla kâr birleştirilir, fazla vergi alınmaz.",
+          kavramlar: [
+            { terim: "GVK Geçici 67. Madde", tanim: "Sermaye piyasası araçlarından elde edilen gelirlerin tevkifat yoluyla vergilendirilmesini düzenleyen; Türkiye'nin finans vergisi çerçevesi." },
+            { terim: "Tevkifat (Stopaj)", tanim: "Gelirin sahibine ödenmeden önce vergi sorumlusu tarafından kesilip devlete ödenmesi; GVK Geçici 67'nin temel mekanizması." },
+            { terim: "Nihai Vergi", tanim: "Tevkifatın tam mükellef gerçek kişiler için beyan gerektirmeyen son ve kesin vergi olması; ayrıca yıllık beyanname verilmesi gerekmez." },
+            { terim: "Üç Aylık Mahsup İmkânı", tanim: "Aynı üç aylık dönem içinde gerçekleşen zararlı işlemlerin kârlı işlemlerle mahsup edilebilmesi; fazla kesilen vergi iade edilir." },
+            { terim: "Tevkifat Sorumlusu", tanim: "GVK Geçici 67 kapsamında tevkifatı yapan ve devlete ödemekle yükümlü saklama kuruluşları (Takasbank, MKK, aracı kurumlar)." },
+            { terim: "Zarar Mahsubu", tanim: "Sermaye piyasası işlemlerinde oluşan zararların aynı tür işlemlerden elde edilen kârlarla mahsup edilebilmesi." },
+            { terim: "Beyan Zorunluluğu İstisnası", tanim: "Tevkifata tabi gelirler için tam mükellef gerçek kişilerin ayrıca yıllık beyan vermemesi; tevkifat tüm vergi yükümlülüğünü karşılar." },
+          ],
+          dikkatlar: [
+            "GVK Geçici 67'de tevkifat tam mükellef gerçek kişiler için NİHAİ vergidir; ayrıca yıllık beyanname verilmesi gerekmez.",
+            "Üç aylık mahsup imkânı: zarar eden işlemlerin aynı dönemdeki kârlı işlemlerle netleştirilmesi — farklı dönem mahsubu uygulanmaz.",
+            "Tevkifat sorumlusu saklama kuruluşlarıdır (Takasbank, MKK, aracı kurumlar); yatırımcı değil, bu kuruluşlar vergiyi keser ve devlete öder.",
+            "Kurumlar için GVK Geçici 67 uygulanmaz; kurumlar kendi kurumlar vergisi rejimlerine tabidir.",
+            "Dar mükellef gerçek kişiler için tevkifat nihai vergi niteliği taşıyabilir; beyan yükümlülüğü için çifte vergilendirme önleme anlaşmaları belirleyicidir.",
+          ],
         },
         questions: [
           {
@@ -479,6 +527,22 @@ export const mevzuat1013: Module[] = [
             },
           ],
           tip: "İki ana gelir kategorisi: menkul sermaye iradı (faiz, kar payı) + değer artışı kazancı (alım-satım). ÜFE endekslemesi enflasyon etkisini siler. BIST payları %0 tevkifat — yerli yatırımcı teşviki. Tahvil faizleri %10. Zarar mahsubu 5 yıl ileriye devredilebilir. Vergi oranları sürekli değişir — sınavda güncel oranlar değil, mantığı sorulur.",
+          kavramlar: [
+            { terim: "Menkul Sermaye İradı", tanim: "Hisse senedi temettüsü, tahvil faizi, mevduat faizi gibi sermayenin faiz veya kâr payı şeklinde getiri sağladığı gelir türü." },
+            { terim: "Değer Artışı Kazancı", tanim: "Sermaye piyasası araçlarının alım-satım farkından elde edilen kazanç; GVK Geçici 67 kapsamında tevkifata tabidir." },
+            { terim: "ÜFE Endekslemesi", tanim: "Menkul kıymet alış maliyetinin enflasyona göre ÜFE ile güncellenmesi; reel kazanç üzerinden vergi hesaplanmasını sağlar." },
+            { terim: "BİST Pay Tevkifat Oranı", tanim: "BİST'te işlem gören hisse senetlerinden tam mükellef gerçek kişiler için uygulanan tevkifat oranı; yerli yatırımcıyı teşvik için %0." },
+            { terim: "Tahvil Faiz Tevkifatı", tanim: "Devlet tahvili ve özel sektör tahvil faiz gelirlerinden uygulanan tevkifat oranı: %10." },
+            { terim: "Zarar Mahsup Süresi", tanim: "Sermaye piyasası işlemlerinden doğan zararın sonraki yıllara taşınarak kârdan düşülebilmesi; azami süre 5 yıldır." },
+            { terim: "Tevkifat Oranı Mantığı", tanim: "Vergi oranları mevzuat değişikliğiyle sık güncellenir; sınavda oranların mantığı (hangi araç daha yüksek/düşük vergi) sorulur." },
+          ],
+          dikkatlar: [
+            "BİST paylarında yerli yatırımcı teşviki için tevkifat oranı %0'dır; 'BİST hisselerinde %10 stopaj' ifadesi yanıltıcıdır.",
+            "Tahvil faiz geliri için tevkifat oranı %10'dur; bu oran hisse senetlerindeki sıfır oranla karşılaştırıldığında yatırım aracı seçimini etkiler.",
+            "ÜFE endekslemesi maliyeti enflasyona göre artırır; böylece yalnızca reel kazanç üzerinden vergi ödenir.",
+            "Zarar mahsubu en fazla 5 yıl ileriye taşınabilir; aynı tür gelirle mahsup zorunluluğu bulunabilir — farklı gelir türleriyle mahsup kısıtlıdır.",
+            "Vergi oranları sıkça değişir; sınavda oran ezberi değil hangi aracın daha avantajlı vergi yapısına sahip olduğu mantığı ölçülür.",
+          ],
         },
         questions: [
           {
@@ -607,6 +671,22 @@ export const mevzuat1013: Module[] = [
             },
           ],
           tip: "Türev araç vergisi: Genel %10, pay endeks futures/opsiyon %0 (teşvik). Yatırım fonları: portföy kazancı KVK'dan istisna, dağıtımda yatırımcı vergiler. GYO: kurumlar vergisi %0! Örtülü sermaye sınırı: özsermaye × 3 (aşan faiz indirilemez). Transfer fiyatlandırması = ilişkili kişiler arası 'piyasa fiyatı' kuralı.",
+          kavramlar: [
+            { terim: "Türev Araç Vergilendirmesi", tanim: "Genel türev araçlardan elde edilen kazançlara %10 tevkifat; BİST pay ve endekse dayalı futures/opsiyon işlemlerinden %0 tevkifat (teşvik)." },
+            { terim: "Yatırım Fonu Vergi İstisnası", tanim: "Yatırım fonu portföyündeki sermaye kazancı KVK kapsamında istisnadır; fon dağıtım yaptığında yatırımcı kendi statüsüne göre vergilendirilir." },
+            { terim: "GYO Kurumlar Vergisi İstisnası", tanim: "Gayrimenkul Yatırım Ortaklıklarının kurumlar vergisinden tam olarak istisna tutulması; bu teşvik GYO'ları cazip yatırım aracı kılar." },
+            { terim: "Örtülü Sermaye", tanim: "İlişkili kişilerden alınan borcun özsermayenin 3 katını aşması; aşan kısma ait faizler gider olarak kabul edilmez." },
+            { terim: "Transfer Fiyatlandırması", tanim: "İlişkili kişiler arasındaki işlemlerde emsal bedelin kullanılması zorunluluğu; piyasa fiyatından sapma vergi kaçakçılığı şüphesi doğurur." },
+            { terim: "Örtülü Kazanç Dağıtımı", tanim: "İlişkili kişiye emsal bedelden farklı fiyatlarla yapılan işlemler yoluyla vergi avantajlı kazanç transferi; KVK'da yasaklanmıştır." },
+            { terim: "Çifte Vergilendirme Önleme Anlaşması (ÇVÖA)", tanim: "Türkiye ile diğer ülkeler arasında aynı gelirin iki ülkede vergilendirilmesini önleyen ikili anlaşma; iç hukuktan önce uygulanır." },
+          ],
+          dikkatlar: [
+            "GYO kurumlar vergisinden %100 istisnadır; bu özellik GYO'yu vergi avantajlı gayrimenkul yatırım aracı yapan temel düzenlemedir.",
+            "Pay ve endeks futures/opsiyon işlemleri %0 tevkifat; diğer türev araçlar %10 tevkifat — 'tüm türevlerde %10' ifadesi yanıltıcıdır.",
+            "Örtülü sermaye sınırı: ilişkili kişiden alınan borç özsermayenin 3 katını aşarsa, aşan kısma ait faiz gider yazılamaz.",
+            "Transfer fiyatlandırması ilişkili kişiler arasındaki işlemlerde emsale uygun fiyat zorunluluğudur; sapma otomatik ceza değil, düzeltme ve vergi tarhiyatına yol açar.",
+            "Yatırım fonu portföy kazancı kurumlar vergisinden istisna; yatırımcı ise katılma payını sattığında kendi tevkifat rejimine tabi olur.",
+          ],
         },
         questions: [
           {

@@ -95,6 +95,22 @@ export const mevzuat1015: Module[] = [
             },
           ],
           tip: "İki temel inşaat işletmesi: Özel İnşaat (kendi adına) + İnşaat Taahhüt (başkası adına). Eser sözleşmesi TBK md. 470 — inşaatın hukuki temeli. KÖİ modelleri: YİD (devirli), Yİ (devirsiz), YKD (kira+devir), İHD (mevcut tesis). Yıllara yaygın inşaat = birden fazla takvim yılı, özel muhasebe kuralları.",
+          kavramlar: [
+            { terim: "Özel İnşaat", tanim: "Müteahhidin kendi adına ve hesabına inşaat yapması; tamamlanan yapı stok maliyetiyle satışa sunulur, hasılat satışla doğar." },
+            { terim: "İnşaat Taahhüdü", tanim: "Müteahhidin bir iş sahibi adına ve hesabına inşaat yapması; eser sözleşmesine dayanır, hak ediş dönemlerinde gelir tanınır." },
+            { terim: "Eser Sözleşmesi", tanim: "TBK md. 470 — müteahhidin bir eser meydana getirmeyi, iş sahibinin de bedel ödemeyi üstlendiği sözleşme türü." },
+            { terim: "Yıllara Yaygın İnşaat", tanim: "Başlangıcı ve bitişi farklı vergi dönemlerine yayılan inşaat işi; GVK md. 42-44 kapsamında özel vergi kurallarına tabidir." },
+            { terim: "YİD Modeli", tanim: "Kamu-özel işbirliğinde 'Yap-İşlet-Devret'; özel sektör finansmanla inşa eder, belirli süre işletir, sonra devlete devreder." },
+            { terim: "KÖİ (Kamu-Özel İşbirliği)", tanim: "Kamu hizmetlerinin özel sektör tarafından finanse edilip yürütüldüğü modeller; YİD, Yİ, YKD, İHD başlıca türlerdir." },
+            { terim: "Hak Ediş", tanim: "Taahhüt işlerinde tamamlanan iş miktarına göre müteahhide yapılan kısmi ödeme; gelir ve maliyet tanımanın temelini oluşturur." },
+          ],
+          dikkatlar: [
+            "Özel inşaatta hasılat satış anında doğar; stok modeli uygulanır — inşaat süreci boyunca maliyet aktifleştirilir.",
+            "Taahhüt işlerinde yıllara yaygın durum var ise GVK md. 42 devreye girer; kazanç sadece iş bitiminde beyan edilir.",
+            "YİD'de tesis bedeli devlet garantisi olmaksızın özel sektörce finanse edilir; süre sonunda devlete devredilir.",
+            "KÖİ modellerini birbirinden ayırt et: YİD (devir var), Yİ (devir yok), YKD (kira+devir), İHD (mevcut tesisi devlet kiralıyor).",
+            "Eser sözleşmesinde ayıp sorumluluğu ve kabul prosedürü TBK'da düzenlenmiştir; pratikte hak ediş hesap tablosuyla bağlantılıdır.",
+          ],
         },
         questions: [
           {
@@ -223,6 +239,22 @@ export const mevzuat1015: Module[] = [
             },
           ],
           tip: "5 temel finansal tablo: Bilanço, Gelir Tablosu, Nakit Akış, Özkaynak Değişim, Dipnotlar. Türkiye'de 3 raporlama çerçevesi: TMS/TFRS (büyük), BOBİ FRS (orta), KÜMİ FRS (küçük). Tekdüzen Hesap Planı: 1-2 (Varlık), 3-4 (Borç), 5 (Özkaynak), 6 (Gelir Tablosu), 7 (Maliyet Hesapları). Going concern (süreklilik) muhasebenin temel varsayımıdır.",
+          kavramlar: [
+            { terim: "Bilanço", tanim: "Belirli bir tarihte işletmenin varlıkları ile bu varlıkların finansman kaynaklarını (borç + özkaynak) gösteren finansal tablo." },
+            { terim: "Tahakkuk Esası", tanim: "Gelir ve giderlerin nakit akışından bağımsız olarak hak kazanıldığında/yükümlülük doğduğunda muhasebeleştirilmesi ilkesi." },
+            { terim: "TMS/TFRS", tanim: "Türkiye Muhasebe/Finansal Raporlama Standartları; IASB'nin IAS/IFRS standartlarının Türkçe uyarlaması, büyük işletmelere zorunlu." },
+            { terim: "BOBİ FRS", tanim: "Bağımsız denetime tabi büyük ve orta boy işletmeler için hazırlanmış finansal raporlama çerçevesi; TMS/TFRS'nin basitleştirilmiş versiyonu." },
+            { terim: "Tekdüzen Hesap Planı (THP)", tanim: "Türkiye'de muhasebe kayıtlarını standartlaştırmak için kullanılan hesap planı; 1-8 arası ana hesap gruplarına ayrılır." },
+            { terim: "Nakit Akış Tablosu", tanim: "İşletme, yatırım ve finansman faaliyetlerinden kaynaklanan nakit giriş ve çıkışlarını gösteren finansal tablo." },
+            { terim: "İhtiyatlılık İlkesi", tanim: "Belirsizlik durumunda varlık/gelirlerin düşük, borç/giderlerin yüksek tahmin edilmesi yönünde muhafazakâr yaklaşım." },
+          ],
+          dikkatlar: [
+            "Türkiye'de raporlama çerçevesi büyüklüğe göre değişir: büyük → TMS/TFRS, orta → BOBİ FRS, küçük → KÜMİ FRS.",
+            "THP'de 1-2 dönen/duran varlıklar, 3-4 kısa/uzun vadeli borçlar, 5 özkaynak, 6 gelir tablosu, 7 maliyet hesaplarıdır.",
+            "Nakit akış tablosunda faaliyet bölümü dolaylı ya da doğrudan yöntemle hazırlanabilir; yatırım ve finansman bölümü değişmez.",
+            "Going concern (işletmenin sürekliliği) varsayımı yoksa tablolar tasfiye esasına göre hazırlanır; bu durum dipnotlarda açıklanır.",
+            "Dipnotlar beşinci finansal tablo olarak kabul edilir; diğer tabloların anlaşılması için vazgeçilmezdir.",
+          ],
         },
         questions: [
           {
@@ -351,6 +383,22 @@ export const mevzuat1015: Module[] = [
             },
           ],
           tip: "Maliyet hesapları 7. grup: 7/A (fonksiyon) veya 7/B (gider çeşidi). Özel inşaat = stok mantığı, taahhüt = sözleşme mantığı. Yıllara yaygın iş için iki yöntem: Tamamlanma Yüzdesi (TFRS 15) vs İş Bitiminde Hasılat (Vergi-GVK 42). Tamamlanma oranı = Yapılan Maliyet/Toplam Tahmini Maliyet. Hesap 170 = yıllara yaygın maliyetler.",
+          kavramlar: [
+            { terim: "7/A Maliyet Yöntemi", tanim: "Maliyetlerin fonksiyonel gruba (üretim, pazarlama, genel yönetim) göre sınıflandırıldığı Tekdüzen Hesap Planı uygulaması." },
+            { terim: "7/B Maliyet Yöntemi", tanim: "Maliyetlerin gider çeşidine (ilk madde, işçilik, genel üretim) göre sınıflandırıldığı alternatif maliyet muhasebesi yaklaşımı." },
+            { terim: "Tamamlanma Yüzdesi Yöntemi", tanim: "TFRS 15 uyarınca yıllara yaygın inşaat sözleşmelerinde hasılatın gerçekleşme oranında (Yapılan Maliyet/Tahmini Toplam Maliyet) tanınması." },
+            { terim: "GVK Md. 42 (İş Bitim Yöntemi)", tanim: "Birden fazla takvim yılına yayılan inşaat ve onarım işlerinde kazancın vergi açısından yalnızca iş bitiminde beyan edilmesi." },
+            { terim: "Hesap 170 (Yıllara Yaygın Maliyetler)", tanim: "Taahhüt işlerinde henüz tamamlanmamış yıllara yaygın inşaat sözleşmesinin birikimli maliyetlerinin izlendiği aktif hesap." },
+            { terim: "Maliyet Muhasebesi", tanim: "Ürün veya hizmet maliyetlerini belirlemek, izlemek ve raporlamak amacıyla yürütülen muhasebe dalı; yönetim kararlarına veri sağlar." },
+            { terim: "Hasılat Tanıma", tanim: "TFRS 15'in 5 adımlı modeli: sözleşme tanımlama → yükümlülük belirleme → işlem fiyatı → fiyat dağıtımı → yükümlülük yerine getirilince hasılat." },
+          ],
+          dikkatlar: [
+            "Vergi açısından (GVK 42) yıllara yaygın inşaat kazancı iş bitiminde beyan edilir; muhasebe açısından TFRS 15 tamamlanma yüzdesini esas alır.",
+            "Tamamlanma oranı = Bugüne Kadar Yapılan Maliyet / Toplam Tahmini Maliyet; bu oran dönem hasılatını belirler.",
+            "Özel inşaatta konutlar 153-Ticari Mallar (stok) hesabında izlenir; satışta 600-Yurt İçi Satışlar'a aktarılır.",
+            "7/A ve 7/B yöntemleri arasında geçiş serbesttir; ancak dönem içinde değiştirilemez, muhasebe politikası olarak açıklanmalıdır.",
+            "Hesap 350 (Yıllara Yaygın Hak Ediş Bedelleri) pasif hesabı taahhüt hasılatını izler; 170 hesabıyla birlikte değerlendirilir.",
+          ],
         },
         questions: [
           {
@@ -479,6 +527,22 @@ export const mevzuat1015: Module[] = [
             },
           ],
           tip: "GVK md. 42-44 = yıllara yaygın inşaat işlerinin vergi rejimi. %5 tevkifat (KKDF dahil değil). KDV: 150 m² altı konut %1, üstü %20. İnşaat taahhüt = %20 KDV. Asgari işçilik = SGK'nın inşaat sektöründeki kayıt dışı çalışmayı önleme mekanizması. İlişkisiz belgesi olmadan son hak ediş ödenmez. Damga vergisi binde 9,48.",
+          kavramlar: [
+            { terim: "GVK Md. 42-44", tanim: "Yıllara yaygın inşaat ve onarım işlerinin vergilendirme esaslarını düzenleyen Gelir Vergisi Kanunu maddeleri; kazanç iş bitiminde beyan edilir." },
+            { terim: "%5 Tevkifat", tanim: "Kamu kurumlarının inşaat hak edişleri üzerinden yaptığı %5 gelir vergisi kesintisi; peşin vergi niteliğinde olup beyan döneminde mahsup edilir." },
+            { terim: "KDV Tevkifatı (İnşaat)", tanim: "Alt yüklenici hizmetlerinde KDV'nin alıcı (asıl yüklenici/kurum) tarafından doğrudan vergi dairesine beyan ve ödenmesi uygulaması." },
+            { terim: "Asgari İşçilik", tanim: "SGK'nın inşaat işlerinde, uygulanan asgari işçilik oranı üzerinden hesaplanan tutarın sigorta priminin ödenmesini zorunlu kılan mekanizması." },
+            { terim: "İlişkisiz Belgesi", tanim: "SGK'nın asgari işçilik yükümlülüğünün karşılandığına dair düzenlediği belge; son hak ediş ödemesinde iş verence aranır." },
+            { terim: "Damga Vergisi", tanim: "İnşaat sözleşmeleri dahil kâğıtlar üzerinden alınan vergi; inşaat taahhüt sözleşmeleri için binde 9,48 oranı uygulanır." },
+            { terim: "KDV Oranları (Konut)", tanim: "150 m² net alana kadar konutlar %1, üstü %20 KDV'ye tabidir; taahhüt işleri genellikle %20 KDV kapsamındadır." },
+          ],
+          dikkatlar: [
+            "GVK 42: yıllara yaygın işlerde kazanç iş bitiminde beyan edilir; iş bitimi = işin fiilen tamamlandığı ve teslim edildiği dönemdir.",
+            "%5 tevkifat inşaat hak ediş bedelinden kesilir; KKDF'ye dahil değildir ve yıllık beyan üzerinden mahsup edilir.",
+            "150 m² sınırı konutun net kullanım alanına göre ölçülür; brüt alana göre değil.",
+            "Asgari işçilik ilişkisiz belgesi olmadan son hak ediş ödenmez; müteahhit için kritik bir yükümlülüktür.",
+            "İnşaat sözleşmesindeki damga vergisi sözleşme bedeli üzerinden binde 9,48; sözleşme tutarı artarsa ek damga vergisi doğar.",
+          ],
         },
         questions: [
           {
@@ -607,6 +671,22 @@ export const mevzuat1015: Module[] = [
             },
           ],
           tip: "5 ana standart: TFRS 15 (yıllara yaygın hasılat), TMS 40 (yatırım amaçlı gayrimenkul), TMS 16 (kendi kullanım), TFRS 16 (kiralama), TMS 12 (ertelenmiş vergi). Aynı bina farklı amaçla farklı standarda tabi! TFRS 15 = 5 adımlı hasılat tanıma. TFRS 16 = artık tüm kiralamalar bilançoda. Gerçeğe uygun değer değişiklikleri TMS 40'ta P&L'e gider.",
+          kavramlar: [
+            { terim: "TFRS 15 (Hasılat)", tanim: "Müşterilerle yapılan sözleşmelerden doğan hasılatın tanınmasına ilişkin standart; 5 adımlı model uygulanır, inşaat taahhütleri zamanla tanınan kategoridedir." },
+            { terim: "TMS 40 (Yatırım Amaçlı Gayrimenkul)", tanim: "Kira geliri veya sermaye kazancı için elde tutulan gayrimenkullere uygulanan standart; gerçeğe uygun değer değişimleri kâr/zarara yansır." },
+            { terim: "TMS 16 (Maddi Duran Varlıklar)", tanim: "Kendi kullanımındaki binalara uygulanan standart; maliyet veya yeniden değerleme modeliyle izlenebilir, amortisman zorunludur." },
+            { terim: "TFRS 16 (Kiralamalar)", tanim: "2019'dan itibaren kiracılar bilançoya kullanım hakkı varlığı + kira yükümlülüğü kaydeder; kısa vadeli ve düşük değerli kiralamalar istisna." },
+            { terim: "TMS 12 (Ertelenmiş Vergi)", tanim: "Muhasebe kârı ile vergi matrahı arasındaki geçici farklar nedeniyle bilançoya alınan ertelenmiş vergi varlık veya yükümlülüğü." },
+            { terim: "Gerçeğe Uygun Değer Modeli", tanim: "TMS 40'ta tercih edilebilecek yöntem; yatırım amaçlı gayrimenkul her raporlama döneminde gerçeğe uygun değerle ölçülür, amortisman yoktur." },
+            { terim: "Kullanım Hakkı Varlığı", tanim: "TFRS 16 kapsamında kiracının bilançosuna aldığı varlık; kira süresi boyunca amorte edilir." },
+          ],
+          dikkatlar: [
+            "Aynı bina; kendi kullanım → TMS 16, kira/değer artışı için → TMS 40, satış için üretilen stok → TMS 2 kapsamındadır.",
+            "TMS 40 gerçeğe uygun değer modelinde değer artış/azalışları doğrudan gelir tablosuna (P&L) gider; özkaynak değil!",
+            "TFRS 16 ile artık tüm kiralamalar (bazı istisnalar hariç) kiracının bilançosuna taşınır; faaliyet kiralaması bilanço dışı kalmaz.",
+            "TMS 12 ertelenmiş vergi: geçici fark × vergi oranı; kalıcı farklar için ertelenmiş vergi hesaplanmaz.",
+            "TFRS 15'in 5 adımı: sözleşme tanımlama → edim yükümlülükleri → işlem fiyatı → fiyat dağıtımı → yükümlülük yerine getirilince hasılat tanıma.",
+          ],
         },
         questions: [
           {

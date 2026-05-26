@@ -100,6 +100,22 @@ export const mevzuat1021: Module[] = [
             },
           ],
           tip: "Proje 4 özelliği: emsalsiz + tekrarlanmayan + kısıtlı + yönetim gerektirir. 3T Hedefi (Demir Üçgen): Zaman + Maliyet + Kapsam. PMI = uluslararası proje yönetimi enstitüsü, PMBOK = referans rehber, PMP = altın sertifika. SMART = proje hedeflerinin formülü. WBS = iş kırılım yapısı (kapsam yönetiminin temeli).",
+          kavramlar: [
+            { terim: "Proje", tanim: "Belirli bir ürün, hizmet veya sonuç elde etmek için yürütülen geçici girişim; emsalsiz, kısıtlı ve yönetim gerektiren faaliyet." },
+            { terim: "Demir Üçgen (3T)", tanim: "Zaman, Maliyet (bütçe) ve Kapsam; birindeki değişiklik diğer ikisini etkiler — proje kısıtlarının temel dengesi." },
+            { terim: "PMBOK", tanim: "PMI'ın yayımladığı proje yönetimi standartları ve rehber bilgiler kitabı; 10 bilgi alanı ve 5 süreç grubunu tanımlar." },
+            { terim: "PMP (Proje Yönetimi Profesyoneli)", tanim: "PMI'ın proje yöneticilerine verdiği altın standart uluslararası sertifika; deneyim ve sınav zorunluluğu var." },
+            { terim: "SMART Hedef", tanim: "Proje hedeflerinin Spesifik, Ölçülebilir, Ulaşılabilir, İlgili ve Zamana Bağlı olması gerektiğini tanımlayan çerçeve." },
+            { terim: "WBS (İş Kırılım Yapısı)", tanim: "Proje kapsamının teslim edilebilir bileşenlere kademeli biçimde parçalandığı hiyerarşik yapı; kapsam yönetiminin temel aracı." },
+            { terim: "Paydaş Yönetimi", tanim: "Projeden etkilenen veya projeyi etkileyen kişi ve grupların belirlenmesi, analizi ve projeye katılımının sağlanması süreci." },
+          ],
+          dikkatlar: [
+            "Demir üçgeni (Zaman-Maliyet-Kapsam): birini sabit tutarken diğerini değiştirmek üçüncüyü etkiler; sınav sorusu favorisi.",
+            "PMBOK = referans kılavuz, PMP = sertifika; PMI = her ikisini yöneten enstitü.",
+            "WBS aktivite listesi değil; teslim edilebilir (deliverable) odaklı kapsam belgesidir.",
+            "SMART hedefler belirlenirken 'ulaşılabilir' ile 'meydan okuyucu' arasındaki denge kritik; erişilmez hedef motivasyon kaybı yaratır.",
+            "Paydaş analizi erken yapılmalı; geç fark edilen kritik paydaş scope creep ve gecikmeler yaratabilir.",
+          ],
         },
         questions: [
           {
@@ -228,6 +244,22 @@ export const mevzuat1021: Module[] = [
             },
           ],
           tip: "Gantt = çubuk grafik, görsel (1910). PERT = olasılıksal, 3 süre tahmini, (a+4m+b)/6 formülü (1957). CPM = deterministik, kritik yol, slack=0 olan yol (1957). Zaman Kutulama = Agile'da sabit süreli sprintler. Kritik yoldaki gecikme TÜM projeyi geciktirir. PERT ve CPM birlikte de kullanılabilir.",
+          kavramlar: [
+            { terim: "Gantt Şeması", tanim: "Proje aktivitelerini çubuk grafik olarak zaman ekseninde gösteren görsel planlama aracı (Henry Gantt, 1910)." },
+            { terim: "PERT (Proje Değerlendirme ve Gözden Geçirme Tekniği)", tanim: "Olasılıksal süre tahminleri kullanan ağ tabanlı yöntem; beklenen süre = (a + 4m + b) / 6 formülüyle hesaplanır." },
+            { terim: "CPM (Kritik Yol Yöntemi)", tanim: "Deterministik süre tahminleri kullanan ağ tabanlı yöntem; toplam float = 0 olan aktiviteler kritik yolu oluşturur." },
+            { terim: "Kritik Yol", tanim: "Projedeki en uzun faaliyet dizisi; bu yoldaki herhangi bir gecikme projenin toplam bitiş tarihini geciktirir." },
+            { terim: "Float (Serbest Süre)", tanim: "Bir aktivitenin kritik yolu geciktirmeksizin ne kadar ertelenebileceği süre; kritik yol üzerindeki aktivitelerin float = 0'dır." },
+            { terim: "Sprint (Zaman Kutulama)", tanim: "Agile/Scrum metodolojisinde sabit uzunlukta (genellikle 1-4 hafta) yinelenen geliştirme döngüsü." },
+            { terim: "Kaynak Seviyeleme", tanim: "Proje içinde kaynakların aşırı yüklenmesini önlemek için faaliyet zamanlamalarının düzenlenmesi; kritik yol değişebilir." },
+          ],
+          dikkatlar: [
+            "PERT formülü: Beklenen Süre = (İyimser + 4×En Olası + Kötümser) / 6; olasılıksal tahminlerde kullanılır.",
+            "CPM deterministik (tek süre tahmini); PERT olasılıksal (3 süre tahmini) — ikisi farklı durumlara uygulanır, birlikte de kullanılabilir.",
+            "Kritik yoldaki gecikme = projenin bitişi o kadar gecikir; kritik olmayan yolda float kadar gecikme tolere edilir.",
+            "Gantt görsel ve anlaşılır; ancak aktiviteler arası bağımlılıkları PERT/CPM kadar net göstermez.",
+            "Zaman kutulama (sprint): sabit süre, değişken kapsam; waterfall'da süre esnektir kapsam sabittir — fark önemli.",
+          ],
         },
         questions: [
           {
@@ -356,6 +388,22 @@ export const mevzuat1021: Module[] = [
             },
           ],
           tip: "Proje işletimi 3 aşama: Açılış → İzleme/Kontrol → Kapatma. EVA temel formüller: CV=EV−AC, SV=EV−PV, CPI=EV/AC, SPI=EV/PV; CPI<1 = bütçe aşımı, SPI<1 = gecikme. Risk Müdahale: Tehdit (Kaçın-Aktar-Azalt-Kabul) + Fırsat (Kullan-Paylaş-Geliştir-Kabul). Scope Creep = sessiz öldürücü. Lessons Learned = kurumsal bilgi.",
+          kavramlar: [
+            { terim: "EVA (Kazanılmış Değer Analizi)", tanim: "Proje ilerlemesini zaman ve maliyet boyutunda ölçen yöntem; EV (kazanılmış değer), PV (planlanan değer), AC (gerçek maliyet) kullanır." },
+            { terim: "CPI (Maliyet Performans İndeksi)", tanim: "CPI = EV / AC; 1'den küçük bütçe aşımını, 1'den büyük bütçe tasarrufunu gösterir." },
+            { terim: "SPI (Program Performans İndeksi)", tanim: "SPI = EV / PV; 1'den küçük gecikeyi, 1'den büyük ilerlemede önde olduğunu gösterir." },
+            { terim: "Scope Creep", tanim: "Onaysız ve kontrolsüz kapsam genişlemesi; projeyi zaman, maliyet ve kalite açısından tehdit eden 'sessiz öldürücü'." },
+            { terim: "Risk Müdahale Stratejisi", tanim: "Tehditler için: Kaçın, Aktar, Azalt, Kabul; Fırsatlar için: Kullan, Paylaş, Geliştir, Kabul — her risk tipi için farklı tepki." },
+            { terim: "Lessons Learned (Öğrenilen Dersler)", tanim: "Proje kapatma aşamasında derlenen başarı, başarısızlık ve iyileştirme bilgisi; kurumsal hafızanın temel kaynağı." },
+            { terim: "Değişim Yönetimi (Change Control)", tanim: "Kapsam, maliyet veya zamana ilişkin değişiklik taleplerinin belgelenip onaylandıktan sonra uygulanmasını sağlayan formel süreç." },
+          ],
+          dikkatlar: [
+            "EVA formülleri: CV = EV - AC (maliyet sapması), SV = EV - PV (zaman sapması); negatif her ikisi de kötü.",
+            "CPI < 1 = her 1 TL için 1 TL'den az değer üretiliyor (bütçe aşımı); SPI < 1 = plandan geri (gecikme).",
+            "Risk müdahalede tehdit kaçın/aktar/azalt/kabul; fırsat için kullan/paylaş/geliştir/kabul — liste sırasıyla öğren.",
+            "Scope creep önleme: onaylı WBS + değişim kontrol kurulu (CCB) + tüm değişiklikler yazılı olarak belgelenmeli.",
+            "Lessons Learned proje kapatma adımıdır; teslimattan önce değil teslimattan sonra yapılır.",
+          ],
         },
         questions: [
           {
@@ -484,6 +532,22 @@ export const mevzuat1021: Module[] = [
             },
           ],
           tip: "SDLC = sistem geliştirme yaşam döngüsü. Klasik metodolojiler: Waterfall (doğrusal), V-Modeli (test odaklı), Spiral (risk odaklı). Modern: Agile (Scrum, Kanban), DevOps (geliştirme+operasyon). RAD = hızlı prototipleme, kullanıcı odaklı. OOSD = nesne yönelimli (UML, sınıflar, kalıtım). Agile Manifesto 2001 = 4 değer + 12 ilke.",
+          kavramlar: [
+            { terim: "Waterfall (Şelale) Modeli", tanim: "SDLC'nin doğrusal sıralı modeli; her aşama tamamlanmadan sonraki başlamaz, gereksinim değişikliğine kapalıdır." },
+            { terim: "Agile Manifesto", tanim: "2001'de 17 yazılım geliştiricinin imzaladığı; 4 değer ve 12 ilkeyle hızlı, kullanıcı odaklı ve değişime uyumlu geliştirmeyi benimseyen bildirge." },
+            { terim: "Scrum", tanim: "Agile'ın en yaygın çerçevesi; sprint (1-4 hafta), Product Owner, Scrum Master ve Development Team rolleriyle iteratif geliştirme." },
+            { terim: "DevOps", tanim: "Geliştirme (Dev) ve operasyon (Ops) ekiplerini entegre eden kültür ve otomasyon yaklaşımı; sürekli entegrasyon/teslim (CI/CD) temel pratikleri." },
+            { terim: "Spiral Model", tanim: "Risk odaklı iteratif SDLC modeli; her döngü planlama-risk analizi-mühendislik-değerlendirme aşamalarını tekrarlar." },
+            { terim: "RAD (Hızlı Uygulama Geliştirme)", tanim: "Kullanıcı katılımının yüksek olduğu, prototipleme ve yineleme yoluyla hızlı çözüm üretmeyi esas alan geliştirme metodolojisi." },
+            { terim: "UML (Birleşik Modelleme Dili)", tanim: "Nesne yönelimli sistemlerin görselleştirilmesi için kullanılan standart modelleme dili; sınıf, kullanım senaryosu, dizi diyagramları içerir." },
+          ],
+          dikkatlar: [
+            "Waterfall: gereksinimler sabit ve net ise uygun; değişim sıksa Agile tercih edilir.",
+            "Agile Manifesto 4 değeri: bireyler > süreçler, çalışan yazılım > kapsamlı belgeleme, müşteri işbirliği > sözleşme müzakeresi, değişime yanıt > plan takibi.",
+            "Scrum'da 3 rol: Product Owner (öncelik), Scrum Master (kolaylaştırıcı), Development Team (yapan).",
+            "DevOps CI/CD: Continuous Integration (sık entegrasyon) + Continuous Delivery/Deployment (otomatik üretim).",
+            "V-Modeli: Waterfall'ın simetrik test eşleniği; her geliştirme aşamasının karşısında bir test aşaması bulunur.",
+          ],
         },
         questions: [
           {
@@ -612,6 +676,22 @@ export const mevzuat1021: Module[] = [
             },
           ],
           tip: "Test piramidi: çok birim test → az entegrasyon → daha az UI/UAT. Üretime Aktarım 4 strateji: Big Bang (riskli/hızlı), Paralel (güvenli/maliyetli), Aşamalı, Pilot. Bakım %50+ Mükemmelleştirici. Uygulama Kontrolleri 3 katman: GİRİŞ (validation, check digit) + İŞLEME (mutabakat, run-to-run) + ÇIKTI (distribution log, review). Savunma derinliği = 3 katmanın birlikte çalışması.",
+          kavramlar: [
+            { terim: "Test Piramidi", tanim: "En fazla birim testi, daha az entegrasyon testi, en az UI/UAT testi şeklinde katmanlanan test stratejisi; düşük seviye testler hızlı ve ucuzdur." },
+            { terim: "UAT (Kullanıcı Kabul Testi)", tanim: "Sistemin iş gereksinimlerini karşıladığını doğrulamak için kullanıcılar tarafından gerçek iş senaryolarıyla yapılan son test aşaması." },
+            { terim: "Paralel Çalışma Stratejisi", tanim: "Eski ve yeni sistemin aynı anda çalıştırıldığı geçiş stratejisi; en güvenli ama en maliyetli yöntemdir." },
+            { terim: "Big Bang Geçiş Stratejisi", tanim: "Eski sistemin tamamen kapatılıp yeni sistemin tek seferde devreye alındığı geçiş; hızlı ama en riskli strateji." },
+            { terim: "Mükemmelleştirici Bakım", tanim: "Varolan hatalar dışında sisteme yeni özellik veya performans iyileştirmesi eklenmesi; bakım maliyetinin %50+ bölümünü oluşturur." },
+            { terim: "Giriş Kontrolü (Input Control)", tanim: "Sisteme girilen verinin doğruluğunu ve bütünlüğünü sağlayan kontroller; alan doğrulama, aralık kontrolü, check digit." },
+            { terim: "İşleme Kontrolü (Processing Control)", tanim: "Verilerin işlenme aşamasında doğruluğunu güvence altına alan kontroller; mutabakat, run-to-run toplamlar, çift girdi doğrulama." },
+          ],
+          dikkatlar: [
+            "Üretime aktarım 4 stratejisi: Big Bang (hızlı/riskli) → Pilot (sınırlı kullanıcı) → Aşamalı → Paralel (güvenli/maliyetli).",
+            "Bakım türleri: Düzeltici (hata gider) + Uyarlamalı (çevre değişikliği) + Mükemmelleştirici (özellik ekle) + Önleyici (gelecek hatalara karşı).",
+            "Uygulama kontrolleri: Giriş + İşleme + Çıktı; üçlü savunma derinliği birbirinin tamamlayıcısıdır.",
+            "Check digit: barkod/hesap numarası gibi kodlardaki tuş hatalarını yakalamak için son basamağa eklenen kontrol rakamı.",
+            "Test piramidi prensibi: altta çok, ucuz ve hızlı testler; üstte az, pahalı ve yavaş testler — maliyeti düşürür, kapsamı artırır.",
+          ],
         },
         questions: [
           {

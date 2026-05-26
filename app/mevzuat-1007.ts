@@ -93,6 +93,22 @@ export const mevzuat1007: Module[] = [
             },
           ],
           tip: "Kaldıraç formüllerinde yön çok önemli: Faaliyet kaldıracı 'satış → FVÖK', Finansal kaldıraç 'FVÖK → HBK', Toplam kaldıraç ise ikisinin çarpımı. Sabit maliyet/sabit faiz ne kadar yüksekse kaldıraç o kadar büyür — ancak risk de aynı oranda artar. Sınavda bu üç formülü ezbere bilmek gerek.",
+          kavramlar: [
+            { terim: "Başabaş Noktası", tanim: "Toplam gelirin toplam maliyete eşit olduğu satış hacmi/cirosu; bu noktanın altında zarar, üstünde kâr oluşur." },
+            { terim: "Faaliyet Kaldıraç Derecesi (FKD)", tanim: "Satışlardaki %1 değişimin FVÖK'te (faiz ve vergi öncesi kâr) kaç %'lik değişime yol açtığını gösteren katsayı; yüksek sabit maliyet FKD'yi artırır." },
+            { terim: "Finansal Kaldıraç Derecesi (FinKD)", tanim: "FVÖK'teki %1 değişimin hisse başına kârda (HBK) kaç %'lik değişime neden olduğunu gösteren katsayı; yüksek faiz giderleri FinKD'yi artırır." },
+            { terim: "Toplam Kaldıraç Derecesi", tanim: "FKD × FinKD; satışlardaki %1 değişimin HBK'da kaç %'lik değişime yol açtığını gösteren birleşik kaldıraç ölçüsü." },
+            { terim: "FVÖK", tanim: "Faiz ve Vergi Öncesi Kâr; işletmenin borç yapısı ve vergi durumundan bağımsız faaliyet performansını gösteren gelir kalemi." },
+            { terim: "Sabit Maliyet", tanim: "Üretim hacminden bağımsız olarak katlanılan kira, amortisman, sabit personel gibi giderler; yüksek sabit maliyet yüksek faaliyet kaldıracı demektir." },
+            { terim: "Değişken Maliyet", tanim: "Üretim/satış hacmiyle orantılı olarak değişen; hammadde, işçilik gibi giderler; marjinal maliyetin temelini oluşturur." },
+          ],
+          dikkatlar: [
+            "FKD = Satışlar → FVÖK yönünde ölçer; FinKD = FVÖK → HBK yönünde ölçer; Toplam = FKD × FinKD — yön karıştırılmamalı.",
+            "Sabit maliyet yükseldikçe FKD yükselir ve faaliyet riski artar; sabit faiz giderleri yükseldikçe FinKD yükselir ve finansal risk artar.",
+            "Başabaş noktasında kâr SIFIRDIR; bu noktanın altında zarardır — 'başabaş = en düşük kâr noktası' ifadesi yanlıştır.",
+            "Satış hacmindeki artış FKD yüksek olan şirkette FVÖK'ü orantısız biçimde artırır; aynı şekilde düşüş de orantısız zarar yaratır.",
+            "Toplam kaldıraç derecesi hem iş hem de finansal riskini ölçer; yüksek TKD yüksek getiri potansiyeli ve yüksek kayıp riski anlamına gelir.",
+          ],
         },
         questions: [
           {
@@ -221,6 +237,22 @@ export const mevzuat1007: Module[] = [
             },
           ],
           tip: "AOSM formülü = ağırlıklı ortalama; her finansman kaynağının payı × maliyeti. Borç maliyetinde vergi sonrası kullanılır (vergi kalkanı). MM Teoremi I 'mükemmel dünya' modelidir, gerçek dünyada Trade-off ve Pecking Order teorileri açıklayıcıdır.",
+          kavramlar: [
+            { terim: "AOSM (WACC)", tanim: "Ağırlıklı Ortalama Sermaye Maliyeti; özkaynakların ve yabancı kaynakların ağırlıkları ve maliyetleri bazında hesaplanan bileşik sermaye maliyeti." },
+            { terim: "Vergi Kalkanı", tanim: "Borç faizinin vergi matrahından düşülebilmesi nedeniyle sağlanan vergi tasarrufu; borç maliyeti vergi sonrası (r×(1-t)) hesaplanır." },
+            { terim: "Modigliani-Miller Teoremi I", tanim: "Mükemmel piyasa koşullarında firmanın değerinin sermaye yapısından bağımsız olduğunu öne süren teorem; vergi ve iflas maliyeti yoktur." },
+            { terim: "Trade-off Teorisi", tanim: "Firmanın vergi kalkanı avantajı ile iflas maliyetlerini dengeleyerek optimal borç oranına ulaştığını açıklayan sermaye yapısı teorisi." },
+            { terim: "Pecking Order Teorisi", tanim: "Firmanın önce iç kaynakları, sonra borcu, en son özkaynağı tercih ettiğini; asimetrik bilgi nedeniyle bir hiyerarşi oluştuğunu açıklayan teori." },
+            { terim: "Özkaynak Maliyeti", tanim: "Hissedarların şirketten beklediği getiri; genellikle CAPM (Sermaye Varlık Fiyatlama Modeli) ile hesaplanır: ke = rf + β(rm - rf)." },
+            { terim: "Finansal Kaldıraç", tanim: "Yabancı kaynak oranı arttıkça hem hissedar getirisi hem de finansal risk artar; aşırı borçlanma iflas riskini yükseltir." },
+          ],
+          dikkatlar: [
+            "AOSM hesabında borç maliyeti MUTLAKA vergi sonrası kullanılır: kd × (1-vergi oranı); brüt borç maliyeti yanıltıcıdır.",
+            "MM Teoremi I'de firma değeri sermaye yapısından bağımsızdır — bu yalnızca mükemmel piyasa varsayımı altında geçerlidir, gerçek dünyada geçersizdir.",
+            "Trade-off teorisine göre optimal borç oranı vergi kalkanı faydası ile iflas maliyetinin dengesi noktasında oluşur.",
+            "Pecking Order'a göre firmalar sırasıyla dağıtılmamış kâr → borç → özkaynak tercih eder; bu teoride 'optimal borç oranı' yoktur.",
+            "CAPM ile özkaynak maliyeti hesabında beta katsayısı sistematik riski ölçer; β > 1 piyasadan daha riskli anlamına gelir.",
+          ],
         },
         questions: [
           {
@@ -349,6 +381,22 @@ export const mevzuat1007: Module[] = [
             },
           ],
           tip: "ESM formülü = √(2DS/H); D=yıllık talep, S=sipariş maliyeti, H=birim bulundurma maliyeti. Ortalama tahsilat süresi formülü 365 ile çarpılır — sınavda sıkça çıkar. Üç işletme sermayesi politikası (agresif, muhafazakar, ılımlı) arasında 'risk-getiri' takasını anlamak kritiktir.",
+          kavramlar: [
+            { terim: "İşletme Sermayesi", tanim: "Dönen varlıklar ile kısa vadeli yabancı kaynakların farkı (net çalışma sermayesi); günlük operasyonları finanse eden kaynak." },
+            { terim: "Ekonomik Sipariş Miktarı (ESM)", tanim: "Sipariş ve bulundurma maliyetlerini minimize eden optimal sipariş büyüklüğü; ESM = √(2DS/H) formülüyle hesaplanır." },
+            { terim: "Ortalama Tahsilat Süresi", tanim: "Alacakların ortalama kaç günde tahsil edildiğini gösteren oran; Ticari Alacaklar / (Net Satışlar/365)." },
+            { terim: "Agresif İşletme Sermayesi Politikası", tanim: "Yüksek kısa vadeli finansman, düşük stok ve alacak hedefleyen; yüksek risk-yüksek getiri yapısındaki politika." },
+            { terim: "Muhafazakar İşletme Sermayesi Politikası", tanim: "Düşük kısa vadeli finansman, yüksek stok ve alacak hedefleyen; düşük risk-düşük getiri yapısındaki politika." },
+            { terim: "Nakit Döngüsü", tanim: "Stokların alımından müşteri tahsilatına kadar geçen süre; Stok devir süresi + Alacak tahsilat süresi - Borç ödeme süresi." },
+            { terim: "Ticari Alacak Yönetimi", tanim: "Müşteri kredisi, tahsilat politikası ve iskonto koşullarının belirlenerek nakit akışını optimize etme süreci." },
+          ],
+          dikkatlar: [
+            "ESM formülü: √(2DS/H) — D yıllık talep, S sipariş maliyeti, H birim bulundurma maliyeti; sadece sayısal soru olarak da gelebilir.",
+            "Ortalama tahsilat süresi formülü = (Ticari Alacaklar / Net Satışlar) × 365; rakamı 365 ile çarparak gün cinsinden hesaplanır.",
+            "Agresif politika yüksek getiri-yüksek risk; muhafazakar politika düşük getiri-düşük risk; ılımlı politika ikisinin ortasıdır.",
+            "Nakit döngüsü kısaldıkça işletme sermayesi ihtiyacı azalır; yüksek alacak tahsilat süresi nakit döngüsünü uzatır.",
+            "İskonto politikası alacak tahsilat süresini kısaltır ancak indirim maliyeti de doğurur; bu dengeyi analiz etmek kritiktir.",
+          ],
         },
         questions: [
           {
@@ -477,6 +525,22 @@ export const mevzuat1007: Module[] = [
             },
           ],
           tip: "NBD ve İVO'nun temel farkı: NBD tutar (TL) verir, İVO oran (%) verir. NBD > 0 = İVO > AOSM (aynı şeyi söyler). Çatışma halinde NBD esastır çünkü doğrudan firma değerine etkiyi gösterir. Geri ödeme süresi basit ama zaman değerini görmez — sadece destek aracı olarak kullanılır.",
+          kavramlar: [
+            { terim: "Net Bugünkü Değer (NBD)", tanim: "Yatırımın tüm nakit akışlarının uygun iskonto oranıyla bugüne indirgenmesi; NBD > 0 ise proje değer yaratır ve kabul edilir." },
+            { terim: "İç Verimlilik Oranı (İVO)", tanim: "NBD'yi sıfıra eşitleyen iskonto oranı; İVO > AOSM ise proje kabul edilir, oran döner." },
+            { terim: "Geri Ödeme Süresi", tanim: "Yatırımın başlangıç maliyetinin nakit girişleriyle ne kadar sürede geri kazanıldığını gösteren yöntem; zaman değerini dikkate almaz." },
+            { terim: "İskontolu Geri Ödeme Süresi", tanim: "Nakit akışlarının zaman değerine göre iskonto edilerek hesaplanan geri ödeme süresi; standart yöntemin geliştirilmiş hali." },
+            { terim: "AOSM ile İVO Karşılaştırması", tanim: "İVO > AOSM ise proje kabul, İVO < AOSM ise proje red; bu karşılaştırma NBD > 0 ile eş anlamlıdır." },
+            { terim: "Nakit Akış Tahmini", tanim: "Yatırım değerlemesinde kullanılan gelecek dönem nakit girişleri ve çıkışlarının tahmini; yalnızca artımsal nakit akışları dahil edilir." },
+            { terim: "NBD-İVO Çatışması", tanim: "Birden fazla projeyi karşılaştırırken NBD ve İVO'nun farklı projeler lehine karar üretmesi; bu durumda NBD esas alınır." },
+          ],
+          dikkatlar: [
+            "NBD para birimi cinsinden (TL) sonuç verir; İVO oran (%) olarak sonuç verir — ikisinin karşılaştırılması doğrudan mümkün değildir.",
+            "NBD > 0 = İVO > AOSM = proje kabul; NBD = 0 = İVO = AOSM = nötr; NBD < 0 = İVO < AOSM = proje red.",
+            "İki proje arasında çatışma olduğunda NBD esastır çünkü firma değerine katkıyı doğrudan gösterir; İVO oransal olduğundan ölçek farklılıklarını görmez.",
+            "Geri ödeme süresi zaman değerini dikkate almaz; bu nedenle tek başına kullanımı yanıltıcıdır — NBD veya İVO ile birlikte kullanılmalıdır.",
+            "İVO'nun birden fazla değer alabileceği durumlar (multiple IRR) mevcut olabilir; bu NBD'nin bir dezavantajı değil, İVO'nundur.",
+          ],
         },
         questions: [
           {
@@ -605,6 +669,22 @@ export const mevzuat1007: Module[] = [
             },
           ],
           tip: "Oran analizinde 'tek başına' bir oran anlamlı değildir — sektör ortalaması, geçmiş yıllar ve rakiplerle karşılaştırma şart. Cari Oran, Asit-Test ve Nakit Oranı sıkılık sırasına göre azalır. DuPont formülü ROE'nin üç sürücüsünü gösterir: marj (kârlılık), devir (verimlilik), kaldıraç (finansal yapı).",
+          kavramlar: [
+            { terim: "Cari Oran", tanim: "Dönen Varlıklar / Kısa Vadeli Yabancı Kaynaklar; kısa vadeli yükümlülükleri karşılama kapasitesini gösteren likidite oranı." },
+            { terim: "Asit-Test Oranı", tanim: "(Dönen Varlıklar - Stoklar) / Kısa Vadeli Yabancı Kaynaklar; stokları dışarıda bırakarak daha sıkı likidite testi yapar." },
+            { terim: "Nakit Oranı", tanim: "Hazır Değerler / Kısa Vadeli Yabancı Kaynaklar; yalnızca nakit ve nakde eşdeğer varlıkları likidite ölçütü olarak kullanan en sıkı oran." },
+            { terim: "DuPont Analizi", tanim: "ROE'yi (özkaynak kârlılığı) üç bileşene ayıran analiz: Net Kâr Marjı (kârlılık) × Aktif Devir Hızı (verimlilik) × Finansal Kaldıraç." },
+            { terim: "Borç/Özkaynak Oranı", tanim: "Toplam yabancı kaynağın toplam özkaynağa oranı; finansal kaldıraç ve finansal risk düzeyini gösteren yapı oranı." },
+            { terim: "Aktif Devir Hızı", tanim: "Net Satışlar / Toplam Aktif; şirketin varlıklarını ne kadar verimli kullandığını gösteren verimlilik oranı." },
+            { terim: "Kârlılık Oranları", tanim: "Brüt kâr marjı, faaliyet kâr marjı, net kâr marjı, ROA (aktif kârlılığı) ve ROE (özkaynak kârlılığı) gibi gelir-gider ilişkisini ölçen oranlar." },
+          ],
+          dikkatlar: [
+            "Likidite oranları sıkılaşma sırasıyla: Cari Oran > Asit-Test Oranı > Nakit Oranı — her geçişte paydan bir varlık sınıfı çıkarılır.",
+            "DuPont analizi: ROE = Net Kâr Marjı × Aktif Devir Hızı × Finansal Kaldıraç — hangi sürücünün ROE'yi etkilediğini belirlemek için kullanılır.",
+            "Oran analizi karşılaştırma olmadan anlamsızdır; sektör ortalaması, tarihsel trend veya rakip verisi olmadan tek başına oran yorumlanamaz.",
+            "Cari oran 2 hedef olarak bilinse de sektöre göre 'ideal' oran değişir; düşük stok döngüsü olan firmalarda 1'in altında bile olabilir.",
+            "Borç/Özkaynak oranı yükseldikçe hem finansal kaldıraç hem de finansal risk artar; yüksek kaldıraç yüksek ROE verebilir ancak iflas riskini de büyütür.",
+          ],
         },
         questions: [
           {
