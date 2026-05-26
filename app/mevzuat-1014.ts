@@ -751,6 +751,547 @@ export const mevzuat1014: Module[] = [
           },
         ],
       },
+
+      // ──────────── Ders 6: Değerleme Matematiği ve Uygulamaları ────────────
+      {
+        id: "m1014-l6",
+        title: "Değerleme Matematiği ve Uygulamaları",
+        duration: "9 dk",
+        summary: {
+          title: "Değerleme Matematiği ve Uygulamaları",
+          intro:
+            "Gayrimenkul değerleme sürecinde kullanılan matematiksel araçlar; bir mülkün bugünkü değerini, gelecekteki nakit akışlarının iskonto edilmesi veya kapitalizasyon yoluyla hesaplamaya olanak tanır. Paranın zaman değeri, kapitalizasyon oranları, brüt kira çarpanı (BKÇ/GRM) ve net bugünkü değer (NBD/NPV) gibi kavramlar değerleme matematiğinin temelini oluşturur. Bu araçlar başta gelir yaklaşımı olmak üzere tüm değerleme yöntemlerinde yoğun biçimde kullanılır.",
+          sections: [
+            {
+              heading: "Paranın Zaman Değeri ve İskonto",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Bugünkü Değer (BDn):",
+                  text: "BDn = Cn / (1+r)^n formülüyle, n yıl sonra alınacak Cn tutarındaki nakit akışının bugüne indirgenmesi. Değerlemede r (iskonto oranı) yatırımcının beklediği getiri oranını, yani fırsat maliyetini yansıtır.",
+                },
+                {
+                  strong: "İskonto Oranının Belirlenmesi:",
+                  text: "Piyasa karşılaştırması (benzer mülklerin fiili getirisi), sermaye bileşimi (CD+ED ağırlıklı maliyet) veya kümülatif oluşturma yöntemi (risksiz oran + risk primleri) kullanılır. Risk primleri arasında likidite, yönetim yükü ve mülkün kalitesi sayılabilir.",
+                },
+                {
+                  strong: "Kapitalizasyon Oranı (Cap Rate):",
+                  text: "Cap Rate = NOI / Değer formülüyle, bir mülkün net faaliyet gelirini (Net Operating Income) değerine bölerek elde edilen oran. Ters kapitalizasyon yöntemiyle: Değer = NOI / Cap Rate. Cap rate piyasa verilerinden veya kapitalizasyon bant yöntemiyle bulunur.",
+                },
+                {
+                  strong: "Terminal Değer (TV):",
+                  text: "Çok dönemli değerlemede projeksiyon dönemi sonundaki mülk değeri; genellikle son yıl NOI'unun bir sonraki yılın cap rate'e bölümüyle hesaplanır: TV = NOI(n+1) / Çıkış Cap Oranı.",
+                },
+              ],
+            },
+            {
+              heading: "Gelir Çarpanı Yöntemleri",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Brüt Kira Çarpanı (BKÇ / GRM):",
+                  text: "BKÇ = Satış Fiyatı / Yıllık Brüt Kira geliri. Basit ve hızlı bir karşılaştırma aracıdır; ancak boşluk oranları ve giderleri yansıtmaz. Piyasada benzer mülklerden elde edilen BKÇ değeri değerlenecek mülke uygulanır.",
+                },
+                {
+                  strong: "Net Kira Çarpanı (NKÇ):",
+                  text: "NKÇ = Satış Fiyatı / Net Faaliyet Geliri (NOI). BKÇ'ye göre daha gerçekçidir çünkü işletme giderlerini ve boşluk payını dikkate alır.",
+                },
+                {
+                  strong: "Geri Dönüş Süresi:",
+                  text: "Yatırım maliyetinin net gelirle kaç yılda geri döneceğini gösterir: Geri Dönüş Süresi = Yatırım Tutarı / Yıllık NOI. Uzun vadeli yatırım kararlarında ön elemede kullanılır.",
+                },
+              ],
+            },
+            {
+              heading: "İndirgenmiş Nakit Akışı (İNA/DCF) Analizi",
+              icon: "shield",
+              items: [
+                {
+                  strong: "DCF Değeri:",
+                  text: "Değer = Σ [NOI_t / (1+r)^t] + [TV / (1+r)^n]. Projeksiyon dönemi boyunca yıllık NOI akışlarının ve vade sonu terminal değerinin bugüne iskonto edilmesiyle hesaplanır.",
+                },
+                {
+                  strong: "Duyarlılık Analizi:",
+                  text: "DCF değeri, iskonto oranı ve çıkış cap oranındaki değişimlere karşı son derece duyarlıdır. Piyasa pratisyenleri bu iki parametreyi farklı senaryolarda değiştirerek değer aralığı (value range) oluştururlar.",
+                },
+                {
+                  strong: "Nakit-Nakit Getirisi (Cash-on-Cash):",
+                  text: "Yıllık nakit akışının (borç servisi öncesi veya sonrası) özkaynağa bölümü; özellikle kaldıraçlı yatırımlarda kullanılan performans ölçütü.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda Cap Rate hesabı, BKÇ uygulaması ve DCF mantığı (iskonto oranı, terminal değer) en sık çıkan konulardır. Formülleri hem hesaplayabilir hem yorumlayabilir olun.",
+          kavramlar: [
+            { terim: "Kapitalizasyon Oranı (Cap Rate)", tanim: "Mülkün net faaliyet gelirinin değerine bölünmesiyle elde edilen oran; gelir yaklaşımında temel dönüştürücüdür." },
+            { terim: "Net Faaliyet Geliri (NOI)", tanim: "Mülkün brüt kira gelirinden boşluk payı ve işletme giderleri düşüldükten sonra kalan gelir; borç servisi dahil değildir." },
+            { terim: "Brüt Kira Çarpanı (BKÇ / GRM)", tanim: "Satış fiyatının yıllık brüt kira gelirine bölümü; konutlarda sıkça kullanılan hızlı karşılaştırma ölçütü." },
+            { terim: "İndirgenmiş Nakit Akışı (DCF)", tanim: "Projeksiyon dönemi NOI akışları ile terminal değerin belirlenen iskonto oranıyla bugüne indirgenmesi yöntemi." },
+            { terim: "Terminal Değer (TV)", tanim: "DCF analizinde projeksiyon dönemi sonundaki mülk satış değeri; son yıl NOI'unun çıkış cap rate'e bölümüyle bulunur." },
+            { terim: "İskonto Oranı", tanim: "Değerlemede gelecekteki nakit akışlarını bugüne indirgemekte kullanılan, yatırımcının beklenen getirisini yansıtan oran." },
+            { terim: "Nakit-Nakit Getirisi (Cash-on-Cash)", tanim: "Yıllık nakit akışının toplam özsermayeye bölümü; kaldıraçlı gayrimenkul yatırımlarında yıllık performans ölçütü." },
+          ],
+          dikkatlar: [
+            "Cap Rate yükselirse değer düşer, cap rate düşerse değer yükselir — ters orantı ilişkisi sınavın klasik sorusudur.",
+            "DCF analizinde iskonto oranı ile çıkış cap oranındaki küçük değişimler değer sonucunu büyük ölçüde etkiler (duyarlılık analizi).",
+            "BKÇ (GRM) giderleri ve boşluk oranını yansıtmaz; dolayısıyla karşılaştırmalı analizlerde ön eleme aracı olarak kullanılır.",
+            "NOI hesaplanırken borç servisi (anapara + faiz) gider olarak DÜŞÜLMEMELİDİR; NOI borç öncesi geliri ifade eder.",
+            "Terminal değer hesaplanırken çıkış cap oranı, genellikle giriş cap oranından biraz daha yüksek alınır — mülkün yaşlanması ve risk artışı gerekçesiyle.",
+          ],
+        },
+        questions: [
+          {
+            text: "Yıllık NOI'si 120.000 TL olan bir gayrimenkulün değeri Cap Rate yöntemiyle 1.500.000 TL olarak hesaplanmışsa, kullanılan kapitalizasyon oranı nedir?",
+            options: [
+              { id: "A", text: "%6" },
+              { id: "B", text: "%8" },
+              { id: "C", text: "%10" },
+              { id: "D", text: "%12" },
+            ],
+            correct: "B",
+            explanation:
+              "Cap Rate = NOI / Değer = 120.000 / 1.500.000 = 0,08 = %8. Cap rate yöntemi: Değer = NOI / Cap Rate. Dolayısıyla 1.500.000 = 120.000 / Cap Rate → Cap Rate = %8.",
+          },
+          {
+            text: "Bir dairenin satış fiyatı 600.000 TL, yıllık brüt kira geliri 30.000 TL ise Brüt Kira Çarpanı (BKÇ) kaçtır?",
+            options: [
+              { id: "A", text: "10" },
+              { id: "B", text: "15" },
+              { id: "C", text: "20" },
+              { id: "D", text: "25" },
+            ],
+            correct: "C",
+            explanation:
+              "BKÇ (GRM) = Satış Fiyatı / Yıllık Brüt Kira = 600.000 / 30.000 = 20. Bu, yatırımcının brüt kira geliriyle yatırımını 20 yılda geri alacağını gösterir (boşluk ve giderler hesaba katılmadan).",
+          },
+          {
+            text: "DCF analizinde 'Terminal Değer' nasıl hesaplanır?",
+            options: [
+              { id: "A", text: "Tüm projeksiyon dönemi NOI'larının toplamı" },
+              { id: "B", text: "Son yıl NOI'unun projeksiyon dönemi başındaki cap rate'e bölümü" },
+              { id: "C", text: "Projeksiyon dönemi sonundaki (n+1). yıl NOI'unun çıkış cap rate'e bölümü" },
+              { id: "D", text: "Mülkün inşaat maliyetinin enflasyon oranıyla çarpımı" },
+            ],
+            correct: "C",
+            explanation:
+              "Terminal Değer = NOI(n+1) / Çıkış Cap Oranı. DCF analizinde projeksiyon sonrası dönemin değeri, bir sonraki yılın NOI'unun çıkış cap oranına bölünmesiyle bulunur. Çıkış cap oranı, mülkün olgunlaşması ve risk artışı nedeniyle genellikle giriş cap oranından biraz daha yüksek alınır.",
+          },
+          {
+            text: "Kapitalizasyon oranı ile mülkün değeri arasındaki ilişki nasıldır?",
+            options: [
+              { id: "A", text: "Kapitalizasyon oranı arttıkça değer artar" },
+              { id: "B", text: "Kapitalizasyon oranı arttıkça değer düşer" },
+              { id: "C", text: "Kapitalizasyon oranı ile değer arasında ilişki yoktur" },
+              { id: "D", text: "Kapitalizasyon oranı azaldıkça değer düşer" },
+            ],
+            correct: "B",
+            explanation:
+              "Değer = NOI / Cap Rate formülünden, cap rate payda konumundadır; dolayısıyla cap rate arttıkça değer düşer, cap rate azaldıkça değer yükselir (ters orantı). Örneğin NOI = 100.000 TL, Cap Rate %5 iken Değer = 2.000.000 TL; Cap Rate %10 iken Değer = 1.000.000 TL.",
+          },
+          {
+            text: "NOI (Net Faaliyet Geliri) hesaplanırken aşağıdakilerden hangisi GİDER olarak DÜŞÜLMEMELİDİR?",
+            options: [
+              { id: "A", text: "Sigorta giderleri" },
+              { id: "B", text: "Yönetim giderleri" },
+              { id: "C", text: "Borç servisi (anapara + faiz ödemeleri)" },
+              { id: "D", text: "Bakım onarım giderleri" },
+            ],
+            correct: "C",
+            explanation:
+              "NOI = Efektif Brüt Gelir − İşletme Giderleri. İşletme giderleri arasında yönetim, sigorta, vergi, bakım-onarım yer alır. Borç servisi (mortgage ödemeleri) ise NOI hesabında yer almaz çünkü NOI finansman yapısından bağımsız olarak mülkün ürettiği geliri gösterir; borç servisi sonrasındaki nakit akışı ayrıca hesaplanır.",
+          },
+          {
+            text: "İskonto oranı DCF analizinde hangi anlama gelir?",
+            options: [
+              { id: "A", text: "Mülkün kira getirisi" },
+              { id: "B", text: "Yatırımcının beklediği minimum getiri oranı (fırsat maliyeti)" },
+              { id: "C", text: "Enflasyon oranı" },
+              { id: "D", text: "Merkez Bankası politika faizi" },
+            ],
+            correct: "B",
+            explanation:
+              "İskonto oranı, DCF analizinde gelecekteki nakit akışlarını bugüne indirgemekte kullanılan orandır ve yatırımcının benzer risk düzeyindeki yatırımlardan beklediği minimum getiriyi, yani fırsat maliyetini yansıtır. Risk arttıkça iskonto oranı yükselir; bu da bugünkü değeri düşürür.",
+          },
+          {
+            text: "Nakit-Nakit Getirisi (Cash-on-Cash Return) neyi ölçer?",
+            options: [
+              { id: "A", text: "Mülkün toplam yaşam boyu getirisini" },
+              { id: "B", text: "Yıllık nakit akışının toplam özsermayeye oranını" },
+              { id: "C", text: "Cap rate ile iskonto oranı arasındaki farkı" },
+              { id: "D", text: "Mülkün piyasa değerinin maliyet değerine oranını" },
+            ],
+            correct: "B",
+            explanation:
+              "Nakit-Nakit Getirisi (Cash-on-Cash Return) = Yıllık Net Nakit Akışı / Toplam Özsermaye. Kaldıraçlı (borçlu) gayrimenkul yatırımlarında yatırımcının özsermayesine karşı yıllık nakit getirisini ölçen performans göstergesidir. IRR'dan farklı olarak tek bir yılın nakit akışını baz alır.",
+          },
+        ],
+      },
+
+      // ──────────── Ders 7: Gayrimenkul Piyasaları ve Kurumları ────────────
+      {
+        id: "m1014-l7",
+        title: "Gayrimenkul Piyasaları, Kurumları ve Piyasa Analizi",
+        duration: "8 dk",
+        summary: {
+          title: "Gayrimenkul Piyasaları ve Kurumları",
+          intro:
+            "Gayrimenkul piyasası; konut, ticari, endüstriyel ve tarımsal mülklerin alım satım ve kiralama yoluyla el değiştirdiği piyasalardır. Arz-talep dengesi, piyasa döngüleri, demografik değişimler ve ekonomik konjonktür gayrimenkul piyasalarını yönlendiren temel güçlerdir. Değerleme uzmanının etkin bir analiz yapabilmesi için piyasanın yapısını, oyuncularını (kurumlarını) ve döngüsel karakterini kavraması zorunludur.",
+          sections: [
+            {
+              heading: "Gayrimenkul Piyasasının Özellikleri",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Heterojenlik:",
+                  text: "Her gayrimenkul birbirinden farklıdır; konum, kullanım, yaş ve fiziksel özellikler bakımından tam ikamesi yoktur. Bu nedenle gayrimenkul piyasaları tam rekabet koşullarında çalışmaz.",
+                },
+                {
+                  strong: "Hareketsizlik (Immobility):",
+                  text: "Gayrimenkul taşınamaz; bu da piyasayı yerel nitelikte kılar. Bir bölgedeki arz-talep dengesi komşu bölgelerden büyük ölçüde bağımsız olarak hareket edebilir.",
+                },
+                {
+                  strong: "Uzun Üretim Süresi (Gecikmeli Arz):",
+                  text: "Yeni arz yaratmak (inşaat) uzun zaman alır. Talep artışına karşı arzın hızla tepki verememesi fiyat oynaklığını artırır.",
+                },
+                {
+                  strong: "Piyasa Döngüleri:",
+                  text: "Gayrimenkul piyasaları büyüme (upswing), zirve (peak), gerileme (downturn) ve dip (trough) evrelerinden oluşan döngüler izler. Müller'in dörtlü döngü modeli değerleme ve yatırım kararlarında referans alınır.",
+                },
+                {
+                  strong: "Arz-Talep Dinamikleri:",
+                  text: "Talebi etkileyen faktörler: demografik yapı, hane geliri, faiz oranları, nüfus göçü ve kentleşme. Arzı etkileyen faktörler: arsa maliyeti, inşaat maliyeti, imar kısıtlamaları ve müteahhit kapasitesi.",
+                },
+              ],
+            },
+            {
+              heading: "Türk Gayrimenkul Piyasasının Kurumsal Yapısı",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Sermaye Piyasası Kurulu (SPK):",
+                  text: "Gayrimenkul Yatırım Ortaklıkları (GYO), Gayrimenkul Yatırım Fonları (GYF) ve değerleme kuruluşları üzerindeki düzenleyici ve denetleyici otorite.",
+                },
+                {
+                  strong: "Toplu Konut İdaresi (TOKİ):",
+                  text: "Konut üretimi, kentsel dönüşüm projeleri ve arsa geliştirme alanlarında kamu aktörü olarak önemli arz sağlayıcı. Alt gelir grubuna yönelik konut projelerinin baş yürütücüsüdür.",
+                },
+                {
+                  strong: "Belediyeler ve İmar Otoriteleri:",
+                  text: "İmar planları, yapı ruhsatları ve kullanım izinleri aracılığıyla arzı doğrudan etkilerler. Nazım imar planı ve uygulama imar planı piyasa değerlerini belirleyen temel kısıtlayıcılardır.",
+                },
+                {
+                  strong: "Bankalar ve BDDK:",
+                  text: "Konut ve ticari gayrimenkul kredileri, ipotek tesis ve serbest bırakma süreçleri bankaların piyasadaki rolünü belirler. BDDK kredilerin yapısını düzenleyerek talep dinamiklerini etkiler.",
+                },
+                {
+                  strong: "Tapu ve Kadastro Genel Müdürlüğü (TKGM):",
+                  text: "Tapu sicilinin tutulması, mülkiyet devirlerinin tescili ve kadastro çalışmalarının yürütülmesi görevleri aracılığıyla gayrimenkul piyasasının altyapısını sağlar.",
+                },
+              ],
+            },
+            {
+              heading: "Piyasa Analizi ve Pazar Araştırması",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Piyasa Analizi (Market Analysis):",
+                  text: "Belirli bir mülk türü ve konuma özgü arz, talep ve rekabet koşullarının incelenmesidir. Değerleme raporunun pazar koşulları bölümünü destekler.",
+                },
+                {
+                  strong: "En Yüksek ve En İyi Kullanım (EYEIK):",
+                  text: "Fiziksel olarak mümkün, hukuki açıdan izin verilen, finansal açıdan uygulanabilir ve maksimum değer yaratan kullanım. Her değerlemenin temel analizlerinden biridir.",
+                },
+                {
+                  strong: "Piyasa Koşulları Analizi:",
+                  text: "Boşluk oranı, emilim oranı (absorption rate), yeni arz ve rekabetçi projeler gibi göstergeler piyasa kararlarında yönlendirici olur.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda gayrimenkul piyasasının özellikleri (heterojenlik, hareketsizlik), kurumlar (SPK, TOKİ, TKGM, BDDK) ve En Yüksek En İyi Kullanım kavramı sıkça çıkar.",
+          kavramlar: [
+            { terim: "Heterojenlik", tanim: "Her gayrimenkulün fiziksel ve hukuki açıdan benzersiz olması; tam ikamesinin bulunmaması." },
+            { terim: "Piyasa Döngüsü (Gayrimenkul)", tanim: "Büyüme, zirve, gerileme ve dip evrelerinden oluşan ve arz-talep dengesini izleyen döngüsel hareket." },
+            { terim: "En Yüksek ve En İyi Kullanım (EYEIK)", tanim: "Bir mülkün fiziksel, hukuki ve finansal açıdan mümkün olan ve en yüksek değeri yaratan kullanım biçimi." },
+            { terim: "Emilim Oranı (Absorption Rate)", tanim: "Piyasada belirli bir dönemde satılan veya kiralanan mülk sayısını mevcut arz miktarına bölerek hesaplanan piyasa hız göstergesi." },
+            { terim: "TOKİ", tanim: "Toplu Konut İdaresi; kamu adına konut üretimi, arsa geliştirme ve kentsel dönüşüm projelerini yürüten idaredir." },
+            { terim: "TKGM", tanim: "Tapu ve Kadastro Genel Müdürlüğü; tapu sicilinin tutulması ve mülkiyet devirlerinin tescilinden sorumlu kurum." },
+            { terim: "Boşluk Oranı (Vacancy Rate)", tanim: "Belirli bir piyasada toplam arzın boş (kiraya verilmemiş/satılmamış) olan oranı; düşük boşluk oranı kira baskısının yüksekliğine işaret eder." },
+          ],
+          dikkatlar: [
+            "Gayrimenkul piyasasının heterojenlik ve hareketsizlik özellikleri tam rekabet koşullarını engeller; bu piyasada 'tek tip fiyat' oluşmaz.",
+            "Gayrimenkul arzı talepteki artışa hızla tepki veremez (inşaat süresi); bu gecikme (lag) fiyat oynaklığını artırır.",
+            "En Yüksek En İyi Kullanım analizi değerlemede her mülk için yapılmalıdır; mevcut kullanım her zaman EYEIK olmayabilir.",
+            "SPK, Türkiye'de GYO ve GYF ile değerleme kuruluşları üzerindeki temel düzenleyici otoritedir.",
+            "Piyasa döngüsünün hangi evresinde olunduğu değerleme raporunun pazar koşulları bölümünde açıkça belirtilmelidir.",
+          ],
+        },
+        questions: [
+          {
+            text: "Gayrimenkul piyasasını tam rekabet piyasasından ayıran temel özellik hangisidir?",
+            options: [
+              { id: "A", text: "Fiyatların çok hızlı değişmesi" },
+              { id: "B", text: "Her mülkün heterojen ve hareketsiz olması; tam ikamesinin bulunmaması" },
+              { id: "C", text: "Piyasada çok sayıda alıcı ve satıcının bulunması" },
+              { id: "D", text: "Devlet müdahalesinin olmaması" },
+            ],
+            correct: "B",
+            explanation:
+              "Gayrimenkul piyasasını tam rekabetten ayıran başlıca özellikler: her mülkün kendine özgü (heterojen) olması, taşınamaması (hareketsizlik), tam ikamesi bulunmaması ve yerel niteliği. Bu nedenle gayrimenkul piyasasında fiyat oluşumu tam rekabet koşullarında değil, asimetrik bilgi ve sınırlı piyasa katılımcılarıyla gerçekleşir.",
+          },
+          {
+            text: "Türkiye'de Gayrimenkul Yatırım Ortaklıkları (GYO) ve değerleme kuruluşlarının temel düzenleyici otoritesi kimdir?",
+            options: [
+              { id: "A", text: "BDDK" },
+              { id: "B", text: "TKGM" },
+              { id: "C", text: "SPK" },
+              { id: "D", text: "TOKİ" },
+            ],
+            correct: "C",
+            explanation:
+              "Sermaye Piyasası Kurulu (SPK), GYO, GYF ve değerleme kuruluşlarının lisanslama, faaliyet kuralları ve denetiminden sorumlu düzenleyici otoritedir. BDDK bankacılık düzenlemesini, TKGM tapu sicilini yönetir; TOKİ ise kamu adına konut üretimi yapar.",
+          },
+          {
+            text: "Gayrimenkul piyasasında 'arzın gecikmeli tepkisi (lag)' ne anlama gelir?",
+            options: [
+              { id: "A", text: "Satış fiyatlarının kira değerlerine geç yansıması" },
+              { id: "B", text: "Talep artışına karşın yeni arzın inşaat süresi nedeniyle hızla karşılanamaması" },
+              { id: "C", text: "Tapu tescil işlemlerinin gecikmeli tamamlanması" },
+              { id: "D", text: "Değerleme raporlarının geç teslim edilmesi" },
+            ],
+            correct: "B",
+            explanation:
+              "Gayrimenkul arzı yeni inşaat gerektirir; inşaat süreci ise ruhsat, arazi temini ve yapım dahil genellikle 2-5 yıl sürer. Talep hızla artsa bile arz aynı hızda artamaz. Bu gecikme (lag) döneminde fiyatlar sert yükselir; arz devreye girince ise piyasa dengeyi yeniden arar. Bu özellik gayrimenkul fiyat döngülerini açıklar.",
+          },
+          {
+            text: "En Yüksek ve En İyi Kullanım (EYEIK) analizi hangi koşulların aynı anda sağlanmasını gerektirir?",
+            options: [
+              { id: "A", text: "Fiziksel mümkünlük ve kâr maksimizasyonu" },
+              { id: "B", text: "Fiziksel mümkünlük, hukuki izin, finansal uygulanabilirlik ve maksimum değer" },
+              { id: "C", text: "Mevcut kullanıma devam ve kira geliri maksimizasyonu" },
+              { id: "D", text: "Yalnızca hukuki izin ve fiziksel mümkünlük" },
+            ],
+            correct: "B",
+            explanation:
+              "EYEIK; (1) Fiziksel olarak mümkün, (2) Hukuki açıdan izin verilmiş (imar, ruhsat), (3) Finansal açıdan uygulanabilir (kârlı) ve (4) Bu koşullar içinde maksimum değer yaratan kullanım biçimidir. Mevcut kullanım her zaman EYEIK değildir; değerleme uzmanı bu dört kriteri birlikte değerlendirmelidir.",
+          },
+          {
+            text: "TOKİ'nin Türkiye gayrimenkul piyasasındaki temel rolü nedir?",
+            options: [
+              { id: "A", text: "Tapu sicilini tutmak ve mülkiyet devirlerini tescil etmek" },
+              { id: "B", text: "Gayrimenkul değerleme kuruluşlarını lisanslamak" },
+              { id: "C", text: "Kamu adına konut üretimi, arsa geliştirme ve kentsel dönüşüm projelerini yürütmek" },
+              { id: "D", text: "Konut kredilerini düzenlemek ve bankalar üzerinde denetim yapmak" },
+            ],
+            correct: "C",
+            explanation:
+              "TOKİ (Toplu Konut İdaresi), düşük ve orta gelirli kesimlere yönelik konut üretimi, arsa geliştirme, kentsel dönüşüm projelerini kamu adına yürüten idaredir. Tapu sicili TKGM'nin, değerleme lisansları SPK'nın, banka denetimi ise BDDK'nın görevidir.",
+          },
+          {
+            text: "Emilim oranı (absorption rate) ne anlama gelir?",
+            options: [
+              { id: "A", text: "Piyasadaki tüm mülklerin toplam kira gelirinin değere oranı" },
+              { id: "B", text: "Belirli bir dönemde satılan veya kiralanan mülk sayısını mevcut arz miktarına bölerek hesaplanan piyasa hız göstergesi" },
+              { id: "C", text: "İnşaat maliyetinin piyasa değerine oranı" },
+              { id: "D", text: "Bir mülkün yıllık değer artış oranı" },
+            ],
+            correct: "B",
+            explanation:
+              "Emilim oranı (absorption rate), piyasada belirli bir dönemde (genellikle ay veya çeyrek) satılan ya da kiralanan mülk sayısının mevcut toplam arz miktarına bölünmesiyle hesaplanır. Yüksek emilim oranı talebin güçlü olduğunu, piyasanın sıkıştığını gösterir; düşük emilim oranı ise arz fazlasına işaret eder.",
+          },
+          {
+            text: "Gayrimenkul piyasa döngüsünün hangi evresi genellikle yeni inşaat başlangıçlarının zirveye ulaştığı evredir?",
+            options: [
+              { id: "A", text: "Dip (trough) evresi" },
+              { id: "B", text: "Gerileme (downturn) evresi" },
+              { id: "C", text: "Büyüme (upswing) evresinin sonları / zirve (peak) evresi" },
+              { id: "D", text: "Toparlanma (recovery) evresinin başları" },
+            ],
+            correct: "C",
+            explanation:
+              "Gayrimenkul döngüsünde yeni inşaat başlangıçları büyüme evresinin geç döneminde ya da zirve evresinde yoğunlaşır; çünkü müteahhitler ve yatırımcılar yüksek kira/fiyat ortamında projelere başlarlar. Bu yeni arzın piyasaya girmesiyle birlikte gerileme evresi başlar — dolayısıyla inşaat artışı ile fiyat zirvesi arasında gecikme (lag) oluşur.",
+          },
+        ],
+      },
+
+      // ──────────── Ders 8: Değerlemeye İlişkin Düzenlemeler ve Örgütler ────────────
+      {
+        id: "m1014-l8",
+        title: "Değerlemeye İlişkin Düzenlemeler ve Örgütler",
+        duration: "8 dk",
+        summary: {
+          title: "Değerleme Mevzuatı ve Uluslararası Örgütler",
+          intro:
+            "Türkiye'de gayrimenkul değerleme faaliyeti, Sermaye Piyasası Kurulu'nun (SPK) düzenlemeleri çerçevesinde yürütülür. Değerleme kuruluşlarının yetkilendirilmesi, sorumlu değerleme uzmanlarının lisanslanması ve meslek örgütü olarak Türkiye Değerleme Uzmanları Birliği'nin (TDUB) kurulması bu düzenleyici çerçevenin temel unsurlarıdır. Uluslararası alanda ise RICS, IVSC ve TEGoVA gibi örgütler değerleme standartlarını (IVS, EVS, RICS Red Book) yayımlamaktadır.",
+          sections: [
+            {
+              heading: "Türkiye'de Değerleme Mevzuatı",
+              icon: "shield",
+              items: [
+                {
+                  strong: "III-62.1 Tebliği (Değerleme Kuruluşları):",
+                  text: "SPK'nın yetkilendirdiği değerleme kuruluşlarının kuruluş, faaliyet, sorumlu değerleme uzmanı gereksinimleri ve bağımsızlık kurallarını düzenleyen temel tebliğdir. SPK listesinde yer almayan kuruluşlar sermaye piyasası işlemlerine ilişkin değerleme yapamazlar.",
+                },
+                {
+                  strong: "III-62.3 Tebliği (Değerleme Standartları):",
+                  text: "Değerleme raporlarında uyulması gereken asgari standartlar, format gereksinimleri ve raporun içermesi gereken bölümleri belirler. Bu tebliğ ile Türkiye'de değerleme standartları büyük ölçüde RICS ve IVS ile uyumlu hale getirilmiştir.",
+                },
+                {
+                  strong: "Sorumlu Değerleme Uzmanı (SDU):",
+                  text: "Değerleme kuruluşunda lisanslı ve SPK listesinde kayıtlı olan, raporlarda imza yetkisine sahip uzman. SDU olmak için lisans sınavını geçmek ve mesleki deneyim şartlarını yerine getirmek gereklidir.",
+                },
+                {
+                  strong: "Bağımsızlık İlkesi:",
+                  text: "Değerleme kuruluşu ve uzmanı; değerleme yaptıkları mülkle veya müşteriyle menfaat çatışması yaratacak ilişkilerden kaçınmak zorundadır. Aynı mülkü art arda değerlemede ücret bağımlılığı bağımsızlığı tehdit eden faktörler arasındadır.",
+                },
+              ],
+            },
+            {
+              heading: "Türkiye Değerleme Uzmanları Birliği (TDUB)",
+              icon: "shield",
+              items: [
+                {
+                  strong: "TDUB'un Kuruluşu ve Statüsü:",
+                  text: "4362 sayılı Kanun ve SPK düzenlemeleri çerçevesinde kurulan, tüm lisanslı değerleme uzmanlarının zorunlu üyeliğiyle oluşan meslek kuruluşudur. Kamu kurumu niteliğinde meslek kuruluşu statüsünde değil, özel hukuk tüzel kişisi statüsündedir.",
+                },
+                {
+                  strong: "TDUB'un Görevleri:",
+                  text: "Mesleki etik kurallarını belirleme, disiplin kararları alma, üye kayıtlarını tutma, eğitim programları düzenleme, mesleki standartlar geliştirme ve uluslararası değerleme kuruluşlarıyla işbirliği yapma.",
+                },
+                {
+                  strong: "SPK ile TDUB İlişkisi:",
+                  text: "SPK asıl düzenleyici otorite olarak değerleme kuruluşlarını listeler ve denetler; TDUB ise uzman bazında meslek kuruluşu işlevi görür. İkisi birbirini tamamlar.",
+                },
+              ],
+            },
+            {
+              heading: "Uluslararası Değerleme Standartları ve Örgütleri",
+              icon: "shield",
+              items: [
+                {
+                  strong: "IVSC ve Uluslararası Değerleme Standartları (IVS):",
+                  text: "IVSC (International Valuation Standards Council) tarafından yayımlanan IVS, dünyada genel kabul görmüş değerleme standartlarıdır. Değerleme tanımları, yaklaşımlar ve raporlama gereksinimleri konularında küresel çerçeve sunar.",
+                },
+                {
+                  strong: "RICS ve Red Book (RICS Valuation Standards):",
+                  text: "Londra merkezli RICS (Royal Institution of Chartered Surveyors), gayrimenkul değerleme standartları için 'Red Book' olarak anılan kapsamlı bir rehber yayımlar. Türkiye dahil pek çok ülkede kurumsal yatırımcılar RICS standartlarına göre hazırlanmış raporlar talep eder.",
+                },
+                {
+                  strong: "TEGoVA ve Avrupa Değerleme Standartları (EVS/Blue Book):",
+                  text: "TEGoVA (The European Group of Valuers' Associations) Avrupa değerleme standartlarını (EVS, 'Blue Book') belirler. AB üyesi ülkelerin bankaları tarafından talep edilen değerleme raporları EVS uyumlu olmalıdır.",
+                },
+                {
+                  strong: "Türkiye Değerleme Standartları (TDS):",
+                  text: "TDUB ve SPK, Türkiye'ye özgü değerleme standartları (TDS) geliştirmiş; bu standartlar IVS ve RICS ile uyum içinde hazırlanmıştır.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda III-62.1 / III-62.3 tebliğ farkı, Sorumlu Değerleme Uzmanı gereksinimleri, TDUB'un statüsü ve IVSC/RICS/TEGoVA ayrımı sıkça çıkar.",
+          kavramlar: [
+            { terim: "III-62.1 Tebliği", tanim: "SPK'nın değerleme kuruluşlarının yetkilendirilmesi ve faaliyet koşullarını düzenleyen temel tebliği." },
+            { terim: "III-62.3 Tebliği", tanim: "Değerleme raporlarında uyulması gereken standartlar ve format gereksinimlerini belirleyen SPK tebliği." },
+            { terim: "Sorumlu Değerleme Uzmanı (SDU)", tanim: "SPK listesinde kayıtlı, lisanslı ve değerleme raporlarında imza yetkisi bulunan değerleme uzmanı." },
+            { terim: "TDUB", tanim: "Türkiye Değerleme Uzmanları Birliği; lisanslı değerleme uzmanlarının zorunlu üyeliğiyle oluşan özel hukuk statülü meslek kuruluşu." },
+            { terim: "IVSC / IVS", tanim: "International Valuation Standards Council; küresel kabul görmüş Uluslararası Değerleme Standartları'nı (IVS) yayımlayan kuruluş." },
+            { terim: "RICS Red Book", tanim: "RICS'in yayımladığı değerleme standartları rehberi; kurumsal yatırımcılar tarafından talep edilen değerleme raporlarında yaygın referans." },
+            { terim: "TEGoVA / EVS (Blue Book)", tanim: "Avrupa Değerleyiciler Birliği (TEGoVA) tarafından yayımlanan Avrupa Değerleme Standartları; AB ülkelerinde banka işlemlerinde referans alınır." },
+          ],
+          dikkatlar: [
+            "III-62.1 değerleme kuruluşlarının lisanslanmasını, III-62.3 ise değerleme raporlarının standartlarını düzenler — iki tebliği birbiriyle karıştırmayın.",
+            "TDUB özel hukuk tüzel kişiliğine sahip bir meslek kuruluşudur; kamu kurumu niteliğinde meslek kuruluşu statüsünde DEĞİLDİR.",
+            "Sorumlu Değerleme Uzmanı (SDU) olmak için hem lisans sınavını geçmek hem de SPK'nın öngördüğü mesleki deneyim şartlarını sağlamak gerekir.",
+            "IVS küresel standartları, EVS Avrupa standartlarını, RICS Red Book ise pratik değerleme uygulamasını kapsar — örgüt-standart eşleştirmesi sınavda çıkar.",
+            "Bağımsızlık ilkesi gereği aynı değerleme kuruluşu; değerlenecek mülkte ya da müşteride doğrudan mali çıkarı bulunan uzmanları görevlendiremez.",
+          ],
+        },
+        questions: [
+          {
+            text: "SPK'nın III-62.1 ve III-62.3 tebliğleri arasındaki temel fark nedir?",
+            options: [
+              { id: "A", text: "III-62.1 uluslararası standartları, III-62.3 yurt içi standartları düzenler." },
+              { id: "B", text: "III-62.1 değerleme kuruluşlarının yetkilendirilme ve faaliyet koşullarını; III-62.3 değerleme raporlarının standartlarını düzenler." },
+              { id: "C", text: "III-62.1 konut değerlemesini, III-62.3 ticari gayrimenkul değerlemesini kapsar." },
+              { id: "D", text: "Her ikisi de aynı konuyu farklı yönleriyle düzenler, aralarında anlamlı bir fark yoktur." },
+            ],
+            correct: "B",
+            explanation:
+              "III-62.1 değerleme kuruluşlarının kuruluş, yetkilendirme ve faaliyet esaslarını belirlerken; III-62.3 değerleme raporlarında kullanılacak standartları, formatı ve raporun içermesi gereken asgari unsurları düzenler. İkisi birbirini tamamlar ancak farklı konuları kapsar.",
+          },
+          {
+            text: "TDUB'un hukuki statüsü nedir?",
+            options: [
+              { id: "A", text: "Kamu kurumu niteliğinde meslek kuruluşu" },
+              { id: "B", text: "Devlet kurumu (bakanlığa bağlı)" },
+              { id: "C", text: "Özel hukuk tüzel kişisi statüsünde meslek kuruluşu" },
+              { id: "D", text: "Uluslararası bir kuruluşun Türkiye temsilcisi" },
+            ],
+            correct: "C",
+            explanation:
+              "TDUB (Türkiye Değerleme Uzmanları Birliği), özel hukuk tüzel kişisi statüsünde bir meslek kuruluşudur; baro veya tabip odaları gibi 'kamu kurumu niteliğinde meslek kuruluşu' değildir. Tüm lisanslı değerleme uzmanları zorunlu olarak TDUB üyesidir.",
+          },
+          {
+            text: "Sorumlu Değerleme Uzmanı (SDU) unvanını kazanmak için gereken koşullar arasında aşağıdakilerden hangisi YER ALMAZ?",
+            options: [
+              { id: "A", text: "SPK lisans sınavını geçmek" },
+              { id: "B", text: "SPK listesine kayıtlı olmak" },
+              { id: "C", text: "RICS üyeliği almak" },
+              { id: "D", text: "Öngörülen mesleki deneyim süresini tamamlamak" },
+            ],
+            correct: "C",
+            explanation:
+              "Sorumlu Değerleme Uzmanı olabilmek için SPK lisans sınavını geçmek, SPK listesine kayıt olmak ve belirlenen mesleki deneyim şartlarını sağlamak gereklidir. RICS üyeliği uluslararası mesleki bir kimlik olmakla birlikte Türkiye'de SDU unvanının zorunlu koşulu değildir.",
+          },
+          {
+            text: "Uluslararası Değerleme Standartları (IVS) hangi kuruluş tarafından yayımlanmaktadır?",
+            options: [
+              { id: "A", text: "RICS (Royal Institution of Chartered Surveyors)" },
+              { id: "B", text: "TEGoVA (The European Group of Valuers' Associations)" },
+              { id: "C", text: "IVSC (International Valuation Standards Council)" },
+              { id: "D", text: "TDUB (Türkiye Değerleme Uzmanları Birliği)" },
+            ],
+            correct: "C",
+            explanation:
+              "IVS (International Valuation Standards) IVSC tarafından yayımlanmaktadır. RICS kendi 'Red Book' standartlarını, TEGoVA ise 'EVS (Blue Book)' Avrupa standartlarını yayımlar. TDUB ise Türkiye değerleme standartlarını geliştirmekten sorumludur.",
+          },
+          {
+            text: "RICS Red Book hangi amaçla kullanılmaktadır?",
+            options: [
+              { id: "A", text: "Yalnızca Türkiye gayrimenkul piyasasına özgü değerleme kurallarını belirlemek" },
+              { id: "B", text: "Kurumsal yatırımcıların talep ettiği uluslararası değerleme standartlarına göre rapor hazırlamak için rehber sağlamak" },
+              { id: "C", text: "Avrupa Birliği ülkelerindeki banka işlemlerinde kullanılan zorunlu değerleme standardını oluşturmak" },
+              { id: "D", text: "Yalnızca konut değerlemesi için hazırlanan standart seti sunmak" },
+            ],
+            correct: "B",
+            explanation:
+              "RICS Red Book (Valuation Global Standards), kurumsal yatırımcılar, uluslararası bankalar ve fonlar tarafından talep edilen değerleme raporlarının kalite güvencesi için kullanılan standartlar rehberidir. Küresel ölçekte uygulama alanı bulur. AB'de banka işlemlerinde zorunlu tutulan ise TEGoVA'nın EVS'sidir.",
+          },
+          {
+            text: "Değerleme faaliyetinde bağımsızlık ilkesi neyi gerektirir?",
+            options: [
+              { id: "A", text: "Değerleme uzmanının yalnızca devlet kurumlarından iş alması" },
+              { id: "B", text: "Değerleme kuruluşunun değerlenecek mülkte veya müşteride menfaat çatışması yaratacak doğrudan ilişkilerden kaçınması" },
+              { id: "C", text: "Değerleme raporunun mutlaka iki farklı uzman tarafından onaylanması" },
+              { id: "D", text: "Aynı müşteriden arka arkaya iş alınamaması" },
+            ],
+            correct: "B",
+            explanation:
+              "Bağımsızlık ilkesi gereği değerleme kuruluşu ve uzmanı; değerlenecek mülkte ortak, hissedar veya alacaklı konumunda bulunmamalı, müşteriyle aşırı ücret bağımlılığı oluşturacak ilişkilerden kaçınmalıdır. Bağımsızlık değerleme sonucunun güvenilirliğinin temel güvencesidir.",
+          },
+          {
+            text: "Türkiye'de sermaye piyasası işlemlerine ilişkin (örneğin GYO raporları) değerleme yapabilmek için hangi koşul şarttır?",
+            options: [
+              { id: "A", text: "RICS üyeliği bulunması" },
+              { id: "B", text: "TDUB tarafından akredite edilmiş olmak" },
+              { id: "C", text: "SPK'nın yetkilendirdiği değerleme kuruluşları listesinde yer almak" },
+              { id: "D", text: "Yalnızca Tapu ve Kadastro Genel Müdürlüğü onayı bulunması" },
+            ],
+            correct: "C",
+            explanation:
+              "Sermaye piyasası mevzuatı kapsamındaki değerlemeler (GYO, halka arz, teminat değerlemesi vb.) yalnızca SPK'nın III-62.1 Tebliği çerçevesinde yetkilendirip listesine aldığı değerleme kuruluşları tarafından yapılabilir. Listede yer almayan kuruluşlar bu kapsamdaki değerlemeler için yetkili sayılmaz.",
+          },
+        ],
+      },
     ],
   },
 ];
