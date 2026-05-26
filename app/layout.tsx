@@ -61,7 +61,7 @@ export default function RootLayout({
         `}} />
       </head>
       <body className={spaceGrotesk.className}>{children}</body>
-      <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+      <GoogleAnalytics gaId="G-9M6F441GQB" />
     </html>
   );
 }
