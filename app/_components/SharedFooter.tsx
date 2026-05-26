@@ -32,8 +32,7 @@ export default function SharedFooter() {
             <div className="font-semibold text-[var(--text-primary)] mb-4 text-sm tracking-wider uppercase">Platform</div>
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/dashboard"    className="hover:text-indigo-400 transition">Çalışma Paneli</Link></li>
-              <li><Link href="/pratik"       className="hover:text-indigo-400 transition">Pratik</Link></li>
-              <li><Link href="/sinav"        className="hover:text-indigo-400 transition">Hızlı Pratik</Link></li>
+              <li><Link href="/pratik"       className="hover:text-indigo-400 transition">Konu Pratiği</Link></li>
               <li><Link href="/favoriler"    className="hover:text-indigo-400 transition">Favoriler</Link></li>
               <li><Link href="/istatistikler" className="hover:text-indigo-400 transition">İstatistikler</Link></li>
             </ul>

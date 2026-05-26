@@ -92,8 +92,7 @@ export default function HomePage() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--text-secondary)]">
             <a href="#moduller" className="hover:text-indigo-400 transition">Modüller</a>
-            <Link href="/pratik" className="hover:text-indigo-400 transition">Pratik</Link>
-            <Link href="/sinav" className="hover:text-indigo-400 transition">Hızlı Pratik</Link>
+            <Link href="/pratik" className="hover:text-indigo-400 transition">Konu Pratiği</Link>
 
             {/* ── Sınavlar Dropdown ── */}
             <div
@@ -197,8 +196,7 @@ export default function HomePage() {
           <div className="md:hidden border-t border-[var(--border-base)] bg-[var(--bg-base)]/98 backdrop-blur-xl">
             <div className="px-5 py-4 space-y-1">
               <a href="#moduller" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">Modüller</a>
-              <Link href="/pratik" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">Pratik</Link>
-              <Link href="/sinav" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">Hızlı Pratik</Link>
+              <Link href="/pratik" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">Konu Pratiği</Link>
               <Link href="/favoriler" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">Favoriler</Link>
               <Link href="/istatistikler" onClick={() => setMobileMenuAcik(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[var(--bg-surface-2)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition text-sm font-medium">İstatistikler</Link>
 
