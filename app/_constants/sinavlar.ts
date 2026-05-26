@@ -26,7 +26,7 @@ export const SINAVLAR = [
     soruSayisi: 100, sureDakika: 150,
     href: "/sinav/duzey2",
     aciklama: "İleri düzey sermaye piyasası faaliyetleri lisansı",
-    pdfler: ["1002", "1003", "1004", "1005", "1006", "1012"],
+    pdfler: ["1002", "1003", "1004", "1005", "1006", "1007", "1009", "1012", "1018"],
   },
   {
     kod: "D3", ad: "Düzey 3",               pilAd: "Düzey 3",    renk: "indigo",
@@ -54,7 +54,7 @@ export const SINAVLAR = [
     soruSayisi: 100, sureDakika: 150,
     href: "/sinav/kd",
     aciklama: "Kredi derecelendirme uzmanlığı lisansı",
-    pdfler: ["1001", "1009", "1010", "1016", "1017"],
+    pdfler: ["1002", "1009", "1010", "1016", "1017"],
   },
   {
     kod: "GD", ad: "Gayrimenkul",           pilAd: "Gayrimenkul",renk: "orange",
