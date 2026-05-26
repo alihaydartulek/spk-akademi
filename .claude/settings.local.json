@@ -30,7 +30,8 @@
       "mcp__Claude_in_Chrome__list_connected_browsers",
       "PowerShell(cd \"C:\\\\Users\\\\90506\\\\Desktop\\\\spl-projem\"; $content = [System.IO.File]::ReadAllText\\(\"app/mevzuat-1023.ts\", [System.Text.Encoding]::UTF8\\); $idx = $content.IndexOf\\([char]0xFFFD\\); $content.Substring\\([Math]::Max\\(0,$idx-80\\), 160\\))",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "WebFetch(domain:spl.com.tr)"
+      "WebFetch(domain:spl.com.tr)",
+      "Bash(npx tsc *)"
     ]
   }
 }

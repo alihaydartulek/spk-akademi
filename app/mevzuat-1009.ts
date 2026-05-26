@@ -750,6 +750,207 @@ export const mevzuat1009: Module[] = [
           },
         ],
       },
+
+      // ──────────── Ders 6: Portföy Performans Ölçümü ────────────
+      {
+        id: "m1009-l6",
+        title: "Portföy Performans Ölçüm Teknikleri: Sharpe, Treynor ve Jensen",
+        duration: "9 dk",
+        summary: {
+          title: "Portföy Performans Ölçüm Teknikleri",
+          intro:
+            "Portföy performansını değerlendirmek için yalnızca getiri oranına bakmak yanıltıcı olabilir; çünkü yüksek getiri yüksek riskle elde edilmiş olabilir. Bu nedenle risk-ayarlı performans ölçütleri geliştirilmiştir. Sharpe Oranı, Treynor Oranı ve Jensen Alfası (Jensen'in Alfası) en yaygın kullanılan üç risk-ayarlı performans göstergesidir; her biri riski farklı şekilde tanımlar ve farklı portföy karşılaştırma durumlarında kullanılır.",
+          sections: [
+            {
+              heading: "Sharpe Oranı",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Formül:",
+                  text: "Sharpe Oranı = (Rp – Rf) / σp. Burada Rp: portföyün ortalama getirisi; Rf: risksiz faiz oranı; σp: portföyün standart sapması (toplam risk).",
+                },
+                {
+                  strong: "Yorumu:",
+                  text: "Sharpe oranı, üstlenilen her birim toplam risk (standart sapma) başına elde edilen fazla getiriyi (risk primini) ölçer. Oran ne kadar yüksekse portföy performansı o kadar iyidir.",
+                },
+                {
+                  strong: "Kullanım Alanı:",
+                  text: "Yatırımcı portföyünü iyi çeşitlendirememişse veya tek bir portföy değerlendiriliyorsa Sharpe oranı uygundur çünkü toplam riski (sistematik + sistematik olmayan) dikkate alır.",
+                },
+                {
+                  strong: "Sınırlaması:",
+                  text: "Negatif Sharpe değerleri karşılaştırma yapmayı zorlaştırır. Standart sapma getiri dağılımının simetrik olduğunu varsayar; asimetrik dağılımlarda yanıltıcı olabilir.",
+                },
+              ],
+            },
+            {
+              heading: "Treynor Oranı",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Formül:",
+                  text: "Treynor Oranı = (Rp – Rf) / βp. Burada βp: portföyün betası (sistematik risk).",
+                },
+                {
+                  strong: "Yorumu:",
+                  text: "Treynor oranı, üstlenilen her birim sistematik risk (piyasa riski) başına elde edilen fazla getiriyi ölçer. Çeşitlendirilebilir (sistematik olmayan) riski görmezden gelir.",
+                },
+                {
+                  strong: "Kullanım Alanı:",
+                  text: "Portföy iyi çeşitlendirilmişse ve daha geniş bir portföyün parçasıysa Treynor oranı tercih edilir. Büyük kurumsal portföylerin karşılaştırılmasında kullanılır.",
+                },
+                {
+                  strong: "Sharpe ile Fark:",
+                  text: "Sharpe toplam riski (σ), Treynor ise yalnızca piyasa riskini (β) baz alır. İyi çeşitlendirilmiş bir portföy için her iki oran da benzer sıralama verir.",
+                },
+              ],
+            },
+            {
+              heading: "Jensen Alfası (α)",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Formül:",
+                  text: "Jensen Alfası (α) = Rp – [Rf + βp × (Rm – Rf)]. Burada Rm: piyasa portföyünün getirisi; parantez içindeki ifade CAPM'e göre beklenen getiridir.",
+                },
+                {
+                  strong: "Yorumu:",
+                  text: "Jensen Alfası, portföyün CAPM tarafından öngörülen getirinin üzerinde (veya altında) fiilen elde ettiği fazla getiridir. α > 0: portföy yöneticisi piyasayı yeniyor; α = 0: piyasayla aynı; α < 0: piyasanın altında kalınıyor.",
+                },
+                {
+                  strong: "Kullanım Alanı:",
+                  text: "Portföy yöneticisinin aktif yönetiminin değer yaratıp yaratmadığını ölçmek için kullanılır. Fon yöneticisi değerlendirmelerinde sıkça başvurulan bir ölçüttür.",
+                },
+                {
+                  strong: "CAPM Bağlantısı:",
+                  text: "Jensen Alfası CAPM'i temel aldığından, CAPM'in geçerliliğini kabul etmeden alfa yorumlamak doğru değildir. Piyasa anomalileri ve CAPM sınırlılıkları alfa değerlerini etkileyebilir.",
+                },
+              ],
+            },
+            {
+              heading: "Üç Ölçütün Karşılaştırması",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Risk Tanımı:",
+                  text: "Sharpe → Toplam risk (σ) | Treynor → Sistematik risk (β) | Jensen → Sistematik risk (β) ile CAPM beklentisi aşımı.",
+                },
+                {
+                  strong: "En Uygun Kullanım:",
+                  text: "Az çeşitlendirilmiş portföy → Sharpe. İyi çeşitlendirilmiş veya kurumsal portföy → Treynor. Aktif yönetici performansı → Jensen Alfası.",
+                },
+                {
+                  strong: "Ortak Payda:",
+                  text: "Her üç ölçüt de risksiz faiz oranını (Rf) temel alır ve fazla getiriyi (risk primini) ölçer; fark ettikleri nokta risk ölçütüdür.",
+                },
+              ],
+            },
+          ],
+          tip: "Formüller ve risk tanımları arasındaki fark sınavın favorisidir: Sharpe σ, Treynor β kullanır. Jensen alfası ise CAPM beklentisinin üzerindeki getiridir.",
+          kavramlar: [
+            { terim: "Sharpe Oranı", tanim: "(Rp – Rf) / σp formülüyle toplam risk başına fazla getiriyi ölçen risk-ayarlı performans göstergesi." },
+            { terim: "Treynor Oranı", tanim: "(Rp – Rf) / βp formülüyle sistematik risk (beta) başına fazla getiriyi ölçen performans göstergesi." },
+            { terim: "Jensen Alfası (α)", tanim: "Portföyün CAPM beklentisinin üzerinde fiilen elde ettiği fazla getiri; aktif yönetim değerini ölçer." },
+            { terim: "Risk-Ayarlı Getiri", tanim: "Portföy getirisinin alınan riske göre normalize edilerek elde edilen ölçüt; saf getiri karşılaştırmasından daha anlamlıdır." },
+            { terim: "Beta (β)", tanim: "Portföyün piyasaya göre duyarlılığını gösteren sistematik risk ölçütü; β=1 piyasayla aynı hareketliliği ifade eder." },
+            { terim: "Standart Sapma (σ)", tanim: "Portföy getirilerinin ortalamadan sapmasını gösteren toplam risk ölçütü; Sharpe oranında payda olarak kullanılır." },
+            { terim: "CAPM Beklentisi", tanim: "Rf + β × (Rm – Rf) formülüyle hesaplanan; piyasa riskine göre beklenen portföy getirisi." },
+          ],
+          dikkatlar: [
+            "Sharpe oranı toplam riski (σ) baz alırken Treynor oranı yalnızca sistematik riski (β) dikkate alır; az çeşitlendirilmiş portföylerde Sharpe daha uygun tercihdir.",
+            "Jensen Alfası sıfırın üzerindeyse portföy yöneticisi piyasayı geçiyor demektir; sıfırın altında ise aktif yönetim zarar etmektedir.",
+            "CAPM'e dayanan Jensen Alfasını yorumlamak için CAPM'in geçerli olduğunu varsaymak gerekir.",
+            "Üç ölçüt de risksiz faiz oranını (Rf) paylaşır; fazla getiriyi (risk primini) farklı risk tanımlarıyla normalize eder.",
+            "İyi çeşitlendirilmiş kurumsal portföylerde Treynor ve Jensen benzer sıralama verirken, az çeşitlendirilmiş portföylerde Sharpe ile Treynor sıralamaları farklılaşabilir.",
+          ],
+        },
+        questions: [
+          {
+            text: "Sharpe Oranı formülü hangisidir?",
+            options: [
+              { id: "A", text: "(Rp – Rf) / βp" },
+              { id: "B", text: "(Rp – Rf) / σp" },
+              { id: "C", text: "Rp – [Rf + βp × (Rm – Rf)]" },
+              { id: "D", text: "(Rp – Rm) / σp" },
+            ],
+            correct: "B",
+            explanation:
+              "Sharpe Oranı = (Rp – Rf) / σp formülüyle hesaplanır. Portföy getirisi ile risksiz faiz arasındaki farkı (fazla getiri) portföyün standart sapmasına (toplam riske) böler. Seçenek A Treynor Oranı, C ise Jensen Alfasıdır.",
+          },
+          {
+            text: "Treynor Oranı ile Sharpe Oranı'nın temel farkı nedir?",
+            options: [
+              { id: "A", text: "Treynor oranı standart sapmayı; Sharpe oranı betayı baz alır." },
+              { id: "B", text: "Treynor oranı sistematik riski (beta); Sharpe oranı toplam riski (standart sapma) baz alır." },
+              { id: "C", text: "İkisi de aynı formülü kullanır, yorumları farklıdır." },
+              { id: "D", text: "Treynor oranı yalnızca hisse senetleri için kullanılır." },
+            ],
+            correct: "B",
+            explanation:
+              "Sharpe oranı paydada standart sapmayı (toplam risk = sistematik + sistematik olmayan) kullanırken, Treynor oranı paydada betayı (yalnızca piyasa riski = sistematik risk) kullanır. Bu fark, hangi ölçütün ne zaman tercih edileceğini belirler.",
+          },
+          {
+            text: "Jensen Alfasının (α) pozitif olması ne anlama gelir?",
+            options: [
+              { id: "A", text: "Portföyün standart sapması piyasadan yüksektir." },
+              { id: "B", text: "Portföy yöneticisi CAPM beklentisinin üzerinde fazla getiri elde etmiştir; aktif yönetim değer yaratmıştır." },
+              { id: "C", text: "Portföyün betası birden büyüktür." },
+              { id: "D", text: "Portföy risksiz faizin altında getiri sağlamıştır." },
+            ],
+            correct: "B",
+            explanation:
+              "Jensen Alfası = Rp – [Rf + β(Rm – Rf)] formülüyle hesaplanır. Pozitif alfa, portföy yöneticisinin CAPM'in öngördüğü beklenen getirisinin üzerinde fiilen getiri elde ettiğini, yani aktif yönetimin değer yarattığını gösterir. α = 0 piyasayla aynı, α < 0 piyasanın altında kalındığı anlamına gelir.",
+          },
+          {
+            text: "Az çeşitlendirilmiş bir portföyü değerlendirirken hangi performans ölçütü daha uygun tercihdir?",
+            options: [
+              { id: "A", text: "Treynor Oranı" },
+              { id: "B", text: "Jensen Alfası" },
+              { id: "C", text: "Sharpe Oranı" },
+              { id: "D", text: "Beta Katsayısı" },
+            ],
+            correct: "C",
+            explanation:
+              "Az çeşitlendirilmiş portföylerde sistematik olmayan (özgün) risk tamamen giderilemez. Bu durumda yalnızca sistematik riski (β) baz alan Treynor veya Jensen yerine toplam riski (σ) dikkate alan Sharpe Oranı daha doğru değerlendirme sağlar.",
+          },
+          {
+            text: "Bir portföy yöneticisinin aktif yönetim becerisi değerlendirilmek istendiğinde en uygun ölçüt hangisidir?",
+            options: [
+              { id: "A", text: "Standart Sapma" },
+              { id: "B", text: "Jensen Alfası" },
+              { id: "C", text: "Sharpe Oranı" },
+              { id: "D", text: "Korelasyon Katsayısı" },
+            ],
+            correct: "B",
+            explanation:
+              "Jensen Alfası, portföy yöneticisinin piyasa riskine göre beklenen getiriyi (CAPM) ne kadar aştığını ölçtüğünden aktif yönetim becerisini doğrudan değerlendirmek için idealdir. Fon yöneticisi karşılaştırmalarında ve performans değerlendirme raporlarında yaygın olarak kullanılır.",
+          },
+          {
+            text: "CAPM'e göre bir portföyün beklenen getirisi Rf = %5, βp = 1,2 ve Rm = %12 ise Jensen Alfasını hesaplamak için portföyün gerçekleşen getirisi Rp = %15 olduğunda alfa kaçtır?",
+            options: [
+              { id: "A", text: "%1,6" },
+              { id: "B", text: "%3,4" },
+              { id: "C", text: "–%1,4" },
+              { id: "D", text: "%10" },
+            ],
+            correct: "A",
+            explanation:
+              "CAPM Beklentisi = Rf + β × (Rm – Rf) = 5 + 1,2 × (12 – 5) = 5 + 8,4 = 13,4%. Jensen Alfası = Rp – CAPM Beklentisi = 15 – 13,4 = 1,6%. Pozitif alfa, yöneticinin piyasayı geçtiğini gösterir.",
+          },
+          {
+            text: "Hangi durum için Treynor oranı Sharpe oranına tercih edilir?",
+            options: [
+              { id: "A", text: "Portföy az çeşitlendirildiğinde ve tek başına değerlendirildiğinde" },
+              { id: "B", text: "Portföy iyi çeşitlendirildiğinde ve daha büyük bir portföyün alt bileşeni olduğunda" },
+              { id: "C", text: "Portföy yüksek getiri-düşük risk özelliği taşıdığında" },
+              { id: "D", text: "Portföy yalnızca hisse senetlerinden oluştuğunda" },
+            ],
+            correct: "B",
+            explanation:
+              "Treynor oranı, portföyün iyi çeşitlendirilmiş olduğu ve daha büyük bir portföyün bir parçası olarak değerlendirildiği durumlarda tercih edilir. Bu koşullarda sistematik olmayan risk çeşitlendirmeyle giderildiğinden yalnızca sistematik risk (β) ilgili risk ölçütüdür.",
+          },
+        ],
+      },
     ],
   },
 ];

@@ -746,6 +746,133 @@ export const mevzuat1005: Module[] = [
           },
         ],
       },
+      // ───────────── Ders 6: Uzaktan Kimlik Tespiti ve Elektronik Sözleşme ─────────────
+      {
+        id: "m1005-l6",
+        title: "Uzaktan Kimlik Tespiti ve Elektronik Sözleşme (III-42.1)",
+        duration: "8 dk",
+        summary: {
+          title: "Uzaktan Kimlik Tespiti ve Elektronik Sözleşme",
+          intro:
+            "III-42.1 sayılı Tebliğ, aracı kurumlar ve portföy yönetim şirketlerinin müşterileriyle fiziksel ortam gerektirmeksizin elektronik kanallar aracılığıyla sözleşme ilişkisi kurmasını düzenler. Kimlik tespiti video görüşme veya dijital onay yoluyla yapılabilir; ancak yükümlülükler ve güvenlik standartları bakımından katı koşullar öngörülür.",
+          sections: [
+            {
+              heading: "Uzaktan Kimlik Tespiti Yöntemleri",
+              icon: "shield",
+              items: [
+                { strong: "Video Görüşme Yöntemi:", text: "Müşteriyle canlı video bağlantısı kurularak kimlik belgesi görüntülenir ve kayıt altına alınır; gerçek zamanlı etkileşim zorunludur." },
+                { strong: "Dijital Onay Yöntemi:", text: "E-devlet üzerinden nitelikli elektronik imza veya mobil imza kullanılarak kimlik doğrulaması yapılır." },
+                { strong: "Kayıt Yükümlülüğü:", text: "Kimlik tespitine ilişkin tüm ses ve görüntü kayıtları en az 5 yıl süreyle saklanmak zorundadır." },
+              ],
+            },
+            {
+              heading: "Elektronik Sözleşme İlkeleri",
+              icon: "shield",
+              items: [
+                { strong: "Çerçeve Sözleşme:", text: "Yatırım hizmetlerine ilişkin çerçeve sözleşme elektronik ortamda kurulabilir; müşteriye kalıcı veri saklayıcısıyla iletilmesi zorunludur." },
+                { strong: "İptal Hakkı:", text: "Müşteri, cayma hakkına sahiptir; ancak cayma süresi ve koşulları tebliğde belirlenir." },
+                { strong: "Kapsam Dışı İşlemler:", text: "Nitelikli yatırımcılar dışındaki müşterilere yönelik bazı karmaşık ürün sözleşmeleri uzaktan kurulamaz." },
+              ],
+            },
+          ],
+          tip: "III-42.1 = aracı kurumlar ve PYŞ'lerin uzaktan müşteri edinimi için temel tebliğ. Video görüşmede canlı bağlantı zorunlu, kayıt 5 yıl saklanır. Dijital onay için e-devlet/nitelikli e-imza şart. Çerçeve sözleşme elektronik kurulabilir ama kalıcı veri saklayıcıyla müşteriye iletilmeli.",
+          kavramlar: [
+            { terim: "Uzaktan Kimlik Tespiti", tanim: "Müşteriyle fiziksel ortamda karşılaşmaksızın video görüşme veya dijital onay yoluyla kimliğinin doğrulanması." },
+            { terim: "Video Görüşme Yöntemi", tanim: "Canlı video bağlantısı ile müşteri kimlik belgesi görüntülenerek kayıt altına alınan kimlik tespit yöntemi." },
+            { terim: "Nitelikli Elektronik İmza", tanim: "E-devlet altyapısı veya akredite kuruluş tarafından düzenlenen, yasal olarak el yazılı imzayla eşdeğer elektronik imza." },
+            { terim: "Kalıcı Veri Saklayıcısı", tanim: "Müşteriye iletilen bilgilerin değiştirilemez biçimde saklandığı ve erişilebildiği ortam; e-posta, müşteri portalı gibi." },
+            { terim: "Çerçeve Sözleşme", tanim: "Yatırım hizmetlerine ilişkin genel koşulları düzenleyen ve hizmetin sunumuna temel teşkil eden ana sözleşme." },
+            { terim: "Mobil İmza", tanim: "SIM kart tabanlı nitelikli elektronik imza aracı; uzaktan kimlik tespitinde e-imzayla eşdeğer kullanım hakkına sahip." },
+            { terim: "5 Yıl Saklama", tanim: "Uzaktan kimlik tespit kayıtlarının (ses, görüntü, belgeler) tebliğ gereği asgari 5 yıl süreyle muhafaza edilmesi zorunluluğu." },
+          ],
+          dikkatlar: [
+            "Video görüşmede kayıt zorunludur ve en az 5 yıl saklanmalıdır — 'canlı bağlantı yeterlidir, kayıt gerekmez' ifadesi yanlıştır.",
+            "Dijital onay için e-devlet entegrasyonu veya nitelikli e-imza/mobil imza gerekir; sıradan SMS ile kimlik tespiti yapılamaz.",
+            "Çerçeve sözleşme elektronik ortamda kurulabilir; ancak müşteriye kalıcı veri saklayıcısıyla iletilmesi şarttır.",
+            "Tebliğ yalnızca aracı kurumlar ve portföy yönetim şirketlerini kapsar; bankaların kendi mevzuatı (BDDK) ayrıdır.",
+            "Uzaktan kimlik tespiti sonrası müşteri hesabı açılabilir; ancak işlem limitleri fiziksel doğrulama yapılana kadar kısıtlı tutulabilir.",
+          ],
+        },
+        questions: [
+          {
+            text: "III-42.1 sayılı Tebliğ kapsamında uzaktan kimlik tespitinde hangi yöntem kullanılamaz?",
+            options: [
+              { id: "A", text: "Canlı video görüşmesi" },
+              { id: "B", text: "E-devlet üzerinden nitelikli elektronik imza" },
+              { id: "C", text: "Müşteriye gönderilen SMS kodu" },
+              { id: "D", text: "Mobil imza" },
+            ],
+            correct: "C",
+            explanation: "SMS kodu nitelikli elektronik imza veya video görüşme yerine geçemez. Tebliğ kapsamındaki geçerli yöntemler video görüşme, nitelikli e-imza ve mobil imzadır.",
+          },
+          {
+            text: "Uzaktan kimlik tespitine ilişkin ses ve görüntü kayıtları en az kaç yıl saklanmalıdır?",
+            options: [
+              { id: "A", text: "2 yıl" },
+              { id: "B", text: "3 yıl" },
+              { id: "C", text: "5 yıl" },
+              { id: "D", text: "10 yıl" },
+            ],
+            correct: "C",
+            explanation: "III-42.1 Tebliği uyarınca uzaktan kimlik tespitine ilişkin ses ve görüntü kayıtları en az 5 yıl süreyle saklanmak zorundadır.",
+          },
+          {
+            text: "III-42.1 Tebliği hangi kuruluşları kapsamaktadır?",
+            options: [
+              { id: "A", text: "Yalnızca aracı kurumlar" },
+              { id: "B", text: "Aracı kurumlar ve portföy yönetim şirketleri" },
+              { id: "C", text: "Tüm finansal kuruluşlar" },
+              { id: "D", text: "Yalnızca portföy yönetim şirketleri" },
+            ],
+            correct: "B",
+            explanation: "III-42.1 Tebliği aracı kurumlar ve portföy yönetim şirketleri tarafından kullanılacak uzaktan kimlik tespiti yöntemlerini ve elektronik sözleşme ilişkisinin kurulmasını düzenler.",
+          },
+          {
+            text: "Elektronik ortamda kurulan çerçeve sözleşmeyle ilgili aşağıdakilerden hangisi doğrudur?",
+            options: [
+              { id: "A", text: "Müşteriye yalnızca fiziksel posta yoluyla iletilmelidir." },
+              { id: "B", text: "Müşteriye kalıcı veri saklayıcısıyla iletilmesi zorunludur." },
+              { id: "C", text: "Sözlü onay yeterlidir, yazılı iletim gerekmez." },
+              { id: "D", text: "Yalnızca nitelikli yatırımcılarla elektronik sözleşme kurulabilir." },
+            ],
+            correct: "B",
+            explanation: "Elektronik ortamda kurulan çerçeve sözleşme müşteriye kalıcı veri saklayıcısı (e-posta, portal) aracılığıyla iletilmek zorundadır; bu iletim müşterinin sözleşmeye erişimini güvence altına alır.",
+          },
+          {
+            text: "Video görüşme yöntemiyle uzaktan kimlik tespitinde aşağıdakilerden hangisi zorunludur?",
+            options: [
+              { id: "A", text: "Müşterinin şubeye gelerek ek onay vermesi" },
+              { id: "B", text: "Görüşmenin canlı ve eş zamanlı olması ve kayıt altına alınması" },
+              { id: "C", text: "Görüşmenin yalnızca mesai saatleri içinde yapılması" },
+              { id: "D", text: "Müşterinin iki ayrı kimlik belgesi sunması" },
+            ],
+            correct: "B",
+            explanation: "Video görüşme yöntemiyle kimlik tespitinde görüşmenin gerçek zamanlı (canlı) olması ve tüm ses/görüntü kayıtlarının tutulması zorunludur.",
+          },
+          {
+            text: "Aşağıdakilerden hangisi uzaktan kimlik tespiti kapsamında dijital onay yöntemi için geçerli bir araçtır?",
+            options: [
+              { id: "A", text: "Banka kartı PIN kodu" },
+              { id: "B", text: "E-posta onayı" },
+              { id: "C", text: "Nitelikli elektronik imza" },
+              { id: "D", text: "Sosyal medya hesabı doğrulaması" },
+            ],
+            correct: "C",
+            explanation: "Nitelikli elektronik imza, yasal olarak el yazılı imzayla eşdeğer kabul edilir ve III-42.1 kapsamında dijital onay yöntemi olarak kullanılabilir.",
+          },
+          {
+            text: "III-42.1 Tebliği kapsamında uzaktan kimlik tespiti yapılmasına rağmen hangi durum söz konusu olabilir?",
+            options: [
+              { id: "A", text: "Müşteri hesabı hiçbir koşulda açılamaz." },
+              { id: "B", text: "İşlem limitleri fiziksel doğrulama tamamlanana kadar kısıtlı tutulabilir." },
+              { id: "C", text: "Müşteri tüm yatırım ürünlerine sınırsız erişim sağlar." },
+              { id: "D", text: "Sözleşme geçersiz sayılır." },
+            ],
+            correct: "B",
+            explanation: "Uzaktan kimlik tespiti yapılmış olsa dahi kuruluşlar risk yönetimi çerçevesinde fiziksel doğrulama tamamlanana kadar müşteri işlem limitlerini kısıtlı tutabilir.",
+          },
+        ],
+      },
     ],
   },
 ];

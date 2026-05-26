@@ -748,6 +748,517 @@ export const mevzuat1006: Module[] = [
           },
         ],
       },
+
+      // ──────────── Ders 6: Tezgahüstü (OTC) Piyasalar ────────────
+      {
+        id: "m1006-l6",
+        title: "Tezgahüstü (OTC) Piyasalar ve İşleyişi",
+        duration: "8 dk",
+        summary: {
+          title: "Tezgahüstü (OTC) Piyasalar",
+          intro:
+            "Tezgahüstü piyasalar (Over-the-Counter — OTC), organize bir borsa bünyesinde değil, tarafların ikili anlaşmalar aracılığıyla doğrudan alım satım gerçekleştirdiği merkezi olmayan piyasalardır. Türkiye'de başta bankalar ve aracı kurumlar arasında yürütülen yabancı para, repo, tahvil ve türev araç işlemleri OTC piyasalarda gerçekleşir. OTC piyasalar esneklik ve özelleştirme imkânı sunmakla birlikte karşı taraf riski ve şeffaflık eksikliği gibi sorunlar barındırır.",
+          sections: [
+            {
+              heading: "OTC Piyasanın Özellikleri ve Türleri",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Tanım ve Temel Fark:",
+                  text: "OTC piyasalarda sözleşme koşulları (miktar, vade, fiyat) tamamen taraflarca belirlenir; standartlaştırılmış borsalarda ise sözleşme şartları önceden sabitlenmiştir. Böylece işlemler daha esnek ama daha az şeffaftır.",
+                },
+                {
+                  strong: "Yabancı Para (Döviz) OTC Piyasaları:",
+                  text: "Türkiye'de bankalararası döviz alım satımı ve müşteri işlemlerinin büyük kısmı OTC kanalıyla yürütülür. TCMB döviz müdahalelerinin bir bölümü de bu piyasa üzerinden gerçekleşir.",
+                },
+                {
+                  strong: "Tahvil ve Repo OTC Piyasaları:",
+                  text: "Devlet iç borçlanma senetleri (DİBS) birincil piyasadan ihraç edildikten sonra ikincil piyasada ağırlıklı olarak OTC kanalıyla (elektronik platformlar dahil) el değiştirir; gecelik repo ve ters repo işlemleri de OTC niteliğindedir.",
+                },
+                {
+                  strong: "Türev OTC Araçlar:",
+                  text: "Forward (vadeli döviz alım-satım), faiz swap (IRS), döviz swap, egzotik opsiyonlar gibi birçok türev işlem organize borsada değil, taraflar arasında OTC yapılır. Avrupa'da EMIR, ABD'de Dodd-Frank bu işlemlere raporlama ve takas merkezi zorunluluğu getirmiştir.",
+                },
+                {
+                  strong: "Karşı Taraf Riski:",
+                  text: "Borsalarda merkezi karşı taraf (CCP) temerrüt riskini üstlenir; OTC'de ise taraflar birbirlerine doğrudan maruz kalır. Bu nedenle kredi değerliliği ve teminat anlaşmaları (CSA/ISDA) OTC işlemler için kritik öneme sahiptir.",
+                },
+                {
+                  strong: "Yurt İçi OTC Platformları:",
+                  text: "BIST bünyesindeki Borçlanma Araçları Piyasası, BİST Repo-Ters Repo Pazarı ve Elektronik Fon Platformu organize olmakla birlikte OTC benzeri ikili fiyatlama da kullanılmaktadır. Tamamen OTC olan işlemler ise TCMB'nin kotasyon sistemi ve bankalararası doğrudan müzakere yoluyla gerçekleşir.",
+                },
+              ],
+            },
+            {
+              heading: "OTC Piyasaların Avantajları ve Riskleri",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Esneklik:",
+                  text: "Taraflar ihtiyaca özgü vade, tutar ve yapı tasarlayabilir; bu durum kurumsal yatırımcılar ve şirketler için finansal risk yönetimini kolaylaştırır.",
+                },
+                {
+                  strong: "Likidite ve Fiyat Tespiti:",
+                  text: "OTC piyasalar bazen organize borsalara kıyasla daha derin likidite sunabilir; ancak fiyatlar kamuoyuyla anlık paylaşılmadığından fiyat şeffaflığı sınırlıdır.",
+                },
+                {
+                  strong: "Düzenleyici Gelişmeler:",
+                  text: "2008 krizi sonrası G20 kararları doğrultusunda standartlaştırılabilir OTC türev sözleşmelerinin merkezi karşı taraf (CCP) aracılığıyla takası zorunlu hale getirilmiştir; bu süreç OTC ile organize piyasalar arasındaki sınırı kısmen bulanıklaştırmıştır.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda OTC ile organize piyasaların farkı, karşı taraf riski ve Türkiye'deki OTC araç türleri sıkça sorulur. Döviz, tahvil ve türev ayrımını netleştirin.",
+          kavramlar: [
+            { terim: "OTC (Tezgahüstü) Piyasa", tanim: "Merkezi bir borsa olmaksızın taraflarca ikili anlaşmayla gerçekleştirilen alım satım platformu." },
+            { terim: "Karşı Taraf Riski (Counterparty Risk)", tanim: "OTC işlemlerde karşı tarafın yükümlülüğünü yerine getirememesi riski." },
+            { terim: "Forward", tanim: "İleri vadede belirli bir varlığı önceden anlaşılan fiyat ve koşullarla alıp satmayı taahhüt eden OTC sözleşmesi." },
+            { terim: "Faiz Swap (IRS)", tanim: "İki tarafın sabit ve değişken faiz ödemelerini belirli bir anapara üzerinden takas ettiği OTC türev aracı." },
+            { terim: "ISDA Ana Sözleşmesi", tanim: "OTC türev işlemleri düzenleyen standart uluslararası çerçeve sözleşmesi; Türkiye'de bankalar arası kullanılır." },
+            { terim: "Merkezi Karşı Taraf (CCP)", tanim: "Takasbanka benzer şekilde OTC işlemlerde karşı taraf riskini üstlenen merkezi takas kuruluşu." },
+            { terim: "DİBS İkincil Piyasası", tanim: "Birincil piyasadan ihraç edilen devlet tahvillerinin OTC kanalıyla el değiştirdiği piyasa." },
+          ],
+          dikkatlar: [
+            "OTC piyasalarda fiyatlar kamuya anlık olarak açıklanmaz; bu durum şeffaflık riskini artırır.",
+            "Türkiye'de bankalararası döviz işlemlerinin büyük çoğunluğu OTC piyasada gerçekleşir ve TCMB müdahaleleri bu kanal üzerinden yürütülür.",
+            "2008 sonrası düzenlemeler (EMIR, Dodd-Frank) standart OTC türev sözleşmelerini zorunlu merkezi takasa (CCP) yönlendirmiştir.",
+            "OTC işlemlerde karşı tarafın ödeme gücünü yitirmesi riski (karşı taraf riski) organize borsalara göre çok daha yüksektir.",
+            "Egzotik opsiyonlar ve özelleştirilmiş swap sözleşmeleri standartlaştırılamadığından daima OTC kalmaya devam eder.",
+          ],
+        },
+        questions: [
+          {
+            text: "Tezgahüstü (OTC) piyasaların organize borsalardan temel farkı nedir?",
+            options: [
+              { id: "A", text: "OTC piyasalarda işlemler merkezi bir takas odası aracılığıyla gerçekleştirilir." },
+              { id: "B", text: "OTC piyasalarda sözleşme koşulları standartlaştırılmıştır ve değiştirilemez." },
+              { id: "C", text: "OTC piyasalarda taraflar ikili anlaşmayla sözleşme koşullarını serbestçe belirler; merkezi borsa yoktur." },
+              { id: "D", text: "OTC piyasalar yalnızca hisse senedi alım satımına aracılık eder." },
+            ],
+            correct: "C",
+            explanation:
+              "OTC piyasaların özü, tarafların doğrudan birbirleriyle müzakere ederek sözleşme koşullarını (vade, miktar, fiyat) belirlemesidir. Organize borsalarda ise standartlaştırılmış sözleşmeler ve merkezi takas odası (CCP) bulunur.",
+          },
+          {
+            text: "OTC piyasalarda karşı taraf riskinin yönetiminde kullanılan temel uluslararası standart sözleşme hangisidir?",
+            options: [
+              { id: "A", text: "ISDA Ana Sözleşmesi" },
+              { id: "B", text: "BIST Temel Sözleşmesi" },
+              { id: "C", text: "EMIR Standart Protokolü" },
+              { id: "D", text: "Dodd-Frank Çerçeve Anlaşması" },
+            ],
+            correct: "A",
+            explanation:
+              "ISDA (International Swaps and Derivatives Association) Ana Sözleşmesi, OTC türev işlemlerinde taraflar arasındaki hak ve yükümlülükleri düzenleyen standart uluslararası çerçevedir. Türkiye'deki bankalar da bu sözleşmeyi yaygın olarak kullanır.",
+          },
+          {
+            text: "Aşağıdakilerden hangisi OTC piyasalarda işlem gören bir araç değildir?",
+            options: [
+              { id: "A", text: "Faiz oranı swap (IRS)" },
+              { id: "B", text: "Vadeli döviz (Forward) sözleşmesi" },
+              { id: "C", text: "Borsa İstanbul'da işlem gören standart vadeli işlem (futures) sözleşmesi" },
+              { id: "D", text: "Bankalararası gecelik repo" },
+            ],
+            correct: "C",
+            explanation:
+              "BIST'te (VİOP gibi) işlem gören standart vadeli işlem sözleşmeleri organize borsaya aittir; standartlaştırılmış fiyat, miktar ve vade içerir ve CCP üzerinden takas edilir. Forward, IRS ve bankalararası repo ise OTC niteliğindedir.",
+          },
+          {
+            text: "2008 küresel finansal krizi sonrasında G20 kararlarıyla OTC türev piyasaları için getirilen temel düzenleyici yükümlülük nedir?",
+            options: [
+              { id: "A", text: "OTC türev işlemlerinin tamamen yasaklanması" },
+              { id: "B", text: "Standartlaştırılabilir OTC türevlerin merkezi karşı taraf (CCP) aracılığıyla takasının zorunlu tutulması" },
+              { id: "C", text: "Tüm OTC türevlerin borsaya taşınarak standartlaştırılması" },
+              { id: "D", text: "OTC türevlere yalnızca merkez bankalarının aracılık etmesi" },
+            ],
+            correct: "B",
+            explanation:
+              "G20 Pittsburgh Zirvesi (2009) kararları ve ardından gelen EMIR (AB) ile Dodd-Frank (ABD) düzenlemeleri, standartlaştırılabilir OTC türev sözleşmelerini zorunlu merkezi takasa (CCP) yönlendirmiştir. Böylece karşı taraf riski azaltılmak istenmiştir.",
+          },
+          {
+            text: "Türkiye'de bankalararası döviz işlemlerinin büyük bölümünün gerçekleştiği piyasa türü hangisidir?",
+            options: [
+              { id: "A", text: "Borsa İstanbul Pay Piyasası" },
+              { id: "B", text: "Tezgahüstü (OTC) Döviz Piyasası" },
+              { id: "C", text: "VİOP Döviz Vadeli İşlem Piyasası" },
+              { id: "D", text: "Serbest Döviz Büroları" },
+            ],
+            correct: "B",
+            explanation:
+              "Türkiye'de bankalararası döviz alım satımının büyük kısmı OTC kanalıyla, yani bankalar arasında doğrudan elektronik platformlar ve telefon müzakeresi yoluyla gerçekleşir. TCMB döviz müdahaleleri de bu OTC döviz piyasasında uygulanır.",
+          },
+          {
+            text: "Aşağıdakilerden hangisi OTC piyasaların avantajlarından biri değildir?",
+            options: [
+              { id: "A", text: "Sözleşme koşullarının taraflarca özelleştirilmesine imkân tanıması" },
+              { id: "B", text: "Fiyatların anlık olarak kamuoyuyla paylaşılması" },
+              { id: "C", text: "İhtiyaca özgü vade ve yapıların tasarlanabilmesi" },
+              { id: "D", text: "Kurumsal yatırımcılara esnek risk yönetimi imkânı sunması" },
+            ],
+            correct: "B",
+            explanation:
+              "Fiyatların anlık kamuoyuyla paylaşılması OTC piyasaların özelliği değil, organize borsaların özelliğidir. OTC piyasalarda fiyatlar taraflar arasında belirlenir ve şeffaflık sınırlıdır; bu, şeffaflık eksikliği olarak OTC'nin dezavantajlarından biridir.",
+          },
+          {
+            text: "Egzotik opsiyonların OTC piyasalarda kalmaya devam etmesinin temel nedeni nedir?",
+            options: [
+              { id: "A", text: "Yüksek işlem hacimlerinden kaynaklanan takas maliyetleri" },
+              { id: "B", text: "Yasal düzenlemelerin egzotik opsiyonları borsaya taşımayı açıkça yasaklaması" },
+              { id: "C", text: "Özelleştirilmiş yapıları nedeniyle standartlaştırılamamaları" },
+              { id: "D", text: "Merkezi takas kurumlarının egzotik opsiyonları reddetmesi" },
+            ],
+            correct: "C",
+            explanation:
+              "Egzotik opsiyonlar (bariyer, Asya tipi, lookback vb.) ödeme yapısı, vade ve aktivasyon koşulları bakımından standartlaştırılamayan özelleştirilmiş araçlardır. Bu yüzden borsaya taşınmaları mümkün değildir ve OTC piyasada kalmaya devam ederler.",
+          },
+        ],
+      },
+
+      // ──────────── Ders 7: TCMB Piyasaları ve Bankalararası Para Piyasası ────────────
+      {
+        id: "m1006-l7",
+        title: "TCMB Piyasaları ve Bankalararası Para Piyasası",
+        duration: "8 dk",
+        summary: {
+          title: "TCMB Piyasaları ve Bankalararası Para Piyasası",
+          intro:
+            "Türkiye Cumhuriyet Merkez Bankası (TCMB), para politikasını hayata geçirirken çeşitli piyasaları araç olarak kullanır: Açık Piyasa İşlemleri (APİ), Döviz ve Efektif Piyasaları, Bankalararası Para Piyasası (BPP) ve TCMB İnterbank Piyasası bunların başında gelir. Bu piyasalar aracılığıyla TCMB kısa vadeli faiz oranlarını yönlendirir, TL likiditesini yönetir ve döviz kurunu etkiler.",
+          sections: [
+            {
+              heading: "TCMB Açık Piyasa İşlemleri (APİ)",
+              icon: "shield",
+              items: [
+                {
+                  strong: "APİ Tanımı:",
+                  text: "TCMB'nin para politikası amaçlarıyla DİBS (Devlet İç Borçlanma Senedi) alım-satımı, repo veya ters repo işlemleri yaparak piyasadaki TL likiditesini düzenlemesidir. Türkiye'de APİ esas olarak repo ve ters repo kanalıyla yürütülür.",
+                },
+                {
+                  strong: "Repo İşlemi (Likidite Enjeksiyonu):",
+                  text: "TCMB menkul kıymet teminata alarak bankacılık sektörüne TL aktarır; vade sonunda bankalar kıymetleri geri alır. Piyasada TL sıkışıklığı olduğunda TCMB repo açar ve faiz koridorunun alt sınırını (gecelik borç alma faizi) belirler.",
+                },
+                {
+                  strong: "Ters Repo İşlemi (Likidite Çekme):",
+                  text: "TCMB menkul kıymet satarak piyasadan TL çeker; aşırı likidite dönemlerinde kullanılır. Faiz koridorunun üst sınırı (gecelik borç verme faizi) bu işlem aracılığıyla şekillenir.",
+                },
+                {
+                  strong: "Politika Faizi (Bir Haftalık Repo):",
+                  text: "TCMB'nin temel para politikası aracı olan bir haftalık repo ihalesi; gecelik faizlerin çıpalı tutulduğu temel referans oranıdır. Para Politikası Kurulu (PPK) kararlarıyla belirlenir.",
+                },
+              ],
+            },
+            {
+              heading: "TCMB Döviz ve Efektif Piyasaları",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Döviz Alım-Satım İhaleleri:",
+                  text: "TCMB döviz rezervini yönetmek ve kur oynaklığını azaltmak amacıyla belirlenmiş kurallara göre döviz alım veya satım ihalesi düzenler; bu ihaleler organize ihale yöntemiyle veya doğrudan işlem yoluyla yapılır.",
+                },
+                {
+                  strong: "Efektif Piyasası:",
+                  text: "TCMB'nin bankalara karşı döviz efektif (banknot) alım ve satımı yaptığı piyasadır; turizm yoğun dönemlerinde döviz banknotu talebini karşılamaya yönelik işlemler bu kanaldan yürütülür.",
+                },
+                {
+                  strong: "Döviz Swap İşlemleri:",
+                  text: "TCMB, TL likiditesi vermek veya döviz rezervini desteklemek amacıyla bankalara döviz karşılığı TL (veya tersi) swap imkânı tanır. Bu işlemler aynı zamanda kısa vadeli döviz arz-talep dengesini düzenler.",
+                },
+              ],
+            },
+            {
+              heading: "Bankalararası Para Piyasası (BPP)",
+              icon: "trend",
+              items: [
+                {
+                  strong: "BPP'nin İşlevi:",
+                  text: "Bankalar günlük likidite açıklarını veya fazlalarını kendi aralarında gecelik veya kısa vadeli borçlanma (TL) yoluyla giderir. Piyasa faizi (TLREF vb.) bu mekanizmayla oluşur.",
+                },
+                {
+                  strong: "TLREF ve Referans Faiz:",
+                  text: "Türkiye Lirası Gecelik Referans Faiz Oranı (TLREF), Borsa İstanbul Repo-Ters Repo Pazarı ile bankalararası işlemlerden türetilir; kredi ve türev sözleşmelerinde endeks faiz olarak yaygınlaşmaktadır.",
+                },
+                {
+                  strong: "BIST Repo-Ters Repo Pazarı:",
+                  text: "TCMB APİ'si dışındaki repo işlemleri BIST Borçlanma Araçları Piyasası bünyesindeki Repo-Ters Repo Pazarı'nda gerçekleşir ve hem bankalar hem aracı kurumlar bu piyasada işlem yapabilir.",
+                },
+              ],
+            },
+          ],
+          tip: "TCMB faiz koridoru (alt-üst sınır), politika faizi (1 haftalık repo), TLREF referans faizi ve APİ mekanizması sınavda sıkça çıkar. Bu araçların birbirleriyle ilişkisini kavrayın.",
+          kavramlar: [
+            { terim: "Açık Piyasa İşlemleri (APİ)", tanim: "TCMB'nin piyasa likiditesini düzenlemek amacıyla DİBS ve repo/ters repo yoluyla TL alım-satımı yapması." },
+            { terim: "Politika Faizi", tanim: "TCMB'nin Para Politikası Kurulu tarafından belirlenen ve referans alınan 1 haftalık repo faiz oranı." },
+            { terim: "Faiz Koridoru", tanim: "TCMB'nin gecelik borç verme (üst sınır) ve borç alma (alt sınır) faizlerinin oluşturduğu bant; kısa vadeli piyasa faizleri bu koridorda gezinir." },
+            { terim: "TLREF", tanim: "Türkiye Lirası Gecelik Referans Faiz Oranı; repo piyasası işlemlerinden hesaplanır ve kredi sözleşmelerinde endeks faiz olarak kullanılır." },
+            { terim: "Bankalararası Para Piyasası (BPP)", tanim: "Bankaların kendi aralarında kısa vadeli TL borç alıp vererek günlük likidite dengesini sağladığı piyasa." },
+            { terim: "Döviz Swap İşlemi (TCMB)", tanim: "TCMB'nin bankalara TL karşılığı döviz (veya tersi) verdiği, vade sonunda iade yapılan kısa vadeli döviz-TL değişim işlemi." },
+            { terim: "Ters Repo (Likidite Çekme)", tanim: "TCMB'nin DİBS satışı yoluyla piyasadan TL çektiği APİ aracı; aşırı likidite koşullarında kullanılır." },
+          ],
+          dikkatlar: [
+            "Politika faizi TCMB'nin 1 haftalık repo ihalesinin faiz oranıdır; gecelik borç alma/verme faizleriyle karıştırılmamalıdır.",
+            "TCMB repo işlemi piyasaya TL enjekte eder (likidite artışı); ters repo ise piyasadan TL çeker (likidite azalışı).",
+            "TLREF, BIST Repo-Ters Repo Pazarı verilerinden türetilir ve LIBOR'un yerini alan yerel referans faiz olarak gelişmektedir.",
+            "TCMB Döviz ve Efektif Piyasaları ayrı mekanizmalardır: döviz ihaleleri rezerv yönetimine, efektif piyasası banknot talebine yöneliktir.",
+            "Faiz koridoru uygulamasında üst sınır (borç verme faizi) ile alt sınır (borç alma faizi) arasındaki fark para politikasının öngörülebilirliğini etkiler.",
+          ],
+        },
+        questions: [
+          {
+            text: "TCMB'nin temel para politikası aracı olarak kullandığı politika faizi hangi işleme karşılık gelir?",
+            options: [
+              { id: "A", text: "Gecelik borç verme faizi" },
+              { id: "B", text: "Bir haftalık repo ihale faizi" },
+              { id: "C", text: "Gecelik borç alma faizi" },
+              { id: "D", text: "Üç aylık hazine bonosu faizi" },
+            ],
+            correct: "B",
+            explanation:
+              "TCMB'nin temel para politikası aracı olan politika faizi, Para Politikası Kurulu tarafından belirlenen 1 haftalık repo ihale faiz oranıdır. Gecelik faizler bu oranın etrafında seyretmekte, faiz koridoru ise alt ve üst sınırı belirlemektedir.",
+          },
+          {
+            text: "TCMB APİ kapsamında piyasaya TL enjekte etmek amacıyla kullandığı araç hangisidir?",
+            options: [
+              { id: "A", text: "Ters Repo (DİBS satışı)" },
+              { id: "B", text: "Repo (DİBS teminatlı borç verme)" },
+              { id: "C", text: "Döviz satım ihalesi" },
+              { id: "D", text: "Efektif döviz alımı" },
+            ],
+            correct: "B",
+            explanation:
+              "Repo işleminde TCMB, bankaların DİBS'lerini teminat olarak alıp piyasaya TL aktarır. Vade sonunda bankalar DİBS'lerini geri alarak borcu kapatır. Ters repoda ise DİBS satışıyla piyasadan TL çekilir.",
+          },
+          {
+            text: "TLREF (Türkiye Lirası Gecelik Referans Faiz Oranı) hangi piyasadan türetilmektedir?",
+            options: [
+              { id: "A", text: "TCMB Açık Piyasa İşlemleri faiz oranı" },
+              { id: "B", text: "BIST Repo-Ters Repo Pazarı işlemleri" },
+              { id: "C", text: "Hazine ihaleleri ağırlıklı ortalama faizi" },
+              { id: "D", text: "BIST Pay Piyasası temettü getirisi" },
+            ],
+            correct: "B",
+            explanation:
+              "TLREF, Borsa İstanbul Repo-Ters Repo Pazarı'ndaki gerçekleşmiş işlemlerden hesaplanan ağırlıklı ortalama gecelik faiz oranıdır. Türkiye'de LIBOR'un yerine geçen yerel referans faizi olarak kredi ve türev sözleşmelerinde giderek yaygınlaşmaktadır.",
+          },
+          {
+            text: "TCMB faiz koridorunun üst sınırını belirleyen faiz türü hangisidir?",
+            options: [
+              { id: "A", text: "Bir haftalık repo faizi (politika faizi)" },
+              { id: "B", text: "Gecelik borç alma faizi" },
+              { id: "C", text: "Gecelik borç verme faizi" },
+              { id: "D", text: "Zorunlu karşılık faizi" },
+            ],
+            correct: "C",
+            explanation:
+              "Faiz koridorunda üst sınır TCMB'nin bankalara gecelik borç verdiği faiz oranıdır; alt sınır ise TCMB'nin bankalardan gecelik borç aldığı faiz oranıdır. Politika faizi (1 haftalık repo) bu iki sınır arasında konumlanır.",
+          },
+          {
+            text: "TCMB Döviz Swap İşleminin temel amacı nedir?",
+            options: [
+              { id: "A", text: "Bankaların uzun vadeli kredi maliyetlerini azaltmak" },
+              { id: "B", text: "Kısa vadeli TL likiditesi sağlamak veya döviz rezervini desteklemek" },
+              { id: "C", text: "Hisse senedi piyasasını düzenlemek" },
+              { id: "D", text: "DİBS faizlerini doğrudan belirlemek" },
+            ],
+            correct: "B",
+            explanation:
+              "TCMB Döviz Swap işleminde bankalar dövizlerini TCMB'ye vererek TL alır (veya tersi); vade sonunda işlem iade edilir. Bu mekanizma hem TL likiditesini düzenlemek hem de döviz rezervini desteklemek için kullanılır.",
+          },
+          {
+            text: "Bankalararası Para Piyasasının (BPP) bankacılık sektörü açısından temel işlevi nedir?",
+            options: [
+              { id: "A", text: "Uzun vadeli yatırım projelerine finansman sağlamak" },
+              { id: "B", text: "Hisse senedi ve tahvil ihraçlarına aracılık etmek" },
+              { id: "C", text: "Bankaların günlük likidite açıklarını veya fazlalarını kısa vadeli borçlanmayla gidermesi" },
+              { id: "D", text: "TCMB para politikasını doğrudan uygulamak" },
+            ],
+            correct: "C",
+            explanation:
+              "Bankalararası Para Piyasası, bankaların birbirine kısa vadeli (genellikle gecelik) TL borç verip aldığı piyasadır. Bankaların rezerv açıkları veya fazlaları bu piyasa aracılığıyla dengelenir; TLREF bu piyasadan oluşan gecelik faizi yansıtır.",
+          },
+          {
+            text: "TCMB aşırı likidite döneminde hangi APİ aracını kullanır?",
+            options: [
+              { id: "A", text: "Repo açarak bankacılık sistemine TL aktarır" },
+              { id: "B", text: "Ters repo yaparak piyasadan TL çeker" },
+              { id: "C", text: "DİBS alım ihalesi düzenleyerek piyasaya likidite sağlar" },
+              { id: "D", text: "Zorunlu karşılık oranını düşürerek piyasaya TL bırakır" },
+            ],
+            correct: "B",
+            explanation:
+              "Aşırı likidite dönemlerinde TCMB ters repo yaparak bankalardan TL alır ve piyasadaki fazla likiditeyi çeker; bu işlemde TCMB menkul kıymet satıp TL'yi piyasadan çekmiş olur. Repo ise tam tersi yönde çalışır: piyasaya TL aktarır.",
+          },
+        ],
+      },
+
+      // ──────────── Ders 8: Bireysel Emeklilik Fon Platformu ────────────
+      {
+        id: "m1006-l8",
+        title: "Bireysel Emeklilik Fon Alım Satım Platformu (EFP)",
+        duration: "7 dk",
+        summary: {
+          title: "Bireysel Emeklilik Fon Alım Satım Platformu",
+          intro:
+            "Bireysel Emeklilik Fon Alım Satım Platformu (EFP veya BEFAS); Borsa İstanbul bünyesinde kurulmuş olup bireysel emeklilik şirketlerinin (BES) katılımcı fonlarının alım-satımını düzenli, şeffaf ve merkezi biçimde gerçekleştirdiği elektronik platformdur. 2022 yılında devreye giren EFP, bireysel emeklilik sisteminin etkinliğini artırmak ve fon transferlerini standartlaştırmak amacıyla oluşturulmuştur.",
+          sections: [
+            {
+              heading: "Platformun Amacı ve Kapsamı",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Kuruluş Amacı:",
+                  text: "EFP; BES katılımcılarının birikimlerini yönetmede kullanılan emeklilik yatırım fonlarının bireysel emeklilik şirketleri arasında ve katılımcı hesapları arasında standart, hızlı ve güvenli şekilde transfer edilmesini sağlamak için kurulmuştur.",
+                },
+                {
+                  strong: "Platform Yöneticisi:",
+                  text: "EFP, Borsa İstanbul A.Ş. (BİAŞ) tarafından işletilmektedir. Platforma bireysel emeklilik şirketleri, emeklilik yatırım fonu kurucuları ve yöneticileri (portföy yönetim şirketleri) katılabilir.",
+                },
+                {
+                  strong: "Kapsam:",
+                  text: "Bireysel Emeklilik Sistemi (BES) kapsamındaki emeklilik yatırım fonları EFP üzerinden alım-satıma konu olabilir. Bireysel emeklilik şirketleri, katılımcılarına ait fon payı alım satım emirlerini Platform üzerinden iletir.",
+                },
+              ],
+            },
+            {
+              heading: "EFP'nin İşleyişi ve Avantajları",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Emir İletimi ve Eşleştirme:",
+                  text: "BES şirketi, katılımcı talebini aldıktan sonra fon payı alım veya satım emrini EFP'ye iletir. Platform, emirleri fon yöneticisiyle eşleştirir ve takas işlemlerini merkezi olarak yönetir.",
+                },
+                {
+                  strong: "Şeffaflık ve Standartlaştırma:",
+                  text: "EFP öncesinde her BES şirketi kendi sisteminde fon transferi yaparken işlemler standart dışıydı ve süreçler uzundu. EFP ile tüm transferler tek bir platforma taşınarak şeffaflık ve hız artırılmıştır.",
+                },
+                {
+                  strong: "Takas ve Saklama:",
+                  text: "EFP işlemlerinin takası ve saklama hizmetleri Merkezi Kayıt Kuruluşu (MKK) ve Borsa İstanbul Takas ve Saklama A.Ş. (Takasbank) altyapısıyla entegre yürütülür.",
+                },
+                {
+                  strong: "Fon Transfer Süreci:",
+                  text: "Katılımcı BES şirketi değiştirdiğinde (şirket transferi) veya fon tercihini değiştirdiğinde EFP, eski fondaki payların satışı ve yeni fondaki alışı eş zamanlı ve sorunsuz gerçekleştirerek katılımcının birikiminin sürekliliğini korur.",
+                },
+              ],
+            },
+            {
+              heading: "Düzenleyici Çerçeve",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Yasal Dayanak:",
+                  text: "EFP, 4632 sayılı Bireysel Emeklilik Tasarruf ve Yatırım Sistemi Kanunu ile SPK'nın emeklilik yatırım fonlarına ilişkin tebliğleri kapsamında faaliyet göstermektedir.",
+                },
+                {
+                  strong: "Denetim:",
+                  text: "EFP işlemleri hem SPK hem de Emeklilik Gözetim Merkezi (EGM) tarafından izlenmektedir. BİAŞ platformun operasyonundan sorumludur.",
+                },
+              ],
+            },
+          ],
+          tip: "EFP; BES, BİAŞ ve fon transfer mekanizması ekseninde sınava çıkabilir. 'Kim işletiyor?', 'Hangi fonlar kapsama giriyor?', 'Takas kimle yapılıyor?' sorularına hazırlıklı olun.",
+          kavramlar: [
+            { terim: "EFP (Elektronik Fon Platformu)", tanim: "Borsa İstanbul bünyesinde BES emeklilik yatırım fonlarının alım-satımının standart ve merkezi biçimde gerçekleştirildiği platform." },
+            { terim: "Bireysel Emeklilik Sistemi (BES)", tanim: "Devlet katkısıyla desteklenen ve katılımcıların emeklilik tasarruflarını birikimleri için yatırdığı zorunlu olmayan bireysel emeklilik sistemi." },
+            { terim: "Emeklilik Yatırım Fonu", tanim: "BES katılımcılarının birikimlerinin yatırıldığı, portföy yönetim şirketlerince yönetilen ve EFP üzerinden alım-satımı yapılan yatırım fonu türü." },
+            { terim: "Şirket Transferi (BES)", tanim: "Katılımcının bir BES şirketinden diğerine geçişi; EFP bu transferin fon alım-satımını standart biçimde gerçekleştirir." },
+            { terim: "Emeklilik Gözetim Merkezi (EGM)", tanim: "BES sisteminin teknik altyapısını yöneten, fon ve katılımcı bilgilerini takip eden merkezi sistem." },
+            { terim: "Merkezi Karşı Taraf (CCP — EFP Bağlamında)", tanim: "EFP işlemlerinde takas hizmetlerini sunan Takasbank'ın üstlendiği karşı taraf rolü." },
+            { terim: "4632 Sayılı Kanun", tanim: "Bireysel Emeklilik Tasarruf ve Yatırım Sistemi Kanunu; BES ve emeklilik şirketlerinin temel yasal çerçevesini oluşturur." },
+          ],
+          dikkatlar: [
+            "EFP'yi işleten kuruluş Borsa İstanbul A.Ş.'dir; SPK düzenlemek ve denetlemekle birlikte platformu işletmez.",
+            "EFP yalnızca BES emeklilik yatırım fonlarını kapsar; bireysel yatırım fonları veya TEFAS kapsamındaki yatırım fonlarıyla karıştırılmamalıdır.",
+            "Takas ve saklama hizmetleri Takasbank ve MKK altyapısıyla entegre çalışır.",
+            "Şirket transferi durumunda katılımcının birikiminin sürekliliği EFP'nin en kritik işlevlerinden biridir.",
+            "EFP'nin yasal dayanağı 4632 sayılı Bireysel Emeklilik Kanunu'dur; SPK tebliğleri ikincil mevzuatı oluşturur.",
+          ],
+        },
+        questions: [
+          {
+            text: "Bireysel Emeklilik Fon Alım Satım Platformu'nu (EFP) işleten kuruluş hangisidir?",
+            options: [
+              { id: "A", text: "Sermaye Piyasası Kurulu (SPK)" },
+              { id: "B", text: "Emeklilik Gözetim Merkezi (EGM)" },
+              { id: "C", text: "Borsa İstanbul A.Ş. (BİAŞ)" },
+              { id: "D", text: "Hazine ve Maliye Bakanlığı" },
+            ],
+            correct: "C",
+            explanation:
+              "Bireysel Emeklilik Fon Alım Satım Platformu (EFP), Borsa İstanbul A.Ş. (BİAŞ) tarafından işletilmektedir. SPK düzenleyici ve denetleyici rolüne, EGM ise teknik izleme ve gözetim rolüne sahiptir.",
+          },
+          {
+            text: "EFP'nin temel kuruluş amacı nedir?",
+            options: [
+              { id: "A", text: "Hisse senedi ve tahvil piyasasındaki ikincil işlemleri yürütmek" },
+              { id: "B", text: "BES kapsamındaki emeklilik yatırım fonlarının alım-satımını standart ve merkezi biçimde gerçekleştirmek" },
+              { id: "C", text: "TCMB'nin döviz müdahalelerini koordine etmek" },
+              { id: "D", text: "OTC türev işlemlerini düzenlemek" },
+            ],
+            correct: "B",
+            explanation:
+              "EFP; bireysel emeklilik şirketleri arasında ve katılımcı hesaplarında emeklilik yatırım fonu alım-satımını standartlaştırmak, hızlandırmak ve şeffaflaştırmak amacıyla Borsa İstanbul bünyesinde kurulmuştur.",
+          },
+          {
+            text: "EFP işlemlerinin takası ve saklaması hangi kuruluşlar aracılığıyla yürütülür?",
+            options: [
+              { id: "A", text: "TCMB ve SPK" },
+              { id: "B", text: "Takasbank ve Merkezi Kayıt Kuruluşu (MKK)" },
+              { id: "C", text: "EGM ve Hazine" },
+              { id: "D", text: "BES şirketleri kendi bünyelerinde yönetir" },
+            ],
+            correct: "B",
+            explanation:
+              "EFP işlemlerinin takası Takasbank, saklama hizmetleri ise Merkezi Kayıt Kuruluşu (MKK) altyapısıyla entegre biçimde yürütülmektedir. Bu yapı BES sistemindeki fon transferlerinde güvenlik ve süreklilik sağlar.",
+          },
+          {
+            text: "Bir BES katılımcısının başka bir emeklilik şirketine geçmek istediğinde EFP'nin üstlendiği kritik işlev nedir?",
+            options: [
+              { id: "A", text: "Katılımcıya yeni şirketi seçmede danışmanlık yapmak" },
+              { id: "B", text: "Eski fondaki payların satışını ve yeni fondaki alışı eş zamanlı gerçekleştirerek birikimin sürekliliğini korumak" },
+              { id: "C", text: "Transfer için SPK onayı almak" },
+              { id: "D", text: "Katılımcının birikimini geçici olarak TCMB'de tutmak" },
+            ],
+            correct: "B",
+            explanation:
+              "EFP, şirket transferi sürecinde eski BES şirketindeki fon paylarının satışını ve yeni şirketteki emeklilik yatırım fonunun alışını eş zamanlı standart bir süreçte gerçekleştirerek katılımcının birikiminin kesintisiz aktarılmasını sağlar.",
+          },
+          {
+            text: "EFP'nin yasal dayanağını oluşturan kanun hangisidir?",
+            options: [
+              { id: "A", text: "6362 Sayılı Sermaye Piyasası Kanunu" },
+              { id: "B", text: "5411 Sayılı Bankacılık Kanunu" },
+              { id: "C", text: "4632 Sayılı Bireysel Emeklilik Tasarruf ve Yatırım Sistemi Kanunu" },
+              { id: "D", text: "2499 Sayılı Eski Sermaye Piyasası Kanunu" },
+            ],
+            correct: "C",
+            explanation:
+              "EFP, 4632 sayılı Bireysel Emeklilik Tasarruf ve Yatırım Sistemi Kanunu ile SPK'nın emeklilik yatırım fonlarına ilişkin tebliğleri kapsamında faaliyet göstermektedir. 6362 sayılı Kanun ise genel sermaye piyasası mevzuatıdır.",
+          },
+          {
+            text: "EFP kapsamına giren araçlar aşağıdakilerden hangisidir?",
+            options: [
+              { id: "A", text: "Tüm yatırım fonları (TEFAS dahil)" },
+              { id: "B", text: "Yalnızca BES kapsamındaki emeklilik yatırım fonları" },
+              { id: "C", text: "Hisse senedi ve devlet tahvilleri" },
+              { id: "D", text: "Döviz ve altın fonları" },
+            ],
+            correct: "B",
+            explanation:
+              "EFP yalnızca Bireysel Emeklilik Sistemi (BES) kapsamındaki emeklilik yatırım fonlarını kapsar. TEFAS üzerinden işlem gören bireysel yatırım fonları EFP'nin değil TEFAS'ın kapsamındadır.",
+          },
+          {
+            text: "Aşağıdakilerden hangisi EFP öncesi sistemin temel sorunlarından biri değildi?",
+            options: [
+              { id: "A", text: "Fon transfer işlemlerinin standart dışı ve uzun sürmesi" },
+              { id: "B", text: "BES şirketleri arasında fon takibinin güç olması" },
+              { id: "C", text: "Merkezi takas altyapısının olmaması" },
+              { id: "D", text: "Emeklilik fonlarının yüksek getiri sağlamaması" },
+            ],
+            correct: "D",
+            explanation:
+              "EFP'nin kuruluş gerekçesi yüksek getiri sorunu değil; standartlaştırma eksikliği, fon transferlerinin uzun sürmesi ve merkezi takas/saklama altyapısının bulunmamasıydı. Getiri performansı ayrı bir konudur ve EFP'nin kuruluş amacıyla doğrudan ilgisi yoktur.",
+          },
+        ],
+      },
     ],
   },
 ];

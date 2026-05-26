@@ -749,6 +749,356 @@ export const mevzuat1007: Module[] = [
           },
         ],
       },
+
+      // ──────────── Ders 6: Birleşme, Devir ve Bölünme ────────────
+      {
+        id: "m1007-l6",
+        title: "Şirketlerde Birleşme, Devir ve Bölünme",
+        duration: "8 dk",
+        summary: {
+          title: "Birleşme, Devir ve Bölünme",
+          intro:
+            "Şirketler büyüme, sinerji, pazar gücü veya vergi avantajları amacıyla birleşme (merger) ve devirler (acquisition) yoluyla yeniden yapılanabilir. Türkiye'de TTK'nın 134-158. maddeleri birleşmeleri; 159-179. maddeleri bölünmeleri; 180-190. maddeleri ise tür değiştirmeyi düzenler. Sermaye piyasası mevzuatı açısından halka açık şirket birleşmeleri SPK'nın birleşme ve bölünmeye ilişkin tebliğine tabidir.",
+          sections: [
+            {
+              heading: "Birleşme Türleri ve Hukuki Çerçeve",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Devralma Yoluyla Birleşme:",
+                  text: "Bir şirketin diğerini bünyesine katmasıdır; devralınan şirket tüzel kişiliğini yitirir, aktif ve pasifleri devralan şirkete geçer. Örneğin A Şirketi B'yi devralırsa B'nin borç ve varlıkları A'ya geçer, B tüzel kişiliğini yitirir.",
+                },
+                {
+                  strong: "Yeni Kuruluş Yoluyla Birleşme:",
+                  text: "İki veya daha fazla şirketin tüm varlık ve yükümlülüklerini yeni kurulan bir şirkete devredip kendilerini feshetmesidir. Her iki şirket de kapanır, yeni bir hukuki kişilik doğar.",
+                },
+                {
+                  strong: "Halka Açık Şirketlerde Birleşme — SPK Mevzuatı:",
+                  text: "Halka açık şirketlerin birleşmelerinde SPK'nın II-23.3 sayılı 'Birleşme ve Bölünme Tebliği' uygulanır. Bağımsız değerleme, bilgi formu hazırlanması ve genel kurul onayı zorunludur.",
+                },
+                {
+                  strong: "Zorunlu Pay Alım Teklifi:",
+                  text: "Halka açık şirkette kontrolün el değiştirdiği birleşmelerde SPK mevzuatı uyarınca azınlık hissedarlarına yönelik zorunlu pay alım teklifi yükümlülüğü doğabilir.",
+                },
+              ],
+            },
+            {
+              heading: "Bölünme Türleri",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Tam Bölünme:",
+                  text: "Şirketin tüm aktif ve pasifleri iki ya da daha fazla yeni veya mevcut şirkete devredilir; bölünen şirket tüzel kişiliğini yitirir. Hissedarlar bölünen şirketin paylarına karşılık yeni şirketlerin paylarını alır.",
+                },
+                {
+                  strong: "Kısmi Bölünme:",
+                  text: "Şirketin aktiflerinin bir kısmı bir veya birden fazla başka şirkete devredilir; bölünen şirket varlığını sürdürür. Kısmi bölünme sonucunda bölünen şirket küçülmekte, yeni/mevcut şirket ise büyümektedir.",
+                },
+              ],
+            },
+            {
+              heading: "Birleşme Değerlemesi ve Sinerji",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Değerleme Yöntemleri:",
+                  text: "Birleşmelerde şirket değerlemesi için indirgenmiş nakit akımı (DCF), piyasa karşılaştırması (EV/EBITDA, F/K çarpanları) ve net aktif değeri (NAV) yöntemleri kullanılır. Halka açık şirketlerde bağımsız değerleme zorunludur.",
+                },
+                {
+                  strong: "Sinerji Kavramı:",
+                  text: "Birleşme sonrası elde edilmesi beklenen değer artışıdır; maliyet sinerjisi (ölçek ekonomisi, genel gider azaltımı) ve gelir sinerjisi (çapraz satış, pazar payı artışı) olmak üzere ikiye ayrılır.",
+                },
+                {
+                  strong: "Goodwill (Şerefiye):",
+                  text: "Bir şirkete ödenen satın alma bedelinin, satın alınan net varlıkların makul değerini aşan kısmıdır. TFRS 3 kapsamında goodwill yılda en az bir kez değer düşüklüğü testine tabi tutulur.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda devralma ile yeni kuruluş yoluyla birleşme farkı, halka açık şirket birleşmelerinde SPK zorunlulukları ve goodwill kavramı sıkça sorulur.",
+          kavramlar: [
+            { terim: "Devralma Yoluyla Birleşme", tanim: "Bir şirketin diğerini bünyesine katarak devralınan şirketin tüzel kişiliğinin sona ermesi." },
+            { terim: "Yeni Kuruluş Yoluyla Birleşme", tanim: "İki veya daha fazla şirketin yeni kurulan bir şirkete tüm aktif-pasiflerini devredip feshedilmesi." },
+            { terim: "Tam Bölünme", tanim: "Şirketin tüm varlık ve yükümlülüklerini yeni veya mevcut şirketlere devredip tüzel kişiliğini yitirmesi." },
+            { terim: "Kısmi Bölünme", tanim: "Şirketin aktiflerinin bir bölümünü başka şirketlere devretmesi; şirket varlığını sürdürür." },
+            { terim: "Goodwill (Şerefiye)", tanim: "Satın alınan şirket için ödenen bedelin net varlıkların makul değerini aşan kısmı; TFRS 3 kapsamında değer düşüklüğü testine tabidir." },
+            { terim: "Sinerji", tanim: "Birleşme sonrası elde edilen ek değer; maliyet sinerjisi ve gelir sinerjisi olarak ikiye ayrılır." },
+            { terim: "Zorunlu Pay Alım Teklifi", tanim: "Halka açık şirkette kontrolün el değiştirmesi durumunda SPK mevzuatının azınlık hissedarları için öngördüğü pay alım yükümlülüğü." },
+          ],
+          dikkatlar: [
+            "Devralma yoluyla birleşmede devralınan şirket tüzel kişiliğini yitirir; yeni kuruluşta ise her iki şirket de kapanır.",
+            "Halka açık şirket birleşmelerinde SPK'nın II-23.3 Tebliği uygulanır ve bağımsız değerleme zorunludur.",
+            "Goodwill yalnızca satın alma yoluyla oluşur; içsel olarak geliştirilemez ve TFRS 3'e göre itfa edilmez, değer düşüklüğü testine tabi tutulur.",
+            "Sinerji birleşme gerekçesinde kritik rol oynar; maliyet ve gelir sinerjilerini birbirinden ayırt edebilmek önemlidir.",
+            "Kontrolün el değiştirdiği birleşmelerde azınlık hissedarlarına yönelik zorunlu pay alım teklifi yükümlülüğü doğabilir.",
+          ],
+        },
+        questions: [
+          {
+            text: "Devralma yoluyla birleşmede hangi sonuç ortaya çıkar?",
+            options: [
+              { id: "A", text: "Her iki şirket de tüzel kişiliğini yitirir, yeni bir şirket kurulur." },
+              { id: "B", text: "Devralınan şirket tüzel kişiliğini yitirir, aktif ve pasifleri devralan şirkete geçer." },
+              { id: "C", text: "Her iki şirket ayrı tüzel kişiliklerini korur, sadece ortaklık paylaşımı gerçekleşir." },
+              { id: "D", text: "Devralan şirket tüzel kişiliğini yitirir, devralınan devam eder." },
+            ],
+            correct: "B",
+            explanation:
+              "Devralma yoluyla birleşmede devralınan şirket tüzel kişiliğini yitirir ve tüm aktif-pasifleri devralan şirkete geçer. Devralan şirket varlığını sürdürür. Yeni kuruluş yoluyla birleşmede ise her iki şirket kapanır ve yeni bir hukuki kişilik oluşur.",
+          },
+          {
+            text: "Halka açık şirketlerin birleşmelerinde uygulanacak SPK tebliği hangisidir?",
+            options: [
+              { id: "A", text: "II-14.1 Yatırım Fonlarına İlişkin Esaslar Tebliği" },
+              { id: "B", text: "II-23.3 Birleşme ve Bölünme Tebliği" },
+              { id: "C", text: "II-5.1 İzahname Tebliği" },
+              { id: "D", text: "VII-128.1 Pay Tebliği" },
+            ],
+            correct: "B",
+            explanation:
+              "Halka açık şirketlerin birleşme ve bölünmelerinde SPK'nın II-23.3 sayılı 'Birleşme ve Bölünme Tebliği' uygulanır. Bu tebliğ bağımsız değerleme zorunluluğu, bilgi formu hazırlanması ve genel kurul onayı gibi koşulları düzenler.",
+          },
+          {
+            text: "Kısmi bölünmeyi tam bölünmeden ayıran temel unsur nedir?",
+            options: [
+              { id: "A", text: "Kısmi bölünmede bölünen şirket tüzel kişiliğini yitirirken tam bölünmede sürdürür." },
+              { id: "B", text: "Tam bölünmede bölünen şirket tüzel kişiliğini yitirirken kısmi bölünmede varlığını sürdürür." },
+              { id: "C", text: "Tam bölünme yalnızca anonim şirketlere uygulanabilir." },
+              { id: "D", text: "Kısmi bölünmede hissedarlar yeni payları almak zorundadır." },
+            ],
+            correct: "B",
+            explanation:
+              "Tam bölünmede bölünen şirket tüm aktif ve pasiflerini devrederek tüzel kişiliğini yitirir. Kısmi bölünmede ise aktiflerinin yalnızca bir bölümünü devreder ve şirket faaliyetini sürdürür.",
+          },
+          {
+            text: "Goodwill (şerefiye) nasıl oluşur ve TFRS'ye göre muhasebeleştirilmesi nasıldır?",
+            options: [
+              { id: "A", text: "Şirketin kendi markasına yaptığı yatırımlarla oluşur; yıllık itfa edilir." },
+              { id: "B", text: "Satın alma bedelinin alınan net varlıkların makul değerini aşması durumunda oluşur; itfa edilmez, yıllık değer düşüklüğü testine tabi tutulur." },
+              { id: "C", text: "Satın alma bedelinden bağımsız olarak, yönetim kalitesine göre hesaplanır." },
+              { id: "D", text: "Yalnızca kısmi bölünmelerde oluşur ve 5 yılda itfa edilir." },
+            ],
+            correct: "B",
+            explanation:
+              "Goodwill (şerefiye), bir işletmenin satın alınmasında ödenen bedelin, edinilen net varlıkların makul değerini aşan kısmıdır. TFRS 3'e göre goodwill itfa edilmez; ancak yılda en az bir kez (önemli olaylar sonrasında daha sık) değer düşüklüğü testine tabi tutulur.",
+          },
+          {
+            text: "Birleşmelerde maliyet sinerjisinin temel kaynakları arasında hangisi yer alır?",
+            options: [
+              { id: "A", text: "Çapraz satış imkânları ve yeni pazar kazanımları" },
+              { id: "B", text: "Ölçek ekonomisi ve yönetim giderlerinin azaltılması" },
+              { id: "C", text: "Goodwill değerinin artması" },
+              { id: "D", text: "Zorunlu pay alım teklifinden kâr edilmesi" },
+            ],
+            correct: "B",
+            explanation:
+              "Maliyet sinerjisi, birleşme sonrası üretim, satın alma ve genel yönetim giderlerinin azaltılmasıyla elde edilen tasarrufları ifade eder. Ölçek ekonomisi (birim başına maliyetin düşmesi) en klasik maliyet sinerjisi kaynağıdır. Çapraz satış ise gelir sinerjisine örnektir.",
+          },
+          {
+            text: "Halka açık bir şirkette birleşme sonucu kontrol el değiştirdiğinde SPK mevzuatının öngördüğü yükümlülük nedir?",
+            options: [
+              { id: "A", text: "Şirketin borsadan çıkarılması" },
+              { id: "B", text: "Azınlık hissedarlarına yönelik zorunlu pay alım teklifi yükümlülüğü" },
+              { id: "C", text: "Birleşmenin otomatik olarak iptal edilmesi" },
+              { id: "D", text: "Birleşmenin rekabet kurumu onayına sunulması" },
+            ],
+            correct: "B",
+            explanation:
+              "SPK mevzuatı, halka açık şirketlerde kontrolün el değiştirdiği işlemlerde azınlık hissedarlarını korumak amacıyla zorunlu pay alım teklifi yükümlülüğü öngörür. Bu sayede azınlık hissedarları paylarını piyasa koşullarından daha avantajlı bir fiyata satma imkânına kavuşur.",
+          },
+          {
+            text: "Yeni kuruluş yoluyla birleşmeyi devralma yoluyla birleşmeden ayıran temel özellik nedir?",
+            options: [
+              { id: "A", text: "Yalnızca yeni kuruluşta bağımsız değerleme yapılır." },
+              { id: "B", text: "Yeni kuruluşta her iki şirket de kapanır ve yeni bir hukuki kişilik doğar." },
+              { id: "C", text: "Yeni kuruluşta devralınan şirket tüzel kişiliğini yitirir." },
+              { id: "D", text: "Yeni kuruluşta birleşme SPK onayı gerektirmez." },
+            ],
+            correct: "B",
+            explanation:
+              "Yeni kuruluş yoluyla birleşmede her iki şirket de tüm aktif ve pasiflerini yeni kurulan şirkete devrederek tüzel kişiliklerini yitirir. Devralma yoluyla birleşmede ise yalnızca devralınan şirket ortadan kalkar, devralan şirket varlığını sürdürür.",
+          },
+        ],
+      },
+
+      // ──────────── Ders 7: Leasing, Faktöring ve Forfaiting ────────────
+      {
+        id: "m1007-l7",
+        title: "Finansal Kiralama (Leasing), Faktöring ve Forfaiting",
+        duration: "8 dk",
+        summary: {
+          title: "Leasing, Faktöring ve Forfaiting",
+          intro:
+            "Finansal kiralama (leasing), faktöring ve forfaiting; özellikle KOBİ'ler ve ihracatçı şirketler için banka kredisine alternatif finansman araçları sunan özelleşmiş finansal hizmetlerdir. Türkiye'de bu hizmetler 6361 sayılı Finansal Kiralama, Faktöring, Finansman ve Tasarruf Finansman Şirketleri Kanunu ile BDDK düzenlemeleri çerçevesinde yürütülür.",
+          sections: [
+            {
+              heading: "Finansal Kiralama (Leasing)",
+              icon: "shield",
+              items: [
+                {
+                  strong: "Tanım:",
+                  text: "Kiralayan (leasing şirketi) bir varlığı satın alarak kiracıya kullanım hakkı tanır; kiracı varlığı belirli periyodik ödemeler karşılığında kullanır. Vade sonunda varlık kiracıya devredilebilir veya yeniden kiraya verilebilir.",
+                },
+                {
+                  strong: "Finansal Kiralama (Finance Lease):",
+                  text: "Varlığın sahipliğine ilişkin risk ve faydaların büyük ölçüde kiracıya devredildiği kiralamadır. TFRS 16 kapsamında kiracı varlığı ve kira yükümlülüğünü bilançosuna alır. Kira ödemeleri faiz ve anapara ödeme olarak ayrılır.",
+                },
+                {
+                  strong: "Faaliyet Kiralaması (Operating Lease):",
+                  text: "Sahipliğe ait risk ve faydaların kiralayana ait kaldığı, daha kısa vadeli kiralamadır. TFRS 16 öncesinde bilanço dışı olarak kayıt edilirdi; artık kiracı kullanım hakkı varlığı ve kira borcu olarak bilançosuna almaktadır.",
+                },
+                {
+                  strong: "Avantajları:",
+                  text: "Vergi avantajı (kira ödemeleri gider yazılabilir), sermaye bağlamaksızın ekipmana erişim, bilanço verimliliği ve teknoloji yenileme esnekliği leasingin başlıca avantajlarıdır.",
+                },
+              ],
+            },
+            {
+              heading: "Faktöring",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Tanım:",
+                  text: "Şirketin vadeli alacaklarını faktör şirketine (banka veya faktöring şirketi) devretmesidir. Faktör, alacağı vadeden önce peşin ödeyerek alacağı satın alır ve tahsilat riskini üstlenir.",
+                },
+                {
+                  strong: "Rücu Edilemeyen (Non-recourse) Faktöring:",
+                  text: "Alacağın tahsil edilememe riski faktör şirketine ait olup satıcı şirkete rücu edilmez. Bu tür faktöring bilanço dışılık (off-balance sheet) imkânı tanır.",
+                },
+                {
+                  strong: "Rücu Edilebilir (Recourse) Faktöring:",
+                  text: "Borçlu ödeme yapamazsa faktör, alacağı satıcı şirkete iade edebilir; tahsilat riski satıcıda kalmaktadır.",
+                },
+                {
+                  strong: "İhracat Faktöringi:",
+                  text: "Yurt dışı alıcılara yönelik vadeli satışlardan doğan alacakların faktöringe konu edilmesidir; özellikle KOBİ ihracatçılarda nakit akışını hızlandırır.",
+                },
+              ],
+            },
+            {
+              heading: "Forfaiting",
+              icon: "trend",
+              items: [
+                {
+                  strong: "Tanım:",
+                  text: "Forfaiting, ihracatçı firmanın orta-uzun vadeli ihracat alacaklarını (genellikle senetli alacaklar) rücu hakkı olmaksızın forfaiter'a (banka/finans kuruluşu) satmasıdır. Faktöring kısa vadeli iken forfaiting orta-uzun vadeli alacaklara yöneliktir.",
+                },
+                {
+                  strong: "Farklar — Faktöring vs Forfaiting:",
+                  text: "Faktöring kısa vadeli (180 güne kadar) alacakları kapsar; forfaiting ise 1–7 yıl vadeli büyük ölçekli ihracat işlemlerine uygulanır. Forfaiting'de senet/poliçe bedelinin %100'üne kadar finansman sağlanabilirken faktöringde genellikle %80–90'ı ödenir.",
+                },
+                {
+                  strong: "Avantajları:",
+                  text: "İhracatçı nakit akışını hızlandırır ve ülke/alıcı riskini forfaiter'a devreder. Avantajlar arasında bilanço dışılık, kur riskinden korunma ve tahsilat garantisi sayılabilir.",
+                },
+              ],
+            },
+          ],
+          tip: "Sınavda leasing türleri (finansal/faaliyet), TFRS 16 etkisi, faktöring ile forfaiting'in karşılaştırılması ve rücu edilebilir/edilemez faktöring ayrımı sıkça çıkar.",
+          kavramlar: [
+            { terim: "Finansal Kiralama (Leasing)", tanim: "Kiralayan bir varlığı satın alıp kiracıya belirli ödemeler karşılığında kullanım hakkı tanıdığı finansman yöntemi." },
+            { terim: "TFRS 16", tanim: "Kira sözleşmelerinin muhasebeleştirilmesini düzenleyen uluslararası standart; kiracının kullanım hakkı varlığı ve kira yükümlülüğünü bilançoya almasını gerektirir." },
+            { terim: "Faktöring", tanim: "Şirketin vadeli alacaklarını faktör şirketine devrederek vadeden önce nakit elde etmesi işlemi." },
+            { terim: "Rücu Edilemeyen Faktöring", tanim: "Alacağın tahsil edilememesi riskinin faktör şirketinde kaldığı; satıcı şirkete geri dönülemediği faktöring türü." },
+            { terim: "Forfaiting", tanim: "İhracatçının orta-uzun vadeli senetli ihracat alacaklarını rücu hakkı olmaksızın forfaiter'a sattığı finansman yöntemi." },
+            { terim: "İhracat Faktöringi", tanim: "Yurt dışı alıcılardan doğan kısa vadeli ihracat alacaklarının faktöringe konu edilmesi." },
+            { terim: "6361 Sayılı Kanun", tanim: "Finansal Kiralama, Faktöring, Finansman ve Tasarruf Finansman Şirketleri Kanunu; bu hizmetlerin hukuki çerçevesini oluşturur." },
+          ],
+          dikkatlar: [
+            "TFRS 16 ile faaliyet kiralamaları da bilançoya alınmaya başlamış; eskiden tüm faaliyet kiralamaları bilanço dışı tutulurdu.",
+            "Rücu edilemeyen faktöringde tahsilat riski faktöre devredilir; rücu edilebilirde ise risk satıcıda kalır.",
+            "Forfaiting orta-uzun vadeli (1–7 yıl) büyük ihracat alacakları için kullanılır; faktöring ise kısa vadeli (180 güne kadar) alacaklara yöneliktir.",
+            "Türkiye'de leasing, faktöring ve forfaiting şirketleri BDDK denetimine tabi olup 6361 sayılı Kanun kapsamında faaliyet gösterir.",
+            "Forfaiting'de finansman oranı %100'e ulaşabilirken faktöringde genellikle %80–90 ödenir.",
+          ],
+        },
+        questions: [
+          {
+            text: "Finansal kiralama (leasing) ile faaliyet kiralaması (operating lease) arasındaki temel fark nedir?",
+            options: [
+              { id: "A", text: "Finansal kiralamada varlık kiralayan bilançosunda kalır; faaliyet kiralamada kiracı varlığı bilançosuna alır." },
+              { id: "B", text: "Finansal kiralamada sahipliğe ait risk ve faydalar büyük ölçüde kiracıya devredilir; faaliyet kiralamada ise kiralayana aittir." },
+              { id: "C", text: "Faaliyet kiralamada kira ödemeleri daha yüksektir." },
+              { id: "D", text: "Finansal kiralama yalnızca taşınmazlara; faaliyet kiralaması yalnızca taşınırlara uygulanır." },
+            ],
+            correct: "B",
+            explanation:
+              "Finansal kiralamada varlığın sahipliğine ilişkin risk ve faydaların büyük bölümü kiracıya devredilir; kiracı varlığı ve kira yükümlülüğünü bilançosuna alır. Faaliyet kiralamada ise risk ve faydalar kiralayana ait kalmaya devam eder; TFRS 16 ile artık faaliyet kiralamaları da kiracının bilançosuna alınmaktadır.",
+          },
+          {
+            text: "TFRS 16 standartının kiracılar açısından getirdiği temel değişiklik nedir?",
+            options: [
+              { id: "A", text: "Finansal kiralamalar bilanço dışı tutulmaya başlanmıştır." },
+              { id: "B", text: "Faaliyet kiralamaları da kiracı tarafından kullanım hakkı varlığı ve kira borcu olarak bilançoya alınmaya başlanmıştır." },
+              { id: "C", text: "Tüm kiralamalarda devlet teşviki zorunlu hale gelmiştir." },
+              { id: "D", text: "Kira ödemeleri artık gider olarak yazılamamaktadır." },
+            ],
+            correct: "B",
+            explanation:
+              "TFRS 16 öncesinde faaliyet kiralamaları kiracı bilançosunda yer almazken, TFRS 16 ile birlikte kiracılar tüm kira sözleşmelerini (kısa vadeliler ve küçük varlıklar hariç) kullanım hakkı varlığı ve kira yükümlülüğü olarak bilançolarına almak zorundadır.",
+          },
+          {
+            text: "Rücu edilemeyen (non-recourse) faktöring ile rücu edilebilir (recourse) faktöring arasındaki fark nedir?",
+            options: [
+              { id: "A", text: "Rücu edilemeyen faktöringde tahsilat riski satıcıda; rücu edilebilirde faktördedir." },
+              { id: "B", text: "Rücu edilemeyen faktöringde tahsilat riski faktör şirketine devredilir; satıcı şirkete geri dönülemez." },
+              { id: "C", text: "Rücu edilemeyen faktöring yalnızca yurt içi alacaklar için geçerlidir." },
+              { id: "D", text: "Rücu edilebilir faktöring her zaman daha pahalıdır." },
+            ],
+            correct: "B",
+            explanation:
+              "Rücu edilemeyen faktöringde alacağın tahsil edilememesi riski faktör şirketine ait olup satıcı firmaya rücu edilemez; bu durum bilanço dışılık (off-balance sheet) imkânı tanır. Rücu edilebilir faktöringde ise borçlu ödeme yapmazsa faktör alacağı satıcıya iade edebilir.",
+          },
+          {
+            text: "Forfaiting ile faktöringe kıyasla en belirgin özellik hangisidir?",
+            options: [
+              { id: "A", text: "Forfaiting kısa vadeli alacakları kapsar; faktöring orta-uzun vadeli." },
+              { id: "B", text: "Forfaiting orta-uzun vadeli ihracat alacaklarını rücu hakkı olmaksızın kapsarken faktöring kısa vadeli." },
+              { id: "C", text: "Forfaiting yurt içi alacaklara uygulanır; faktöring yalnızca ihracat alacaklarına." },
+              { id: "D", text: "Forfaiting'de varlık bilançoya alınır; faktöringde alınmaz." },
+            ],
+            correct: "B",
+            explanation:
+              "Forfaiting, ihracatçının 1–7 yıl vadeli büyük ölçekli senetli ihracat alacaklarını rücu hakkı olmaksızın forfaiter'a devretmesidir. Faktöring ise 180 güne kadar olan kısa vadeli alacaklar için kullanılır. Forfaiting'de genellikle %100 finansman sağlanabilirken faktöringde oran daha düşüktür.",
+          },
+          {
+            text: "Türkiye'de finansal kiralama, faktöring ve forfaiting şirketleri hangi kanun kapsamında düzenlenmektedir?",
+            options: [
+              { id: "A", text: "6362 Sayılı Sermaye Piyasası Kanunu" },
+              { id: "B", text: "5411 Sayılı Bankacılık Kanunu" },
+              { id: "C", text: "6361 Sayılı Finansal Kiralama, Faktöring, Finansman ve Tasarruf Finansman Şirketleri Kanunu" },
+              { id: "D", text: "4632 Sayılı Bireysel Emeklilik Kanunu" },
+            ],
+            correct: "C",
+            explanation:
+              "Türkiye'de finansal kiralama (leasing), faktöring, finansman ve tasarruf finansman şirketleri 6361 sayılı Kanun kapsamında BDDK denetimine tabidir. Bu şirketler banka olmamalarına rağmen mevduat dışı kaynaklarla finansman sağlayan düzenlenmiş kuruluşlardır.",
+          },
+          {
+            text: "Faktöringin KOBİ'ler açısından en temel finansal avantajı nedir?",
+            options: [
+              { id: "A", text: "Uzun vadeli yatırım projelerinin finansmanını kolaylaştırması" },
+              { id: "B", text: "Vadeli alacakların peşin nakde çevrilmesiyle nakit akışının hızlandırılması" },
+              { id: "C", text: "Şirketin özsermaye tabanını artırması" },
+              { id: "D", text: "Banka kredisi maliyetlerinden tamamen bağımsız olması" },
+            ],
+            correct: "B",
+            explanation:
+              "Faktöringin temel avantajı, şirketin vadeli alacaklarını vadeleri gelmeden nakde çevirerek işletme sermayesi döngüsünü hızlandırmasıdır. KOBİ'ler için banka kredisine alternatif bir kısa vadeli finansman kaynağı işlevi görür.",
+          },
+          {
+            text: "İhracat faktöringinin forfaitingden ayrıldığı temel özellik nedir?",
+            options: [
+              { id: "A", text: "İhracat faktöringi senetli alacaklara; forfaiting senetsiz alacaklara uygulanır." },
+              { id: "B", text: "İhracat faktöringi kısa vadeli (genellikle 180 güne kadar) alacakları kapsar; forfaiting orta-uzun vadeli (1–7 yıl) büyük ölçekli ihracat alacaklarını." },
+              { id: "C", text: "İhracat faktöringinde rücu hakkı yoktur; forfaitingde vardır." },
+              { id: "D", text: "Forfaiting yalnızca AB ülkeleriyle ticarette kullanılır." },
+            ],
+            correct: "B",
+            explanation:
+              "İhracat faktöringi kısa vadeli (genellikle 90–180 güne kadar) yurt dışı alacaklar için kullanılırken forfaiting orta-uzun vadeli (1–7 yıl), büyük tutarlı ihracat alacakları (makine, ekipman, sermaye malları) için kullanılır. Her ikisinde de risk devri söz konusudur ancak vade ve kapsam farklıdır.",
+          },
+        ],
+      },
     ],
   },
 ];
