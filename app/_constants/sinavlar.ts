@@ -41,7 +41,7 @@ export const SINAVLAR = [
     soruSayisi: 100, sureDakika: 150,
     href: "/sinav/turev",
     aciklama: "Türev araçlar ve risk yönetimi lisansı",
-    pdfler: ["1002", "1003", "1004", "1006", "1009", "1011", "1013"],
+    pdfler: ["1002", "1003", "1004", "1005", "1006", "1009", "1011", "1013"],
   },
   {
     kod: "KY", ad: "Kurumsal Yönetim",      pilAd: "Kur. Yön.",  renk: "emerald",

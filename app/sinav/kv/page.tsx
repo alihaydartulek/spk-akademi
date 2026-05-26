@@ -8,10 +8,10 @@ const config: SinavConfig = {
   soruSayisi: 50,
   sureDakika: 90,
   gecmeEsigi: 60,
-  modulIds: ["m1001", "m1014"],
+  modulIds: ["m1", "m2", "m3", "m4", "m1014"],
   konular: [
-    { pdf: "1001", ad: "Dar Kapsamlı Mevzuat ve Meslek Kuralları", icerik: "Sermaye piyasası mevzuatı, değerleme kuruluşları, meslek etiği, SPK düzenlemeleri" },
-    { pdf: "1014", ad: "Gayrimenkul Değerleme Esasları", icerik: "Değerleme yaklaşımları, konut değerleme yöntemleri, pazar karşılaştırma, değerleme raporu" },
+    { pdf: "1001", ad: "Dar Kapsamlı Mevzuat ve Meslek Kuralları", icerik: "Sermaye Piyasası Kanunu (6362), değerleme kuruluşları ile lisanslama mevzuatı, Özel Durumlar Tebliği (II-15.1), TSPB meslek kuralları ve etik ilkeler" },
+    { pdf: "1014", ad: "Gayrimenkul Değerleme Esasları", icerik: "Değerleme yaklaşımları (pazar karşılaştırma, gelir, maliyet), konut değerleme yöntemleri, konut pazar analizi, değerleme raporu hazırlama standartları" },
   ],
 };
 
